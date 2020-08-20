@@ -1,0 +1,51 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700&display=swap');
+// font-family: 'Playfair Display', serif;
+// Weights: 400,500,700
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+// variables
+$primary: #091024;
+$secondary: #e4eefc;
+$gray: #f8f8ff;
+$lightgray: #f8f9fb;
+
+$green: #def0f0;
+
+// mixins
+// media query @ snippet mq
+$breakpoints: (
+  "phone": 480px,
+  "650": 650px,
+  "tablet": 768px,
+  "tabletw": 992px,
+  "desktop": 1150px,
+);
+@mixin mq($width, $type: min) {
+  @if map_has_key($breakpoints, $width) {
+    $width: map_get($breakpoints, $width);
+    @if $type == max {
+      $width: $width - 1px;
+    }
+    @media only screen and (#{$type}-width: $width) {
+      @content;
+    }
+  }
+}
+$hamburger-layer-width: 28px !default;
+$hamburger-layer-height: 3px !default;
+$hamburger-layer-border-radius: 3px !default;
+$hamburger-padding-x: 10px;
+$hamburger-padding-y: 0px;
+$hamburger-active-layer-color: $secondary;
+$hamburger-layer-color: $primary !default;
+$hamburger-active-hover-opacity: 1;
+$hamburger-types: (collapse);
+
+@import "../../node_modules/hamburgers/_sass/hamburgers/hamburgers.scss";

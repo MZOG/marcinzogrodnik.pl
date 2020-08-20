@@ -1,0 +1,32 @@
+/********************
+* This file contains:
+* .btn
+* .small
+* 
+*********************/
+
+.btn {
+  background: $secondary;
+  color: $lightgray;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  font-size: 14px;
+  border-radius: 4px;
+  border: 1px solid transparent;
+  line-height: 1.6;
+
+  @include mq('650', max) {
+    padding: 0.1rem 0.5rem;
+    margin-right: 20px;
+  }
+
+  &:hover {
+    background: #fff;
+    border-color: $secondary;
+    color: $secondary;
+  }
+}
+
+.small {
+  font-size: 13px;
+}

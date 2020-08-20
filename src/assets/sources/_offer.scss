@@ -1,0 +1,97 @@
+// offer homepage + offer page
+
+// offer homepage
+.offer {
+  padding: 100px 0;
+
+  h2 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+  }
+
+  &-wrapper {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  &-box {
+    color: $primary;
+    text-decoration: none;
+    margin-bottom: 2rem;
+    width: 100%;
+    padding: 20px;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    border-radius: 4px;
+    cursor: pointer;
+    position: relative;
+
+    @include mq('650', min) {
+      width: calc(50% - 10px);
+      padding: 25px;
+    }
+
+    @include mq('tabletw', min) {
+      width: calc(33.333% - 20px);
+      padding: 30px;
+    }
+
+    h3 {
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      font-size: 14px;
+    }
+
+    .icon {
+      svg {
+        width: 30px;
+        margin-bottom: 15px;
+        stroke: $primary;
+      }
+    }
+
+    .more {
+      position: absolute;
+      right: 10px;
+      top: 35px;
+      opacity: 0;
+      transition: all 0.2s ease-in;
+      background: #fff;
+      font-size: 14px;
+      border-radius: 4px;
+      padding: 3px 10px;
+    }
+
+    &:hover {
+      background: $secondary;
+
+      svg {
+        stroke: #000;
+      }
+
+      h3,
+      p {
+        color: #000;
+      }
+
+      .more {
+        opacity: 1;
+        right: 20px;
+      }
+    }
+  }
+}
+
+// offer page
+.offer-page {
+  position: relative;
+
+  .content {
+    max-width: 850px;
+    margin: 0 auto;
+  }
+}

@@ -1,0 +1,92 @@
+body {
+  font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif,
+    BlinkMacSystemFont, Helvetica Neue, Arial, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+  color: $primary;
+  line-height: 1.65rem;
+  margin-top: 85px;
+
+  @include mq("650", max) {
+    overflow-x: hidden !important;
+    margin-top: 80px;
+  }
+}
+
+.container {
+  width: 100%;
+  padding: 0 15px;
+
+  @include mq("tablet", min) {
+    width: 768px;
+    padding: 0;
+    margin: 0 auto;
+  }
+
+  @include mq("tabletw", min) {
+    width: 992px;
+  }
+
+  @include mq("desktop", min) {
+    width: 1150px;
+  }
+}
+
+a {
+  text-decoration: none;
+  color: $primary;
+}
+
+.page {
+  h1 {
+    font-size: 3rem;
+    margin-bottom: 3rem;
+  }
+
+  h2 {
+    margin-bottom: 1rem;
+  }
+}
+
+.homepage {
+  h2 {
+    font-size: 38px;
+    line-height: 1;
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+  }
+}
+
+.page-hero {
+  padding: 20px 0 20px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @include mq("tablet", min) {
+    padding: 50px 0;
+  }
+
+  h1 {
+    margin: 0;
+    font-size: 30px;
+    font-weight: 900;
+
+    @include mq("650", min) {
+      font-size: 35px;
+    }
+
+    @include mq("tabletw", min) {
+      font-size: 48px;
+    }
+  }
+
+  .lead {
+    font-size: 16px;
+    margin: 1.5rem 0;
+    line-height: 2;
+
+    @include mq("650", min) {
+      font-size: 18px;
+    }
+  }
+}

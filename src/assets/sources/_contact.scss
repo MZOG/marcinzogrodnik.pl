@@ -1,0 +1,78 @@
+//todo
+.contact-wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(370px, 1fr));
+  grid-column-gap: 20px;
+
+  .form {
+    margin-top: 1rem;
+    &-item {
+      margin-bottom: 20px;
+      label {
+        display: block;
+        margin-bottom: 10px;
+
+        span {
+          color: rgba($primary, 0.5);
+        }
+      }
+
+      input {
+        width: 80%;
+        border: 1px solid rgba($primary, 0.2);
+        font-family: inherit;
+        font-size: 14px;
+        min-height: 35px;
+        text-indent: 10px;
+
+        &[type="submit"] {
+          background-color: $secondary;
+          border-radius: 4px;
+          border: 1px solid transparent;
+          color: #fff;
+          width: auto;
+          padding: 0 20px;
+          text-indent: 0;
+          cursor: pointer;
+
+          &:hover {
+            background: #fff;
+            color: $secondary;
+            border-color: $secondary;
+          }
+        }
+      }
+
+      textarea {
+        width: 80%;
+        resize: none;
+        border: 1px solid rgba($primary, 0.2);
+        padding: 10px;
+        font-family: inherit;
+        font-size: 14px;
+        min-height: 100px;
+      }
+    }
+  }
+
+  .contact-wrapper_left {
+    p {
+      display: flex;
+      align-items: center;
+
+      svg {
+        width: 20px;
+        margin-right: 10px;
+        stroke: $primary;
+      }
+    }
+
+    .contact-box {
+      margin: 2rem 0;
+    }
+  }
+}
+
+.contact-small {
+  margin-top: 2rem;
+}
