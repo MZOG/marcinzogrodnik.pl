@@ -15,15 +15,10 @@ export default ({ data }) => {
         switch (time) {
             case 1:
                 return `${time} minuta czytania`;
-                break;
-
             case time > 1:
                 return `${time} minuty czytania`;
-                break;
-
             case time > 4:
                 return `${time} minut czytania`;
-                break;
             default:
                 break;
         }

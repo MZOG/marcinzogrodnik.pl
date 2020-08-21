@@ -254,7 +254,7 @@ header {
 
       &:hover {
         background: #fff;
-        border-color: $secondary;
+        border-color: darken($green, 50%);
       }
     }
   }

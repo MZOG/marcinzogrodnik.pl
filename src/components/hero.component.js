@@ -1,6 +1,5 @@
 import React from "react"
 import HeroImage from "../images/marcin_profilowe.jpg"
-import { Link } from "gatsby"
 
 const Hero = () => {
   return (

@@ -10,7 +10,7 @@ const HomepageRecentProjects = ({ projects }) => {
                 <h2>Wybrane realizacje</h2>
 
                 <div className="recent-projects-more">
-                    <Link to="/realizacje" className="btn">
+                    <Link to="/realizacje" className="btn primary">
                         Więcej →
                     </Link>
                 </div>

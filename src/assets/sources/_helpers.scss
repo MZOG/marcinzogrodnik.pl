@@ -1,10 +1,3 @@
-/********************
-* This file contains:
-* .btn
-* .small
-* 
-*********************/
-
 .btn {
   background: $secondary;
   color: $lightgray;
@@ -14,6 +7,16 @@
   border-radius: 4px;
   border: 1px solid transparent;
   line-height: 1.6;
+
+  &.primary {
+    background: $primary;
+
+    &:hover {
+      background: $gray;
+      color: $primary;
+      border: 1px solid $primary;
+    }
+  }
 
   @include mq('650', max) {
     padding: 0.1rem 0.5rem;
