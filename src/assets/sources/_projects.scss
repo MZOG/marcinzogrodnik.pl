@@ -3,20 +3,14 @@
 // homepage recent projects
 .recent-projects {
   position: relative;
-  padding: 50px 0;
-
-  &-more {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
+  background: rgba($secondaryColor, 0.05);
 
   h2 {
     font-family: 'marcinzogrodnik';
     font-weight: 700;
     text-align: center;
     font-size: 50px;
-    color: $secondaryColor;
+    color: $primaryColor;
     padding: 50px 0;
     line-height: 50px;
   }
@@ -29,54 +23,16 @@
     .recent-project-item {
       margin-bottom: 50px;
       box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-      border-radius: 4px;
+      border-radius: 10px;
+      transition: all .2s ease-in-out;
 
       .gatsby-image-wrapper {
-        border-top-left-radius: 4px;
-        border-top-right-radius: 4px;
-        transition: all 0.3s ease-in;
+        border-radius: 10px;
+        transition: all 0.1s ease-in;
       }
 
-      .title {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding:  0 20px;
-
-        span {
-          font-size: 18px;
-          color: $primaryColor;
-          opacity: 0;
-          transition: all .1s ease-in-out;
-        }
-
-        &:hover {
-          h3 {
-            color: $primaryColor;
-          }
-          span {
-            opacity: 1;
-          }
-        }
-      }
-
-      h3 {
-        margin: 1rem 0;
-        font-size: 35px;
-        font-family: 'marcinzogrodnik';
-        color: $primaryColor;
-        transition: all .1s ease-in-out;
-      }
-
-      p {
-        color: $primaryColor;
-        font-size: 18px;
-        padding: 10px 20px;
-      }
-
-      a {
-        position: relative;
-        display: block;
+      &:hover {
+        transform: translateY(-10px);
       }
     }
   }

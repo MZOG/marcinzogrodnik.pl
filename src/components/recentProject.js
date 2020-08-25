@@ -8,10 +8,6 @@ const RecentProject = (props) => {
             <Link to={`/realizacje/${props.slug}`}>
                 <Img fluid={props.image} className="main-image" />
             </Link>
-            <div className="title">
-            <Link to={`/realizacje/${props.slug}`}><h3>{props.title}</h3></Link> <span>→</span>
-            </div>
-            <p>{props.excerpt}</p>
         </article>
     );
 };

@@ -21,12 +21,6 @@ const HomepageRecentProjects = ({ projects }) => {
                         );
                     })}
                 </div>
-
-                <div className="recent-projects-more">
-                    <Link to="/realizacje" className="btn primary">
-                        Więcej →
-                    </Link>
-                </div>
             </div>
         </section>
     );
