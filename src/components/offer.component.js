@@ -2,12 +2,12 @@ import React from "react";
 import { Link } from "gatsby";
 
 const homepageOffer = () => (
-    <section className="homepage offer">
+    <section className="offer">
         <div className="container">
             <h2>Oferta</h2>
             <div className="offer-wrapper">
                 <Link to="/oferta/strony-internetowe" className="offer-box">
-                    <div className="more">Więcej →</div>
+                    <div className="more">→</div>
                     <div className="icon">
                         <svg
                             fill="none"
@@ -28,7 +28,7 @@ const homepageOffer = () => (
                 </Link>
 
                 <Link to="/oferta/sklepy-internetowe" className="offer-box">
-                    <div className="more">Więcej →</div>
+                    <div className="more">→</div>
                     <div className="icon">
                         <svg
                             fill="none"
@@ -49,7 +49,7 @@ const homepageOffer = () => (
                 </Link>
 
                 <Link to="/oferta/projekty-graficzne" className="offer-box">
-                    <div className="more">Więcej →</div>
+                    <div className="more">→</div>
                     <div className="icon">
                         <svg
                             fill="none"
@@ -70,7 +70,7 @@ const homepageOffer = () => (
                 </Link>
 
                 <Link to="/oferta/hosting" className="offer-box">
-                    <div className="more">Więcej →</div>
+                    <div className="more">→</div>
                     <div className="icon">
                         <svg
                             fill="none"
@@ -91,7 +91,7 @@ const homepageOffer = () => (
                 </Link>
 
                 <Link to="/oferta/pozycjonowanie" className="offer-box">
-                    <div className="more">Więcej →</div>
+                    <div className="more">→</div>
                     <div className="icon">
                         <svg
                             fill="none"
@@ -112,7 +112,7 @@ const homepageOffer = () => (
                 </Link>
 
                 <Link to="/oferta/opieka-nad-strona" className="offer-box">
-                    <div className="more">Więcej →</div>
+                    <div className="more">→</div>
                     <div className="icon">
                         <svg
                             fill="none"

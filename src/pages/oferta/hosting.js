@@ -8,12 +8,12 @@ const Hosting = () => (
         <SEO title="Hosting" />
         <div className="container offer-page">
             <PageHero
-                title="Hosting Katowice"
+                title="Hosting"
                 lead="Zapraszam do zapoznania się z ofertą hostingu"
             />
 
             <div className="content">
-            <p>Opieka nad stroną</p>
+            <p>Hosting stron internetowych</p>
             </div>
         </div>
     </Layout>

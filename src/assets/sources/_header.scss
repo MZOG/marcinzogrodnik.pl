@@ -1,5 +1,5 @@
 header {
-  padding: 1.5rem 0;
+  padding: 0.7rem 0;
   position: fixed;
   top: 0;
   left: 0;
@@ -15,7 +15,6 @@ header {
 
   &.scroll {
     box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 10px 10px -5px rgba(0, 0, 0, 0.01);
-    padding: 1.5rem 0;
   }
 
   .container {
@@ -25,7 +24,15 @@ header {
   }
 
   .logo {
-    height: 37px;
+    a {
+      font-family: 'marcinzogrodnik';
+      font-size: 30px;
+      color: $primaryColor;
+
+      span {
+        color: $secondaryColor;
+      }
+    }
 
     @include mq("650", max) {
       height: 27px;
@@ -63,15 +70,6 @@ header {
     ul {
       list-style: none;
 
-      &:hover {
-        li {
-          opacity: 0.5;
-
-          @include mq("650", max) {
-            opacity: 1;
-          }
-        }
-      }
 
       li {
         display: inline-block;
@@ -156,7 +154,7 @@ header {
             ul {
               margin: 15px 0 0 0;
               padding: 0.5rem 0;
-              border: 1px solid $lightgray;
+              // border: 1px solid $lightgray;
               box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
               border-radius: 4px;
 
@@ -221,7 +219,7 @@ header {
                     top: 0;
                     width: 5px;
                     height: 100%;
-                    background-color: $secondary;
+                    background-color: $secondaryColor;
                     opacity: 0;
 
                     @include mq("650", max) {
@@ -239,8 +237,8 @@ header {
 
   .header-contact {
     a {
-      background: $green;
-      color: darken($green, 50%);
+      background: $secondaryColor;
+      color: #fff;
       text-decoration: none;
       padding: 0.5rem 1rem;
       font-size: 14px;
@@ -254,7 +252,8 @@ header {
 
       &:hover {
         background: #fff;
-        border-color: darken($green, 50%);
+        color: $secondaryColor;
+        border-color: $secondaryColor;
       }
     }
   }

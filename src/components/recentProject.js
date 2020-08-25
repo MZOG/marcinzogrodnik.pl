@@ -7,9 +7,10 @@ const RecentProject = (props) => {
         <article className="recent-project-item">
             <Link to={`/realizacje/${props.slug}`}>
                 <Img fluid={props.image} className="main-image" />
-                <div className="more">Więcej →</div>
             </Link>
-            <h3>{props.title}</h3>
+            <div className="title">
+            <Link to={`/realizacje/${props.slug}`}><h3>{props.title}</h3></Link> <span>→</span>
+            </div>
             <p>{props.excerpt}</p>
         </article>
     );

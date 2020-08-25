@@ -1,21 +1,46 @@
 import React from "react"
-
+import { Link } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
 // components
-import Hero from "../components/hero.component"
+import Hero from "../components/hero"
 import HomepageOffer from "../components/offer.component"
 import HomepageRecentProjects from "../components/recentProjects.component"
+import Testimonials from '../components/testimonials';
 
 const IndexPage = ({ data }) => {
   const recentProjects = data.allDatoCmsShowcase
+  const recentPosts = data.allDatoCmsBlog
+
+  console.log(recentPosts)
   return (
     <Layout>
       <SEO title="Marcin Zogrodnik" />
       <Hero />
-      <HomepageOffer />
       <HomepageRecentProjects projects={recentProjects} />
+      <HomepageOffer />
+      <Testimonials />
+
+      {/* Recent Posts */}
+      <section className="home-recent-posts">
+        <div className="container">
+          <h2>Ostatnio na blogu</h2>
+
+          <div className="posts-wrapper">
+            {
+              recentPosts.edges.map((post) => {
+                return(
+                  <article>
+                    <h3><Link to={`/blog/${post.node.slug}`}>{post.node.title}</Link></h3>
+                    <p>{post.node.excerpt}</p>
+                  </article>
+                )
+              })
+            }
+          </div>
+        </div>
+      </section>
     </Layout>
   )
 }

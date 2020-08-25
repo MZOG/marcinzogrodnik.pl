@@ -1,10 +1,6 @@
-/* eslint-disable */
 
 import React, { useEffect, useState } from "react"
 import { Link } from "gatsby"
-
-import logo from '../images/logo.svg'
-console.log(logo)
 
 const Header = () => {
   const [active, setActive] = useState(false)
@@ -38,7 +34,7 @@ const Header = () => {
       <div className="container">
         <div className="logo">
           <Link to="/">
-          <img src={logo} alt=""/>
+            marcin<span>zogrodnik</span>
           </Link>
         </div>
 

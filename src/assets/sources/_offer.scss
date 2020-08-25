@@ -2,12 +2,15 @@
 
 // offer homepage
 .offer {
-  padding: 100px 0;
+  padding: 50px 0;
 
   h2 {
-    font-family: 'Playfair Display', serif;
-    font-weight: 700;
-    margin-bottom: 100px;
+    font-family: 'marcinzogrodnik';
+    text-align: center;
+    padding: 50px 0;
+    font-size: 50px;
+    color: $primaryColor;
+    line-height: 50px;
   }
 
   &-wrapper {
@@ -30,28 +33,33 @@
 
     @include mq('650', min) {
       width: calc(50% - 10px);
-      padding: 25px;
-    }
-
-    @include mq('tabletw', min) {
-      width: calc(33.333% - 20px);
       padding: 30px;
     }
+
+    // @include mq('tabletw', min) {
+    //   width: calc(33.333% - 20px);
+    //   padding: 30px;
+    // }
 
     h3 {
       font-weight: 600;
       margin-bottom: 1rem;
+      line-height: 35px;
+      font-size: 35px;
+      font-family: 'marcinzogrodnik';
+      color: $primaryColor;
     }
 
     p {
-      font-size: 14px;
+      font-size: 18px;
+      color: $primaryColor;
     }
 
     .icon {
       svg {
-        width: 30px;
+        width: 100px;
         margin-bottom: 15px;
-        stroke: $primary;
+        stroke: $secondaryColor;
       }
     }
 
@@ -61,27 +69,28 @@
       top: 35px;
       opacity: 0;
       transition: all 0.2s ease-in;
-      background: #fff;
-      font-size: 14px;
+      font-size: 50px;
       border-radius: 4px;
       padding: 3px 10px;
+      color: $secondaryColor;
     }
 
     &:hover {
-      background: $secondary;
+      background: $secondaryColor;
 
       svg {
-        stroke: #000;
+        stroke: #fff;
       }
 
       h3,
       p {
-        color: #000;
+        color: #fff;
       }
 
       .more {
         opacity: 1;
         right: 20px;
+        color: #fff;
       }
     }
   }

@@ -5,16 +5,9 @@ import { Link } from "gatsby";
 const HomepageRecentProjects = ({ projects }) => {
     const recentProjects = projects.edges;
     return (
-        <section className="homepage recent-projects">
+        <section className="recent-projects">
             <div className="container">
                 <h2>Wybrane realizacje</h2>
-
-                <div className="recent-projects-more">
-                    <Link to="/realizacje" className="btn primary">
-                        Więcej →
-                    </Link>
-                </div>
-
                 <div className="recent-projects-wrapper">
                     {recentProjects.map((project) => {
                         return (
@@ -27,6 +20,12 @@ const HomepageRecentProjects = ({ projects }) => {
                             />
                         );
                     })}
+                </div>
+
+                <div className="recent-projects-more">
+                    <Link to="/realizacje" className="btn primary">
+                        Więcej →
+                    </Link>
                 </div>
             </div>
         </section>

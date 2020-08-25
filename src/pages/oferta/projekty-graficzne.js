@@ -8,7 +8,7 @@ const ProjektyGraficzne = () => (
         <SEO title="Projekty graficzne" />
         <div className="container offer-page">
             <PageHero
-                title="Projekty graficzne Katowice"
+                title="Projekty graficzne"
                 lead="Zapraszam do zapoznania się z ofertą projektów graficznych"
             />
             <div className="content">

@@ -68,6 +68,11 @@ export default ({ data }) => {
                                     .childMarkdownRemark.html,
                         }}
                     />
+
+                    <div className="blog-post-content-contact">
+                        <p className="lead">Zapraszam do współpracy</p>
+                        <p>Zadzwoń - 739 907 919</p>
+                    </div>
                 </div>
             </article>
         </Layout>

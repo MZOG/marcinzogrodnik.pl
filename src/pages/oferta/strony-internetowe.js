@@ -8,7 +8,7 @@ const StronyInternetowe = () => (
         <SEO title="Strona internetowa" />
         <div className="container offer-page">
             <PageHero
-                title="Strony internetowe Katowice"
+                title="Strony internetowe"
                 lead="Zapraszam do zapoznania się z ofertą stron internetowych"
             />
 

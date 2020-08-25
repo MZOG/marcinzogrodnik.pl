@@ -9,12 +9,12 @@
   line-height: 1.6;
 
   &.primary {
-    background: $primary;
+    background: $primaryColor;
 
     &:hover {
       background: $gray;
-      color: $primary;
-      border: 1px solid $primary;
+      color: $primaryColor;
+      border: 1px solid $primaryColor;
     }
   }
 

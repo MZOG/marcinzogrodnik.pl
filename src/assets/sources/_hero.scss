@@ -1,49 +1,31 @@
 .hero {
-  padding: 230px 0;
-  background: #fcf5f3;
-
-  .container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-  }
-
-  &-image {
-    width: 100%;
-    text-align: center;
-    img {
-      max-width: 200px;
-      border-radius: 50%;
-      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 10px 10px -5px rgba(0, 0, 0, 0.01);
-      opacity: 0.7;
-
-      &:hover {
-        opacity: 1;
-      }
-    }
-  }
+  padding: 100px 0 100px 0;
 
   h1 {
-    font-size: 4.5rem;
-    line-height: 1;
-    text-align: center;
+    font-size: 65px;
+    line-height: 75px;
     font-weight: 700;
-    font-family: 'Playfair Display', serif;
+    color: $primaryColor;
+    font-family: 'marcinzogrodnik';
+    text-align: center;
+  }
 
-    span {
-      display: block;
-      margin-top: 40px;
-      font-family: 'Inter';
-      font-weight: 400;
+  p {
+    font-size: 50px;
+    line-height: 1em;
+    color: $primaryColor;
+    padding-top: 15px;
+    font-family: 'marcinzogrodnik';
+    opacity: 0.95;
 
-      &.small {
-        font-size: 1.5rem;
-        color: rgba($primary, 0.9);
+    a {
+      color: $secondaryColor;
+      position: relative;
+      transition: all .1s ease-in-out;
 
-        &:last-child {
-          margin-top: 10px;
-        }
+      &:hover {
+       opacity: 1;
+       color: darken($secondaryColor, 10%);
       }
     }
   }

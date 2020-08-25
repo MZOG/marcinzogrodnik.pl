@@ -8,7 +8,7 @@ const SklepyInternetowe = () => (
         <SEO title="Sklep internetowy" />
         <div className="container offer-page">
             <PageHero
-                title="Sklepy internetowe Katowice"
+                title="Sklepy internetowe"
                 lead="Zapraszam do zapoznania się z ofertą sklepów internetowych"
             />
             <div className="content">Elson</div>
