@@ -103,4 +103,35 @@
     max-width: 850px;
     margin: 0 auto;
   }
+
+  p {
+    color: $primaryColor;
+    margin-bottom: 1.3rem;
+    font-size: 18px;
+    line-height: 1.5;
+
+    a {
+      color: $secondaryColor;
+      border-bottom: 1px dotted $secondaryColor;
+
+      &:hover {
+        background: rgba($secondaryColor, 0.1);
+      }
+    }
+  }
+
+  h2 {
+    color: $secondaryColor;
+    font-family: 'marcinzogrodnik';
+    margin-bottom: 2rem;
+    font-size: 45px;
+
+    &:not(:first-child) {
+      margin-top: 2rem;
+    }
+
+    @include mq('desktop', min) {
+      margin-left: -50px;
+    }
+  }
 }

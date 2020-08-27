@@ -103,6 +103,7 @@ a {
   a, p {
     font-family: 'marcinzogrodnik';
     font-size: 24px;
+    color: $primaryColor;
 
     span {
       color: $secondaryColor;
@@ -140,5 +141,51 @@ a {
 
   article {
     margin-bottom: 50px;
+  }
+}
+
+.quickContact {
+  margin: 50px 0;
+  background: $secondaryColor;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 10px 10px -5px rgba(0, 0, 0, 0.01);
+
+  h2 {
+    color: #fff !important;
+    margin: 0 0 1rem 0 !important;
+  }
+
+  p {
+    color: #fff !important;
+    font-size: 20px !important;
+  }
+
+  &-form {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    input {
+      width: calc(20% - 20px);
+      font-size: 20px;
+      border-radius: 4px;
+      border: 0;
+      min-height: 40px;
+      font-family: 'marcinzogrodnik';
+      color: #000;
+      text-indent: 10px;
+    }
+
+    button {
+      background: $primaryColor;
+      border: 0;
+      border-radius: 4px;
+      color: #fff;
+      font-size: 20px;
+      padding: 7px 30px;
+      cursor: pointer;
+      font-family: 'marcinzogrodnik';
+    }
   }
 }
