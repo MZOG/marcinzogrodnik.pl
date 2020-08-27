@@ -7,7 +7,8 @@ const QuickContact = () => {
             <h2>Dowiedz się więcej</h2>
             <p>Chcesz porozmawiać o nowej stronie internetowej? Zostaw numer telefonu.</p>
 
-            <form className="quickContact-form" name="CallToCustomer" method="POST" data-netlify="true">
+            <form className="quickContact-form" name="CallToCustomer" netlify-honeypot="bot-field" data-netlify="true">
+                <input type="hidden" name="bot-field" />
                 <input type="tel" name="customerPhone" placeholder="739907919" />
                 <button type="submit">Klik</button>
             </form>
