@@ -1,35 +1,16 @@
 .btn {
-  background: $secondary;
-  color: $lightgray;
-  text-decoration: none;
-  padding: 0.5rem 1rem;
-  font-size: 14px;
-  border-radius: 4px;
-  border: 1px solid transparent;
-  line-height: 1.6;
+    &-primary {
+        background: $secondaryColor;
+        color: #fff;
+        font-family: 'marcinzogrodnik';
+        font-size: 18px;
+        display: inline-block;
+        text-decoration: none;
+        padding: .25rem 1rem;
+        border-radius: 5px;
 
-  &.primary {
-    background: $primaryColor;
-
-    &:hover {
-      background: $gray;
-      color: $primaryColor;
-      border: 1px solid $primaryColor;
+        &:hover {
+            background: $primaryColor;
+        }
     }
-  }
-
-  @include mq('650', max) {
-    padding: 0.1rem 0.5rem;
-    margin-right: 20px;
-  }
-
-  &:hover {
-    background: #fff;
-    border-color: $secondary;
-    color: $secondary;
-  }
-}
-
-.small {
-  font-size: 13px;
 }

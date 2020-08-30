@@ -3,17 +3,14 @@
 // homepage recent projects
 .recent-projects {
   position: relative;
-  background: rgba($secondaryColor, 0.05);
+  padding: 50px 0;
 
   h2 {
-    font-family: 'marcinzogrodnik';
-    font-weight: 700;
-    text-align: center;
-    font-size: 50px;
-    color: $primaryColor;
-    padding: 50px 0;
-    line-height: 50px;
-  }
+
+    @include mq('tablet', 'min') {
+        margin-bottom: 3rem;
+    }
+}
 
   &-wrapper {
     display: grid;

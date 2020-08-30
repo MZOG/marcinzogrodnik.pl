@@ -1,0 +1,56 @@
+.quickContact {
+    @include mq('tablet', 'min') {
+        margin-top: -50px;
+    }
+    .container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &-left {
+        @include mq('tablet', 'min') {
+            width: 30%;
+        }
+
+        svg {
+            width: 70%;
+        }
+    }
+
+    &-right {
+        @include mq('tablet', 'min') {
+            width: 50%;
+        }
+    }
+
+    &-form {
+        margin-top: 1.5rem;
+        .item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            input {
+                width: calc(70% - 10px);
+                min-height: 50px;
+                border-radius: 5px;
+                border: 0;
+                background: rgba($primaryColor, 0.1);
+                box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 10px 10px -5px rgba(0, 0, 0, 0.01);
+                font-size: 18px;
+                text-indent: 20px;
+                color: $primaryColor;
+            }
+
+            button {
+                width: calc(30% - 10px);
+                border: 0;
+                min-height: 50px;
+                cursor: pointer;
+                box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 10px 10px -5px rgba(0, 0, 0, 0.01);
+                padding: 0;
+            }
+        }
+    }
+}

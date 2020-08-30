@@ -4,7 +4,7 @@ import { Link } from "gatsby";
 const homepageOffer = () => (
     <section className="offer">
         <div className="container">
-            <h2>Oferta</h2>
+            <h2>Sprawdź w czym mogę Ci pomóc</h2>
             <div className="offer-wrapper">
                 <Link to="/oferta/strony-internetowe" className="offer-box">
                     <div className="more">→</div>

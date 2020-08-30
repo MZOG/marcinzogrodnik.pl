@@ -1,15 +1,18 @@
-// offer homepage + offer page
-
-// offer homepage
 .offer {
-
-  h2 {
-    font-family: 'marcinzogrodnik';
-    text-align: center;
     padding: 50px 0;
-    font-size: 50px;
-    color: $primaryColor;
-    line-height: 50px;
+    background: #FAFAFA;
+    position: relative;
+
+    @include mq('tablet', 'min') {
+        padding: 50px 0 50px 0;
+    }
+
+    h2 {
+    color: $secondaryColor;
+
+    @include mq('tablet', 'min') {
+        margin-bottom: 3rem;
+    }
   }
 
   &-wrapper {
@@ -20,33 +23,30 @@
   }
 
   &-box {
-    color: $primary;
+    color: $primaryColor;
     text-decoration: none;
     margin-bottom: 2rem;
     width: 100%;
-    padding: 20px;
-    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-    border-radius: 4px;
-    cursor: pointer;
     position: relative;
+    margin-top: 1rem;
 
-    @include mq('650', min) {
-      width: calc(50% - 10px);
+    @include mq('tablet', min) {
+      width: calc(33.33%);
       padding: 30px;
+      margin-bottom: 0;
+      margin-top: 0;
     }
-
-    // @include mq('tabletw', min) {
-    //   width: calc(33.333% - 20px);
-    //   padding: 30px;
-    // }
 
     h3 {
       font-weight: 600;
       margin-bottom: 1rem;
-      line-height: 35px;
-      font-size: 30px;
+      font-size: 22px;
       font-family: 'marcinzogrodnik';
       color: $primaryColor;
+
+      @include mq('tablet', 'min') {
+          font-size: 30px;
+      }
     }
 
     p {

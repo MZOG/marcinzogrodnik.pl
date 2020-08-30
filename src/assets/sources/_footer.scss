@@ -1,0 +1,56 @@
+.footer {
+    padding: 3rem 0;
+    .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    .logo {
+        margin-bottom: 2rem;
+        width: 100%;
+        a {
+            font-family: 'marcinzogrodnik';
+            font-size: 20px;
+            text-decoration: none;
+            color: $primaryColor;
+
+            span {
+                color: $secondaryColor;
+            }
+
+            @include mq('tablet', min) {
+                font-size: 30px;
+            }
+        }
+    }
+
+    &-box {
+        width: 100%;
+        margin-top: 30px;
+
+        @include mq('650', min) {
+            width: 33.33%;
+            margin-top: 0;
+        }
+        p {
+            font-size: 14px;
+            color: $primaryColor;
+        }
+
+        a {
+            color: $primaryColor;
+            text-decoration: none;
+
+            &:first-child {
+                margin-right: 20px;
+            }
+
+            &:hover {
+                color: $secondaryColor;
+            }
+        }
+    }
+
+}

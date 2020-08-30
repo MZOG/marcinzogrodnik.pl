@@ -2,12 +2,14 @@ import React from "react"
 import { Link } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import Img from "gatsby-image";
 
 // components
-import Hero from "../components/hero"
+import Hero from "../components/hero";
+import About from "../components/about";
 import HomepageOffer from "../components/offer.component"
 import HomepageRecentProjects from "../components/recentProjects.component"
-import Testimonials from '../components/testimonials';
+import QuickContact from "../components/quickContact";
 
 const IndexPage = ({ data }) => {
   const recentProjects = data.allDatoCmsShowcase
@@ -18,11 +20,12 @@ const IndexPage = ({ data }) => {
     <Layout>
       <SEO title="Marcin Zogrodnik" />
       <Hero />
-      <HomepageRecentProjects projects={recentProjects} />
+      <About />
       <HomepageOffer />
-      <Testimonials />
+      <HomepageRecentProjects projects={recentProjects} />
+      <QuickContact />
 
-      {/* Recent Posts */}
+
       <section className="home-recent-posts">
         <div className="container">
           <h2>Ostatnio na blogu</h2>
@@ -32,8 +35,14 @@ const IndexPage = ({ data }) => {
               recentPosts.edges.map((post) => {
                 return(
                   <article>
+                    <div className="image">
+                      <Img fluid={post.node.postImage.fluid} className="main-image" />
+                    </div>
+                    <div className="content">
                     <h3><Link to={`/blog/${post.node.slug}`}>{post.node.title}</Link></h3>
                     <p>{post.node.excerpt}</p>
+                    <Link to={`/blog/${post.node.slug}`} className="btn btn-primary">Czytaj</Link>
+                    </div>
                   </article>
                 )
               })
