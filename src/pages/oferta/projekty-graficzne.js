@@ -6,7 +6,7 @@ import PageHero from "../../components/pageHero.component";
 const ProjektyGraficzne = () => (
     <Layout>
         <SEO title="Projekty graficzne" />
-        <div className="container offer-page">
+        <div className="container page">
             <PageHero
                 title="Projekty graficzne"
                 lead="Zapraszam do zapoznania się z ofertą projektów graficznych"

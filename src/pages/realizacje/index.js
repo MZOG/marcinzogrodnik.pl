@@ -10,15 +10,18 @@ const Blog = ({ data }) => {
     return (
         <Layout>
             <SEO title="Realizacje" />
-            <section className="container page blog-page">
-                <PageHero
-                    title="Realizacje"
-                    lead="Projekty stron internetowych"
-                />
-                <div className="blog-articles">
-                    {data.allDatoCmsShowcase.edges.map((post) => (
-                        <ShowcasePost project={post} key={post.id} />
-                    ))}
+            <section className="showcase page">
+                <div className="container">
+                    <PageHero
+                        title="Realizacje"
+                        lead="Projekty stron internetowych"
+                    />
+
+                    <div className="blog-articles">
+                        {data.allDatoCmsShowcase.edges.map((post) => (
+                            <ShowcasePost project={post} key={post.id} />
+                        ))}
+                    </div>
                 </div>
             </section>
         </Layout>

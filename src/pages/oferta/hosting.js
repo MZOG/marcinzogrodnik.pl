@@ -6,7 +6,7 @@ import PageHero from "../../components/pageHero.component";
 const Hosting = () => (
     <Layout>
         <SEO title="Hosting" />
-        <div className="container offer-page">
+        <div className="container page">
             <PageHero
                 title="Hosting"
                 lead="Zapraszam do zapoznania się z ofertą hostingu"

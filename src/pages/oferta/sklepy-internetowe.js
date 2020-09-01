@@ -7,7 +7,7 @@ import QuickContact from "../../components/quickContact";
 const SklepyInternetowe = () => (
     <Layout>
         <SEO title="Sklep internetowy" />
-        <div className="container offer-page">
+        <div className="container page">
             <PageHero
                 title="Sklepy internetowe"
                 lead="Zapraszam do zapoznania się z ofertą sklepów internetowych"

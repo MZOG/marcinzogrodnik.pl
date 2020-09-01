@@ -7,7 +7,7 @@ import QuickContact from "../../components/quickContact";
 const StronyInternetowe = () => (
     <Layout>
         <SEO title="Strona internetowa" />
-        <div className="container offer-page">
+        <div className="container page">
             <PageHero
                 title="Strony internetowe"
                 lead="Zapraszam do zapoznania się z ofertą stron internetowych"
@@ -57,9 +57,8 @@ const StronyInternetowe = () => (
                     Strona wizytówka to prosta strona, najczęściej strona główna z oferowanymi usługami oraz kilka podstron,
                     które nie wymagają częstej aktualizacji.
                 </p>
-
-                <QuickContact />
             </div>
+            <QuickContact />
         </div>
     </Layout>
 );
