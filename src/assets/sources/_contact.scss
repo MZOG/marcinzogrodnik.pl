@@ -1,78 +1,78 @@
-// //todo
-// .contact-wrapper {
-//   display: grid;
-//   grid-template-columns: repeat(auto-fit, minmax(370px, 1fr));
-//   grid-column-gap: 20px;
+//todo
+.contact-wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(370px, 1fr));
+  grid-column-gap: 20px;
 
-//   .form {
-//     margin-top: 1rem;
-//     &-item {
-//       margin-bottom: 20px;
-//       label {
-//         display: block;
-//         margin-bottom: 10px;
+  .form {
+    margin-top: 1rem;
+    &-item {
+      margin-bottom: 20px;
+      label {
+        display: block;
+        margin-bottom: 10px;
 
-//         span {
-//           color: rgba($primary, 0.5);
-//         }
-//       }
+        span {
+          color: rgba($primaryColor, 0.5);
+        }
+      }
 
-//       input {
-//         width: 80%;
-//         border: 1px solid rgba($primary, 0.2);
-//         font-family: inherit;
-//         font-size: 14px;
-//         min-height: 35px;
-//         text-indent: 10px;
+      input {
+        width: 80%;
+        border: 1px solid rgba($primaryColor, 0.2);
+        font-family: inherit;
+        font-size: 14px;
+        min-height: 35px;
+        text-indent: 10px;
 
-//         &[type="submit"] {
-//           background-color: $secondaryColor;
-//           border-radius: 4px;
-//           border: 1px solid transparent;
-//           color: #fff;
-//           width: auto;
-//           padding: 0 20px;
-//           text-indent: 0;
-//           cursor: pointer;
+        &[type="submit"] {
+          background-color: $secondaryColor;
+          border-radius: 4px;
+          border: 1px solid transparent;
+          color: #fff;
+          width: auto;
+          padding: 0 20px;
+          text-indent: 0;
+          cursor: pointer;
 
-//           &:hover {
-//             background: $primaryColor;
-//             color: $secondary;
-//             border-color: $primaryColor;
-//           }
-//         }
-//       }
+          &:hover {
+            background: $primaryColor;
+            color: $secondaryColor;
+            border-color: $primaryColor;
+          }
+        }
+      }
 
-//       textarea {
-//         width: 80%;
-//         resize: none;
-//         border: 1px solid rgba($primary, 0.2);
-//         padding: 10px;
-//         font-family: inherit;
-//         font-size: 14px;
-//         min-height: 100px;
-//       }
-//     }
-//   }
+      textarea {
+        width: 80%;
+        resize: none;
+        border: 1px solid rgba($primaryColor, 0.2);
+        padding: 10px;
+        font-family: inherit;
+        font-size: 14px;
+        min-height: 100px;
+      }
+    }
+  }
 
-//   .contact-wrapper_left {
-//     p {
-//       display: flex;
-//       align-items: center;
+  .contact-wrapper_left {
+    p {
+      display: flex;
+      align-items: center;
 
-//       svg {
-//         width: 20px;
-//         margin-right: 10px;
-//         stroke: $primary;
-//       }
-//     }
+      svg {
+        width: 20px;
+        margin-right: 10px;
+        stroke: $primaryColor;
+      }
+    }
 
-//     .contact-box {
-//       margin: 2rem 0;
-//     }
-//   }
-// }
+    .contact-box {
+      margin: 2rem 0;
+    }
+  }
+}
 
-// .contact-small {
-//   margin-top: 2rem;
-// }
+.contact-small {
+  margin-top: 2rem;
+}

@@ -34,7 +34,7 @@ const ShowcasePost = (props) => {
                     </p>
                     <Link
                         to={`/realizacje/${props.project.node.slug}`}
-                        className="btn primary"
+                        className="btn btn-primary"
                     >
                         Więcej →
                     </Link>

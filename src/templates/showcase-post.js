@@ -26,7 +26,7 @@ export default ({ data }) => {
                 description={showcase.excerpt}
                 shareImage={showcase.projectImage.fluid.src}
             />
-            <article className="container blog-post">
+            <article className="container page blog-post">
                 <PageHero
                     title={showcase.projectName}
                     lead={showcase.excerpt}

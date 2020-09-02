@@ -41,7 +41,7 @@ const postItem = (props) => {
                     <p className="created-at">
                         {convertDate(props.post.node.meta.createdAt)}
                     </p>
-                    <Link to={`/blog/${props.post.node.slug}`} className="btn primary">
+                    <Link to={`/blog/${props.post.node.slug}`} className="btn btn-primary">
                         Więcej →
                     </Link>
                 </div>

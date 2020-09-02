@@ -42,7 +42,7 @@ export default ({ data }) => {
                 shareImage={post.postImage.fluid.src}
             />
 
-            <article className="container blog-post">
+            <article className="container page blog-post">
                 <PageHero title={post.title} lead={post.excerpt} />
 
                 <div className="blog-post-image">
