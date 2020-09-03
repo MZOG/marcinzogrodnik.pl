@@ -123,26 +123,73 @@ h2 {
 }
 
 .page-hero {
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
+
+  @include mq('tablet', 'min') {
+    margin-bottom: 2rem;
+  }
+
   h1 {
     font-family: 'marcinzogrodnik';
-    font-size: 50px;
-    line-height: 1;
-    text-align: center;
+    font-size: 30px;
+    line-height: 1.2;
+
+    @include mq('tablet', 'min') {
+      font-size: 50px;
+      text-align: center;
+    }
   }
 
   .lead {
-    text-align: center;
     margin-top: 1rem;
+
+    @include mq('tablet', 'min') {
+      text-align: center;
+    }
   }
 }
 
 .page {
-  padding-top: 120px;
+  padding-top: 80px;
 
-  h2 {
-    &:not(:first-child) {
-      margin: 2rem 0;
+  @include mq('tablet', 'min') {
+    padding-top: 120px;
+  }
+
+  .content {
+    h2 {
+      margin-bottom: 2rem;
+      font-family: 'marcinzogrodnik';
+      color: $secondaryColor;
+      font-size: 45px;
+      margin-left: -50px;
+
+      &:not(:first-child) {
+        margin-top: 2rem;
+        margin-left: -50px;
+      }
+    }
+
+    h3 {
+      margin-bottom: 2rem;
+      font-family: 'marcinzogrodnik';
+      color: $secondaryColor;
+      font-size: 37px;
+      margin-left: -50px;
+
+      &:not(:first-child) {
+        margin-top: 2rem;
+      }
+    }
+
+    a {
+      color: $secondaryColor;
+      text-decoration: none;
+      border-bottom: 1px dotted $secondaryColor;
+
+      &:hover {
+        color: $primaryColor;
+      }
     }
   }
 

@@ -43,12 +43,10 @@ export default ({ data }) => {
             />
 
             <article className="container page blog-post">
-                <PageHero title={post.title} lead={post.excerpt} />
-
                 <div className="blog-post-image">
                     <Img fluid={post.postImage.fluid} className="main-image" />
                 </div>
-
+                <PageHero title={post.title} lead={post.excerpt} />
                 <div className="blog-post-content">
                     <div className="post-info">
                         <div className="breadcrumbs">

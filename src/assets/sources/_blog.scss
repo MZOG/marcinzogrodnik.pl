@@ -89,24 +89,34 @@
     }
 
     h2 {
-      margin-bottom: 2rem;
+      margin-bottom: 1rem;
       font-family: 'marcinzogrodnik';
       color: $secondaryColor;
-      font-size: 45px;
-      margin-left: -50px;
+      font-size: 25px;
+      line-height: 1.2;
+
+      @include mq('tablet', 'min') {
+        margin-left: -50px;
+        font-size: 45px;
+      }
 
       &:not(:first-child) {
-        margin-top: 2rem;
-        margin-left: -50px;
+        margin-top: 1rem;
+
+        @include mq('tablet', 'min') {
+            margin-left: -50px;
+            margin-top: 2rem;
+        }
       }
     }
 
     h3 {
-      margin-bottom: 2rem;
+      margin-bottom: 1rem;
       font-family: 'marcinzogrodnik';
       color: $secondaryColor;
-      font-size: 37px;
+      font-size: 23px;
       margin-left: -50px;
+      line-height: 1.2;
 
       &:not(:first-child) {
         margin-top: 2rem;
