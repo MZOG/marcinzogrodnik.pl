@@ -121,6 +121,10 @@
 
     .project-url {
       text-align: center;
+
+      @include mq('tablet', 'min') {
+        margin: 1rem 0;
+      }
     }
 
     p {
@@ -168,15 +172,13 @@
       line-height: 1.2;
 
       @include mq('tablet', 'min') {
-        margin-left: -30px;
-        font-size: 45px;
+        font-size: 40px;
       }
 
       &:not(:first-child) {
         margin-top: 1rem;
 
         @include mq('tablet', 'min') {
-            margin-left: -30px;
             margin-top: 2rem;
         }
       }
@@ -194,8 +196,7 @@
       }
 
       @include mq('tablet', 'min') {
-        margin-left: -30px;
-        font-size: 35px;
+        font-size: 33px;
       }
     }
 

@@ -138,16 +138,11 @@ h2 {
 
     @include mq('tablet', 'min') {
       font-size: 50px;
-      text-align: center;
     }
   }
 
   .lead {
-    margin-top: 1rem;
-
-    @include mq('tablet', 'min') {
-      text-align: center;
-    }
+    // margin-top: 1rem;
   }
 }
 
