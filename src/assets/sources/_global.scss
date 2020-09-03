@@ -20,6 +20,7 @@ body {
     BlinkMacSystemFont, Helvetica Neue, Arial, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
   color: $primaryColor;
   line-height: 1.65rem;
+  overflow-x: hidden !important;
 }
 
 .container {

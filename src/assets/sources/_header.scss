@@ -58,7 +58,7 @@ header {
     position: absolute;
     right: -100%;
     top: 60px;
-    // background: $lightgray;
+    background: #fafafa;
     padding: 0 1rem;
 
     &.is-active {
@@ -82,7 +82,7 @@ header {
 
         @include mq("650", max) {
           display: block;
-          // margin: 1rem 0;
+          margin: 1rem 0;
         }
 
         &:hover {

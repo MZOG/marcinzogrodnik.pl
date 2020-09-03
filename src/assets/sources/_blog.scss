@@ -97,6 +97,7 @@
 
       &:not(:first-child) {
         margin-top: 2rem;
+        margin-left: -50px;
       }
     }
 
@@ -164,6 +165,8 @@
 
             a {
               font-size: 14px;
+              color: $primaryColor;
+              text-decoration: none;
 
               &:hover {
                 border-bottom: 1px solid $secondaryColor;

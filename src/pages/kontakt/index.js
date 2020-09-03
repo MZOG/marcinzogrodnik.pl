@@ -10,7 +10,7 @@ const Kontakt = () => (
     <Layout>
         <SEO title="Kontakt" />
         <section className="container page">
-            <PageHero title="Kontakt" lead="lead text" />
+            <PageHero title="Kontakt" lead="Stwórzmy razem coś fajnego!" />
 
             <div className="contact-wrapper">
                 <div className="contact-wrapper_left">
@@ -36,7 +36,7 @@ const Kontakt = () => (
                             >
                                 <path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
                             </svg>
-                            UK - 078 50545566
+                            PL - 739 907 919
                         </p>
                         <p>
                             <svg
@@ -49,7 +49,8 @@ const Kontakt = () => (
                             >
                                 <path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
                             </svg>
-                            PL - 739 907 919
+                            
+                            UK - 078 50545566
                         </p>
                         <p>
                             <svg
@@ -68,30 +69,7 @@ const Kontakt = () => (
                         </p>
                     </div>
 
-                    <h2>Zostaw numer telefonu</h2>
-                    <p>
-                        Podaj swój numer telefonu, skontaktuję się w ciągu 2h.
-                    </p>
-
-                    <form action="" className="form">
-                        <div className="form-item">
-                            <label htmlFor="name" aria-label="Name">
-                                Imię i nazwisko <span>*</span>
-                            </label>
-                            <input type="text" placeholder="np. Jan Kowalski" />
-                        </div>
-
-                        <div className="form-item">
-                            <label htmlFor="phone" aria-label="Phone">
-                                Numer telefonu <span>*</span>
-                            </label>
-                            <input type="text" placeholder="np. 503379917" />
-                        </div>
-
-                        <div className="form-item">
-                            <input type="submit" value="Zadzwoń do mnie" />
-                        </div>
-                    </form>
+                    
                 </div>
 
                 <div className="contact-wrapper_right">
