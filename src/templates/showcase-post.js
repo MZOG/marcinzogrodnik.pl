@@ -61,6 +61,11 @@ export default ({ data }) => {
                             {convertDate(showcase.meta.createdAt)}
                         </p>
                     </div>
+                    <div className="project-url">
+                        <Link to={showcase.projectUrl} className="btn btn-primary">
+                            Zobacz online
+                        </Link>
+                    </div>
                     <div
                         dangerouslySetInnerHTML={{
                             __html:
@@ -68,6 +73,12 @@ export default ({ data }) => {
                                     .childMarkdownRemark.html,
                         }}
                     />
+
+                    <div className="project-url">
+                        <Link to={showcase.projectUrl} className="btn btn-primary">
+                            Zobacz online
+                        </Link>
+                    </div>
 
                     <div className="blog-post-content-contact">
                         <p className="lead">Zapraszam do współpracy</p>
