@@ -43,12 +43,8 @@ export default ({ data }) => {
             />
 
             <article className="container page blog-post">
-                <div className="blog-post-image">
-                    <Img fluid={post.postImage.fluid} className="main-image" />
-                </div>
-                <PageHero title={post.title} lead={post.excerpt} />
-                <div className="blog-post-content">
-                    <div className="post-info">
+
+            <div className="post-info">
                         <div className="breadcrumbs">
                             <ul>
                                 <li>
@@ -72,6 +68,12 @@ export default ({ data }) => {
                             )}
                         </p>
                     </div>
+
+                <div className="blog-post-image">
+                    <Img fluid={post.postImage.fluid} className="main-image" />
+                </div>
+                <PageHero title={post.title} lead={post.excerpt} />
+                <div className="blog-post-content">
                     <div
                         dangerouslySetInnerHTML={{
                             __html: post.contentNode.childMarkdownRemark.html,

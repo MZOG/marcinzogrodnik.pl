@@ -47,6 +47,74 @@
 
 //single post
 .blog-post {
+
+  .post-info {
+    max-width: 850px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2rem;
+
+    @include mq("tablet", min) {
+      justify-content: space-between;
+      flex-direction: row;
+      align-items: center;
+      margin-bottom: 3rem;
+    }
+
+    h2 {
+      margin-bottom: 2rem;
+    }
+
+    .posted {
+      font-size: 14px;
+      color: rgba($primaryColor, 0.5);
+      margin-bottom: 0;
+    }
+
+    .breadcrumbs {
+      ul {
+        margin: 0;
+        padding: 0;
+
+        li {
+          display: inline-block;
+          margin-right: 20px;
+          position: relative;
+
+          &::after {
+            content: "/";
+            position: absolute;
+            right: -12px;
+            top: 0;
+            color: rgba($primaryColor, 0.5);
+          }
+
+          &:last-child {
+            &::after {
+              display: none;
+            }
+
+            a {
+              font-weight: 600;
+            }
+          }
+
+          a {
+            font-size: 14px;
+            color: $primaryColor;
+            text-decoration: none;
+
+            &:hover {
+              border-bottom: 1px solid $secondaryColor;
+              background: rgba($secondaryColor, 0.1);
+            }
+          }
+        }
+      }
+    }
+  }
+
   &-content {
     max-width: 850px;
     margin: 0 auto;
@@ -131,70 +199,7 @@
       }
     }
 
-    .post-info {
-      display: flex;
-      flex-direction: column;
-      margin-bottom: 2rem;
 
-      @include mq("tablet", min) {
-        justify-content: space-between;
-        flex-direction: row;
-        align-items: center;
-        margin-bottom: 3rem;
-      }
-
-      h2 {
-        margin-bottom: 2rem;
-      }
-
-      .posted {
-        font-size: 14px;
-        color: rgba($primaryColor, 0.5);
-        margin-bottom: 0;
-      }
-
-      .breadcrumbs {
-        ul {
-          margin: 0;
-          padding: 0;
-
-          li {
-            display: inline-block;
-            margin-right: 20px;
-            position: relative;
-
-            &::after {
-              content: "/";
-              position: absolute;
-              right: -12px;
-              top: 0;
-              color: rgba($primaryColor, 0.5);
-            }
-
-            &:last-child {
-              &::after {
-                display: none;
-              }
-
-              a {
-                font-weight: 600;
-              }
-            }
-
-            a {
-              font-size: 14px;
-              color: $primaryColor;
-              text-decoration: none;
-
-              &:hover {
-                border-bottom: 1px solid $secondaryColor;
-                background: rgba($secondaryColor, 0.1);
-              }
-            }
-          }
-        }
-      }
-    }
   }
 
   &-image {

@@ -123,6 +123,8 @@ h2 {
 }
 
 .page-hero {
+  max-width: 850px;
+  margin: 0 auto;
   margin-bottom: 1rem;
 
   @include mq('tablet', 'min') {
