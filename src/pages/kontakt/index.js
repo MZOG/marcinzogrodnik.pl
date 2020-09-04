@@ -113,7 +113,7 @@ const Kontakt = () => (
                         </div>
 
                         <div className="form-item">
-                            <input type="submit" value="Wyślij wiadomość" />
+                            <input type="submit" className="btn btn-primary" value="Wyślij wiadomość" />
                         </div>
                     </form>
                 </div>
