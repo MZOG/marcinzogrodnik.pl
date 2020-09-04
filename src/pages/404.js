@@ -2,22 +2,24 @@ import React from "react";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 import { Link } from "gatsby";
+import PageHero from "../components/pageHero.component";
 
 const NotFoundPage = () => (
     <Layout>
-        <SEO title="WAT?" />
-        <section className="not-found">
-            <div className="container">
-                <div className="content">
-                    <h1>NOT FOUND</h1>
-                    <p>
-                        You just hit a route that doesn&#39;t exist... the
-                        sadness.
-                    </p>
+        <SEO title="Ups.." description="Wygląda na to, że wyszukiwana strona nie istnieje.." />
+            <section className="not-found">
+                <div className="container page">
+                    <div className="content">
+                    <PageHero
+                    title="Nie ma takiej strony.."
+                    lead="Wygląda na to, że wyszukiwana strona nie istnieje"
+                />
 
-                    <Link to="/" className="btn">
-                        Back home
-                    </Link>
+                    <div className="not-found-btn">
+                        <Link to="/" className="btn btn-primary">
+                            Strona główna
+                        </Link>
+                    </div>
                 </div>
             </div>
         </section>

@@ -6,7 +6,7 @@ import QuickContact from "../../components/quickContact";
 
 const Pozycjonowanie = () => (
     <Layout>
-        <SEO title="Pozycjonowanie" />
+        <SEO title="Pozycjonowanie" description="Twoja strona jest daleko w tyle za konkurencją? Pozycjonowanie strony to jedna z najważniejszych rzeczy na stronie internetowej." />
         <div className="container page">
             <PageHero
                 title="Pozycjonowanie"

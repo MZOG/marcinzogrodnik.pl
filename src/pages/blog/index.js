@@ -9,7 +9,7 @@ import SinglePost from "../../components/singlePost";
 const Blog = ({ data }) => {
     return (
         <Layout>
-            <SEO title="Blog" />
+            <SEO title="Blog" description="Marcin Zogrodnik - Artykuły dotyczące świata Front-End." />
             <section className="container page blog-page">
                 <PageHero
                     title="Blog"

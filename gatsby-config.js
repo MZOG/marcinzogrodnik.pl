@@ -2,7 +2,7 @@ const path = require(`path`)
 
 module.exports = {
   siteMetadata: {
-    title: `Strony Internetowe Katowice, Tychy, Śląsk`,
+    title: `Marcin Zogrodnik - Strony internetowe`,
     description: `Marcin Zogrodnik - Tworzę szybkie oraz przyciągające klientów strony internetowe wykorzystując najnowsze technologie tj. JAMstack, React czy Gatsby.`,
     author: `@zogrodnik_m`,
   },

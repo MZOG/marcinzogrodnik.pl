@@ -6,7 +6,7 @@ import QuickContact from "../../components/quickContact";
 
 const SklepyInternetowe = () => (
     <Layout>
-        <SEO title="Sklep internetowy" />
+        <SEO title="Sklep internetowy" description="Specjalizuję się w sklepach internetowych opartych o WooCommerce. Sprzedawaj więcej w sieci!"/>
         <div className="container page">
             <PageHero
                 title="Sklepy internetowe"

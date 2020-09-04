@@ -247,3 +247,14 @@ h2 {
     }
   }
 }
+
+.not-found {
+
+  &-btn {
+    text-align: center;
+
+    a {
+      color: #fff !important;
+    }
+  }
+}

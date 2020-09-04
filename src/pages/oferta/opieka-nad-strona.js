@@ -6,7 +6,7 @@ import QuickContact from "../../components/quickContact";
 
 const OpiekaNadStrona = () => (
     <Layout>
-        <SEO title="Opieka nad stroną" />
+        <SEO title="Opieka nad stroną" description="Nie masz czasu zajmować się swoją stroną internetową? Dla mnie to nie problem! Zajmę się każdą drobnostką na Twojej stronie internetowej." />
         <div className="container page">
             <PageHero
                 title="Opieka nad stroną"

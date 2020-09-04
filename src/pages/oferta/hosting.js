@@ -6,7 +6,7 @@ import QuickContact from "../../components/quickContact";
 
 const Hosting = () => (
     <Layout>
-        <SEO title="Hosting" />
+        <SEO title="Hosting" description="Hosting dla Twojej strony internetowej, szybki hosting VPS oraz kopie zapasowe." />
         <div className="container page">
             <PageHero
                 title="Hosting"

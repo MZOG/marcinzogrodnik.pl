@@ -6,7 +6,7 @@ import QuickContact from "../../components/quickContact";
 
 const StronyInternetowe = () => (
     <Layout>
-        <SEO title="Strona internetowa" />
+        <SEO title="Strona internetowa" description="Strony internetowe WordPress, oraz JAMstack. Wykorzystuję najnowsze technologię aby strony były szybkie oraz bezpieczne." />
         <div className="container page">
             <PageHero
                 title="Strony internetowe"

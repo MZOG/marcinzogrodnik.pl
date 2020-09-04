@@ -9,7 +9,7 @@ import ShowcasePost from "../../components/showcasePost";
 const Blog = ({ data }) => {
     return (
         <Layout>
-            <SEO title="Realizacje" />
+            <SEO title="Realizacje" description="Zobacz moje ostatnie realizacje dla klientów, strony internetowe oraz sklepy. WordPress i JAMstack." />
             <section className="showcase page">
                 <div className="container">
                     <PageHero

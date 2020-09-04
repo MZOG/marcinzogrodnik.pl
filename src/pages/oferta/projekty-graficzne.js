@@ -6,7 +6,7 @@ import QuickContact from "../../components/quickContact";
 
 const ProjektyGraficzne = () => (
     <Layout>
-        <SEO title="Projekty graficzne" />
+        <SEO title="Projekty graficzne" description="Potrzebujesz odświeżyć swoją stronę internetową, lub zaprojektować nową funkcjonalność? Dobrze trafiłeś." />
         <div className="container page">
             <PageHero
                 title="Projekty graficzne"
