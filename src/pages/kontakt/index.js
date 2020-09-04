@@ -74,7 +74,7 @@ const Kontakt = () => (
 
                 <div className="contact-wrapper_right">
                     <h2>Formularz kontaktowy</h2>
-                    <form name="Kontakt" method="POST" data-netlify="true" netlify-honeypot="bot-field" className="form">
+                    <form name="Kontakt" method="POST" action="/kontakt/success/" data-netlify="true" netlify-honeypot="bot-field" className="form">
                         <input name="bot-field" type="hidden" />
                         <div className="form-item">
                             <label htmlFor="name" aria-label="Imię">
