@@ -202,6 +202,10 @@ h2 {
   }
 
   .content {
+
+    max-width: 850px;
+    margin: 0 auto;
+
     h2 {
       color: $secondaryColor;
       margin-bottom: 1rem;
