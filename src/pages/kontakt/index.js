@@ -80,14 +80,14 @@ const Kontakt = () => (
                             <label htmlFor="name" aria-label="Imię">
                                 Imię i nazwisko <span>*</span>
                             </label>
-                            <input type="text" placeholder="np. Jan Kowalski" />
+                            <input type="text" name="imie" placeholder="np. Jan Kowalski" />
                         </div>
 
                         <div className="form-item">
                             <label htmlFor="phone" aria-label="Phone">
                                 Numer telefonu
                             </label>
-                            <input type="text" placeholder="np. 503379917" />
+                            <input type="text" placeholder="np. 503379917" name="telefon" />
                         </div>
 
                         <div className="form-item">
@@ -97,6 +97,7 @@ const Kontakt = () => (
                             <input
                                 type="email"
                                 placeholder="np. jan@gmail.com"
+                                name="email"
                             />
                         </div>
 
