@@ -46,29 +46,29 @@ export default ({ data }) => {
             <article className="container page blog-post">
 
             <div className="post-info">
-                        <div className="breadcrumbs">
-                            <ul>
-                                <li>
-                                    <Link to={`/`}>Home</Link>
-                                </li>
-                                <li>
-                                    <Link to={`/blog`}>Blog</Link>
-                                </li>
-                                <li>
-                                    <Link to={`/blog/${post.slug}`}>
-                                        {post.title}
-                                    </Link>
-                                </li>
-                            </ul>
-                        </div>
+                <div className="breadcrumbs">
+                    <ul>
+                        <li>
+                            <Link to={`/`}>Home</Link>
+                        </li>
+                        <li>
+                            <Link to={`/blog`}>Blog</Link>
+                        </li>
+                        <li>
+                            <Link to={`/blog/${post.slug}`}>
+                                {post.title}
+                            </Link>
+                        </li>
+                    </ul>
+                </div>
 
-                        <p className="posted">
-                            {convertDate(post.meta.createdAt)} /{" "}
-                            {timeToRead(
-                                post.contentNode.childMarkdownRemark.timeToRead,
-                            )}
-                        </p>
-                    </div>
+                <p className="posted">
+                    {convertDate(post.meta.createdAt)} /{" "}
+                    {timeToRead(
+                        post.contentNode.childMarkdownRemark.timeToRead,
+                    )}
+                </p>
+            </div>
 
                 <div className="blog-post-image">
                     <Img fluid={post.postImage.fluid} className="main-image" />

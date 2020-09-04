@@ -29,10 +29,28 @@ export default ({ data }) => {
                 shareImage={showcase.projectImage.fluid.src}
             />
             <article className="container page blog-post">
-                <PageHero
-                    title={showcase.projectName}
-                    lead={showcase.excerpt}
-                />
+
+            <div className="post-info">
+                <div className="breadcrumbs">
+                    <ul>
+                        <li>
+                            <Link to={`/`}>Home</Link>
+                        </li>
+                        <li>
+                            <Link to={`/realizacje`}>Realizacje</Link>
+                        </li>
+                        <li>
+                            <Link to={`/blog/${showcase.slug}`}>
+                                {showcase.projectName}
+                            </Link>
+                        </li>
+                    </ul>
+                </div>
+
+                <p className="posted">
+                    {convertDate(showcase.meta.createdAt)}
+                </p>
+            </div>
 
                 <div className="blog-post-image">
                     <Img
@@ -41,28 +59,13 @@ export default ({ data }) => {
                     />
                 </div>
 
-                <div className="blog-post-content">
-                    <div className="post-info">
-                        <div className="breadcrumbs">
-                            <ul>
-                                <li>
-                                    <Link to={`/`}>Home</Link>
-                                </li>
-                                <li>
-                                    <Link to={`/realizacje`}>Realizacje</Link>
-                                </li>
-                                <li>
-                                    <Link to={`/blog/${showcase.slug}`}>
-                                        {showcase.projectName}
-                                    </Link>
-                                </li>
-                            </ul>
-                        </div>
+                <PageHero
+                    title={showcase.projectName}
+                    lead={showcase.excerpt}
+                />
 
-                        <p className="posted">
-                            {convertDate(showcase.meta.createdAt)}
-                        </p>
-                    </div>
+                <div className="blog-post-content">
+
                     <div className="project-url">
                         <Link to={showcase.projectUrl} className="btn btn-primary">
                             Zobacz online

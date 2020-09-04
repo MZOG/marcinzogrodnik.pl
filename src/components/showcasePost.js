@@ -3,8 +3,6 @@ import { Link } from "gatsby";
 import Img from "gatsby-image";
 
 const ShowcasePost = (props) => {
-    console.log(props);
-
     const convertDate = (date) => {
         date = new Date(date);
         const args = [
