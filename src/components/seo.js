@@ -21,7 +21,7 @@ function SEO({ description, lang, meta, title, shareImage }) {
     const metaDescription = description || site.siteMetadata.description;
     const image =
         shareImage ||
-        "https://www.datocms-assets.com/26663/1587856904-jamstack-zogdev-main-cover.jpeg";
+        "https://www.datocms-assets.com/30080/1599225992-marcinzogrodnik-default-image.jpg";
 
     return (
         <Helmet
