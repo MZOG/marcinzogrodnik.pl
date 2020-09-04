@@ -1,10 +1,10 @@
 .offer {
-    padding: 50px 0;
     background: #FAFAFA;
     position: relative;
+    padding: 20px 0;
 
     @include mq('tablet', 'min') {
-        padding: 50px 0 50px 0;
+        padding: 50px 0;
     }
 
     h2 {
@@ -29,23 +29,33 @@
     width: 100%;
     position: relative;
     margin-top: 1rem;
+    border-radius: 10px;
 
     @include mq('tablet', min) {
-      width: calc(33.33%);
+      width: calc(33.333%);
       padding: 30px;
       margin-bottom: 0;
       margin-top: 0;
     }
 
+    .icon {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+    }
+
     h3 {
       font-weight: 600;
       margin-bottom: 1rem;
-      font-size: 22px;
+      font-size: 27px;
+      letter-spacing: -2px;
       font-family: 'marcinzogrodnik';
       color: $primaryColor;
+      margin-left: 20px;
 
       @include mq('tablet', 'min') {
-          font-size: 30px;
+          font-size: 29px;
+          margin-left: 10px;
       }
     }
 
@@ -75,21 +85,24 @@
     }
 
     &:hover {
-      background: $secondaryColor;
 
-      svg {
-        stroke: #fff;
-      }
+      @include mq('tablet', 'min') {
+        background: $secondaryColor;
 
-      h3,
-      p {
-        color: #fff;
-      }
+        svg {
+          stroke: #fff;
+        }
 
-      .more {
-        opacity: 1;
-        right: 20px;
-        color: #fff;
+        h3,
+        p {
+          color: #fff;
+        }
+
+        .more {
+          opacity: 1;
+          right: 20px;
+          color: #fff;
+        }
       }
     }
   }

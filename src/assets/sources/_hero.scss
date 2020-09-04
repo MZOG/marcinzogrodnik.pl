@@ -43,12 +43,18 @@
         }
         h1, h2 {
             font-family: 'marcinzogrodnik';
+            text-align: center;
+
+            @include mq('tablet', 'min') {
+                text-align: left;
+            }
         }
 
         h1 {
             font-size: 40px;
             color: $secondaryColor;
             margin: 1rem 0;
+            line-height: 0.8;
 
             @include mq('tablet', min) {
                 font-size: 50px;
@@ -56,9 +62,18 @@
             }
         }
 
+        .cta {
+            text-align: center;
+
+            @include mq('tablet', 'min') {
+                text-align: left;
+            }
+        }
+
         .btn {
             @include mq('tablet', 'min') {
                 font-size: 20px;
+                text-align: left;
                 padding: 1rem 2rem;
                 box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 10px 10px -5px rgba(0, 0, 0, 0.01);
             }

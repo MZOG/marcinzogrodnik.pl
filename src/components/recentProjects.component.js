@@ -1,6 +1,5 @@
 import React from "react";
 import RecentProject from "../components/recentProject";
-import { Link } from "gatsby";
 
 const HomepageRecentProjects = ({ projects }) => {
     const recentProjects = projects.edges;

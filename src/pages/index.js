@@ -15,7 +15,6 @@ const IndexPage = ({ data }) => {
   const recentProjects = data.allDatoCmsShowcase
   const recentPosts = data.allDatoCmsBlog
 
-  console.log(recentPosts)
   return (
     <Layout>
       <SEO title="Marcin Zogrodnik" />

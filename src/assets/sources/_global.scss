@@ -43,28 +43,30 @@ body {
 }
 
 p {
-  font-size: 16px;
-
-  @include mq('tablet', 'min') {
-    font-size: 18px;
-  }
+  font-size: 18px;
 }
 
 h2 {
   font-family: 'marcinzogrodnik';
-  font-size: 25px;
+  font-size: 30px;
   line-height: 1;
   margin: 1rem 0;
+  letter-spacing: -2px;
 
   @include mq('tablet', 'min') {
-      font-size: 35px;
+      font-size: 40px;
+      letter-spacing: -1px;
       margin: 1rem 0 1.5rem 0rem;
   }
 }
 
 .home-recent-posts {
-  padding: 50px 0;
+  padding: 20px 0;
   background: #FAFAFA;
+
+  @include mq('tablet', 'min') {
+    padding: 50px 0;
+  }
 
   h2 {
     @include mq('tablet', 'min') {
@@ -78,16 +80,36 @@ h2 {
 
     article {
       display: flex;
+      flex-direction: column;
       justify-content: space-between;
+      padding-bottom: 1rem;
+      margin-bottom: 2rem;
 
-      &:first-child{
+      @include mq('tablet', 'min') {
+        flex-direction: row;
+        padding-bottom: 3rem;
         margin-bottom: 3rem;
       }
 
+      &:last-child {
+        margin-bottom: 0 !important;
+        padding-bottom: 0 !important;
+      }
+
+      &:not(:last-child) {
+        border-bottom: 1px solid rgba($primaryColor, 0.1);
+      }
+
       h3 {
-        font-size: 25px;
+        font-size: 30px;
         font-family: 'marcinzogrodnik';
         padding-bottom: 1.5rem;
+        margin-top: 0;
+
+        @include mq('tablet', 'min') {
+          font-size: 35px;
+          letter-spacing: -1px;
+        }
 
         a {
           color: $primaryColor;
@@ -100,23 +122,37 @@ h2 {
       }
 
       .btn {
-        margin: 1.5rem 0;
+        margin: 1rem 0;
       }
 
       .image {
-        width: calc(30% - 10px);
+        width: 100%;
+
+        @include mq('tablet', 'min') {
+          width: calc(40% - 10px);
+        }
 
         .main-image {
-          box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 10px 10px -5px rgba(0, 0, 0, 0.01);
+          box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.010), 0 6.7px 5.3px rgba(0, 0, 0, 0.020), 0 12.5px 10px rgba(0, 0, 0, 0.03), 0 22.3px 17.9px rgba(0, 0, 0, 0.020), 0 41.8px 33.4px rgba(0, 0, 0, 0.010), 0 100px 80px rgba(0, 0, 0, 0.06);
           img {
             border-radius: 10px;
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 10px 10px -5px rgba(0, 0, 0, 0.01);
+            box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.010), 0 6.7px 5.3px rgba(0, 0, 0, 0.020), 0 12.5px 10px rgba(0, 0, 0, 0.03), 0 22.3px 17.9px rgba(0, 0, 0, 0.020), 0 41.8px 33.4px rgba(0, 0, 0, 0.010), 0 100px 80px rgba(0, 0, 0, 0.06);
           }
         }
       }
 
       .content {
-        width: calc(70% - 10px);
+        width: 100%;
+
+        @include mq('tablet', 'min') {
+          width: calc(60% - 10px);
+        }
+
+        h3 {
+          letter-spacing: -2px;
+          line-height: 1;
+          margin-top: 1rem;
+        }
       }
     }
   }
@@ -133,16 +169,28 @@ h2 {
 
   h1 {
     font-family: 'marcinzogrodnik';
-    font-size: 30px;
-    line-height: 1.2;
+    font-size: 35px;
+    line-height: 1;
+    letter-spacing: -2px;
 
     @include mq('tablet', 'min') {
       font-size: 50px;
+      letter-spacing: -1px;
+      text-align: center;
+
     }
   }
 
   .lead {
-    // margin-top: 1rem;
+    margin-top: 10px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba($primaryColor, 0.1);
+
+    @include mq('tablet', 'min') {
+      // padding-bottom: 0;
+      padding-bottom: 25px;
+      text-align: center;
+    }
   }
 }
 
@@ -155,15 +203,21 @@ h2 {
 
   .content {
     h2 {
-      margin-bottom: 2rem;
-      font-family: 'marcinzogrodnik';
       color: $secondaryColor;
-      font-size: 45px;
-      margin-left: -50px;
+      margin-bottom: 1rem;
+      font-family: 'marcinzogrodnik';
+      color: #fb3c54;
+      font-size: 30px;
+      line-height: 1.2;
+      letter-spacing: -2px;
 
       &:not(:first-child) {
         margin-top: 2rem;
-        margin-left: -50px;
+      }
+
+      @include mq('tablet', 'min') {
+        letter-spacing: -1px;
+        font-size: 40px;
       }
     }
 
@@ -172,7 +226,10 @@ h2 {
       font-family: 'marcinzogrodnik';
       color: $secondaryColor;
       font-size: 37px;
-      margin-left: -50px;
+
+      @include mq('tablet', 'min') {
+        margin-left: -50px;
+      }
 
       &:not(:first-child) {
         margin-top: 2rem;
@@ -188,9 +245,5 @@ h2 {
         color: $primaryColor;
       }
     }
-  }
-
-  .quickContact {
-    margin: 1rem 0;
   }
 }

@@ -26,7 +26,7 @@ header {
 
   .logo {
     a {
-      font-size: 20px;
+      font-size: 23px;
       font-family: 'marcinzogrodnik';
       color: $primaryColor;
       text-decoration: none;
@@ -252,8 +252,8 @@ header {
       border: 1px solid transparent;
 
       @include mq("650", max) {
-        padding: 0.1rem 0.5rem;
-        margin-right: 20px;
+        padding: 0.23rem 0.5rem;
+        margin-right: 10px;
       }
 
       &:hover {

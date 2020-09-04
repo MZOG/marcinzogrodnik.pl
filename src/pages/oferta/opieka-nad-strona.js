@@ -2,6 +2,7 @@ import React from "react";
 import Layout from "../../components/layout";
 import SEO from "../../components/seo";
 import PageHero from "../../components/pageHero.component";
+import QuickContact from "../../components/quickContact";
 
 const OpiekaNadStrona = () => (
     <Layout>
@@ -14,6 +15,8 @@ const OpiekaNadStrona = () => (
             <div className="content">
             <p>Opieka nad stroną</p>
             </div>
+
+            <QuickContact />
         </div>
     </Layout>
 );

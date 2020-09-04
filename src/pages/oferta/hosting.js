@@ -2,6 +2,7 @@ import React from "react";
 import Layout from "../../components/layout";
 import SEO from "../../components/seo";
 import PageHero from "../../components/pageHero.component";
+import QuickContact from "../../components/quickContact";
 
 const Hosting = () => (
     <Layout>
@@ -15,6 +16,8 @@ const Hosting = () => (
             <div className="content">
             <p>Hosting stron internetowych</p>
             </div>
+
+            <QuickContact />
         </div>
     </Layout>
 );

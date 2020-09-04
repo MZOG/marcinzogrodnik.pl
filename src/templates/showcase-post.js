@@ -6,6 +6,8 @@ import SEO from "../components/seo";
 import Img from "gatsby-image";
 import { Link } from "gatsby";
 import PageHero from "../components/pageHero.component";
+import QuickContact from "../components/quickContact";
+
 
 export default ({ data }) => {
     const showcase = data.datoCmsShowcase;
@@ -80,12 +82,10 @@ export default ({ data }) => {
                         </Link>
                     </div>
 
-                    <div className="blog-post-content-contact">
-                        <p className="lead">Zapraszam do współpracy</p>
-                        <p>Zadzwoń - 739 907 919</p>
-                    </div>
+
                 </div>
             </article>
+            <QuickContact />
         </Layout>
     );
 };

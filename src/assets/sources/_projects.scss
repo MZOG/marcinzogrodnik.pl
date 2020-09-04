@@ -3,7 +3,11 @@
 // homepage recent projects
 .recent-projects {
   position: relative;
-  padding: 50px 0;
+  padding: 20px 0;
+
+  @include mq('tablet', 'min') {
+    padding: 50px 0;
+  }
 
   h2 {
 
@@ -13,9 +17,12 @@
 }
 
   &-wrapper {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(370px, 1fr));
-    grid-column-gap: 40px;
+
+    @include mq('tablet', 'min') {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
 
     .recent-project-item {
       margin-bottom: 50px;

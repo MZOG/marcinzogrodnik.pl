@@ -28,6 +28,8 @@ const ShowcasePost = (props) => {
                     </Link>
                 </h2>
 
+                <p>{props.project.node.excerpt}</p>
+
                 <div className="blog-articles__footer">
                     <p className="created-at">
                         {convertDate(props.project.node.meta.createdAt)}
@@ -36,7 +38,7 @@ const ShowcasePost = (props) => {
                         to={`/realizacje/${props.project.node.slug}`}
                         className="btn btn-primary"
                     >
-                        Więcej →
+                        Więcej
                     </Link>
                 </div>
             </div>

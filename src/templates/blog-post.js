@@ -7,6 +7,7 @@ import SEO from "../components/seo";
 import Img from "gatsby-image";
 import { Link } from "gatsby";
 import PageHero from "../components/pageHero.component";
+import QuickContact from "../components/quickContact";
 
 export default ({ data }) => {
     const post = data.datoCmsBlog;
@@ -81,6 +82,7 @@ export default ({ data }) => {
                     />
                 </div>
             </article>
+            <QuickContact />
         </Layout>
     );
 };

@@ -2,6 +2,7 @@ import React from "react";
 import Layout from "../../components/layout";
 import SEO from "../../components/seo";
 import PageHero from "../../components/pageHero.component";
+import QuickContact from "../../components/quickContact";
 
 const Pozycjonowanie = () => (
     <Layout>
@@ -14,6 +15,8 @@ const Pozycjonowanie = () => (
             <div className="content">
             <p>Pozycjonowanie</p>
             </div>
+
+            <QuickContact />
         </div>
     </Layout>
 );

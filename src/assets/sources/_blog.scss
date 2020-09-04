@@ -1,29 +1,60 @@
 
 // blog container
 .blog-articles {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(370px, 1fr));
-  grid-column-gap: 40px;
+  margin-top: 2rem;
+
+  @include mq('tablet', 'min') {
+    margin-top: 3rem;
+  }
 
   &_post {
     margin-bottom: 50px;
+
+    &:not(:last-child) {
+      padding-bottom: 50px;
+      border-bottom: 1px solid rgba($primaryColor, 0.1);
+    }
+
+    @include mq('tablet', 'min') {
+      display: flex;
+      justify-content: space-between;
+    }
   }
 
   &__image {
+    @include mq('tablet', 'min') {
+      width: calc(40% - 20px);
+    }
     .gatsby-image-wrapper {
       border-radius: 10px;
+      box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.010), 0 6.7px 5.3px rgba(0, 0, 0, 0.020), 0 12.5px 10px rgba(0, 0, 0, 0.03), 0 22.3px 17.9px rgba(0, 0, 0, 0.020), 0 41.8px 33.4px rgba(0, 0, 0, 0.010), 0 100px 80px rgba(0, 0, 0, 0.06);
     }
   }
 
   &__content {
-    padding-top: 1.6rem;
+
+    @include mq('tablet', 'min') {
+      width: calc(60% - 20px);
+    }
 
     h2 {
+      margin-top: 25px;
+
+      @include mq('tablet', 'min') {
+        margin: 0 0 1rem 0;
+      }
       a {
         font-family: 'marcinzogrodnik';
-        font-size: 2rem;
+        font-size: 30px;
         color: $primaryColor;
         text-decoration: none;
+        letter-spacing: -2px;
+        line-height: 1;
+
+        @include mq('tablet', 'min') {
+          letter-spacing: -1px;
+          font-size: 35px;
+        }
 
         &:hover {
             color: $secondaryColor;
@@ -53,23 +84,23 @@
     margin: 0 auto;
     display: flex;
     flex-direction: column;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
 
     @include mq("tablet", min) {
       justify-content: space-between;
       flex-direction: row;
       align-items: center;
-      margin-bottom: 3rem;
-    }
-
-    h2 {
-      margin-bottom: 2rem;
     }
 
     .posted {
-      font-size: 14px;
+      font-size: 12px;
       color: rgba($primaryColor, 0.5);
       margin-bottom: 0;
+      margin-top: 5px;
+
+      @include mq('tablet', 'min') {
+        margin-top: 0;
+      }
     }
 
     .breadcrumbs {
@@ -79,13 +110,13 @@
 
         li {
           display: inline-block;
-          margin-right: 20px;
+          margin-right: 15px;
           position: relative;
 
           &::after {
             content: "/";
             position: absolute;
-            right: -12px;
+            right: -10px;
             top: 0;
             color: rgba($primaryColor, 0.5);
           }
@@ -101,7 +132,7 @@
           }
 
           a {
-            font-size: 14px;
+            font-size: 12px;
             color: $primaryColor;
             text-decoration: none;
 
@@ -125,6 +156,14 @@
       @include mq('tablet', 'min') {
         margin: 1rem 0;
       }
+
+      a {
+        color: #fff;
+
+        &:hover {
+          color: #fff;
+        }
+      }
     }
 
     p {
@@ -134,15 +173,32 @@
       color: $primaryColor;
     }
 
+    a {
+      color: $secondaryColor;
+      text-decoration: none;
+      border-bottom: 1px dotted $secondaryColor;
+
+      &:hover {
+        color: $primaryColor;
+      }
+    }
+
     blockquote {
-      margin-left: 30px;
-      padding: 30px;
-      border: 1px solid rgba($secondaryColor, 0.2);
       border-radius: 10px;
-      background: rgba($secondaryColor, 0.05);
       margin-bottom: 2rem;
+      letter-spacing: -1px;
+      font-family: 'marcinzogrodnik';
+      margin-top: 30px;
+
+      @include mq('tablet', 'min') {
+        margin-left: 20px;
+        margin-top: 30px;
+      }
+
       p {
         margin-bottom: 0;
+        font-size: 22px;
+        line-height: 1.2;
       }
     }
 
@@ -168,11 +224,12 @@
       margin-bottom: 1rem;
       font-family: 'marcinzogrodnik';
       color: $secondaryColor;
-      font-size: 25px;
-      line-height: 1.2;
+      font-size: 30px;
+      letter-spacing: -2px;
 
       @include mq('tablet', 'min') {
         font-size: 40px;
+        letter-spacing: -1px;
       }
 
       &:not(:first-child) {
@@ -188,15 +245,16 @@
       margin-bottom: 1rem;
       font-family: 'marcinzogrodnik';
       color: $secondaryColor;
-      font-size: 23px;
-      line-height: 1.2;
+      font-size: 27px;
+      letter-spacing: -2px;
 
       &:not(:first-child) {
         margin-top: 2rem;
       }
 
       @include mq('tablet', 'min') {
-        font-size: 33px;
+        font-size: 35px;
+        letter-spacing: -1px;
       }
     }
 
