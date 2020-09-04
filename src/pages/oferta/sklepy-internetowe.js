@@ -13,7 +13,7 @@ const SklepyInternetowe = () => (
                 lead="Zapraszam do zapoznania się z ofertą sklepów internetowych"
             />
             <div className="content">
-
+            <p>Oferta w przygotowaniu</p>
 
             <QuickContact />
             </div>

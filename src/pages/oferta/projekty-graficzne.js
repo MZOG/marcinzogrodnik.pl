@@ -13,7 +13,7 @@ const ProjektyGraficzne = () => (
                 lead="Zapraszam do zapoznania się z ofertą projektów graficznych"
             />
             <div className="content">
-            <p>Projekty Graficzne</p>
+            <p>Oferta w przygotowaniu</p>
             </div>
 
             <QuickContact />

@@ -13,7 +13,7 @@ const OpiekaNadStrona = () => (
                 lead="Zapraszam do zapoznania się z ofertą opieki nad stroną"
             />
             <div className="content">
-            <p>Opieka nad stroną</p>
+            <p>Oferta w przygotowaniu</p>
             </div>
 
             <QuickContact />

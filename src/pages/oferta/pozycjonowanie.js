@@ -13,7 +13,7 @@ const Pozycjonowanie = () => (
                 lead="Zapraszam do zapoznania się z ofertą pozycjonowania"
             />
             <div className="content">
-            <p>Pozycjonowanie</p>
+            <p>Oferta w przygotowaniu</p>
             </div>
 
             <QuickContact />

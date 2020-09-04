@@ -14,7 +14,7 @@ const Hosting = () => (
             />
 
             <div className="content">
-            <p>Hosting stron internetowych</p>
+            <p>Oferta w przygotowaniu</p>
             </div>
 
             <QuickContact />
