@@ -27,6 +27,3 @@
 
   [plugins.inputs]
   buildDir = "public"
-
-[[plugins]]
-package = "netlify-plugin-subfont"
