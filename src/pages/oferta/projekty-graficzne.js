@@ -16,8 +16,9 @@ const ProjektyGraficzne = (query) => {
 
     return (
     <Layout>
-        <SEO title="Projekty graficzne" description="Potrzebujesz odświeżyć swoją stronę internetową, lub zaprojektować nową funkcjonalność? Dobrze trafiłeś."
-        shareImage={shareImageName} />
+        <SEO title="Projekty graficzne"
+        description="Potrzebujesz odświeżyć swoją stronę internetową, lub zaprojektować nową funkcjonalność? Dobrze trafiłeś."
+        shareImage={shareImage} />
         <div className="container page">
             <PageHero
                 title="Projekty graficzne"

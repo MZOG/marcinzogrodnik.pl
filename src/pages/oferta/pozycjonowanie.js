@@ -16,8 +16,9 @@ const Pozycjonowanie = (query) => {
 
     return (
     <Layout>
-        <SEO title="Pozycjonowanie" description="Twoja strona jest daleko w tyle za konkurencją? Pozycjonowanie strony to jedna z najważniejszych rzeczy na stronie internetowej."
-        shareImage={shareImageName} />
+        <SEO title="Pozycjonowanie"
+        description="Twoja strona jest daleko w tyle za konkurencją? Pozycjonowanie strony to jedna z najważniejszych rzeczy na stronie internetowej."
+        shareImage={shareImage} />
         <div className="container page">
             <PageHero
                 title="Pozycjonowanie"

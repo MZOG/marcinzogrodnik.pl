@@ -16,7 +16,8 @@ const OpiekaNadStrona = (query) => {
 
     return (
     <Layout>
-        <SEO title="Opieka nad stroną" description="Nie masz czasu zajmować się swoją stroną internetową? Dla mnie to nie problem! Zajmę się każdą drobnostką na Twojej stronie internetowej."
+        <SEO title="Opieka nad stroną"
+        description="Nie masz czasu zajmować się swoją stroną internetową? Dla mnie to nie problem! Zajmę się każdą drobnostką na Twojej stronie internetowej."
         shareImage={shareImage} />
         <div className="container page">
             <PageHero
