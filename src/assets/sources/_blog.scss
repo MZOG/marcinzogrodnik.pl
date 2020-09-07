@@ -150,6 +150,17 @@
     max-width: 850px;
     margin: 0 auto;
 
+    ul {
+      list-style: none;
+      li {
+        font-size: 18px;
+
+        strong {
+          color: $secondaryColor;
+        }
+      }
+    }
+
     .project-url {
       text-align: center;
 

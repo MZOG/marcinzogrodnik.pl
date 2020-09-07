@@ -76,7 +76,10 @@ export const query = graphql`
       }
     }
 
-    allDatoCmsBlog(sort: { order: DESC, fields: meta___createdAt }) {
+    allDatoCmsBlog(
+      sort: { order: DESC, fields: meta___createdAt }
+      limit: 3
+    ) {
       edges {
         node {
           id

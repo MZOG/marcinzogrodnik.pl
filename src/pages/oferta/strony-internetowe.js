@@ -4,9 +4,23 @@ import SEO from "../../components/seo";
 import PageHero from "../../components/pageHero.component";
 import QuickContact from "../../components/quickContact";
 
-const StronyInternetowe = () => (
+const StronyInternetowe = (query) => {
+    const shareImageName = "oferta-strony_internetowe";
+    let shareImage;
+
+    query.data.allFile.edges.map(image => {
+        if (image.node.name === shareImageName) {
+            shareImage = image.node.publicURL
+        }
+    })
+
+    return (
     <Layout>
-        <SEO title="Strona internetowa" description="Strony internetowe WordPress, oraz JAMstack. Wykorzystuję najnowsze technologię aby strony były szybkie oraz bezpieczne." />
+        <SEO
+            title="Strona internetowa"
+            description="Strony internetowe WordPress, oraz JAMstack. Wykorzystuję najnowsze technologię aby strony były szybkie oraz bezpieczne."
+            shareImage={shareImage}
+        />
         <div className="container page">
             <PageHero
                 title="Strony internetowe"
@@ -61,6 +75,20 @@ const StronyInternetowe = () => (
             <QuickContact />
         </div>
     </Layout>
-);
+    );
+}
+
+export const query = graphql`
+  query stronaInternetowa {
+    allFile(filter: {extension: {eq: "jpg"}}) {
+        edges {
+          node {
+            publicURL
+            name
+          }
+        }
+      }
+  }
+`
 
 export default StronyInternetowe;

@@ -8,6 +8,8 @@ import Img from "gatsby-image";
 import { Link } from "gatsby";
 import PageHero from "../components/pageHero.component";
 import QuickContact from "../components/quickContact";
+import { defineCustomElements as deckDeckGoHighlightElement } from '@deckdeckgo/highlight-code/dist/loader';
+deckDeckGoHighlightElement();
 
 export default ({ data }) => {
     const post = data.datoCmsBlog;
