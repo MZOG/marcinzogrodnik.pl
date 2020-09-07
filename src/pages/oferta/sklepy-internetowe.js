@@ -16,8 +16,10 @@ const SklepyInternetowe = (query) => {
 
     return (
     <Layout>
-        <SEO title="Sklep internetowy" description="Specjalizuję się w sklepach internetowych opartych o WooCommerce. Sprzedawaj więcej w sieci!"
-        shareImage={shareImageName} />
+        <SEO title="Sklep internetowy"
+        description="Specjalizuję się w sklepach internetowych opartych o WooCommerce. Sprzedawaj więcej w sieci!"
+        shareImage={shareImageName}
+    />
         <div className="container page">
             <PageHero
                 title="Sklepy internetowe"

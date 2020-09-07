@@ -37,7 +37,7 @@ function SEO({ description, lang, meta, title, shareImage }) {
                 },
                 {
                     property: `og:title`,
-                    content: `{title | ${site.siteMetadata.title}}`,
+                    content: `${title} | ${site.siteMetadata.title}`,
                 },
                 {
                     property: `fb:app_id`,
