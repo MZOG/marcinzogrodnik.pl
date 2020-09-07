@@ -14,6 +14,15 @@ deckDeckGoHighlightElement();
 export default ({ data }) => {
     const post = data.datoCmsBlog;
 
+    // let tagsArray = data.datoCmsBlog.tags.split(",")
+    // let postTag;
+    // let tags = [];
+
+    // tagsArray.map(tag => {
+    //     postTag = tag.trim().toLowerCase();
+    //     tags.push(postTag)
+    // })
+
     const timeToRead = (time) => {
         switch (time) {
             case 1:
@@ -46,31 +55,29 @@ export default ({ data }) => {
             />
 
             <article className="container page blog-post">
-
-            <div className="post-info">
-                <div className="breadcrumbs">
-                    <ul>
-                        <li>
-                            <Link to={`/`}>Home</Link>
-                        </li>
-                        <li>
-                            <Link to={`/blog`}>Blog</Link>
-                        </li>
-                        <li>
-                            <Link to={`/blog/${post.slug}`}>
-                                {post.title}
-                            </Link>
-                        </li>
-                    </ul>
+                <div className="post-info">
+                    <div className="breadcrumbs">
+                        <ul>
+                            <li>
+                                <Link to={`/`}>Home</Link>
+                            </li>
+                            <li>
+                                <Link to={`/blog`}>Blog</Link>
+                            </li>
+                            <li>
+                                <Link to={`/blog/${post.slug}`}>
+                                    {post.title}
+                                </Link>
+                            </li>
+                        </ul>
+                    </div>
+                    <p className="posted">
+                        {convertDate(post.meta.createdAt)} /{" "}
+                        {timeToRead(
+                            post.contentNode.childMarkdownRemark.timeToRead,
+                        )}
+                    </p>
                 </div>
-
-                <p className="posted">
-                    {convertDate(post.meta.createdAt)} /{" "}
-                    {timeToRead(
-                        post.contentNode.childMarkdownRemark.timeToRead,
-                    )}
-                </p>
-            </div>
 
                 <div className="blog-post-image">
                     <Img fluid={post.postImage.fluid} className="main-image" />
@@ -82,7 +89,23 @@ export default ({ data }) => {
                             __html: post.contentNode.childMarkdownRemark.html,
                         }}
                     />
+
+                    {/* <div className="post-tags">
+                        <ul>
+                            {tags.map(tag => {
+                                return(
+                                    <li key={tag}>
+                                        <Link to={`/tag/${tag}`}>
+                                            {tag}
+                                        </Link>
+                                    </li>
+                                )
+                            })}
+                        </ul>
+                    </div> */}
                 </div>
+
+
             </article>
             <QuickContact />
         </Layout>
@@ -103,6 +126,7 @@ export const query = graphql`
             }
             excerpt
             title
+            tags
             slug
             meta {
                 createdAt

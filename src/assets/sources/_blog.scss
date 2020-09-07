@@ -150,6 +150,31 @@
     max-width: 850px;
     margin: 0 auto;
 
+    .post-tags {
+      p {
+        margin-bottom: 5px;
+      }
+      ul {
+        li {
+          display: inline-block;
+          margin-right: 20px;
+
+          a {
+            background: $secondaryColor;
+            color: #fafafa;
+            border-radius: 4px;
+            font-size: 15px;
+            padding: 5px 10px;
+            line-height: 1;
+
+            &:hover {
+              background: $primaryColor;
+            }
+          }
+        }
+      }
+    }
+
     ul {
       list-style: none;
       li {
