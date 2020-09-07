@@ -5,7 +5,7 @@ import PageHero from "../../components/pageHero.component";
 import QuickContact from "../../components/quickContact";
 
 const SklepyInternetowe = (query) => {
-    const shareImageName = "oferta-sklepy_internetowe";
+    const shareImageName = "oferta-sklepy-internetowe";
     let shareImage;
 
     query.data.allFile.edges.map(image => {

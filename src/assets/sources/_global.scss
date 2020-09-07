@@ -43,7 +43,10 @@ body {
 }
 
 p {
+  margin-bottom: 1.3rem;
   font-size: 18px;
+  line-height: 1.5;
+  color: #00304d;
 }
 
 h2 {
@@ -226,13 +229,15 @@ h2 {
     }
 
     h3 {
-      margin-bottom: 2rem;
+      margin-bottom: 1rem;
       font-family: 'marcinzogrodnik';
-      color: $secondaryColor;
-      font-size: 37px;
+      color: $primaryColor;
+      font-size: 25px;
+      line-height: 1.2;
+      letter-spacing: -1px;
 
       @include mq('tablet', 'min') {
-        margin-left: -50px;
+        font-size: 30px;
       }
 
       &:not(:first-child) {

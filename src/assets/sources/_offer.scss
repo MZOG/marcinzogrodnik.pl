@@ -51,11 +51,9 @@
       letter-spacing: -2px;
       font-family: 'marcinzogrodnik';
       color: $primaryColor;
-      margin-left: 20px;
 
       @include mq('tablet', 'min') {
           font-size: 29px;
-          margin-left: 10px;
           letter-spacing: -1px;
       }
     }
@@ -142,10 +140,6 @@
 
     &:not(:first-child) {
       margin-top: 2rem;
-    }
-
-    @include mq('desktop', min) {
-      margin-left: -50px;
     }
   }
 }
