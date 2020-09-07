@@ -17,7 +17,7 @@ const StronyInternetowe = (query) => {
     return (
     <Layout>
         <SEO
-            title="Strona internetowa"
+            title="Strony internetowe"
             description="Strony internetowe WordPress, oraz JAMstack. Wykorzystuję najnowsze technologię aby strony były szybkie oraz bezpieczne."
             shareImage={shareImage}
         />

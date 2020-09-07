@@ -4,9 +4,20 @@ import SEO from "../../components/seo";
 import PageHero from "../../components/pageHero.component";
 import QuickContact from "../../components/quickContact";
 
-const SklepyInternetowe = () => (
+const SklepyInternetowe = (query) => {
+    const shareImageName = "oferta-sklepy_internetowe";
+    let shareImage;
+
+    query.data.allFile.edges.map(image => {
+        if (image.node.name === shareImageName) {
+            shareImage = image.node.publicURL
+        }
+    })
+
+    return (
     <Layout>
-        <SEO title="Sklep internetowy" description="Specjalizuję się w sklepach internetowych opartych o WooCommerce. Sprzedawaj więcej w sieci!"/>
+        <SEO title="Sklep internetowy" description="Specjalizuję się w sklepach internetowych opartych o WooCommerce. Sprzedawaj więcej w sieci!"
+        shareImage={shareImageName} />
         <div className="container page">
             <PageHero
                 title="Sklepy internetowe"
@@ -19,6 +30,20 @@ const SklepyInternetowe = () => (
             </div>
         </div>
     </Layout>
-);
+    );
+}
+
+export const query = graphql`
+  query sklepyInternetowe {
+    allFile(filter: {extension: {eq: "jpg"}}) {
+        edges {
+          node {
+            publicURL
+            name
+          }
+        }
+      }
+  }
+`
 
 export default SklepyInternetowe;

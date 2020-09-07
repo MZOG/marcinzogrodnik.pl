@@ -4,9 +4,21 @@ import SEO from "../../components/seo";
 import PageHero from "../../components/pageHero.component";
 import QuickContact from "../../components/quickContact";
 
-const Hosting = () => (
+const Hosting = (query) => {
+    const shareImageName = "oferta-hosting";
+    let shareImage;
+
+    query.data.allFile.edges.map(image => {
+        if (image.node.name === shareImageName) {
+            shareImage = image.node.publicURL
+        }
+    })
+
+    return (
     <Layout>
-        <SEO title="Hosting" description="Hosting dla Twojej strony internetowej, szybki hosting VPS oraz kopie zapasowe." />
+        <SEO title="Hosting"
+            description="Hosting dla Twojej strony internetowej, szybki hosting VPS oraz kopie zapasowe."
+            shareImage={shareImage} />
         <div className="container page">
             <PageHero
                 title="Hosting"
@@ -21,5 +33,19 @@ const Hosting = () => (
         </div>
     </Layout>
 );
+
+}
+export const query = graphql`
+  query hosting {
+    allFile(filter: {extension: {eq: "jpg"}}) {
+        edges {
+          node {
+            publicURL
+            name
+          }
+        }
+      }
+  }
+`
 
 export default Hosting;
