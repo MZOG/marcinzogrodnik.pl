@@ -205,7 +205,6 @@ h2 {
   }
 
   .content {
-
     max-width: 850px;
     margin: 0 auto;
 
@@ -252,6 +251,34 @@ h2 {
 
       &:hover {
         color: $primaryColor;
+      }
+    }
+
+    ul {
+      ::marker {
+        color: $secondaryColor;
+      }
+
+      margin-left: 30px;
+      margin-bottom: 1.2rem;
+
+      li {
+        font-size: 18px;
+        line-height: 1.5;
+      }
+    }
+
+    &-image {
+      svg {
+        max-width: 150px;
+        margin: 0 auto;
+        display: block;
+
+        @include mq('tablet', 'min') {
+          float: right;
+          max-width: 200px;
+          margin-left: 50px;
+        }
       }
     }
   }
