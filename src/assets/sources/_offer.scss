@@ -20,6 +20,8 @@
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
+    flex-basis: auto;
+
   }
 
   &-box {
@@ -31,9 +33,36 @@
     margin-top: 1rem;
     border-radius: 10px;
 
+    &:first-child {
+      @include mq('tablet', 'min') {
+        background: $secondaryColor;
+
+        .icon {
+          svg {
+            stroke: #fff;
+          }
+
+          h3 {
+            color: #fff;
+          }
+        }
+
+        p {
+          color: #fff;
+        }
+      }
+    }
+
+    &:nth-child(4), &:nth-child(5), &:nth-child(6) {
+      @include mq('tablet', 'min') {
+        margin-top: 15px;
+      }
+    }
+
+
     @include mq('tablet', min) {
-      width: calc(33.333%);
-      padding: 30px;
+      width: calc(33.333% - 10px);
+      padding: 30px 15px;
       margin-bottom: 0;
       margin-top: 0;
     }
@@ -68,6 +97,7 @@
         width: 50px;
         margin-bottom: 15px;
         stroke: $secondaryColor;
+        margin-right: 10px;
       }
     }
 
