@@ -41,7 +41,7 @@ const OpiekaNadStrona = (query) => {
               <p>
                 WordPress to najpopularniejszy system zarządzania stroną, wiele stron z niego korzysta.
                 Zdarza się, że brakuje czasu na zarządzanie stroną (czyt. dodawanie nowych postów, aktualizacja
-                treści, promocje itp), co negatywnie wpływa np. na <Link to="/pozycjonowanie">pozycjonowanie</Link>.
+                treści, promocje itp), co negatywnie wpływa np. na <Link to="/oferta/pozycjonowanie">pozycjonowanie</Link>.
               </p>
               <p>
                 Nie pozwól, aby konkurencja była od Ciebie lepsza, tylko dlatgo, że skupiasz się na rozwoju firmy, a nie
