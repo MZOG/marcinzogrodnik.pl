@@ -17,7 +17,7 @@ const IndexPage = ({ data }) => {
 
   return (
     <Layout>
-      <SEO title="Marcin Zogrodnik" />
+      <SEO title="Marcin Zogrodnik" description="Marcin Zogrodnik - Nowoczesne, szybkie oraz bezpieczne strony internetowe JAMstack oraz WordPress. Zapoznaj się z ofertą." />
       <Hero />
       <About />
       <HomepageOffer />
