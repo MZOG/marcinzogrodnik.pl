@@ -1,4 +1,5 @@
-import React from "react";
+/* eslint-disable */
+import React from "react"
 import Layout from "../../components/layout";
 import SEO from "../../components/seo";
 import PageHero from "../../components/pageHero.component";
@@ -14,9 +15,14 @@ const StronyInternetowe = (query) => {
         }
     })
 
+    // Language
+    // const [lang, setLang] = useState(true)
+
     return (
     <Layout>
         <SEO
+            // lang={(lang ? 'pl' : 'en')}
+            lang="pl"
             title="Strony internetowe"
             description="Do stworzenia szybkiej oraz nowoczesnej strony internetowej wykorzystuję JAMstack oraz WordPress."
             shareImage={shareImage}
@@ -26,6 +32,10 @@ const StronyInternetowe = (query) => {
                 title="Strony internetowe"
                 lead="Zapraszam do zapoznania się z ofertą stron internetowych"
             />
+
+            {/* <button onClick={() => setLang(!lang)}>
+                {lang === true ? 'Change Language' : 'Zmień język'}
+            </button> */}
 
             <div className="content">
                 <div className="content-image">

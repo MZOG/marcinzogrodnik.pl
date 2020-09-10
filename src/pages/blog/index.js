@@ -16,9 +16,12 @@ const Blog = ({ data }) => {
                     lead="Artykuły na temat stron internetowych oraz Front End"
                 />
                 <div className="blog-articles">
-                    {data.allDatoCmsBlog.edges.map((post) => (
-                        <SinglePost post={post} key={post.id} />
-                    ))}
+                    {data.allDatoCmsBlog.edges.map((post) => {
+                            console.log(post)
+                            return(
+                                <SinglePost post={post} key={post.id} />
+                        )
+                    })}
                 </div>
             </section>
         </Layout>
