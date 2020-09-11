@@ -14,14 +14,26 @@ deckDeckGoHighlightElement();
 export default ({ data }) => {
     const post = data.datoCmsBlog;
 
-    // let tagsArray = data.datoCmsBlog.tags.split(",")
-    // let postTag;
-    // let tags = [];
-
-    // tagsArray.map(tag => {
-    //     postTag = tag.trim().toLowerCase();
-    //     tags.push(postTag)
-    // })
+    const schema = {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": post.title,
+        "description": post.excerpt,
+        "image": post.postImage.fluid.src,
+        "author": {
+          "@type": "Person",
+          "name": "Marcin Zogrodnik"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "marcin Zogrodnik",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://www.datocms-assets.com/30080/1599225992-marcinzogrodnik-default-image.jpg"
+          }
+        },
+        "datePublished": post.meta.createdAt
+      }
 
     const timeToRead = (time) => {
         switch (time) {
@@ -52,6 +64,7 @@ export default ({ data }) => {
                 title={post.title}
                 description={post.excerpt}
                 shareImage={post.postImage.fluid.src}
+                schemaMarkup={schema}
             />
 
             <article className="container page blog-post">

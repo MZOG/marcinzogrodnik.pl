@@ -8,19 +8,6 @@ module.exports = {
   },
   plugins: [
     {
-      resolve: `gatsby-plugin-facebook-customer-chat`,
-      options: {
-        sdk: {
-          appId: '2659674054065884',
-        },
-        chat: {
-          pageId: '112142883474554',
-          loggedInGreeting: 'Witaj, jak mogę Ci pomóc?',
-          loggedOutGreeting: 'Witaj, jak mogę Ci pomóc?',
-        }
-      },
-    },
-    {
       resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
@@ -47,7 +34,6 @@ module.exports = {
     },
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-sass`,
-    `gatsby-plugin-smoothscroll`,
     {
       resolve: "gatsby-remark-images",
       options: {

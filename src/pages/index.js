@@ -15,9 +15,50 @@ const IndexPage = ({ data }) => {
   const recentProjects = data.allDatoCmsShowcase
   const recentPosts = data.allDatoCmsBlog
 
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Marcin Zogrodnik",
+    "description": "Marcin Zogrodnik - Tworzę szybkie oraz przyciągające klientów strony internetowe wykorzystując najnowsze technologie tj. JAMstack, React czy Gatsby.",
+    "image": "https://www.datocms-assets.com/30080/1599225992-marcinzogrodnik-default-image.jpg",
+    "url": "https://marcinzogrodnik.pl",
+    "telephone": "739907919",
+    "priceRange": "2000",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Ułańska 66",
+      "addressLocality": "Lędziny",
+      "postalCode": "43-143",
+      "addressCountry": "PL"
+    },
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+        "Sunday"
+      ],
+      "opens": "00:00",
+      "closes": "23:59"
+    },
+    "sameAs": [
+      "https://facebook.com/frontendmarcin",
+      "https://github.com/MZOG",
+      "https://marcinzogrodnik.pl"
+    ]
+  }
+
   return (
     <Layout>
-      <SEO title="Marcin Zogrodnik" description="Marcin Zogrodnik - Nowoczesne, szybkie oraz bezpieczne strony internetowe JAMstack oraz WordPress. Zapoznaj się z ofertą." />
+      <SEO
+        title="Marcin Zogrodnik"
+        description="Marcin Zogrodnik - Nowoczesne, szybkie oraz bezpieczne strony internetowe JAMstack oraz WordPress. Zapoznaj się z ofertą."
+        schemaMarkup={schema}
+      />
       <Hero />
       <About />
       <HomepageOffer />

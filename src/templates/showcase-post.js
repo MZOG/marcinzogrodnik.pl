@@ -21,12 +21,34 @@ export default ({ data }) => {
         return date.toLocaleDateString(...args);
     };
 
+    const schema = {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": showcase.title,
+        "description": showcase.excerpt,
+        "image": showcase.projectImage.fluid.src,
+        "author": {
+          "@type": "Person",
+          "name": "Marcin Zogrodnik"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Marcin Zogrodnik",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://www.datocms-assets.com/30080/1599225992-marcinzogrodnik-default-image.jpg"
+          }
+        },
+        "datePublished": showcase.meta.createdAt
+      }
+
     return (
         <Layout>
             <SEO
                 title={showcase.projectName}
                 description={showcase.excerpt}
                 shareImage={showcase.projectImage.fluid.src}
+                schemaMarkup={schema}
             />
             <article className="container page blog-post">
 

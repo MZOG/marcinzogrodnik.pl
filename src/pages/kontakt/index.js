@@ -6,9 +6,52 @@ import Layout from "../../components/layout";
 import SEO from "../../components/seo";
 import PageHero from "../../components/pageHero.component";
 
-const Kontakt = () => (
+const Kontakt = () => {
+
+    const schema = {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "Marcin Zogrodnik",
+        "description": "Pogadajmy o nowym projekcie! Zadzwoń 739 907 919 lub napisz kontakt@marcinzogrodnik.pl",
+        "image": "https://www.datocms-assets.com/30080/1599225992-marcinzogrodnik-default-image.jpg",
+        "url": "https://marcinzogrodnik.pl",
+        "telephone": "739907919",
+        "priceRange": "2000",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Ułańska 66",
+          "addressLocality": "Lędziny",
+          "postalCode": "43-143",
+          "addressCountry": "PL"
+        },
+        "openingHoursSpecification": {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday",
+            "Sunday"
+          ],
+          "opens": "00:00",
+          "closes": "23:59"
+        },
+        "sameAs": [
+          "https://facebook.com/frontendmarcin",
+          "https://github.com/MZOG",
+          "https://marcinzogrodnik.pl"
+        ]
+      }
+
+    return(
     <Layout>
-        <SEO title="Kontakt" description="Pogadajmy o nowym projekcie! Zadzwoń 739 907 919 lub napisz kontakt@marcinzogrodnik.pl" />
+        <SEO
+            title="Kontakt"
+            description="Pogadajmy o nowym projekcie! Zadzwoń 739 907 919 lub napisz kontakt@marcinzogrodnik.pl"
+            schemaMarkup={schema}
+        />
         <section className="container page">
             <PageHero title="Kontakt" lead="Stwórzmy razem coś fajnego!" />
 
@@ -142,6 +185,7 @@ const Kontakt = () => (
             </div>
         </section>
     </Layout>
-);
+    );
+}
 
 export default Kontakt;
