@@ -98,7 +98,7 @@ export const query = graphql`
   query HomepageQuery {
     allDatoCmsShowcase(
       sort: { fields: meta___createdAt, order: DESC }
-      limit: 4
+      limit: 2
     ) {
       edges {
         node {
