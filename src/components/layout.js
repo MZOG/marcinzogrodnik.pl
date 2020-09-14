@@ -9,6 +9,16 @@ const Layout = ({ children }) => {
         <main>
             <Header />
             {children}
+
+            <div class="bg">
+                <div class="lines-vert">
+                    <div class="line"></div>
+                    <div class="line"></div>
+                    <div class="line"></div>
+                    <div class="line"></div>
+                    <div class="line"></div>
+                </div>
+            </div>
             <Footer />
         </main>
     );
