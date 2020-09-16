@@ -23,48 +23,87 @@ body {
   overflow-x: hidden !important;
 }
 
-// .bg {
-//   position: fixed;
-//   top: 0px;
-//   left: 0px;
-//   right: 0px;
-//   height: 100vh;
-//   z-index: -1;
-//   overflow: hidden;
-// }
+.bg {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  height: 100vh;
+  z-index: -1;
+  overflow: hidden;
+}
 
-// .lines-vert {
-//   position: absolute;
-//   height: 100%;
-//   width: 100%;
+.lines-vert {
+  position: absolute;
+  height: 100%;
+  width: 100%;
 
-//   .line {
-//     position: absolute;
-//     background-color: rgba(0, 0, 0, 0.05);
-//     height: 100%;
-//     width: 1px;
+  .line {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.05);
+    height: 100%;
+    width: 1px;
 
-//     &:nth-child(1) {
-//       left: 3%;
-//     }
+    &:nth-child(1) {
+      left: 3%;
+    }
 
-//     &:nth-child(2) {
-//       left: 23%;
-//     }
+    &:nth-child(2) {
+      left: 23%;
+    }
 
-//     &:nth-child(3) {
-//       left: 43%;
-//     }
+    &:nth-child(3) {
+      left: 43%;
+    }
 
-//     &:nth-child(4) {
-//       left: 63%;
-//     }
+    &:nth-child(4) {
+      left: 63%;
+    }
 
-//     &:nth-child(5) {
-//       left: 83%;
-//     }
-//   }
-// }
+    &:nth-child(5) {
+      left: 83%;
+    }
+  }
+}
+
+.bubble {
+  width: 7px;
+  height: 7px;
+  border: 1px solid $secondaryColor;
+  background-color: #fff;
+  position: absolute;
+  border-radius: 8px;
+
+  &:nth-child(1) {
+    left: calc(3% - 3px);
+    top: 20%;
+  }
+
+  &:nth-child(2) {
+    left: calc(23% - 3px);
+    top: 15%;
+  }
+
+  &:nth-child(3) {
+    left: calc(23% - 3px);
+    top: 75%;
+  }
+
+  &:nth-child(4) {
+    left: calc(43% - 3px);
+    top: 25%;
+  }
+
+  &:nth-child(5) {
+    left: calc(83% - 3px);
+    top: 18%;
+  }
+
+  &:nth-child(6) {
+    left: calc(83% - 3px);
+    top: 95%;
+  }
+}
 
 .container {
   width: 100%;
