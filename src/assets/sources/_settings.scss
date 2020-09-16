@@ -2,7 +2,7 @@
 // variables
 $primaryColor: #00304d;
 $secondaryColor: #fb3c54;
-
+$grey: #75778B;
 
 // mixins
 $breakpoints: (
@@ -10,7 +10,7 @@ $breakpoints: (
   "650": 650px,
   "tablet": 768px,
   "tabletw": 992px,
-  "desktop": 1100px,
+  "desktop": 1300px,
 );
 @mixin mq($width, $type: min) {
   @if map_has_key($breakpoints, $width) {

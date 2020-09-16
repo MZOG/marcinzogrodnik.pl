@@ -1,11 +1,11 @@
 header {
-  padding: 2rem 0;
+  padding: 1rem 0;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   transform: translateY(0);
-  transition: all 0.2s ease;
+  transition: all 0.1s ease;
   z-index: 100;
 
   @include mq("650", max) {
@@ -25,7 +25,27 @@ header {
   }
 
   .logo {
+    display: flex;
+
+    svg {
+      width: 30px;
+      margin-right: 20px;
+      transition: all .2s ease-in-out;
+
+      @include mq('tabletw', 'min') {
+        opacity: 0.8;
+      }
+    }
+
+    &:hover {
+      svg {
+        opacity: 1;
+        transform: translateX(5px);
+      }
+    }
+
     a {
+      display: none;
       font-size: 23px;
       font-family: 'marcinzogrodnik';
       color: $primaryColor;
@@ -33,6 +53,7 @@ header {
 
       @include mq('tabletw', min) {
         font-size: 30px;
+        display: block;
       }
 
       span {
@@ -42,15 +63,6 @@ header {
 
     @include mq("650", max) {
       height: 27px;
-    }
-
-    a {
-      display: block;
-
-      img {
-        width: 40px;
-      }
-
     }
   }
 
@@ -85,9 +97,7 @@ header {
           margin: 1rem 0;
         }
 
-        &:hover {
-          opacity: 1;
-        }
+
 
         &.mobile-only {
           span {
@@ -104,8 +114,8 @@ header {
           font-weight: 500;
           color: $primaryColor;
           text-decoration: none;
-          font-size: 14px;
-          padding: 0rem 1rem;
+          font-size: 15px;
+          padding: 1rem 3rem;
           cursor: pointer;
           display: flex;
 
@@ -120,10 +130,20 @@ header {
               width: 15px;
             }
           }
+
+          &:hover {
+            color: $secondaryColor;
+          }
         }
 
         &.subnav {
           position: relative;
+
+          .main-svg {
+            svg {
+              width: 30px;
+            }
+          }
 
           &:hover {
             .sub {
@@ -247,13 +267,29 @@ header {
       color: #fff;
       text-decoration: none;
       padding: 0.5rem 1rem;
-      font-size: 14px;
+      font-size: 15px;
       border-radius: 4px;
       border: 1px solid transparent;
+      font-weight: 600;
 
       @include mq("650", max) {
         padding: 0.23rem 0.5rem;
         margin-right: 10px;
+      }
+
+      @include mq('tablet', 'min') {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      svg {
+        display: none;
+        @include mq('tablet', 'min') {
+          display: block;
+          width: 25px;
+          margin-left: 10px;
+        }
       }
 
       &:hover {

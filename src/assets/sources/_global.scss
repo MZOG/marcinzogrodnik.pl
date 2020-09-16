@@ -23,6 +23,42 @@ body {
   overflow-x: hidden !important;
 }
 
+@keyframes moveBubble {
+  0% {top: 20%;}
+  50% {top: 40%;}
+  100% {top: 20%}
+}
+
+@keyframes moveBubble2 {
+  0% {top: 15%;}
+  50% {top: 25%;}
+  100% {top: 15%}
+}
+
+@keyframes moveBubble3 {
+  0% {top: 75%;}
+  50% {top: 60%;}
+  100% {top: 75%}
+}
+
+@keyframes moveBubble4 {
+  0% {top: 75%;}
+  50% {top: 20%;}
+  100% {top: 75%}
+}
+
+@keyframes moveBubble5 {
+  0% {top: 18%;}
+  50% {top: 30%;}
+  100% {top: 18%}
+}
+
+@keyframes moveBubble6 {
+  0% {top: 35%;}
+  50% {top: 10%;}
+  100% {top: 35%}
+}
+
 .bg {
   position: fixed;
   top: 0px;
@@ -69,7 +105,7 @@ body {
 .bubble {
   width: 7px;
   height: 7px;
-  border: 1px solid $secondaryColor;
+  border: 1px solid rgba($secondaryColor, 0.6);
   background-color: #fff;
   position: absolute;
   border-radius: 8px;
@@ -77,31 +113,56 @@ body {
   &:nth-child(1) {
     left: calc(3% - 3px);
     top: 20%;
+    animation-name: moveBubble;
+    animation-duration: 20s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
   }
 
   &:nth-child(2) {
     left: calc(23% - 3px);
     top: 15%;
+    animation-name: moveBubble;
+    animation-duration: 35s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
   }
 
   &:nth-child(3) {
     left: calc(23% - 3px);
     top: 75%;
+    animation-name: moveBubble3;
+    animation-duration: 30s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-delay: 800ms;
   }
 
   &:nth-child(4) {
     left: calc(43% - 3px);
     top: 25%;
+    animation-name: moveBubble4;
+    animation-duration: 35s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
   }
 
   &:nth-child(5) {
     left: calc(63% - 3px);
     top: 18%;
+    animation-name: moveBubble5;
+    animation-duration: 20s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
   }
 
   &:nth-child(6) {
     left: calc(83% - 3px);
     top: 35%;
+    animation-name: moveBubble6;
+    animation-duration: 15s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
   }
 }
 
@@ -120,7 +181,8 @@ body {
   }
 
   @include mq("desktop", min) {
-    width: 1100px;
+    width: 1300px;
+    padding: 0 40px;
   }
 }
 

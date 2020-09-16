@@ -32,6 +32,7 @@ module.exports = {
         ],
       },
     },
+    `gatsby-plugin-smoothscroll`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-sass`,
     {
@@ -108,6 +109,7 @@ module.exports = {
         siteSpeedSampleRate: 10,
       },
     },
+
     {
       resolve: `gatsby-plugin-posthog-analytics`,
       options: {
