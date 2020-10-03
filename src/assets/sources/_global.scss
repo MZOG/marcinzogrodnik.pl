@@ -23,36 +23,32 @@ body {
   overflow-x: hidden !important;
 }
 
+
 @keyframes moveBubble {
   0% {top: 20%;}
   50% {top: 40%;}
   100% {top: 20%}
 }
-
 @keyframes moveBubble2 {
   0% {top: 15%;}
   50% {top: 25%;}
   100% {top: 15%}
 }
-
 @keyframes moveBubble3 {
   0% {top: 75%;}
   50% {top: 60%;}
   100% {top: 75%}
 }
-
 @keyframes moveBubble4 {
   0% {top: 75%;}
   50% {top: 20%;}
   100% {top: 75%}
 }
-
 @keyframes moveBubble5 {
   0% {top: 18%;}
   50% {top: 30%;}
   100% {top: 18%}
 }
-
 @keyframes moveBubble6 {
   0% {top: 35%;}
   50% {top: 10%;}
@@ -66,7 +62,8 @@ body {
   right: 0px;
   height: 100vh;
   z-index: -1;
-  overflow: hidden;
+  width: 1150px;
+  margin: 0 auto;
 }
 
 .lines-vert {
@@ -76,28 +73,28 @@ body {
 
   .line {
     position: absolute;
-    background-color: rgba(0, 0, 0, 0.05);
+    background-color: #eeeef2;
     height: 100%;
     width: 1px;
 
     &:nth-child(1) {
-      left: 3%;
+      left: 0%;
     }
 
     &:nth-child(2) {
-      left: 23%;
+      left: 25%;
     }
 
     &:nth-child(3) {
-      left: 43%;
+      left: 50%;
     }
 
     &:nth-child(4) {
-      left: 63%;
+      left: 75%;
     }
 
     &:nth-child(5) {
-      left: 83%;
+      left: 100%;
     }
   }
 }
@@ -111,7 +108,7 @@ body {
   border-radius: 8px;
 
   &:nth-child(1) {
-    left: calc(3% - 3px);
+    left: calc(20% - 2px);
     top: 20%;
     animation-name: moveBubble;
     animation-duration: 20s;
@@ -120,8 +117,8 @@ body {
   }
 
   &:nth-child(2) {
-    left: calc(23% - 3px);
-    top: 15%;
+    left: calc(20% - 2px);
+    top: 10%;
     animation-name: moveBubble;
     animation-duration: 35s;
     animation-timing-function: ease-in-out;
@@ -129,7 +126,7 @@ body {
   }
 
   &:nth-child(3) {
-    left: calc(23% - 3px);
+    left: calc(35% - 3px);
     top: 75%;
     animation-name: moveBubble3;
     animation-duration: 30s;
@@ -139,7 +136,7 @@ body {
   }
 
   &:nth-child(4) {
-    left: calc(43% - 3px);
+    left: calc(50% - 3px);
     top: 25%;
     animation-name: moveBubble4;
     animation-duration: 35s;
@@ -148,7 +145,7 @@ body {
   }
 
   &:nth-child(5) {
-    left: calc(63% - 3px);
+    left: calc(65% - 3px);
     top: 18%;
     animation-name: moveBubble5;
     animation-duration: 20s;
@@ -157,7 +154,7 @@ body {
   }
 
   &:nth-child(6) {
-    left: calc(83% - 3px);
+    left: calc(80% - 3px);
     top: 35%;
     animation-name: moveBubble6;
     animation-duration: 15s;
@@ -181,7 +178,7 @@ body {
   }
 
   @include mq("desktop", min) {
-    width: 1300px;
+    width: 1200px;
     padding: 0 40px;
   }
 }

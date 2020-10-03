@@ -4,12 +4,22 @@ import Header from "./header";
 import Footer from "./footer";
 import "../assets/styles.scss";
 
-const Layout = ({ children }) => {
+function Layout ({ children }) {
     return (
         <main>
-            <Header />
+            <Header/>
             {children}
-            {/* <Footer /> */}
+            <Footer />
+
+            <div className="bg">
+                <div className="lines-vert">
+                    <div className="line"></div>
+                    <div className="line"></div>
+                    <div className="line"></div>
+                    <div className="line"></div>
+                    <div className="line"></div>
+                </div>
+            </div>
         </main>
     );
 };

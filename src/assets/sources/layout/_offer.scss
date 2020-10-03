@@ -1,0 +1,60 @@
+.homepage-offer {
+    background: #f6f9fc;
+    width: 90%;
+    margin: 100px auto 0 auto;
+    border-radius: 10px;
+    padding-bottom: 3rem;
+    min-height: calc(100vh - 110px);
+
+    h2 {
+        margin: 5rem 0 1.5rem 0;
+        display: inline-block;
+    }
+
+    .offer-lead {
+        font-size: 18px;
+        color: $grey;
+        width: 43%;
+    }
+
+    .offer-container {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        margin-top: 80px;
+
+        .offer {
+            width: calc(30% - 20px);
+            position: relative;
+            align-self:flex-start;
+            background: none;
+            padding: 0;
+
+            &:nth-child(2), &:nth-child(5) {
+                margin-top: 50px;
+            }
+
+            &:nth-child(3), &:nth-child(6) {
+                margin-top: 100px;
+            }
+
+
+            h3 {
+                font-size: 33px;
+                font-family: 'marcinzogrodnik', serif;
+                margin-bottom: 30px;
+                letter-spacing: -1px;
+            }
+
+            svg {
+                width: 150px;
+                stroke: $secondaryColor;
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+                opacity: 0.1;
+            }
+        }
+    }
+}

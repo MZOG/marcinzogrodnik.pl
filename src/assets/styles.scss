@@ -3,15 +3,9 @@
 @import 'sources/header';
 @import 'sources/footer';
 @import 'sources/helpers';
-@import 'sources/blog';
-@import 'sources/contact';
-@import 'sources/projects';
-@import 'sources/offer';
-@import 'sources/hero';
-@import 'sources/testimonials';
-@import 'sources/about';
-@import 'sources/quickContact';
 
 // new layout
 @import 'sources/layout/hero';
 @import 'sources/layout/steps';
+@import 'sources/layout/offer';
+@import 'sources/layout/projects';

@@ -5,6 +5,11 @@ module.exports = {
     title: `Marcin Zogrodnik - Strony internetowe`,
     description: `Marcin Zogrodnik - Tworzę szybkie oraz przyciągające klientów strony internetowe wykorzystując najnowsze technologie tj. JAMstack, React czy Gatsby.`,
     author: `@zogrodnik_m`,
+    homepage: {
+      heroHeading: 'Marcin Zogrodnik',
+      heroSlug: 'Szybkie, bezpieczne oraz nowoczesne strony internetowe dostosowane do Twoich potrzeb.',
+      heroBtn: 'Zobacz realizacje'
+    }
   },
   plugins: [
     {
@@ -14,11 +19,7 @@ module.exports = {
           {
             resolve: `gatsby-remark-images-datocms`,
             options: {
-              // You need to specify your project read-only API token here!
               apiToken: "21bd12eb1ba5483810768d04fb6417",
-              // It's important to specify the maxWidth (in pixels) of
-              // the content container as this plugin uses this as the
-              // base for generating different widths of each image.
               maxWidth: 1150,
             },
           },
@@ -72,14 +73,14 @@ module.exports = {
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
       },
     },
-    {
-      resolve: `gatsby-source-datocms`,
-      options: {
-        apiToken: `21bd12eb1ba5483810768d04fb6417`,
-        preview: false,
-        disableLiveReload: false,
-      },
-    },
+    // {
+    //   resolve: `gatsby-source-datocms`,
+    //   options: {
+    //     apiToken: `996463ca0503552024c98da27d4337`,
+    //     preview: false,
+    //     disableLiveReload: false,
+    //   },
+    // },
     {
       resolve: 'gatsby-plugin-react-svg',
       options: {

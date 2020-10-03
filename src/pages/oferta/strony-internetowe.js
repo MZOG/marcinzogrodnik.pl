@@ -2,41 +2,17 @@
 import React from "react"
 import Layout from "../../components/layout";
 import SEO from "../../components/seo";
-import PageHero from "../../components/pageHero.component";
-import QuickContact from "../../components/quickContact";
 
-const StronyInternetowe = (query) => {
-    const shareImageName = "oferta-strony_internetowe";
-    let shareImage;
-
-    query.data.allFile.edges.map(image => {
-        if (image.node.name === shareImageName) {
-            shareImage = image.node.publicURL
-        }
-    })
-
-    // Language
-    // const [lang, setLang] = useState(true)
+const StronyInternetowe = () => {
 
     return (
     <Layout>
         <SEO
-            // lang={(lang ? 'pl' : 'en')}
             lang="pl"
             title="Strony internetowe"
             description="Do stworzenia szybkiej oraz nowoczesnej strony internetowej wykorzystuję JAMstack oraz WordPress."
-            shareImage={shareImage}
         />
         <div className="container page">
-            <PageHero
-                title="Strony internetowe"
-                lead="Zapraszam do zapoznania się z ofertą stron internetowych"
-            />
-
-            {/* <button onClick={() => setLang(!lang)}>
-                {lang === true ? 'Change Language' : 'Zmień język'}
-            </button> */}
-
             <div className="content">
                 <div className="content-image">
                     <svg
@@ -101,23 +77,9 @@ const StronyInternetowe = (query) => {
                 </p>
 
             </div>
-            <QuickContact />
         </div>
     </Layout>
     );
 }
-
-export const query = graphql`
-  query stronaInternetowa {
-    allFile(filter: {extension: {eq: "jpg"}}) {
-        edges {
-          node {
-            publicURL
-            name
-          }
-        }
-      }
-  }
-`
 
 export default StronyInternetowe;

@@ -1,0 +1,86 @@
+.homepage-projects {
+    margin-top: 100px;
+    padding-bottom: 50px;
+
+    h2 {
+        margin-bottom: 1.5rem;
+    }
+
+    .projects-lead {
+        font-size: 18px;
+        color: $grey;
+        width: 43%;
+    }
+
+    .projects-container {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        margin-top: 3rem;
+
+        .project-item {
+            background: $lightBlue;
+            width: 100%;
+            display: flex;
+            padding: 2rem;
+            justify-content: space-between;
+            align-items: center;
+            border-radius: 4px;
+            box-shadow: 0px 1px 3px rgba(0,0,0,0.04),0px 10px 25px rgba(0,0,0,0.06);
+
+            &:nth-child(2) {
+                flex-direction: row-reverse;
+                margin-top: 7rem;
+            }
+
+            .project-left {
+                width: calc(50% - 15px);
+
+                h3 {
+                    font-family: 'marcinzogrodnik', serif;
+                    font-size: 30px;
+                    margin-bottom: 1rem;
+                }
+
+                .project-more {
+                    a {
+                        background: $secondaryColor;
+                        text-decoration: none;
+                        color: #fff;
+                        border-radius: 4px;
+                        padding: 0.5rem 1rem;
+                        border: 1px solid $secondaryColor;
+                        display: inline-flex;
+                        align-items: center;
+                        transition: all .2s ease-in-out;
+
+                        &:hover {
+                            background: #fff;
+                            color: $secondaryColor;
+                            border-color: $secondaryColor;
+
+                            svg {
+                                margin-left: 20px;
+                            }
+                        }
+
+                        svg {
+                            width: 20px;
+                            margin-left: 10px;
+                            transition: all .2s ease-in-out;
+                        }
+                    }
+                }
+            }
+
+            .project-right {
+                width: calc(50% - 15px);
+                margin-top: -70px;
+
+                img {
+                    border-radius: 4px;
+                }
+            }
+        }
+    }
+}
