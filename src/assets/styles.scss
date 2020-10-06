@@ -1,11 +1,6 @@
 @import 'sources/settings';
 @import 'sources/global';
-@import 'sources/header';
-@import 'sources/footer';
-@import 'sources/helpers';
 
-// new layout
-@import 'sources/layout/hero';
-@import 'sources/layout/steps';
-@import 'sources/layout/offer';
-@import 'sources/layout/projects';
+// components
+
+@import 'sources/header/header';

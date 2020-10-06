@@ -30,7 +30,19 @@ function Header() {
   }
 
   return (
-    <header className={`header ${scroll === false ? "scroll" : ""}`}>
+    <>
+    <aside>
+      <div className="container">
+        <Link to="/">
+          Nowy post! Oczekiwania vs budżet klienta.
+          <div className="more">
+            Więcej
+          </div>
+          <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+        </Link>
+      </div>
+    </aside>
+    <header className="header">
       <div className="container">
         <div className="logo">
           <div className="svg">
@@ -58,9 +70,15 @@ function Header() {
 
         <nav className={`navigation ${active ? "is-active" : ""}`}>
           <ul>
+            <li>
+              <Link to="/" activeClassName="active">Strona Główna</Link>
+            </li>
+            <li>
+              <Link to="/o-mnie" activeClassName="active">O mnie</Link>
+            </li>
             <li className="subnav">
               <span>
-                Oferta
+                Usługi
                 <div className="icon">
                   <svg
                     className="h-4 fill-current lg:ml-1 lg:mr-2"
@@ -180,10 +198,13 @@ function Header() {
               </div>
             </li>
             <li>
-              <Link to="/realizacje">Realizacje</Link>
+              <Link to="/realizacje" activeClassName="active">Realizacje</Link>
             </li>
             <li>
-              <Link to="/blog">Blog</Link>
+              <Link to="/referencje" activeClassName="active">Referencje</Link>
+            </li>
+            <li>
+              <Link to="/blog" activeClassName="active">Blog</Link>
             </li>
             <li className="mobile-only">
               <span>739 907 919</span>
@@ -196,6 +217,11 @@ function Header() {
 
         <div className="mobile-wrapper">
           <div className="header-contact">
+            <Link to="/darmowa-wycena" className="">
+              Darmowa wycena
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122"></path></svg>
+            </Link>
+
             <Link to="/kontakt">
               Kontakt
               <svg
@@ -230,6 +256,7 @@ function Header() {
         </div>
       </div>
     </header>
+    </>
   )
 }
 

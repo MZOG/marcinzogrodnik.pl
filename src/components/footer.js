@@ -4,7 +4,7 @@ import { Link } from "gatsby"
 const Footer = () => {
   return (
     <footer className="footer">
-      <div className="container">
+      {/* <div className="container">
         <div className="logo">
           <Link to="/">
             marcin<span>zogrodnik</span>
@@ -33,7 +33,7 @@ const Footer = () => {
           <p>Ul. Ułańska 66,</p>
           <p>43-143 Lędziny, Śląsk</p>
         </div>
-      </div>
+      </div> */}
     </footer>
   )
 }

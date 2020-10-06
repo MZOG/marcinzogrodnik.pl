@@ -8,7 +8,7 @@ module.exports = {
     homepage: {
       heroHeading: 'Marcin Zogrodnik',
       heroSlug: 'Szybkie, bezpieczne oraz nowoczesne strony internetowe dostosowane do Twoich potrzeb.',
-      heroBtn: 'Zobacz realizacje'
+      heroBtn: 'Realizacje'
     }
   },
   plugins: [
