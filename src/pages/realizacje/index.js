@@ -3,14 +3,19 @@ import React from "react";
 import Layout from "../../components/layout";
 import SEO from "../../components/seo";
 
-const Blog = () => {
+import PageHero from "../../components/pageHero"
+
+const Realizacje = () => {
     return (
         <Layout>
             <SEO title="Realizacje" description="Zobacz moje ostatnie realizacje dla klientów, strony internetowe oraz sklepy. WordPress i JAMstack." />
-            <section className="showcase page">
+            <section>
+                <div className="container">
+                    <PageHero hero="Realizacje" lead="Sprawdź ostatnie realizacje wykonane dla firm oraz klientów indywidualnych." />
+                </div>
             </section>
         </Layout>
     );
 };
 
-export default Blog;
+export default Realizacje;

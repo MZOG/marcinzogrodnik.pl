@@ -2,7 +2,7 @@
 exports.createPages = async function ({ actions, graphql }) {
   const { data } = await graphql(`
     query {
-        allDatoCmsBlog {
+        allDatoCmsPost {
           edges {
             node {
               slug
@@ -12,7 +12,7 @@ exports.createPages = async function ({ actions, graphql }) {
       }
     `)
 
-  data.allDatoCmsBlog.edges.forEach(edge => {
+  data.allDatoCmsPost.edges.forEach(edge => {
     const slug = edge.node.slug
     actions.createPage({
       path: `blog/${slug}`,
@@ -21,24 +21,24 @@ exports.createPages = async function ({ actions, graphql }) {
     })
   })
 
-  const showcase = await graphql(`
-    query {
-      data: allDatoCmsShowcase {
-        edges {
-          node {
-            slug
-          }
-        }
-      }
-    }
-  `).then(res => res.data)
+  // const showcase = await graphql(`
+  //   query {
+  //     data: allDatoCmsShowcase {
+  //       edges {
+  //         node {
+  //           slug
+  //         }
+  //       }
+  //     }
+  //   }
+  // `).then(res => res.data)
 
-  showcase.data.edges.forEach(edge => {
-    const slug = edge.node.slug
-    actions.createPage({
-      path: `realizacje/${slug}`,
-      component: require.resolve(`./src/templates/showcase-post.js`),
-      context: { slug: slug },
-    })
-  })
+  // showcase.data.edges.forEach(edge => {
+  //   const slug = edge.node.slug
+  //   actions.createPage({
+  //     path: `realizacje/${slug}`,
+  //     component: require.resolve(`./src/templates/showcase-post.js`),
+  //     context: { slug: slug },
+  //   })
+  // })
 }

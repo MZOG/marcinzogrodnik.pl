@@ -1,0 +1,48 @@
+.article {
+  margin: 0 auto;
+
+  &-content {
+    margin-top: 2rem;
+  }
+
+  &-image {
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    margin-bottom: 4rem;
+
+    .gatsby-image-wrapper {
+      border-radius: 10px;
+      img {
+        border-radius: 10px;
+      }
+    }
+  }
+
+  h2 {
+    font-family: 'marcinzogrodnik';
+    font-size: 2.6rem;
+    margin-bottom: 1rem;
+  }
+
+  h3 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    font-family: 'marcinzogrodnik';
+  }
+
+  p {
+    font-size: 1.125rem;
+    margin-bottom: 1rem;
+  }
+
+  strong {
+    font-weight: 500;
+  }
+
+  .page-hero {
+    padding-bottom: 0;
+  }
+
+  .container {
+    max-width: 900px;
+  }
+}

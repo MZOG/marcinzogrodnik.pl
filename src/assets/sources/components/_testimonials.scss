@@ -1,0 +1,41 @@
+.testimonials {
+  display: flex;
+  flex-wrap: wrap;
+
+  .testimonial {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 4rem 0;
+    align-self: flex-start;
+
+    &:not(:first-child) {
+      border-top: 1px solid #eaeaea;
+    }
+
+    &-image {
+      width: calc(20% - 20px);
+
+      img {
+        width: 100%;
+        border-radius: 50%;
+        margin: 0 auto;
+        display: block;
+      }
+    }
+
+    &-content {
+      width: calc(80% - 20px);
+    }
+
+    &-footer {
+      text-align: right;
+      margin-top: 2rem;
+
+      a {
+        text-decoration: none;
+        color: $secondaryColor;
+      }
+    }
+  }
+}

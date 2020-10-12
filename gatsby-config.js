@@ -2,7 +2,7 @@ const path = require(`path`)
 
 module.exports = {
   siteMetadata: {
-    title: `Marcin Zogrodnik - Strony internetowe`,
+    title: `Strony internetowe Katowice`,
     description: `Marcin Zogrodnik - Tworzę szybkie oraz przyciągające klientów strony internetowe wykorzystując najnowsze technologie tj. JAMstack, React czy Gatsby.`,
     author: `@zogrodnik_m`,
     homepage: {
@@ -19,8 +19,8 @@ module.exports = {
           {
             resolve: `gatsby-remark-images-datocms`,
             options: {
-              apiToken: "21bd12eb1ba5483810768d04fb6417",
-              maxWidth: 1150,
+              apiToken: "996463ca0503552024c98da27d4337",
+              maxWidth: 1120,
             },
           },
           {
@@ -73,14 +73,14 @@ module.exports = {
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
       },
     },
-    // {
-    //   resolve: `gatsby-source-datocms`,
-    //   options: {
-    //     apiToken: `996463ca0503552024c98da27d4337`,
-    //     preview: false,
-    //     disableLiveReload: false,
-    //   },
-    // },
+    {
+      resolve: `gatsby-source-datocms`,
+      options: {
+        apiToken: `996463ca0503552024c98da27d4337`,
+        preview: false,
+        disableLiveReload: false,
+      },
+    },
     {
       resolve: 'gatsby-plugin-react-svg',
       options: {
@@ -89,28 +89,6 @@ module.exports = {
         }
       }
     },
-    {
-      resolve: `gatsby-plugin-google-analytics`,
-      options: {
-        // The property ID; the tracking code won't be generated without it
-        trackingId: "UA-145426129-1",
-        // Defines where to place the tracking script - `true` in the head and `false` in the body
-        head: true,
-        // Setting this parameter is optional
-        anonymize: true,
-        // Setting this parameter is also optional
-        respectDNT: true,
-        // Avoids sending pageview hits from custom paths
-        exclude: ["/preview/**", "/do-not-track/me/too/"],
-        // Delays sending pageview hits on route update (in milliseconds)
-        pageTransitionDelay: 0,
-        // Enables Google Optimize using your container Id
-        defer: false,
-        sampleRate: 5,
-        siteSpeedSampleRate: 10,
-      },
-    },
-
     {
       resolve: `gatsby-plugin-posthog-analytics`,
       options: {

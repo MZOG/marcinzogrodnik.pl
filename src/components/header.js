@@ -1,10 +1,25 @@
 /* eslint-disable */
 import React, { useEffect, useState } from "react"
-import { Link } from "gatsby"
+import { useStaticQuery, graphql, Link } from "gatsby"
 
 function Header() {
+  const data = useStaticQuery(graphql`
+  query BlogPost {
+    allDatoCmsPost(sort: {fields: meta___createdAt, order: DESC}, limit: 1) {
+      edges {
+        node {
+          title
+          slug
+          content
+        }
+      }
+    }
+  }
+`)
+
   const [active, setActive] = useState(false)
   const [scroll, setScroll] = useState(0)
+  const asidePanel = true
 
   useEffect(() => {
     document.addEventListener("scroll", headerScroll)
@@ -23,7 +38,7 @@ function Header() {
   }
 
   const headerScroll = () => {
-    const scrollCheck = window.scrollY < 30
+    const scrollCheck = window.scrollY < 50
     if (scrollCheck !== scroll) {
       setScroll(scrollCheck)
     }
@@ -31,18 +46,15 @@ function Header() {
 
   return (
     <>
-    <aside>
+    <aside className={asidePanel ? 'active' : ''}>
       <div className="container">
-        <Link to="/">
-          Nowy post! Oczekiwania vs budżet klienta.
-          <div className="more">
-            Więcej
-          </div>
-          <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+        <Link to={`/blog/${data.allDatoCmsPost.edges[0].node.slug}`}>
+          Nowy post! <span>&nbsp;{data.allDatoCmsPost.edges[0].node.title}</span>
+          <svg width="13" height="13" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path></svg>
         </Link>
       </div>
     </aside>
-    <header className="header">
+    <header className={`header ${scroll === false ? "scroll" : ""}`}>
       <div className="container">
         <div className="logo">
           <div className="svg">
@@ -76,7 +88,19 @@ function Header() {
             <li>
               <Link to="/o-mnie" activeClassName="active">O mnie</Link>
             </li>
-            <li className="subnav">
+            <li>
+              <Link to="/oferta">
+                Oferta
+                <svg
+                    className="h-4 fill-current lg:ml-1 lg:mr-2"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"></path>
+                  </svg>
+              </Link>
+            </li>
+            {/* <li className="subnav">
               <span>
                 Usługi
                 <div className="icon">
@@ -196,15 +220,15 @@ function Header() {
                   </li>
                 </ul>
               </div>
-            </li>
+            </li> */}
             <li>
               <Link to="/realizacje" activeClassName="active">Realizacje</Link>
             </li>
             <li>
-              <Link to="/referencje" activeClassName="active">Referencje</Link>
+              <Link to="/opinie" activeClassName="active">Opinie</Link>
             </li>
             <li>
-              <Link to="/blog" activeClassName="active">Blog</Link>
+              <Link to="/blog" activeClassName="active" partiallyActive={true}>Blog</Link>
             </li>
             <li className="mobile-only">
               <span>739 907 919</span>
@@ -217,12 +241,7 @@ function Header() {
 
         <div className="mobile-wrapper">
           <div className="header-contact">
-            <Link to="/darmowa-wycena" className="">
-              Darmowa wycena
-              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122"></path></svg>
-            </Link>
-
-            <Link to="/kontakt">
+            <Link to="/kontakt" activeClassName="active">
               Kontakt
               <svg
                 className="w-6 h-6"
@@ -260,4 +279,4 @@ function Header() {
   )
 }
 
-export default Header
+export default Header;

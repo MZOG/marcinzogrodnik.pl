@@ -1,34 +1,32 @@
 aside {
+  display: none;
   background: $primaryColor;
+  transition: all .2s ease-in-out;
+
+
+  &.active {
+    display: block;
+  }
 
   &:hover {
-    .more {
-      max-width: 80px;
-      opacity: 1;
-    }
+    background: $secondaryColor;
   }
 
   a {
-    padding: .775rem;
+    padding: .5rem;
     color: $white;
     display: flex;
     justify-content: center;
     align-items: center;
     text-decoration: none;
+    font-size: .8rem;
 
     svg {
       margin-left: 10px;
     }
 
-    .more {
-      max-width: 0;
-      opacity: 0;
-      white-space: nowrap;
-      display: inline-block;
-      overflow: hidden;
-      margin-left: .5167rem;
-      transition: max-width 1s,opacity 1s,transform .75s,transform .75s;
-      font-weight: 600;
+    span {
+      font-weight: 500;
     }
   }
 }
@@ -41,33 +39,25 @@ main {
   position: sticky;
   top: 0;
   transition: all 0.2s ease-in-out;
+  background: $white;
+  background-color: rgba(255,255,255,0.5);
+  z-index: 100;
 
   &.scroll {
-    // padding: 20px 0;
-    // box-shadow: 0px 1px 3px rgba(0,0,0,0.07),0px 10px 25px rgba(0,0,0,0.08);
-
-    .mobile-wrapper {
-      .header-contact {
-        a {
-          &:first-child {
-            opacity: 1;
-            visibility: visible;
-          }
-        }
-      }
-    }
+    backdrop-filter: saturate(180%)blur(6px);
+    box-shadow: 0 1px 2px 0 rgba(0,0,0,.05);
   }
 
   .container {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     min-width: 1500px;
   }
 
   .logo {
     display: flex;
     align-items: center;
-    width: 25%;
 
     a {
       font-family: 'marcinzogrodnik';
@@ -84,17 +74,19 @@ main {
   }
 
   .navigation {
-    margin-right: auto;
+
     ul {
       li {
         display: inline-block;
         padding: 0 .4rem;
 
         a {
-          padding: 2.3rem 1rem;
-          display: block;
+          padding: 1.8rem 1rem;
+          display: flex;
           text-decoration: none;
           color: $primaryColor;
+          transition: all .1s ease-in-out;
+          border-top: 2px solid transparent;
 
           &:hover {
             color: $secondaryColor;
@@ -103,6 +95,11 @@ main {
           &.active {
             border-top: 2px solid $secondaryColor;
             color: $secondaryColor;
+          }
+
+          svg {
+            width: 16px;
+            margin-left: 5px;
           }
         }
 
@@ -114,10 +111,11 @@ main {
 
         &.subnav {
           span {
-            padding: 2.3rem 1rem;
+            padding: 1.8rem 1rem;
             display: flex;
             align-items: center;
             color: $primaryColor;
+            border-top: 2px solid transparent;
             cursor: pointer;
 
             &:hover {
@@ -127,6 +125,8 @@ main {
 
           svg {
             width: 20px;
+            margin-top: 5px;
+            margin-left: 10px;
           }
 
           .sub {
@@ -147,18 +147,17 @@ main {
         align-items: center;
         text-decoration: none;
         color: $primaryColor;
-        padding: 1rem;
-        border-radius: 4px;
-        background: $lightBlue;
-        font-weight: 500;
+        padding: 1.8rem 1rem;
+        border-top: 2px solid transparent;
+        transition: all .1s ease-in-out;
 
-        &:first-child {
-          margin-right: 20px;
-          background: $secondaryColor;
-          color: $white;
-          opacity: 0;
-          visibility: hidden;
-          transition: all .2s ease-in-out;
+        &:hover {
+          color: $secondaryColor;
+        }
+
+        &.active {
+          color: $secondaryColor;
+          border-color: $secondaryColor;
         }
       }
 
