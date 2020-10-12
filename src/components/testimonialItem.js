@@ -1,10 +1,11 @@
 import React from 'react'
 
-const TestimonialItem = ({image, content, author, www}) => {
+const TestimonialItem = ({image, content, author, www, roundedImage}) => {
+  console.log(roundedImage)
   return (
     <article className="testimonial">
 
-      <div className="testimonial-image">
+      <div className={`testimonial-image ${roundedImage ? 'rounded' : ''}`}>
       <img src={image} alt={www}/>
       </div>
 

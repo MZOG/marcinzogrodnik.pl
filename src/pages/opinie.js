@@ -18,6 +18,7 @@ const Opinie = ({data}) => {
             <TestimonialItem
               key={testimonial.node.id}
               image={testimonial.node.avatar.fixed.src}
+              roundedImage={testimonial.node.roundedImage}
               content={testimonial.node.testimonial}
               author={testimonial.node.author}
               www={testimonial.node.website} />
@@ -39,6 +40,7 @@ query Testimonials {
         author
         testimonial
         website
+        roundedImage
         avatar {
           fixed {
             src
