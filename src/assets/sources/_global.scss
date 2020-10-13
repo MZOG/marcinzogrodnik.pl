@@ -21,6 +21,10 @@ body {
   color: $primaryColor;
   // overflow-x: hidden !important;
   height: 100vh;
+
+  &.overflow {
+    overflow: hidden;
+  }
 }
 
 .container {

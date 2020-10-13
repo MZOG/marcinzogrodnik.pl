@@ -23,11 +23,12 @@ function Header() {
 
   useEffect(() => {
     document.addEventListener("scroll", headerScroll)
+    document.body.classList.toggle('overflow', active);
 
     return () => {
       document.removeEventListener("scroll", headerScroll)
     }
-  }, [scroll, setScroll])
+  }, [scroll, setScroll, active])
 
   // functions
   const toggleMenu = () => {
@@ -49,7 +50,7 @@ function Header() {
     <aside className={asidePanel ? 'active' : ''}>
       <div className="container">
         <Link to={`/blog/${data.allDatoCmsPost.edges[0].node.slug}`}>
-          Nowy post! <span>&nbsp;{data.allDatoCmsPost.edges[0].node.title}</span>
+        <span>Nowy post! &nbsp;</span> {data.allDatoCmsPost.edges[0].node.title}
           <svg width="13" height="13" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path></svg>
         </Link>
       </div>
@@ -89,12 +90,13 @@ function Header() {
               <Link to="/o-mnie" activeClassName="active">O mnie</Link>
             </li>
             <li>
-              <Link to="/oferta">
+              <Link to="/oferta" className="offer">
                 Oferta
                 <svg
                     className="h-4 fill-current lg:ml-1 lg:mr-2"
                     fill="currentColor"
-                    viewBox="0 0 20 20"
+                    width="20"
+                    height="20"
                   >
                     <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"></path>
                   </svg>
@@ -231,10 +233,21 @@ function Header() {
               <Link to="/blog" activeClassName="active" partiallyActive={true}>Blog</Link>
             </li>
             <li className="mobile-only">
-              <span>739 907 919</span>
+              <Link to="/kontakt" activeClassName="active">
+                Kontakt
+              </Link>
             </li>
             <li className="mobile-only">
-              <span>hello@marcinzogrodnik.pl</span>
+              <a href="tel:+48739907919">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"  xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+                739 907 919
+              </a>
+            </li>
+            <li className="mobile-only">
+              <a href="mailto:kontakt@marcinzogrodnik.pl">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                kontakt@marcinzogrodnik.pl
+              </a>
             </li>
           </ul>
         </nav>

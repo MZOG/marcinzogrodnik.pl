@@ -3,9 +3,10 @@ aside {
   background: $primaryColor;
   transition: all .2s ease-in-out;
 
-
   &.active {
-    display: block;
+    @include mq('tablet', 'min') {
+      display: block;
+    }
   }
 
   &:hover {
@@ -27,21 +28,28 @@ aside {
 
     span {
       font-weight: 500;
+      display: none;
+
+      @include mq('tablet', 'min') {
+        display: block;
+      }
     }
   }
 }
 
 main {
   height: 100%;
+  overflow: hidden !important;
 }
 
 .header {
   position: sticky;
-  top: 0;
+  top: 0px;
   transition: all 0.2s ease-in-out;
   background: $white;
   background-color: rgba(255,255,255,0.5);
   z-index: 100;
+  padding: 20px 0;
 
   &.scroll {
     backdrop-filter: saturate(180%)blur(6px);
@@ -52,7 +60,11 @@ main {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    min-width: 1500px;
+    position: relative;
+
+    @include mq('desktop', 'min') {
+      min-width: 1500px;
+    }
   }
 
   .logo {
@@ -61,40 +73,84 @@ main {
 
     a {
       font-family: 'marcinzogrodnik';
-      margin-left: 10px;
-      font-size: 27px;
+      margin-left: 5px;
+      font-size: 20px;
       color: $primaryColor;
       text-decoration: none;
+
+      @include mq('tablet', 'min') {
+        font-size: 27px;
+        margin-left: 10px;
+      }
     }
 
     svg {
-      width: 30px;
+      width: 20px;
       margin-top: 5px;
+
+      @include mq('tablet', 'min') {
+        width: 30px;
+      }
     }
   }
 
   .navigation {
+    position: absolute;
+    background: $white;
+    top: -20px;
+    width: 100%;
+    left: 0;
+    min-height: calc(100vh + 20px);
+    visibility: hidden;
+    opacity: 0;
+    transition: all .2s ease-in-out;
+    padding-top: 7rem;
+
+    &.is-active {
+      opacity: 1;
+      visibility: visible;
+    }
 
     ul {
+      padding: 0 30px;
+      width: 100%;
+
       li {
-        display: inline-block;
-        padding: 0 .4rem;
+        display: block;
+
+        @include mq('tablet', 'min') {
+          display: inline-block;
+          padding: 0 .4rem;
+        }
 
         a {
-          padding: 1.8rem 1rem;
-          display: flex;
+          display: block;
           text-decoration: none;
           color: $primaryColor;
           transition: all .1s ease-in-out;
           border-top: 2px solid transparent;
+          font-size: 1.2rem;
+          padding: 0.5rem 0;
+
+          @include mq('tablet', 'min') {
+            padding: 1.8rem 1rem;
+          }
 
           &:hover {
             color: $secondaryColor;
           }
 
           &.active {
-            border-top: 2px solid $secondaryColor;
-            color: $secondaryColor;
+            @include mq('tablet', 'min') {
+              border-top: 2px solid $secondaryColor;
+              color: $secondaryColor;
+            }
+          }
+
+          &.offer {
+            svg {
+              display: none;
+            }
           }
 
           svg {
@@ -106,6 +162,15 @@ main {
         &.mobile-only {
           @include mq('tablet', 'min') {
             display: none;
+          }
+
+          a {
+            display: flex;
+            align-items: center;
+            svg {
+              margin: 0 10px 0 0;
+              width: 24px;
+            }
           }
         }
 
@@ -141,6 +206,11 @@ main {
     .header-contact {
       display: flex;
       align-items: center;
+      display: none;
+
+      @include mq('tablet', 'min') {
+        display: block;
+      }
 
       a {
         display: flex;
@@ -168,7 +238,7 @@ main {
     }
 
     .hamburger {
-
+      z-index: 1000;
       @include mq('tablet', 'min') {
         display: none;
       }
