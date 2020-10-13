@@ -47,7 +47,7 @@ function Header() {
 
   return (
     <>
-    <aside className={asidePanel ? 'active' : ''}>
+    <aside className={`top-new-post ${asidePanel ? 'active' : ''}`}>
       <div className="container">
         <Link to={`/blog/${data.allDatoCmsPost.edges[0].node.slug}`}>
         <span>Nowy post! &nbsp;</span> {data.allDatoCmsPost.edges[0].node.title}
@@ -231,6 +231,11 @@ function Header() {
             </li>
             <li>
               <Link to="/blog" activeClassName="active" partiallyActive={true}>Blog</Link>
+            </li>
+            <li className="mobile-only">
+              <Link to="/wycena-projektu" activeClassName="active">
+                Wycena strony internetowej
+              </Link>
             </li>
             <li className="mobile-only">
               <Link to="/kontakt" activeClassName="active">

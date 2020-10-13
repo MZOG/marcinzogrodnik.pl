@@ -1,4 +1,4 @@
-aside {
+.top-new-post {
   display: none;
   background: $primaryColor;
   transition: all .2s ease-in-out;
@@ -37,11 +37,6 @@ aside {
   }
 }
 
-main {
-  height: 100%;
-  overflow: hidden !important;
-}
-
 .header {
   position: sticky;
   top: 0px;
@@ -50,6 +45,10 @@ main {
   background-color: rgba(255,255,255,0.5);
   z-index: 100;
   padding: 20px 0;
+
+  @include mq('tabletw', 'min') {
+    padding: 0;
+  }
 
   &.scroll {
     backdrop-filter: saturate(180%)blur(6px);
@@ -62,8 +61,17 @@ main {
     justify-content: space-between;
     position: relative;
 
+    @include mq('tablet', 'min') {
+      width: 100%;
+    }
+
     @include mq('desktop', 'min') {
-      min-width: 1500px;
+      width: 1200px;
+    }
+
+    @include mq('wide', 'min') {
+      width: 1480px;
+      padding: 0 20px;
     }
   }
 
@@ -79,8 +87,12 @@ main {
       text-decoration: none;
 
       @include mq('tablet', 'min') {
-        font-size: 27px;
+        font-size: 23px;
         margin-left: 10px;
+      }
+
+      @include mq('desktop', 'min') {
+        font-size: 27px;
       }
     }
 
@@ -89,6 +101,10 @@ main {
       margin-top: 5px;
 
       @include mq('tablet', 'min') {
+        width: 25px;
+      }
+
+      @include mq('desktop', 'min') {
         width: 30px;
       }
     }
@@ -106,6 +122,21 @@ main {
     transition: all .2s ease-in-out;
     padding-top: 7rem;
 
+    @include mq('tablet', 'min') {
+      top: -54px;
+    }
+
+    @include mq('tabletw', 'min') {
+      position: relative;
+      min-height: auto;
+      left: initial;
+      top: initial;
+      visibility: visible;
+      opacity: 1;
+      padding-top: initial;
+      width: auto;
+    }
+
     &.is-active {
       opacity: 1;
       visibility: visible;
@@ -115,10 +146,14 @@ main {
       padding: 0 30px;
       width: 100%;
 
+      @include mq('desktop', 'min') {
+        width: initial;
+      }
+
       li {
         display: block;
 
-        @include mq('tablet', 'min') {
+        @include mq('tabletw', 'min') {
           display: inline-block;
           padding: 0 .4rem;
         }
@@ -132,8 +167,13 @@ main {
           font-size: 1.2rem;
           padding: 0.5rem 0;
 
-          @include mq('tablet', 'min') {
-            padding: 1.8rem 1rem;
+          @include mq('tabletw', 'min') {
+            font-size: 1rem;
+            padding: 1rem 0.5rem;
+          }
+
+          @include mq('wide', 'min') {
+            padding: 1.5rem 1rem;
           }
 
           &:hover {
@@ -142,7 +182,7 @@ main {
 
           &.active {
             color: $secondaryColor;
-            @include mq('tablet', 'min') {
+            @include mq('tabletw', 'min') {
               border-top: 2px solid $secondaryColor;
             }
           }
@@ -160,7 +200,7 @@ main {
         }
 
         &.mobile-only {
-          @include mq('tablet', 'min') {
+          @include mq('tabletw', 'min') {
             display: none;
           }
 
@@ -208,7 +248,7 @@ main {
       align-items: center;
       display: none;
 
-      @include mq('tablet', 'min') {
+      @include mq('tabletw', 'min') {
         display: block;
       }
 
@@ -217,9 +257,17 @@ main {
         align-items: center;
         text-decoration: none;
         color: $primaryColor;
-        padding: 1.8rem 1rem;
         border-top: 2px solid transparent;
         transition: all .1s ease-in-out;
+
+        @include mq('tabletw', 'min') {
+          font-size: 1rem;
+          padding: 1rem 0.5rem;
+        }
+
+        @include mq('wide', 'min') {
+          padding: 1.5rem 1rem;
+        }
 
         &:hover {
           color: $secondaryColor;
@@ -239,7 +287,7 @@ main {
 
     .hamburger {
       z-index: 1000;
-      @include mq('tablet', 'min') {
+      @include mq('tabletw', 'min') {
         display: none;
       }
     }

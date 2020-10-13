@@ -19,8 +19,6 @@ body {
   font-family: "Poppins", system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif,
     BlinkMacSystemFont, Helvetica Neue, Arial, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
   color: $primaryColor;
-  // overflow-x: hidden !important;
-  height: 100vh;
 
   &.overflow {
     overflow: hidden;
@@ -32,17 +30,16 @@ body {
   padding: 0 15px;
 
   @include mq("tablet", min) {
-    width: 768px;
-    padding: 0;
+    width: 755px;
+    padding: 0 20px;
     margin: 0 auto;
   }
 
   @include mq("tabletw", min) {
-    width: 992px;
+    width: 980px;
   }
 
   @include mq("desktop", min) {
-    width: 1200px;
-    padding: 0 40px;
+    width: 1180px;
   }
 }
