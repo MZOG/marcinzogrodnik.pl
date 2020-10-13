@@ -89,8 +89,8 @@ function Header() {
             <li>
               <Link to="/o-mnie" activeClassName="active">O mnie</Link>
             </li>
-            <li>
-              <Link to="/oferta" className="offer">
+            <li className="subnav">
+            <Link to="/oferta" className="offer" activeClassName="active" partiallyActive={true}>
                 Oferta
                 <svg
                     className="h-4 fill-current lg:ml-1 lg:mr-2"
@@ -101,20 +101,6 @@ function Header() {
                     <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"></path>
                   </svg>
               </Link>
-            </li>
-            {/* <li className="subnav">
-              <span>
-                Usługi
-                <div className="icon">
-                  <svg
-                    className="h-4 fill-current lg:ml-1 lg:mr-2"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                  >
-                    <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"></path>
-                  </svg>
-                </div>
-              </span>
 
               <div className="sub">
                 <ul>
@@ -222,7 +208,7 @@ function Header() {
                   </li>
                 </ul>
               </div>
-            </li> */}
+            </li>
             <li>
               <Link to="/realizacje" activeClassName="active">Realizacje</Link>
             </li>
