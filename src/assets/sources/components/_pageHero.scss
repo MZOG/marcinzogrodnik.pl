@@ -6,7 +6,7 @@
   }
 
   @include mq('desktop', 'min') {
-    padding: 3.5rem 0;
+    padding: 2.5rem 0;
   }
 
   h1 {
@@ -25,10 +25,9 @@
     margin-top: 1rem;
     line-height: 1.5;
 
-    @include mq('tablet', 'min') {
+    @include mq('desktop', 'min') {
+      margin-bottom: 2rem;
       max-width: 40%;
-      font-size: 1.25rem;
-      margin-top: 2rem;
     }
   }
 

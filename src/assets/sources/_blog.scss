@@ -6,31 +6,47 @@
 }
 
 .post {
-  width: 100%;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column-reverse;
 
-  @include mq('tabletw', 'min') {
-    display: flex;
-    justify-content: space-between;
+  @include mq('tablet', 'min') {
+    flex-direction: row;
+    margin-bottom: 40px;
+    width: 100%;
   }
 
   &:not(:first-child) {
     border-top: 1px solid #eaeaea;
-    padding-top: 30px;
+    padding-top: 20px;
+
+    @include mq('tablet', 'min') {
+      padding-top: 30px;
+    }
   }
 
   &-image {
-    width: calc(30% - 20px);
+    width: 100%;
+    margin-bottom: 2rem;
+
+    @include mq('tablet', 'min') {
+      width: calc(30% - 20px);
+      margin-bottom: 0;
+    }
 
     .gatsby-image-wrapper {
       box-shadow: 0 6px 24px 0 rgba(44, 39, 56, 0.04), 24px 24px 48px 0 rgba(44, 39, 56, 0.08);
       border-radius: 20px;
     }
-
   }
 
   &-content {
-    width: calc(70% - 20px);
+    width: 100%;
+
+    @include mq('tablet', 'min') {
+      width: calc(70% - 20px);
+    }
 
     h2 {
       a {
@@ -40,8 +56,17 @@
         margin-bottom: 1rem;
         display: inline-block;
         font-family: 'marcinzogrodnik';
-        font-size: 2.2rem;
+        font-size: 1.5rem;
         line-height: 1;
+        letter-spacing: -1px;
+
+        @include mq('tablet', 'min') {
+          font-size: 1.8rem;
+        }
+
+        @include mq('desktop', 'min') {
+          font-size: 2.2rem;
+        }
 
         &:hover {
           color: $secondaryColor;
