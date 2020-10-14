@@ -26,7 +26,6 @@
     line-height: 1.5;
 
     @include mq('desktop', 'min') {
-      margin-bottom: 2rem;
       max-width: 40%;
     }
   }

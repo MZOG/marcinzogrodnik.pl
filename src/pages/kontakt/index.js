@@ -13,12 +13,16 @@ const Kontakt = () => {
         title="Kontakt"
         description="Pogadajmy o nowym projekcie! Zadzwoń 739 907 919 lub napisz kontakt@marcinzogrodnik.pl"
       />
-      <section>
+      <section className="contact">
         <div className="container">
           <PageHero
-            hero="Porozmawiajmy"
-            lead="Opowiedz o swoim projekcie i otrzymaj darmową wycenę oraz plan realizacji."
+            hero="Kontakt"
+            lead="Jesteś zainteresowany ofertą, lub masz inny ciekawy pomysł? Zadzwoń lub napisz."
           />
+
+          <div className="contact-content">
+            .
+          </div>
         </div>
       </section>
     </Layout>
