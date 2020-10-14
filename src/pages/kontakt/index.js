@@ -21,7 +21,7 @@ const Kontakt = () => {
           />
 
           <div className="contact-content">
-            .
+            no hej, co tam mordzia?
           </div>
         </div>
       </section>
