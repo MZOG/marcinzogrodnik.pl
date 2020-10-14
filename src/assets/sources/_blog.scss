@@ -2,7 +2,6 @@
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  max-width: 950px;
   margin: 0 auto;
 }
 
@@ -10,52 +9,68 @@
   width: 100%;
   margin-bottom: 40px;
 
+  @include mq('tabletw', 'min') {
+    display: flex;
+    justify-content: space-between;
+  }
+
   &:not(:first-child) {
     border-top: 1px solid #eaeaea;
     padding-top: 30px;
   }
 
-  h2 {
-    a {
-      font-weight: 600;
-      text-decoration: none;
-      color: $primaryColor;
-      margin-bottom: 1rem;
-      display: inline-block;
-      font-family: 'marcinzogrodnik';
-      font-size: 2.5rem;
+  &-image {
+    width: calc(30% - 20px);
 
-      &:hover {
-        color: $secondaryColor;
-      }
+    .gatsby-image-wrapper {
+      box-shadow: 0 6px 24px 0 rgba(44, 39, 56, 0.04), 24px 24px 48px 0 rgba(44, 39, 56, 0.08);
+      border-radius: 20px;
     }
+
   }
 
-  &-more {
-    margin-top: 2rem;
+  &-content {
+    width: calc(70% - 20px);
 
-    p {
-      font-size: 14px;
+    h2 {
+      a {
+        font-weight: 600;
+        text-decoration: none;
+        color: $primaryColor;
+        margin-bottom: 1rem;
+        display: inline-block;
+        font-family: 'marcinzogrodnik';
+        font-size: 2.2rem;
+        line-height: 1;
+
+        &:hover {
+          color: $secondaryColor;
+        }
+      }
     }
 
-    a {
-      background: rgb(237, 242, 247);
-      display: inline-flex;
-      align-items: center;
-      text-decoration: none;
-      color: $primaryColor;
-      padding: 0.5rem 1rem;
-      border-radius: 6px;
-      font-weight: 500;
-      font-size: 0.8rem;
+    .post-more {
+      margin-top: 2rem;
 
-      svg {
-        margin-left: 10px;
-      }
+      a {
+        background: rgb(237, 242, 247);
+        display: inline-flex;
+        align-items: center;
+        text-decoration: none;
+        color: $primaryColor;
+        padding: 0.5rem 1rem;
+        border-radius: 6px;
+        font-weight: 500;
+        font-size: 0.8rem;
 
-      &:hover {
-        color: $white;
-        background: $secondaryColor;
+        svg {
+          margin-left: 10px;
+        }
+
+        &:hover {
+          color: $white;
+          background: $secondaryColor;
+        }
       }
     }
   }

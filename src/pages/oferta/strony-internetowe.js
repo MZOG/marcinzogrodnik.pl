@@ -2,9 +2,9 @@
 import React from "react"
 import Layout from "../../components/layout";
 import SEO from "../../components/seo";
+import PageHero from "../../components/pageHero"
 
 const StronyInternetowe = () => {
-
     return (
     <Layout>
         <SEO
@@ -13,20 +13,8 @@ const StronyInternetowe = () => {
             description="Do stworzenia szybkiej oraz nowoczesnej strony internetowej wykorzystuję JAMstack oraz WordPress."
         />
         <div className="container page">
+            <PageHero hero="Strony internetowe" />
             <div className="content">
-                <div className="content-image">
-                    <svg
-                        fill="none"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                        >
-                        <path d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
-                    </svg>
-                </div>
-                <h2>Strony internetowe</h2>
                 <p>
                     Posiadam doświadczenie w tworzeniu ładnych, szybkich oraz przyciągających klientów stron internetowych.
                     Do stworzenia strony wykorzystuję głównie system zarządzania treścią WordPress, w którym czuję się najlepiej.

@@ -29,6 +29,7 @@ const Blog = ({ data }) => {
                   title={post.node.title}
                   date={post.node.meta.createdAt}
                   description={post.node.seo.description}
+                  image={post.node.image.fluid}
                 />
               )
             })}
