@@ -224,7 +224,7 @@ function Header() {
               </Link>
             </li>
             <li className="mobile-only">
-              <Link to="/kontakt" activeClassName="active">
+              <Link to="/kontakt/" activeClassName="active">
                 Kontakt
               </Link>
             </li>
@@ -245,7 +245,7 @@ function Header() {
 
         <div className="mobile-wrapper">
           <div className="header-contact">
-            <Link to="/kontakt" activeClassName="active">
+            <Link to="/kontakt/" activeClassName="active">
               Kontakt
               <svg
                 className="w-6 h-6"

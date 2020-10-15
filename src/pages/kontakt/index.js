@@ -21,7 +21,39 @@ const Kontakt = () => {
           />
 
           <div className="contact-content">
-            no hej, co tam mordzia?
+            <div className="contact-text">
+              <p className="lead">
+                Telefon:
+              </p>
+              <a href="tel:739907919">739 907 919</a>
+
+              <p className="lead">E-mail:</p>
+              <a href="mailto:kontakt@marcinzogrodnik.pl">kontakt@marcinzogrodnik.pl</a>
+
+              <p className="lead">Wyślij wiadomość na facebooku:</p>
+              <a href="https://www.facebook.com/messages/t/marcinzogrodnik1993" target="_blank">Otwórz messanger</a>
+
+            </div>
+            <div className="contact-form">
+              <form name="contact" method="POST" data-netlify="true">
+                <div className="contact-form-item">
+                  <label htmlFor="name">Imię</label>
+                  <input type="text" name="name" placeholder="Marcin "/>
+                </div>
+
+                <div className="contact-form-item">
+                  <label htmlFor="email">E-mail lub numer telefonu</label>
+                  <input type="text" name="email" placeholder="marcin@zogrodnik.pl lub 739907919"/>
+                </div>
+
+                <div className="contact-form-item">
+                  <label htmlFor="message">Wiadomość</label>
+                  <textarea name="message"></textarea>
+                </div>
+
+                <button>Wyślij</button>
+              </form>
+            </div>
           </div>
         </div>
       </section>
