@@ -120,7 +120,7 @@
     visibility: hidden;
     opacity: 0;
     transition: all .2s ease-in-out;
-    padding-top: 7rem;
+    padding-top: 5rem;
 
     @include mq('tablet', 'min') {
       top: -54px;
@@ -135,9 +135,6 @@
       opacity: 1;
       padding-top: initial;
       width: auto;
-    }
-
-    @include mq('desktop', 'min') {
       background: transparent;
     }
 

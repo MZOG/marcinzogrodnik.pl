@@ -21,18 +21,7 @@ export default ({ data }) => {
       />
 
       <article className="article">
-        {/* <div className="container">
-
-
-            {post.image.fluid &&
-              <div className="article-image">
-                <Img fluid={post.image.fluid} />
-              </div>
-            }
-        </div> */}
-
         <div className="container flex">
-
           <PageHero hero={post.title} articleInfo={post.meta.createdAt} slug={post.slug} type={post.internal.type}/>
           <section className="article-content">
 
