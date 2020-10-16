@@ -10,7 +10,7 @@ const Opinie = ({data}) => {
   return (
     <Layout>
       <SEO title="Opinie" />
-      <div className="container">
+      <section className="container">
         <PageHero hero="Opinie" lead="Sprawdź co mówią o mnie moi klienci." />
 
         <div className="testimonials">
@@ -24,7 +24,7 @@ const Opinie = ({data}) => {
               www={testimonial.node.website} />
           ))}
         </div>
-      </div>
+      </section>
     </Layout>
   )
 }

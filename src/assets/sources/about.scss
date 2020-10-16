@@ -1,0 +1,18 @@
+.about {
+
+  display: flex;
+  justify-content: space-between;
+
+  &-image {
+    width: calc(40% - 20px);
+
+    .gatsby-image-wrapper {
+      box-shadow: 0 6px 24px 0 rgba(44, 39, 56, 0.04), 24px 24px 48px 0 rgba(44, 39, 56, 0.08);
+      border-radius: 20px;
+    }
+  }
+
+  &-content {
+    width: calc(60% - 20px);
+  }
+}

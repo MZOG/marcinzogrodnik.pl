@@ -1,19 +1,56 @@
-import React from 'react'
+import React from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-
+import { useStaticQuery, graphql } from "gatsby"
 import PageHero from "../components/pageHero"
+import Img from "gatsby-image"
 
 const About = () => {
+  const data = useStaticQuery(graphql`
+    query AboutMePage {
+      datoCmsAboutMe {
+        contentNode {
+          childMarkdownRemark {
+            html
+          }
+        }
+        image {
+          fluid(maxWidth: 500) {
+            ...GatsbyDatoCmsFluid
+            src
+          }
+          alt
+        }
+        seo {
+          description
+        }
+      }
+    }
+  `)
+
+  const aboutContent = data.datoCmsAboutMe
+
   return (
     <Layout>
-      <SEO />
+      <SEO title="O mnie" />
 
-      <div className="container">
+      <section className="container">
         <PageHero hero="O mnie" lead="Kim jestem? Jak pracuję oraz co lubię." />
-      </div>
+
+        <div className="about">
+          <div className="about-image">
+            <Img fluid={aboutContent.image.fluid} alt={aboutContent.image.alt} />
+          </div>
+
+          <div className="about-content"
+            dangerouslySetInnerHTML={{
+              __html: aboutContent.contentNode.childMarkdownRemark.html,
+            }}
+          />
+        </div>
+      </section>
     </Layout>
   )
 }
 
-export default About;
+export default About
