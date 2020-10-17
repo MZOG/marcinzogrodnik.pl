@@ -149,6 +149,7 @@
 
       @include mq('desktop', 'min') {
         width: initial;
+        margin: 0;
       }
 
       li {
