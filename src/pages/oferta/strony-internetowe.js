@@ -4,6 +4,7 @@ import Layout from "../../components/layout"
 import SEO from "../../components/seo"
 import PageHero from "../../components/pageHero"
 import { Link } from "gatsby"
+import QuickContact from "../../components/quickContact"
 
 const StronyInternetowe = () => {
   return (
@@ -101,6 +102,8 @@ const StronyInternetowe = () => {
               zarządznie stroną wykonaną w Gatsby to bułka z masłem.
             </p>
           </div>
+
+          <QuickContact />
         </div>
       </section>
     </Layout>
