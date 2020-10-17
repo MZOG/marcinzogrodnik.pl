@@ -1,73 +1,110 @@
 /* eslint-disable */
 import React from "react"
-import Layout from "../../components/layout";
-import SEO from "../../components/seo";
+import Layout from "../../components/layout"
+import SEO from "../../components/seo"
 import PageHero from "../../components/pageHero"
+import { Link } from "gatsby"
 
 const StronyInternetowe = () => {
-    return (
+  return (
     <Layout>
-        <SEO
-            lang="pl"
-            title="Strony internetowe"
-            description="Do stworzenia szybkiej oraz nowoczesnej strony internetowej wykorzystuję JAMstack oraz WordPress."
-        />
-        <div className="container page">
-            <PageHero hero="Strony internetowe" />
-            <div className="content">
-                <p>
-                    Posiadam doświadczenie w tworzeniu ładnych, szybkich oraz przyciągających klientów stron internetowych.
-                    Do stworzenia strony wykorzystuję głównie system zarządzania treścią WordPress, w którym czuję się najlepiej.
-                    Nie zamykam się jednak tylko na jedno rozwiązanie, potrafię doradzić jaki system sprawdzi się najlepiej
-                    na Twojej stronie internetowej.
-                </p>
+      <SEO
+        lang="pl"
+        title="Strony internetowe"
+        description="Do stworzenia szybkiej oraz nowoczesnej strony internetowej wykorzystuję JAMstack oraz WordPress."
+      />
+      <section className="page">
+        <div className="container">
+          <PageHero
+            hero="Strony internetowe"
+            lead="Szybkie i bezpieczne strony internetowe WordPress & Gatsby"
+          />
 
-                <h2>JAMstack</h2>
-                <p>
-                    W świecie stron internetowych nie ma miejsca na stagnację, technologia rozwija się z dnia na dzień, dlatego
-                    programiści z całego świata bardzo pozytywnie zareagowali na nowy sposób tworzenia stron internetowych, czyli JAMstack.
-                </p>
+          <div className="content">
+            <p>
+              Dobra <strong>strona internetowa</strong>, to nie tylko wygląd.
+              Klienci często nie zdają sobie sprawy ile pracy wymaga stworzenie
+              idealnej strony internetowej, która spełnia wszystkie wymagania.
+            </p>
 
-                <h3>Co to jest JAMstack?</h3>
-                <p>
-                    Strona internetowa typu JAMstack to nowy sposób tworzenia stron internetowych.
-                    Dawno, dawno temu strony internetowe nie posiadały systemu zarządzania treścią, dużo trudniej
-                    było aktualizować treść na stronie, ponieważ były to zwykłe pliki HTML.
-                    Każda zmiana treści na stronie, dodania nowego wpisu na blogu, czy dodanie podstrony wiązało się
-                    z dokładnym sprawdzeniem wszystkich plików, aby strona poprawnie działała. Było to bardzo czasochłonne
-                    oraz generowało spore koszty.
-                    JAMstack jest bardzo podobny do pierwotnych stron internetowych, różnica jest taka, że obecnie
-                    strona internetowa jest generowana za każdym razem gdy zmieni się treść.
-                    Obecnie tworzenie strony JAMstack jest bardzo proste, system Gatsby świetnie radzi sobie z generowaniem
-                    nowych podstron oraz postów na stronę. W przypadku, gdy chcemy dodać nową stronę z nawigacją, to nie musimy
-                    już zmieniać / dodawać kolejnych podstron do nawigacji, ponieważ odpowiednie komponenty dbają o to, aby
-                    cała strona działała poprawnie.
-                </p>
-                <p>
-                    Strona JAMstack nie wymaga serwera WWW, wszystkie zapytania są generowane przez API, dlatego strona internetowa jest
-                    o wiele szybsza niż standardowe strony oparte np. o WordPress.
-                    Zobacz jak szybka jest strona <a href="/">marcinzogrodnik.pl</a>, wykorzystałem właśnie JAMstack jako bazy.
-                </p>
-                <p>
-                    Wspomniałem wcześniej, że strona JAMstack nie posiada systemu zarządzania treścią, dlatego dodawanie nowych postów,
-                    stron jest nieco trudniejsze niż w przypadku WordPress. JAMstack to bardzo przemyślany system, który umożliwia
-                    dodanie zewnętrznych systemów, takich jak DatoCMS do strony, aby wyświetlać treść.
-                    DatoCMS to moim zdaniem najlepszy system zarządzania treścią, który wykorzystuje GraphQL do zapytań o posty, obrazki oraz podstrony.
-                    Klient dostaje pełny dostęp do panelu administratora i może samodzielnie dodawać treść. Po kliknięciu opublikuj, strona internetowa
-                    jest generowana od nowa i dostępna dla każdego kto ją odwiedzi.
-                </p>
+            <p>
+              Strony wykonane przez <strong>marcinzogrodnik.pl</strong> są
+              przede wszystkim szybkie, oraz bezpieczne.
+            </p>
 
-                <h2>Strona wizytówka</h2>
-                <p>
-                    Dostaję sporo zapytań o strony informacyjne / wizytówki. Są to zazwyczaj proste strony typu One Page, z informacją o produkcie lub usłudze
-                    oraz formularzem kontaktowym. Stronę wizytówkę jestem w stanie wykonać w ciągu kilku dni, oczywiście po wcześniejszym
-                    dokładnym uzgodnieniu czego klient wymaga. Najczęściej do stworzenia strony wizytówki / informacyjnej wykorzystuję JAMstack.
-                </p>
+            <p>
+              Specjalizuję się w tworzeniu stron internetowych opartych o
+              popularny system zarządzania treścią <strong>WordPress</strong>,
+              oraz bardziej nowoczesne - <strong>Gatsby</strong>.
+            </p>
 
-            </div>
+            <h2>Strona internetowa WordPress</h2>
+
+            <p>
+              <strong>WordPress</strong> to dobry system zarządzania treścią
+              (CMS), który może zostać wykorzystany na wiele różnych sposobów.
+              Jest to najpopularniejszy system dla blogerów, ponieważ pozwala on
+              na szybkie zarządzanie stronami oraz artykułami.
+            </p>
+
+            <p>
+              Jednak nie tylko blogerzy wykorzystują ten system, wiele znanych
+              marek oraz osób korzysta z WordPress'a i są to strony bardzo
+              popularne. Przykłady: <a href="https://www.vogue.com/">Vogue</a>,{" "}
+              <a href="https://snoopdogg.com/">Snoop Dogg</a>,{" "}
+              <a href="https://www.katyperry.com/">Katy Perry</a> czy{" "}
+              <a href="https://techcrunch.com/">Tech Crunch</a>.
+            </p>
+
+            <p>
+              WordPress może zostać skonfigurowany na milion sposobów, ogranicza
+              nas tylko wyobraźnia, oraz umiejętności programisty, który
+              wykonuje projekt, a o to w tym przypadku nie musisz się martwić.
+            </p>
+
+            <p>
+              Ostatni projekt, który wykonałem właśnie z wykorzystaniem{" "}
+              <strong>WordPress</strong> to{" "}
+              <a href="https://doradcajezykowy.com">Doradca Językowy</a>.
+            </p>
+
+            <p>
+              Stronę WordPress polecam dla osób / firm, które często aktualizują
+              treść na swojej stronie internetowej, oraz cenią sobie łatwość w
+              zarządzaniu nią. Praca z dobrze skonfigurowaną stroną to
+              przyjemność, i tak powinno być zawsze.
+            </p>
+
+            <h2>Strona internetowa JAMstack</h2>
+
+            <p>
+              Do stworzenia strony internetowej <strong>JAMstack</strong>{" "}
+              wykorzystuję <strong>React'a</strong>, a raczej framework o nazwie{" "}
+              <strong>Gatsby</strong>. Więcej o <strong>Gatsby</strong>, możesz
+              przeczytać{" "}
+              <Link to="blog/statyczna-strona-internetowa-gatsby">tutaj</Link>.
+            </p>
+
+            <p>
+              <strong>Gatsby</strong>, to generator statycznych stron
+              internetowych, który jest idealny dla stron typu{" "}
+              <strong>one page</strong>, lub <strong>wizytówka</strong>. Strona{" "}
+              <Link to="/">marcinzogrodnik.pl</Link> została wykonana właśnie z
+              pomocą Gatsby. Zauważ jak szybko strona reaguje na każde
+              kliknięcie! Twoja strona internetowa może róznież być tak szybka!
+            </p>
+
+            <p>
+              Stronę JAMstack polecam w przypadku, gdy treść na stronie nie musi
+              się zmieniać zbyt często (strona jest statyczna), lub gdy
+              właściciel strony nie ma czasu na zarządznie nią. Dla programisty
+              zarządznie stroną wykonaną w Gatsby to bułka z masłem.
+            </p>
+          </div>
         </div>
+      </section>
     </Layout>
-    );
+  )
 }
 
-export default StronyInternetowe;
+export default StronyInternetowe
