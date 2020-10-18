@@ -59,22 +59,10 @@ const Footer = () => {
         <p className="bold">Oferta</p>
           <ul>
             <li>
-              <Link to="/oferta/strony-internetowe">Strony internetowe</Link>
+              <Link to="/oferta/strony-internetowe-wordpress">Strony internetowe WordPress</Link>
             </li>
             <li>
-              <Link to="/oferta/sklepy-internetowe">Sklepy internetowe</Link>
-            </li>
-            <li>
-              <Link to="/oferta/projekty-graficzne">Projekty graficzne</Link>
-            </li>
-            <li>
-              <Link to="/oferta/hosting">Hosting</Link>
-            </li>
-            <li>
-              <Link to="/oferta/pozycjonowanie">Pozycjonowanie</Link>
-            </li>
-            <li>
-              <Link to="/oferta/opieka-nad-strona">Opieka nad stroną</Link>
+              <Link to="/oferta/strony-internetowe-jamstack">Strony internetowe JAMstack</Link>
             </li>
           </ul>
         </div>

@@ -5,9 +5,10 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Img from "gatsby-image"
 import PageHero from "../components/pageHero"
+import QuickContact from "../components/quickContact"
 
-import { defineCustomElements as deckDeckGoHighlightElement } from '@deckdeckgo/highlight-code/dist/loader';
-deckDeckGoHighlightElement();
+import { defineCustomElements as deckDeckGoHighlightElement } from "@deckdeckgo/highlight-code/dist/loader"
+deckDeckGoHighlightElement()
 
 export default ({ data }) => {
   const post = data.datoCmsPost
@@ -22,14 +23,18 @@ export default ({ data }) => {
 
       <article className="article">
         <div className="container flex">
-          <PageHero hero={post.title} articleInfo={post.meta.createdAt} slug={post.slug} type={post.internal.type}/>
+          <PageHero
+            hero={post.title}
+            articleInfo={post.meta.createdAt}
+            slug={post.slug}
+            type={post.internal.type}
+          />
           <section className="article-content">
-
-            {post.image.fluid &&
+            {post.image.fluid && (
               <div className="article-image">
                 <Img fluid={post.image.fluid} />
               </div>
-            }
+            )}
 
             <div
               dangerouslySetInnerHTML={{
@@ -37,6 +42,7 @@ export default ({ data }) => {
               }}
             />
           </section>
+          <QuickContact />
         </div>
       </article>
     </Layout>
