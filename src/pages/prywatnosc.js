@@ -8,7 +8,7 @@ const Prywatnosc = () => (
       title="Polityka Prywatności"
       description="Polityka prywatności storny marcinzogrodnik.pl"
     />
-    <section className="not-found">
+    <section className="page">
       <div className="container page">
         <div className="content">
           <h2>Informacje ogólne</h2>
@@ -16,15 +16,15 @@ const Prywatnosc = () => (
           <ul className="terms">
             <li>
               Niniejsza polityka dotyczy Serwisu www, funkcjonującego pod
-              adresem url: https://marcinzogrodnik.pl
+              adresem url: <a href="https://marcinzogrodnik.pl">marcinzogrodnik.pl</a>
             </li>
             <li>
-              Operatorem serwisu oraz Administratorem danych osobowych jest:
-              Marcin Zogrodnik - Ułańska 66, 43-143
+              Operatorem serwisu oraz Administratorem danych osobowych jest: {" "}
+               <strong>Marcin Zogrodnik - Ułańska 66, 43-143</strong>
             </li>
             <li>
-              Adres kontaktowy poczty elektronicznej operatora:
-              kontakt@marcinzogrodnik.pl
+              Adres kontaktowy poczty elektronicznej operatora: {" "}
+              <a href="mailto:kontakt@marcinzogrodnik.pl">kontakt@marcinzogrodnik.pl</a>
             </li>
             <li>
               Operator jest Administratorem Twoich danych osobowych w
@@ -82,7 +82,7 @@ const Prywatnosc = () => (
           <ul className="terms">
             <li>
               Serwis jest hostowany (technicznie utrzymywany) na serwera
-              operatora: cyberFolks.pl
+              operatora: <a href="https://netlify.com">Netlify</a>
             </li>
           </ul>
 

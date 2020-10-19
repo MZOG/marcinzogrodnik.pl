@@ -2,9 +2,20 @@
 
   display: flex;
   justify-content: space-between;
+  flex-direction: column;
+
+  @include mq('tablet', 'min') {
+    flex-direction: row-reverse;
+  }
 
   &-image {
-    width: calc(40% - 20px);
+    width: 100%;
+    margin-bottom: 1rem;
+
+    @include mq('tablet', 'min') {
+      width: calc(40% - 20px);
+      margin-bottom: 0;
+    }
 
     .gatsby-image-wrapper {
       box-shadow: 0 6px 24px 0 rgba(44, 39, 56, 0.04), 24px 24px 48px 0 rgba(44, 39, 56, 0.08);
@@ -14,5 +25,26 @@
 
   &-content {
     width: calc(60% - 20px);
+
+    p {
+      margin-bottom: 1rem;
+
+      strong {
+        font-weight: 500;
+        display: inline-block;
+        position: relative;
+
+        &::before {
+          z-index: -1;
+          left: 0;
+          content: '';
+          top: 80%;
+          width: 70%;
+          height: 4px;
+          background: rgba($secondaryColor, 0.3);
+          position: absolute;
+        }
+      }
+    }
   }
 }

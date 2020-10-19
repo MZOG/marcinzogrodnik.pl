@@ -26,8 +26,8 @@ h2,
 h3,
 h4,
 p,
-ul[class],
-ol[class],
+ul,
+ol,
 li,
 figure,
 figcaption,
@@ -108,5 +108,24 @@ select {
 
   @include mq("desktop", min) {
     width: 1180px;
+  }
+}
+
+.terms {
+  margin-bottom: 2rem;
+  list-style-type: decimal !important;
+
+  li {
+    margin-bottom: 0.8rem;
+
+    strong {
+      font-weight: 500;
+    }
+
+    ul {
+      margin-top: 0.8rem;
+      margin-left: 1rem;
+      list-style-type: disc !important;
+    }
   }
 }

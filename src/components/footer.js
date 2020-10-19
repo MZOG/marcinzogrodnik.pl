@@ -35,10 +35,10 @@ const Footer = () => {
           <p className="bold">Zobacz również</p>
           <ul>
             <li>
-              <Link to="/">Strona główna</Link>
+              <Link to="/o-mnie">O mnie</Link>
             </li>
             <li>
-              <Link to="/o-mnie">O mnie</Link>
+              <Link to="/oferta">Oferta</Link>
             </li>
             <li>
               <Link to="/realizacje">Realizacje</Link>
@@ -71,8 +71,8 @@ const Footer = () => {
           <p className="bold">Inne</p>
 
           <ul>
-            <li><Link to="/">Regulamin</Link></li>
-            <li><Link to="/">Polityka prywatności</Link></li>
+            <li><Link to="/regulamin">Regulamin</Link></li>
+            <li><Link to="/prywatnosc">Polityka prywatności</Link></li>
           </ul>
         </div>
       </div>

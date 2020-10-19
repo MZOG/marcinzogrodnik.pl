@@ -1,4 +1,5 @@
 .page {
+  margin-bottom: 3rem;
   .container {
     max-width: 900px;
   }
@@ -10,6 +11,7 @@
       font-size: 1.6rem;
       margin-bottom: 1rem;
       color: $secondaryColor;
+      line-height: 1;
 
       @include mq("tablet", "min") {
         font-size: 2rem;
@@ -78,6 +80,56 @@
         height: 4px;
         background: rgba($primaryColor, 0.3);
         position: absolute;
+      }
+    }
+
+    .split {
+      margin: 2rem 0;
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+
+      @include mq('tablet', 'min') {
+        flex-direction: row;
+        align-items: center;
+      }
+
+      h2 {
+        width: 100%;
+        margin-bottom: 1rem;
+
+        @include mq('tablet', 'min') {
+          margin-bottom: 2rem;
+        }
+      }
+
+      .image {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        @include mq('tablet', 'min') {
+          width: calc(20% - 20px);
+        }
+
+        svg {
+          width: 50%;
+          margin-bottom: 1rem;
+
+          @include mq('tablet', 'min') {
+            margin-bottom: 0;
+            width: 70%;
+          }
+        }
+      }
+
+      .text {
+        width: 100%;
+
+        @include mq('tablet', 'min') {
+          width: calc(80% - 20px);
+        }
       }
     }
   }
