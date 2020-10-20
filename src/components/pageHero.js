@@ -16,7 +16,7 @@ const PageHero = ({hero, lead, articleInfo, type, slug}) => {
       pageSlug = "blog"
       break;
 
-    case "DatoCmsPortfolio":
+    case "DatoCmsShowcase":
       pageSlug = "realizacje"
       break;
 

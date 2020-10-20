@@ -1,7 +1,6 @@
 import React from 'react'
 
 const TestimonialItem = ({image, content, author, www, roundedImage}) => {
-  console.log(roundedImage)
   return (
     <article className="testimonial">
 

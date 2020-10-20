@@ -58,7 +58,7 @@ const Oferta = () => (
                   transform="translate(170 214)"
                   fill="#fff"
                   stroke="#f0047f"
-                  stroke-width="1"
+                  strokeWidth="1"
                 />
                 <path
                   id="Path_3"
@@ -67,7 +67,7 @@ const Oferta = () => (
                   transform="translate(170 214)"
                   fill="#fff"
                   stroke="#f0047f"
-                  stroke-width="1"
+                  strokeWidth="1"
                 />
                 <path
                   id="Path_4"
@@ -76,7 +76,7 @@ const Oferta = () => (
                   transform="translate(170 214)"
                   fill="#fff"
                   stroke="#f0047f"
-                  stroke-width="1"
+                  strokeWidth="1"
                 />
               </g>
             </svg>

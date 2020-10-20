@@ -48,7 +48,7 @@ export const query = graphql`
       edges {
         node {
           image {
-            fluid(maxWidth: 540, imgixParams: { auto: "compress" }) {
+            fluid(maxWidth: 540, imgixParams: { auto: "compress", lossless: true }) {
               ...GatsbyDatoCmsFluid
               src
             }

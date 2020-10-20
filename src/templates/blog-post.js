@@ -16,7 +16,7 @@ export default ({ data }) => {
   return (
     <Layout>
       <SEO
-        title={data.datoCmsPost.title}
+        title={post.title}
         description={post.seo.description}
         shareImage={post.seo.image.sizes.src}
       />

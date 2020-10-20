@@ -5,7 +5,7 @@
   flex-direction: column;
 
   @include mq('tablet', 'min') {
-    flex-direction: row-reverse;
+    flex-direction: row;
   }
 
   &-image {
