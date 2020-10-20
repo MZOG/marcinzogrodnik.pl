@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React from "react"
 
 const QuickContact = () => {
@@ -12,8 +13,16 @@ const QuickContact = () => {
         </p>
 
         <form>
-          <input type="text" />
-          <input type="submit" value="Zróbmy to →" />
+          <div className="form-input">
+            <label htmlFor="phone-email">
+              <input type="text" name="phone-email" id="phone-email" />
+            </label>
+          </div>
+          <div className="form-input">
+            <label htmlFor="submit">
+              <input type="submit" value="Zróbmy to →" />
+            </label>
+          </div>
         </form>
       </div>
     </section>

@@ -1,9 +1,9 @@
 import React from 'react'
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-
 import PageHero from "../components/pageHero"
 import TestimonialItem from '../components/testimonialItem'
+import { graphql } from 'gatsby'
 
 const Opinie = ({data}) => {
   const testimonials = data.allDatoCmsTestimonial.edges
@@ -27,6 +27,7 @@ const Opinie = ({data}) => {
       </section>
     </Layout>
   )
+
 }
 
 export default Opinie;

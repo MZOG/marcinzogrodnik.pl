@@ -24,7 +24,11 @@
   }
 
   &-content {
-    width: calc(60% - 20px);
+    width: 100%;
+
+    @include mq('tablet', 'min') {
+      width: calc(60% - 20px);
+    }
 
     p {
       margin-bottom: 1rem;

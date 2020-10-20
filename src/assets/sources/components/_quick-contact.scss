@@ -25,15 +25,13 @@
       font-family: 'marcinzogrodnik';
       letter-spacing: -1px;
       margin-bottom: 1rem;
+      line-height: 1;
 
       @include mq('desktop', 'min') {
         font-size: 2rem;
       }
     }
   }
-
-
-
 
   form {
     margin: 2rem auto 1rem auto;
@@ -46,6 +44,7 @@
       border-radius: 10px;
       text-indent: 10px;
       color: $primaryColor;
+      appearance: none;
     }
 
     input[type="submit"] {
@@ -57,6 +56,7 @@
       border-radius: 5px;
       margin-top: 2rem;
       cursor: pointer;
+      appearance: none;
 
       &:hover {
         background: darken($secondaryColor, 20%);

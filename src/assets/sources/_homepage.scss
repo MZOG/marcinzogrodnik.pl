@@ -1,0 +1,200 @@
+.homepage {
+  h2 {
+    font-size: 2.5rem;
+    font-family: "marcinzogrodnik", sans-serif;
+    letter-spacing: -2px;
+    margin-bottom: 2rem;
+
+    @include mq("tablet", "min") {
+      letter-spacing: -1px;
+    }
+
+    span {
+      color: $secondaryColor;
+    }
+  }
+
+  &_hero {
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    h1 {
+      font-family: "marcinzogrodnik", sans-serif;
+      font-size: 3.3rem;
+      line-height: 1;
+      text-align: center;
+      margin-bottom: 2rem;
+      letter-spacing: -2px;
+
+      @include mq("tablet", "min") {
+        letter-spacing: -1px;
+      }
+
+      span {
+        display: block;
+        color: $secondaryColor;
+      }
+    }
+
+    &_image {
+      width: 400px;
+      position: relative;
+    }
+
+    &_cta {
+      margin-top: 3rem;
+
+      a {
+        border: 1px solid $primaryColor;
+        color: $primaryColor;
+        text-decoration: none;
+        padding: 10px 30px;
+        border-radius: 10px;
+        transition: all 0.2s ease-in-out;
+
+        &:hover {
+          background: $primaryColor;
+          color: $white;
+        }
+
+        &:last-child {
+          margin-left: 2rem;
+          color: $secondaryColor;
+          border-color: $secondaryColor;
+
+          &:hover {
+            background: $secondaryColor;
+            color: $white;
+          }
+        }
+      }
+    }
+  }
+
+  &_offer {
+    margin: 3rem auto;
+    padding: 2rem 0 4rem 0;
+    background: #edf2f7;
+    max-width: 90%;
+    border-radius: 20px;
+
+    &_items {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .item {
+        width: 100%;
+        background: $white;
+        padding: 1rem;
+        border-radius: 10px;
+        box-shadow: 0 6px 24px 0 rgba(44, 39, 56, 0.04),
+          24px 24px 48px 0 rgba(7, 5, 9, 0.05);
+
+        @include mq("tablet", "min") {
+          width: calc(50% - 30px);
+          padding: 2rem;
+        }
+
+        h3 {
+          font-family: "marcinzogrodnik", sans-serif;
+          font-size: 2rem;
+          letter-spacing: -2px;
+          margin-bottom: 1rem;
+
+          @include mq("tablet", "min") {
+            letter-spacing: -1px;
+          }
+        }
+
+        &-more {
+          margin-top: 1rem;
+          display: flex;
+          justify-content: flex-end;
+
+          a {
+            text-decoration: none;
+            border: 1px solid $secondaryColor;
+            color: $secondaryColor;
+            padding: 7px 15px;
+            border-radius: 10px;
+            transition: all 0.2s ease-in-out;
+
+            &:hover {
+              background: $secondaryColor;
+              color: $white;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &_portfolio {
+    &_items {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+
+      .item {
+        width: 100%;
+
+        @include mq("tablet", "min") {
+          width: calc(50% - 20px);
+        }
+
+        @include mq("desktop", "min") {
+          width: calc(33.333% - 20px);
+        }
+
+        h3 {
+          a {
+            font-family: "marcinzogrodnik", sans-serif;
+            font-size: 2rem;
+            letter-spacing: -2px;
+            margin-bottom: 1rem;
+            color: $primaryColor;
+            text-decoration: none;
+
+            @include mq("tablet", "min") {
+              letter-spacing: -1px;
+            }
+
+            &:hover {
+              color: $secondaryColor;
+            }
+          }
+        }
+
+        .gatsby-image-wrapper {
+          border-radius: 10px;
+          box-shadow: 0 6px 24px 0 rgba(44, 39, 56, 0.04),
+            24px 24px 48px 0 rgba(7, 5, 9, 0.05);
+        }
+      }
+    }
+
+    &_more {
+      margin: 3rem 0;
+      display: flex;
+      justify-content: center;
+
+      a {
+        text-decoration: none;
+        border: 1px solid $primaryColor;
+        color: $primaryColor;
+        padding: 7px 15px;
+        border-radius: 10px;
+        transition: all 0.2s ease-in-out;
+
+        &:hover {
+          background: $primaryColor;
+          color: $white;
+        }
+      }
+    }
+  }
+}
