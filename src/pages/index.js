@@ -5,32 +5,61 @@ import { useStaticQuery, graphql, Link } from "gatsby"
 import Img from "gatsby-image"
 
 const IndexPage = () => {
-
   const data = useStaticQuery(graphql`
-  query homeShowcase {
-    allDatoCmsShowcase(
-      sort: { fields: meta___createdAt, order: DESC }
-    ) {
-      edges {
-        node {
-          title
-          slug
-          projectUrl
-          image {
-            fluid(maxWidth: 1120) {
-              ...GatsbyDatoCmsFluid
+    query homepageQuery {
+      allDatoCmsShowcase(
+        sort: { fields: meta___createdAt, order: DESC }
+        limit: 2
+      ) {
+        edges {
+          node {
+            id
+            title
+            tags
+            slug
+            projectUrl
+            image {
+              fluid(maxWidth: 735) {
+                ...GatsbyDatoCmsFluid
+              }
+            }
+            seo {
+              description
             }
           }
-          seo {
-            description
+        }
+      }
+
+      allDatoCmsPost(
+        sort: { order: DESC, fields: meta___createdAt }
+        limit: 3
+      ) {
+        edges {
+          node {
+            title
+            slug
+            id
+            meta {
+              createdAt(formatString: "D MMMM YYYY")
+            }
+            seo {
+              description
+            }
           }
         }
       }
     }
-  }
-`)
+  `)
 
   const projects = data.allDatoCmsShowcase.edges
+  const posts = data.allDatoCmsPost.edges
+
+  // Format time for blog posts
+  let formatter = new Intl.DateTimeFormat( 'pl', {
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric'
+  } );
 
   return (
     <Layout>
@@ -43,8 +72,7 @@ const IndexPage = () => {
         <div className="container">
           <div className="homepage_hero">
             <h1>
-              Tworzę szybkie oraz bezpieczne{" "}
-              <span>strony internetowe</span>
+              Tworzę szybkie oraz bezpieczne <span>strony internetowe</span>
             </h1>
             <div className="homepage_hero_image">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 940 633">
@@ -56,7 +84,7 @@ const IndexPage = () => {
                 <g
                   id="Artboard_3"
                   data-name="Artboard – 3"
-                  clip-path="url(#clip-Artboard_3)"
+                  clipPath="url(#clip-Artboard_3)"
                 >
                   <rect width="940" height="633" fill="#fff" />
                   <g
@@ -291,17 +319,29 @@ const IndexPage = () => {
             <div className="homepage_offer_items">
               <div className="item">
                 <h3>WordPress</h3>
-                <p>Najpopularniejszy system zarządzania treścią WordPress, który jest wykorzystywany przez największe firmy na świecie. Poznaj ofertę stron oraz sklepów Wordpress.</p>
+                <p>
+                  Najpopularniejszy system zarządzania treścią WordPress, który
+                  jest wykorzystywany przez największe firmy na świecie. Poznaj
+                  ofertę stron oraz sklepów Wordpress.
+                </p>
                 <div className="item-more">
-                  <Link to="/oferta/strony-internetowe-wordpress/">Więcej →</Link>
+                  <Link to="/oferta/strony-internetowe-wordpress/">
+                    Więcej →
+                  </Link>
                 </div>
               </div>
 
               <div className="item">
                 <h3>JAMstack</h3>
-                <p>Statyczna strona internetowa to przede wszystkim szybkość, która zostawi w tle konkurencję. Zobacz jakie korzyści oferuje strona wykonana za pomocą Gatsby.</p>
+                <p>
+                  Statyczna strona internetowa to przede wszystkim szybkość,
+                  która zostawi w tle konkurencję. Zobacz jakie korzyści oferuje
+                  strona wykonana za pomocą Gatsby.
+                </p>
                 <div className="item-more">
-                  <Link to="/oferta/strony-internetowe-jamstack/">Więcej →</Link>
+                  <Link to="/oferta/strony-internetowe-jamstack/">
+                    Więcej →
+                  </Link>
                 </div>
               </div>
             </div>
@@ -313,18 +353,65 @@ const IndexPage = () => {
             <h2>Ostatnie realizacje</h2>
 
             <div className="homepage_portfolio_items">
-              {projects.map(project => (
-                <article className="item">
-                  <h3>
-                    <Link to={`/realizacje/${project.node.slug}`}>{project.node.title}</Link>
-                  </h3>
-                  <Img fluid={project.node.image.fluid} />
-                </article>
-              ))}
+              {projects.map(project => {
+                let tags = project.node.tags.split(",")
+                return (
+                  <article className="item" key={project.node.id}>
+                    <h3>
+                      <Link to={`/realizacje/${project.node.slug}`}>
+                        {project.node.title}
+                      </Link>
+                    </h3>
+                    <Img fluid={project.node.image.fluid} />
+                    <div className="item-description">
+                      <p>{project.node.seo.description}</p>
+                    </div>
+                    <div className="item-info">
+                      <ul>
+                        {tags.map(tag => (
+                          <li key={`${tag}-${Math.floor(Math.random() * 10)}`}>{tag}</li>
+                        ))}
+                      </ul>
+                      <div className="more">
+                        <Link to={`/realizacje/${project.node.slug}`}>
+                          Więcej →
+                        </Link>
+                      </div>
+                    </div>
+                  </article>
+                )
+              })}
             </div>
 
             <div className="homepage_portfolio_more">
               <Link to="/realizacje">Zobacz więcej →</Link>
+            </div>
+          </div>
+        </div>
+
+        <div className="homepage_blog">
+          <div className="container">
+            <h2>Ostatnio na blogu</h2>
+
+            {posts.map(post => (
+              <article key={post.node.id} className="homepage_blog_post">
+                <h3>
+                  <Link to={`/blog/${post.node.slug}`}>{post.node.title}</Link>
+                </h3>
+                <div className="time">
+                <p>{formatter.format( new Date(post.node.meta.createdAt) )}</p>
+                </div>
+                <div className="exerpt">
+                  <p>{post.node.seo.description}</p>
+                </div>
+                <div className="more">
+                  <Link to={`/blog/${post.node.slug}`}>Czytaj dalej →</Link>
+                </div>
+              </article>
+            ))}
+
+            <div className="homepage_blog_more">
+            <Link to="/blog">Zobacz więcej →</Link>
             </div>
           </div>
         </div>

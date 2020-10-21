@@ -62,7 +62,7 @@ export const query = graphql`
         }
       }
       image {
-        fluid(maxWidth: 1120) {
+        fluid(maxWidth: 860) {
           ...GatsbyDatoCmsFluid
           src
         }

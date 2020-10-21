@@ -1,8 +1,7 @@
 import React from "react"
 import { Link } from "gatsby"
-import Img from "gatsby-image"
 
-const Article = ({ image, title, slug, description }) => {
+const Article = ({ title, slug, description }) => {
   return (
     <article className="post">
       <div className="post-content">
@@ -17,9 +16,6 @@ const Article = ({ image, title, slug, description }) => {
         <div className="post-more">
           <Link to={`/blog/${slug}`}>Więcej →</Link>
         </div>
-      </div>
-      <div className="post-image">
-        <Img fluid={image} />
       </div>
     </article>
   )

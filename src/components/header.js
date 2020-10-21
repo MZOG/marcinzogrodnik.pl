@@ -222,11 +222,6 @@ function Header() {
                 </Link>
               </li>
               <li className="mobile-only">
-                <Link to="/wycena-projektu" activeClassName="active">
-                  Wycena strony internetowej
-                </Link>
-              </li>
-              <li className="mobile-only">
                 <Link to="/kontakt/" activeClassName="active">
                   Kontakt
                 </Link>

@@ -1,11 +1,21 @@
 .showcase {
   display: flex;
   justify-content: space-between;
+  flex-direction: column;
+
+  @include mq('tablet', 'min') {
+    flex-direction: row;
+  }
 
   &-item {
-    width: calc(33.33% - 20px);
+    width: 100%;
     box-shadow: 0 6px 24px 0 rgba(44, 39, 56, 0.04), 24px 24px 48px 0 rgba(44, 39, 56, 0.08);
     border-radius: 10px;
+    margin-bottom: 2rem;
+
+    @include mq('tablet', 'min') {
+      width: calc(50% - 20px);
+    }
 
     &_image {
       width: 100%;

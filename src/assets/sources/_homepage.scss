@@ -1,12 +1,13 @@
 .homepage {
   h2 {
-    font-size: 2.5rem;
+    font-size: 2rem;
     font-family: "marcinzogrodnik", sans-serif;
     letter-spacing: -2px;
     margin-bottom: 2rem;
 
     @include mq("tablet", "min") {
       letter-spacing: -1px;
+      font-size: 2.5rem;
     }
 
     span {
@@ -15,6 +16,7 @@
   }
 
   &_hero {
+    padding-top: 3rem;
     min-height: 60vh;
     display: flex;
     align-items: center;
@@ -23,7 +25,7 @@
 
     h1 {
       font-family: "marcinzogrodnik", sans-serif;
-      font-size: 3.3rem;
+      font-size: 2.2rem;
       line-height: 1;
       text-align: center;
       margin-bottom: 2rem;
@@ -31,6 +33,7 @@
 
       @include mq("tablet", "min") {
         letter-spacing: -1px;
+        font-size: 3.3rem;
       }
 
       span {
@@ -40,18 +43,35 @@
     }
 
     &_image {
-      width: 400px;
+      width: 200px;
       position: relative;
+
+      @include mq('tablet', 'min') {
+        width: 340px;
+      }
+
+      @include mq('desktop', 'min') {
+        width: 400px;
+      }
     }
 
     &_cta {
       margin-top: 3rem;
+      display: flex;
+      flex-direction: column;
+
+      @include mq('tablet', 'min') {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+      }
 
       a {
+        text-align: center;
         border: 1px solid $primaryColor;
         color: $primaryColor;
         text-decoration: none;
-        padding: 10px 30px;
+        padding: 10px 20px;
         border-radius: 10px;
         transition: all 0.2s ease-in-out;
 
@@ -61,9 +81,14 @@
         }
 
         &:last-child {
-          margin-left: 2rem;
           color: $secondaryColor;
           border-color: $secondaryColor;
+          margin-top: 2rem;
+
+          @include mq('tablet', 'min') {
+            margin-top: 0;
+            margin-left: 2rem;
+          }
 
           &:hover {
             background: $secondaryColor;
@@ -76,15 +101,24 @@
 
   &_offer {
     margin: 3rem auto;
-    padding: 2rem 0 4rem 0;
+    padding: 2rem 0 2rem 0;
     background: #edf2f7;
     max-width: 90%;
     border-radius: 20px;
+
+    @include mq("tablet", "min") {
+      padding: 2rem 0 4rem 0;
+    }
 
     &_items {
       display: flex;
       justify-content: space-between;
       align-items: center;
+      flex-direction: column;
+
+      @include mq('tablet', 'min') {
+        flex-direction: row;
+      }
 
       .item {
         width: 100%;
@@ -93,6 +127,7 @@
         border-radius: 10px;
         box-shadow: 0 6px 24px 0 rgba(44, 39, 56, 0.04),
           24px 24px 48px 0 rgba(7, 5, 9, 0.05);
+        margin-bottom: 2rem;
 
         @include mq("tablet", "min") {
           width: calc(50% - 30px);
@@ -101,12 +136,15 @@
 
         h3 {
           font-family: "marcinzogrodnik", sans-serif;
-          font-size: 2rem;
+          font-size: 1.7rem;
           letter-spacing: -2px;
           margin-bottom: 1rem;
+          text-align: center;
 
           @include mq("tablet", "min") {
             letter-spacing: -1px;
+            font-size: 2rem;
+            text-align: left;
           }
         }
 
@@ -119,9 +157,15 @@
             text-decoration: none;
             border: 1px solid $secondaryColor;
             color: $secondaryColor;
-            padding: 7px 15px;
             border-radius: 10px;
             transition: all 0.2s ease-in-out;
+            padding: 5px 10px;
+            font-size: 0.85rem;
+
+            @include mq("tablet", "min") {
+              padding: 7px 15px;
+              font-size: 1rem;
+            }
 
             &:hover {
               background: $secondaryColor;
@@ -141,13 +185,15 @@
 
       .item {
         width: 100%;
+        margin-bottom: 2rem;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
 
         @include mq("tablet", "min") {
           width: calc(50% - 20px);
-        }
-
-        @include mq("desktop", "min") {
-          width: calc(33.333% - 20px);
+          margin-bottom: 0;
         }
 
         h3 {
@@ -174,11 +220,164 @@
           box-shadow: 0 6px 24px 0 rgba(44, 39, 56, 0.04),
             24px 24px 48px 0 rgba(7, 5, 9, 0.05);
         }
+
+        &-info {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin-top: 2rem;
+
+          ul {
+            list-style: none;
+
+            li {
+              display: inline-block;
+              font-size: 0.85rem;
+              margin-right: 1rem;
+            }
+          }
+
+          .more {
+            a {
+              text-decoration: none;
+              border: 1px solid $secondaryColor;
+              color: $secondaryColor;
+              border-radius: 10px;
+              transition: all 0.2s ease-in-out;
+
+              padding: 5px 10px;
+              font-size: 0.85rem;
+
+              @include mq("tablet", "min") {
+                padding: 7px 15px;
+                font-size: 1rem;
+              }
+
+              &:hover {
+                background: $secondaryColor;
+                color: $white;
+              }
+            }
+          }
+        }
       }
     }
 
     &_more {
-      margin: 3rem 0;
+      margin: 2rem 0;
+      display: flex;
+      justify-content: center;
+
+      @include mq("tablet", "min") {
+        margin: 4rem 0;
+      }
+
+      a {
+        text-decoration: none;
+        border: 1px solid $primaryColor;
+        color: $primaryColor;
+        border-radius: 10px;
+        transition: all 0.2s ease-in-out;
+        padding: 5px 10px;
+        font-size: 0.85rem;
+
+        @include mq("tablet", "min") {
+          padding: 7px 15px;
+          font-size: 1rem;
+        }
+
+        &:hover {
+          background: $primaryColor;
+          color: $white;
+        }
+      }
+    }
+  }
+
+  &_blog {
+    margin: 2rem auto;
+    padding: 2rem 0 4rem 0;
+    background: #edf2f7;
+    max-width: 90%;
+    border-radius: 20px;
+
+    @include mq("tablet", "min") {
+      max-width: 60%;
+      margin: 3rem auto;
+    }
+
+    .container {
+      max-width: 900px;
+    }
+
+    h2 {
+      text-align: center;
+    }
+
+    &_post {
+      margin-bottom: 2rem;
+      transition: all 0.2s ease-in-out;
+      border-radius: 10px;
+      padding: 1rem;
+
+      @include mq("tablet", "min") {
+        margin-bottom: 3rem;
+      }
+
+      &:hover {
+        background: $white;
+        box-shadow: 0 6px 24px 0 rgba(44, 39, 56, 0.04),
+          24px 24px 48px 0 rgba(7, 5, 9, 0.05);
+      }
+
+      h3 {
+        a {
+          font-weight: 500;
+          color: $primaryColor;
+          text-decoration: none;
+          font-size: 1.2rem;
+
+          @include mq("tablet", "min") {
+            font-size: 1.4rem;
+          }
+        }
+      }
+
+      .time {
+        margin-top: 0;
+
+        p {
+          font-size: 0.85rem;
+          color: rgba($primaryColor, 0.7);
+        }
+      }
+
+      .more {
+        margin-top: 2rem;
+        a {
+          text-decoration: none;
+          border: 1px solid $secondaryColor;
+          color: $secondaryColor;
+          border-radius: 10px;
+          transition: all 0.2s ease-in-out;
+          display: inline-block;
+          padding: 5px 10px;
+          font-size: 0.85rem;
+
+          @include mq("tablet", "min") {
+            padding: 7px 15px;
+            font-size: 1rem;
+          }
+
+          &:hover {
+            background: $secondaryColor;
+            color: $white;
+          }
+        }
+      }
+    }
+
+    &_more {
       display: flex;
       justify-content: center;
 
