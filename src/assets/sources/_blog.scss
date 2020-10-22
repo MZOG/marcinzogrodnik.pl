@@ -93,3 +93,10 @@
     }
   }
 }
+
+
+@include mq('tablet', 'min') {
+  p {
+    display: block;
+  }
+}

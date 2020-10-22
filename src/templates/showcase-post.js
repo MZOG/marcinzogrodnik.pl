@@ -32,6 +32,10 @@ export default ({ data }) => {
                 __html: post.contentNode.childMarkdownRemark.html,
               }}
             />
+
+            <div className="project-url">
+            <a href={post.projectUrl}>Zobacz online</a>
+            </div>
           </section>
           <QuickContact />
         </div>
@@ -49,6 +53,7 @@ export const query = graphql`
         }
       }
       title
+      projectUrl
       slug
       meta {
         createdAt(formatString: "D MMMM YYYY")

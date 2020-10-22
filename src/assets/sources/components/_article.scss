@@ -58,7 +58,7 @@
     font-family: 'marcinzogrodnik';
     font-size: 1.6rem;
     margin-bottom: 1rem;
-    color: $secondaryColor;
+    color: $primaryColor;
     letter-spacing: -2px;
 
     @include mq('tablet', 'min') {
@@ -100,5 +100,33 @@
 
   .container {
     max-width: 900px;
+  }
+
+  .project-url {
+    margin: 3rem 0;
+    display: flex;
+    justify-content: center;
+
+    a {
+      text-decoration: none;
+      border: 1px solid $secondaryColor;
+      color: $secondaryColor;
+      border-radius: 10px;
+      transition: all 0.2s ease-in-out;
+      padding: 5px 10px;
+      font-size: 0.85rem;
+      background: $white;
+      font-weight: 400;
+
+      @include mq("tablet", "min") {
+        padding: 7px 15px;
+        font-size: 1rem;
+      }
+
+      &:hover {
+        background: $secondaryColor;
+        color: $white;
+      }
+    }
   }
 }
