@@ -72,7 +72,7 @@ const IndexPage = () => {
         <div className="container">
           <div className="homepage_hero">
             <h1>
-              Tworzę szybkie oraz bezpieczne <span>strony internetowe</span>
+              Szybkie oraz bezpieczne <span>strony internetowe</span>
             </h1>
             <div className="homepage_hero_image">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 940 633">

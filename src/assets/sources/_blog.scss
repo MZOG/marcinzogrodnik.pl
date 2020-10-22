@@ -12,9 +12,16 @@
   flex-direction: column-reverse;
   max-width: 900px;
   margin: 0 auto;
-  padding-bottom: 20px;
 
-  @include mq('tablet', 'min') {
+  @include mq("tablet", "min") {
+    padding: 20px;
+    border-radius: 10px;
+    background: $lightBlue;
+    box-shadow: 0 6px 24px 0 rgba(44, 39, 56, 0.04),
+      24px 24px 48px 0 rgba(44, 39, 56, 0.08);
+  }
+
+  @include mq("tablet", "min") {
     flex-direction: row;
     margin-bottom: 40px;
     width: 100%;
@@ -25,7 +32,7 @@
     border-top: 1px solid #eaeaea;
     padding-top: 20px;
 
-    @include mq('tablet', 'min') {
+    @include mq("tablet", "min") {
       padding-top: 30px;
     }
   }
@@ -35,21 +42,20 @@
 
     h2 {
       a {
-        font-weight: 600;
         text-decoration: none;
         color: $primaryColor;
         margin-bottom: 1rem;
         display: inline-block;
-        font-family: 'marcinzogrodnik';
+        font-family: "marcinzogrodnik";
         font-size: 1.5rem;
         line-height: 1;
         letter-spacing: -1px;
 
-        @include mq('tablet', 'min') {
+        @include mq("tablet", "min") {
           font-size: 1.8rem;
         }
 
-        @include mq('desktop', 'min') {
+        @include mq("desktop", "min") {
           font-size: 2.2rem;
         }
 
@@ -60,18 +66,20 @@
     }
 
     .post-more {
-      margin-top: 2rem;
+      margin-top: 1rem;
+      margin-bottom: 1rem;
 
       a {
-        background: rgb(237, 242, 247);
+        background: $secondaryColor;
         display: inline-flex;
         align-items: center;
         text-decoration: none;
-        color: $primaryColor;
+        color: $white;
         padding: 0.5rem 1rem;
         border-radius: 6px;
         font-weight: 500;
         font-size: 0.8rem;
+        transition: all .2s ease-in-out;
 
         svg {
           margin-left: 10px;
@@ -79,7 +87,7 @@
 
         &:hover {
           color: $white;
-          background: $secondaryColor;
+          background: $primaryColor;
         }
       }
     }
