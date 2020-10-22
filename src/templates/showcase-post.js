@@ -34,7 +34,7 @@ export default ({ data }) => {
             />
 
             <div className="project-url">
-            <a href={post.projectUrl}>Zobacz online</a>
+              <a href={post.projectUrl}>Zobacz online</a>
             </div>
           </section>
           <QuickContact />
