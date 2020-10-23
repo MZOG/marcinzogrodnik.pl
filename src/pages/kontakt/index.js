@@ -35,7 +35,8 @@ const Kontakt = () => {
 
             </div>
             <div className="contact-form">
-              <form name="contact" method="POST" data-netlify="true">
+              <form name="Marcin_Zogrodnik_Kontakt" method="POST" data-netlify="true" action="/kontakt/success">
+               <input type="hidden" name="form-name" value="Marcin_Zogrodnik_Kontakt" />
                 <div className="contact-form-item">
                   <label htmlFor="name">Imię</label>
                   <input type="text" name="name" placeholder="Marcin "/>

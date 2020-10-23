@@ -12,7 +12,9 @@ const QuickContact = () => {
           na temat Twojej nowej strony internetowej.
         </p>
 
-        <form>
+        <form name="QuickContact" method="POST" data-netlify="true" action="/kontakt/success">
+        <input type="hidden" name="form-name" value="QuickContact" />
+
           <div className="form-input">
             <label htmlFor="phone-email">
               <input type="text" name="phone-email" id="phone-email" />
