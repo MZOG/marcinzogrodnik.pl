@@ -8,7 +8,6 @@ import QuickContact from "../components/quickContact"
 
 export default ({ data }) => {
   const post = data.datoCmsShowcase
-  console.log(post)
   return (
     <Layout>
       <SEO title={post.title} description={post.description} />
