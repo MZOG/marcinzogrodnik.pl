@@ -19,9 +19,6 @@ const QuickContact = () => {
             <label htmlFor="phone-email">
               <input type="text" name="phone-email" id="phone-email" placeholder="np. 739907919"/>
             </label>
-            <label htmlFor="path">
-              <input type="hidden" name="path" id="path" value={`${window.location.pathname}`}/>
-            </label>
           </div>
           <div className="form-input">
             <label htmlFor="submit">
