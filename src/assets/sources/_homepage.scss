@@ -32,7 +32,6 @@
       letter-spacing: -1px;
 
       @include mq("tablet", "min") {
-        letter-spacing: -1px;
         font-size: 3.3rem;
       }
 
