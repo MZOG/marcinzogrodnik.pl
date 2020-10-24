@@ -2,11 +2,11 @@
   h2 {
     font-size: 2rem;
     font-family: "marcinzogrodnik", sans-serif;
-    letter-spacing: -2px;
+    letter-spacing: -1px;
     margin-bottom: 2rem;
 
     @include mq("tablet", "min") {
-      letter-spacing: -1px;
+      letter-spacing: 0px;
       font-size: 2.5rem;
     }
 
@@ -29,7 +29,7 @@
       line-height: 1;
       text-align: center;
       margin-bottom: 2rem;
-      letter-spacing: -2px;
+      letter-spacing: -1px;
 
       @include mq("tablet", "min") {
         letter-spacing: -1px;
@@ -137,12 +137,11 @@
         h3 {
           font-family: "marcinzogrodnik", sans-serif;
           font-size: 1.7rem;
-          letter-spacing: -2px;
+          letter-spacing: -1px;
           margin-bottom: 1rem;
           text-align: center;
 
           @include mq("tablet", "min") {
-            letter-spacing: -1px;
             font-size: 2rem;
             text-align: left;
           }
@@ -200,14 +199,10 @@
           a {
             font-family: "marcinzogrodnik", sans-serif;
             font-size: 2rem;
-            letter-spacing: -2px;
+            letter-spacing: -1px;
             margin-bottom: 1rem;
             color: $primaryColor;
             text-decoration: none;
-
-            @include mq("tablet", "min") {
-              letter-spacing: -1px;
-            }
 
             &:hover {
               color: $secondaryColor;
