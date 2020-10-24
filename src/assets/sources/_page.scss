@@ -38,7 +38,7 @@
       margin-bottom: 1rem;
       color: $secondaryColor;
       line-height: 1;
-      letter-spacing: -2px;
+      letter-spacing: -1px;
 
       @include mq("tablet", "min") {
         font-size: 2rem;
@@ -53,7 +53,7 @@
       margin-bottom: 1rem;
       font-family: "marcinzogrodnik";
       font-size: 1.3rem;
-      letter-spacing: -2px;
+      letter-spacing: -1px;
 
       @include mq("tablet", "min") {
         font-size: 1.7rem;
@@ -125,7 +125,7 @@
       h2 {
         width: 100%;
         margin-bottom: 1rem;
-        letter-spacing: -2px;
+        letter-spacing: -1px;
 
         @include mq('tablet', 'min') {
           margin-bottom: 2rem;
