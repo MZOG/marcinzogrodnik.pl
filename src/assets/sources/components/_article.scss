@@ -55,8 +55,8 @@
   }
 
   h2 {
-    font-family: 'marcinzogrodnik';
-    font-size: 1.6rem;
+    // font-family: 'marcinzogrodnik';
+    font-size: 1.5rem;
     margin-bottom: 1rem;
     color: $primaryColor;
     letter-spacing: -1px;
@@ -72,7 +72,7 @@
 
   h3 {
     margin-bottom: 1rem;
-    font-family: 'marcinzogrodnik';
+    // font-family: 'marcinzogrodnik';
     font-size: 1.3rem;
     letter-spacing: -1px;
 
@@ -81,7 +81,7 @@
     }
 
     @include mq('tabletw', 'min') {
-      font-size: 2rem;
+      font-size: 1.8rem;
     }
   }
 
