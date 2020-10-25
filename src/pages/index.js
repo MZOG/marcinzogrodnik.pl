@@ -357,12 +357,12 @@ const IndexPage = () => {
                 let tags = project.node.tags.split(",")
                 return (
                   <article className="item" key={project.node.id}>
+                    <Img fluid={project.node.image.fluid} />
                     <h3>
                       <Link to={`/realizacje/${project.node.slug}`}>
                         {project.node.title}
                       </Link>
                     </h3>
-                    <Img fluid={project.node.image.fluid} />
                     <div className="item-description">
                       <p>{project.node.seo.description}</p>
                     </div>
