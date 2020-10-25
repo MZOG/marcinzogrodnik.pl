@@ -63,7 +63,7 @@
     }
 
     .breadcrumbs {
-      margin-bottom: 1rem;
+      margin-bottom: .2rem;
 
       @include mq('tablet', 'min') {
         margin-bottom: 0;
