@@ -36,7 +36,7 @@
       font-family: "marcinzogrodnik";
       font-size: 1.6rem;
       margin-bottom: 1rem;
-      color: $secondaryColor;
+      // color: $secondaryColor;
       line-height: 1;
       letter-spacing: -1px;
 
@@ -65,7 +65,13 @@
     }
 
     p {
+      line-height: 1.6;
+      font-size: 1.1rem;
       margin-bottom: 1rem;
+
+      @include mq('tablet', 'min') {
+        white-space: break-spaces;
+      }
 
       strong {
         font-weight: 500;
@@ -78,7 +84,7 @@
           content: '';
           top: 80%;
           width: 70%;
-          height: 4px;
+          height: 3px;
           background: rgba($secondaryColor, 0.3);
           position: absolute;
         }
@@ -120,6 +126,7 @@
       @include mq('tablet', 'min') {
         flex-direction: row;
         align-items: center;
+        margin-bottom: 4rem;
       }
 
       h2 {
@@ -145,6 +152,7 @@
         svg {
           width: 50%;
           margin-bottom: 1rem;
+          opacity: 0.7;
 
           @include mq('tablet', 'min') {
             margin-bottom: 0;

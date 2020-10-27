@@ -17,7 +17,7 @@ module.exports = {
       options: {
         fonts: [
           {
-            family: `Poppins`,
+            family: `Inter`,
             variants: [`400`, `500`, `600`],
             subsets: [`latin`]
           },
