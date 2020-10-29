@@ -12,18 +12,18 @@ module.exports = {
     }
   },
   plugins: [
-    {
-      resolve: `gatsby-plugin-prefetch-google-fonts`,
-      options: {
-        fonts: [
-          {
-            family: `Inter`,
-            variants: [`400`, `500`, `600`],
-            subsets: [`latin`]
-          },
-        ],
-      },
-    },
+    // {
+    //   resolve: `gatsby-plugin-prefetch-google-fonts`,
+    //   options: {
+    //     fonts: [
+    //       {
+    //         family: `Inter`,
+    //         variants: [`400`, `500`, `600`],
+    //         subsets: [`latin`]
+    //       },
+    //     ],
+    //   },
+    // },
     {
       resolve: `gatsby-transformer-remark`,
       options: {
