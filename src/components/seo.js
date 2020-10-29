@@ -21,7 +21,7 @@ function SEO({ description, lang, meta, title, shareImage, schemaMarkup }) {
     const metaDescription = description || site.siteMetadata.description;
     const image =
         shareImage ||
-        "https://www.datocms-assets.com/30080/1599225992-marcinzogrodnik-default-image.jpg";
+        "https://www.datocms-assets.com/34585/1603983032-jamstack-wordpress-fb-post.jpg";
 
     return (
         <Helmet
