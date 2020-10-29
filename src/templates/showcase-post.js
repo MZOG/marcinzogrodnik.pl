@@ -43,7 +43,7 @@ export default ({ data }) => {
     <Layout>
       <SEO
         title={post.title}
-        description={post.description}
+        description={post.seo.description}
         shareImage={post.seo.image.sizes.src}
         schemaMarkup={schema}
       />
