@@ -12,18 +12,6 @@ module.exports = {
     }
   },
   plugins: [
-    // {
-    //   resolve: `gatsby-plugin-prefetch-google-fonts`,
-    //   options: {
-    //     fonts: [
-    //       {
-    //         family: `Inter`,
-    //         variants: [`400`, `500`, `600`],
-    //         subsets: [`latin`]
-    //       },
-    //     ],
-    //   },
-    // },
     {
       resolve: `gatsby-transformer-remark`,
       options: {
@@ -68,7 +56,6 @@ module.exports = {
       options: {
         name: `images`,
         path: `${__dirname}/src/images`,
-        // path: path.join(__dirname, `src`, `images`)
       },
     },
     `gatsby-transformer-sharp`,

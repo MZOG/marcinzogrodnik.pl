@@ -2,11 +2,13 @@ import React from "react"
 import Layout from "../../components/layout"
 import SEO from "../../components/seo"
 import PageHero from "../../components/pageHero"
-import { graphql } from "gatsby"
 import Article from "../../components/article"
+import { graphql } from "gatsby"
 
 const Blog = ({ data }) => {
   const blogPosts = data.allDatoCmsPost.edges
+  const author = data.author
+
   return (
     <Layout>
       <SEO
@@ -21,18 +23,24 @@ const Blog = ({ data }) => {
           />
 
           <div className="posts-container">
-            {blogPosts.map(post => {
-              return (
-                <Article
-                  key={post.node.id}
-                  slug={post.node.slug}
-                  title={post.node.title}
-                  date={post.node.meta.createdAt}
-                  description={post.node.seo.description}
-                  image={post.node.image.fluid}
-                />
-              )
-            })}
+            <div className="posts">
+              {blogPosts.map(post => {
+                return (
+                  <Article
+                    author={author.childImageSharp.fluid}
+                    key={post.node.id}
+                    slug={post.node.slug}
+                    title={post.node.title}
+                    date={post.node.meta.createdAt}
+                    description={post.node.seo.description}
+                    image={post.node.image.fluid}
+                  />
+                )
+              })}
+            </div>
+            <aside className="sidebar">
+              <p>hello, this is sidebar</p>
+            </aside>
           </div>
         </div>
       </section>
@@ -44,7 +52,7 @@ export default Blog
 
 export const query = graphql`
   query AllPosts {
-    allDatoCmsPost(sort: { order: DESC, fields: meta___createdAt }) {
+    allDatoCmsPost: allDatoCmsPost(sort: { order: DESC, fields: meta___createdAt }) {
       edges {
         node {
           image {
@@ -62,6 +70,13 @@ export const query = graphql`
           seo {
             description
           }
+        }
+      }
+    }
+    author: file(relativePath: {eq: "marcin_profilowe.jpg"}) {
+      childImageSharp {
+        fluid(maxWidth: 200) {
+          ...GatsbyImageSharpFluid
         }
       }
     }
