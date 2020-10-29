@@ -54,6 +54,26 @@ const IndexPage = () => {
   const projects = data.allDatoCmsShowcase.edges
   const posts = data.allDatoCmsPost.edges
 
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Marcin Zogrodnik - Strony internetowe",
+    "alternateName": "Marcin Zogrodnik - Strony internetowe",
+    "url": "https://marcinzogrodnik.pl",
+    "logo": "https://www.datocms-assets.com/34585/1603980502-invoice-logo.png",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "739907919",
+      "contactType": "customer service",
+      "areaServed": "PL",
+      "availableLanguage": "Polish"
+    },
+    "sameAs": [
+      "https://www.facebook.com/frontendmarcin",
+      "https://instagram.com/marcinzogrodnik.pl"
+    ]
+  }
+
   // Format time for blog posts
   let formatter = new Intl.DateTimeFormat( 'pl', {
     day: 'numeric',
@@ -66,6 +86,7 @@ const IndexPage = () => {
       <SEO
         title="Marcin Zogrodnik"
         description="Marcin Zogrodnik - Nowoczesne, szybkie oraz bezpieczne strony internetowe JAMstack oraz WordPress. Zapoznaj się z ofertą."
+        schemaMarkup={schema}
       />
 
       <section className="homepage">

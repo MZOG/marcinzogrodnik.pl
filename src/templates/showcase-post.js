@@ -8,9 +8,45 @@ import QuickContact from "../components/quickContact"
 
 export default ({ data }) => {
   const post = data.datoCmsShowcase
+
+  let formatter = new Intl.DateTimeFormat( 'pl', {
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric'
+  } );
+
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": `https://marcinzogrodnik.pl/blog/${post.slug}`
+    },
+    "headline": post.title,
+    "image": post.seo.image.sizes.src,
+    "author": {
+      "@type": "Person",
+      "name": "Marcin Zogrodnik"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Marcin Zogrodnik - Strony internetowe",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.datocms-assets.com/34585/1603980502-invoice-logo.png"
+      }
+    },
+    "datePublished": formatter.format( new Date(post.meta.createdAt) )
+  }
+
   return (
     <Layout>
-      <SEO title={post.title} description={post.description} />
+      <SEO
+        title={post.title}
+        description={post.description}
+        shareImage={post.seo.image.sizes.src}
+        schemaMarkup={schema}
+      />
       <article className="article">
         <div className="container flex">
           <PageHero
