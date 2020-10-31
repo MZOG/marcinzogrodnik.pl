@@ -2,7 +2,8 @@ import React from "react"
 import { Link } from "gatsby"
 import Img from "gatsby-image"
 
-const Article = ({ title, slug, description, image, author, date }) => {
+const Article = ({ title, slug, description, image, author, date, tags }) => {
+  let postTags = tags.split(",")
 
   let formatter = new Intl.DateTimeFormat( 'pl', {
     day: 'numeric',
@@ -24,13 +25,6 @@ const Article = ({ title, slug, description, image, author, date }) => {
               <p>Marcin Zogrodnik</p>
               <p>{formatter.format( new Date(date))}</p>
             </div>
-          </div>
-          <div className="categories">
-            <ul>
-              <li><Link to="/">Gastronomia</Link></li>
-              <li><Link to="/">Tag</Link></li>
-              <li><Link to="/">Tag</Link></li>
-            </ul>
           </div>
         </div>
         <h2>

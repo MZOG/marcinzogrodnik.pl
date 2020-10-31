@@ -1,19 +1,21 @@
+const _ = require("lodash")
 
 exports.createPages = async function ({ actions, graphql }) {
   const { data } = await graphql(`
     query {
-        allDatoCmsPost {
-          edges {
-            node {
-              slug
-            }
+      allDatoCmsPost: allDatoCmsPost {
+        edges {
+          node {
+            slug
           }
         }
       }
-    `)
+    }
+  `)
 
   data.allDatoCmsPost.edges.forEach(edge => {
     const slug = edge.node.slug
+
     actions.createPage({
       path: `blog/${slug}`,
       component: require.resolve(`./src/templates/blog-post.js`),

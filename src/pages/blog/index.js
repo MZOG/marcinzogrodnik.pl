@@ -34,12 +34,13 @@ const Blog = ({ data }) => {
                     date={post.node.meta.createdAt}
                     description={post.node.seo.description}
                     image={post.node.image.fluid}
+                    tags={post.node.tags}
                   />
                 )
               })}
             </div>
             <aside className="sidebar">
-              <p>hello, this is sidebar</p>
+              <h2>Ostatnie realizacje</h2>
             </aside>
           </div>
         </div>
@@ -61,6 +62,7 @@ export const query = graphql`
               src
             }
           }
+          tags
           title
           slug
           id

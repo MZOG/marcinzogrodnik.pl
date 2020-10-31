@@ -10,6 +10,7 @@
       margin-bottom: 1rem;
       color: $primaryColor;
       line-height: 1;
+      font-weight: 500;
 
       @include mq('tablet', 'min') {
         font-size: 2rem;
@@ -25,6 +26,7 @@
       margin-bottom: 1rem;
       line-height: 1;
       font-size: 1.3rem;
+      font-weight: 500;
 
       @include mq('tablet', 'min') {
         font-size: 1.7rem;
