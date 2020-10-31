@@ -44,7 +44,7 @@ export default Blog
 
 export const query = graphql`
   query AllPosts {
-    allDatoCmsPost(sort: { order: DESC, fields: meta___createdAt }) {
+    allDatoCmsPost(sort: {order: DESC, fields: meta___firstPublishedAt}) {
       edges {
         node {
           image {
@@ -57,7 +57,7 @@ export const query = graphql`
           slug
           id
           meta {
-            createdAt(formatString: "D MMMM YYYY")
+            publishedAt(formatString: "D MMMM YYYY")
           }
           seo {
             description

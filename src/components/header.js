@@ -6,7 +6,7 @@ function Header() {
   const data = useStaticQuery(graphql`
     query BlogPost {
       allDatoCmsPost(
-        sort: { fields: meta___createdAt, order: DESC }
+        sort: { fields: meta___firstPublishedAt, order: DESC }
         limit: 1
       ) {
         edges {
