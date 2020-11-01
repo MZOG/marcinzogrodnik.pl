@@ -5,40 +5,9 @@
     margin-top: 2rem;
     margin-bottom: 3rem;
 
-    h2 {
-      font-size: 1.5rem;
-      margin-bottom: 1rem;
-      color: $primaryColor;
-      line-height: 1;
-
-      @include mq('tablet', 'min') {
-        font-size: 2rem;
-      }
-
-      @include mq('tabletw', 'min') {
-        // font-size: 2.6rem;
-        margin: 2rem 0;
-      }
-    }
-
-    h3 {
-      margin-bottom: 1rem;
-      line-height: 1;
-      font-size: 1.3rem;
-
-      @include mq('tablet', 'min') {
-        font-size: 1.7rem;
-      }
-
-      @include mq('tabletw', 'min') {
-        // font-size: 2.1rem;
-        margin: 2rem 0;
-      }
-    }
-
     p {
       line-height: 1.6;
-      font-size: 1.1rem;
+      font-size: 1rem;
       margin-bottom: 1rem;
 
       @include mq('tablet', 'min') {
@@ -49,31 +18,57 @@
         font-weight: 500;
         display: inline-block;
         position: relative;
+        line-height: 1;
+        border-bottom: 1px solid rgba($primaryColor, 0.6);
+      }
+    }
 
-        &::before {
-          z-index: -1;
-          left: 0;
-          content: '';
-          top: 80%;
-          width: 70%;
-          height: 3px;
-          background: rgba($secondaryColor, 0.3);
-          position: absolute;
-        }
+    h2 {
+      font-size: 1.6rem;
+      margin-bottom: 2rem;
+      line-height: 1;
+      font-family: 'Montserrat';
+      text-transform: uppercase;
+      font-style: italic;
+      letter-spacing: 0.5px;
+
+      @include mq("tabletw", "min") {
+        font-size: 2rem;
+      }
+
+      &:not(:first-child) {
+        margin: 2rem 0 2rem 0;
+      }
+    }
+
+    h3 {
+      margin-bottom: 1rem;
+      font-family: 'Montserrat';
+      font-size: 1.3rem;
+      text-transform: uppercase;
+      font-weight: 900;
+      font-style: italic;
+      letter-spacing: 0.5px;
+
+      @include mq("tabletw", "min") {
+        font-size: 1.6rem;
+        margin: 2rem 0 1rem 0;
       }
     }
 
     a {
-      font-weight: 500;
+      color: $secondaryColor;
       text-decoration: none;
-      border-bottom: 1px dotted $primaryColor;
-      color: $primaryColor;
-
-      transition: all .2s ease-in-out;
+      display: inline-block;
+      position: relative;
+      font-weight: 500;
+      border-bottom: 1px dashed $secondaryColor;
+      line-height: 1;
+      padding: 3px 0;
 
       &:hover {
-        background: #edf2f7;
-        border-color: $primaryColor;
+        border-bottom: 1px solid $secondaryColor;
+        background: rgba($secondaryColor, 0.2);
       }
     }
   }

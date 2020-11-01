@@ -3,16 +3,29 @@ import React from "react"
 import Layout from "../../components/layout"
 import SEO from "../../components/seo"
 import PageHero from "../../components/pageHero"
-import { Link } from "gatsby"
+import { useStaticQuery, graphql } from "gatsby"
 import QuickContact from "../../components/quickContact"
 
 const StronyInternetoweWordPress = () => {
+  const data = useStaticQuery(graphql`
+    {
+      file(relativePath: {eq: "strony-internetowe-jamstack.jpg"}) {
+        childImageSharp {
+          fluid(maxWidth: 400) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+    }
+  `)
+
   return (
     <Layout>
       <SEO
         lang="pl"
         title="Strony internetowe WordPress"
         description="Strony oraz sklepy internetowe WordPress"
+        shareImage={data.file.childImageSharp.fluid.src}
       />
       <section className="page">
         <div className="container">

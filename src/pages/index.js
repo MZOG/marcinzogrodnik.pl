@@ -31,7 +31,7 @@ const IndexPage = () => {
       }
 
       allDatoCmsPost(
-        sort: { order: DESC, fields: meta___firstPublishedAt }
+        sort: { order: DESC, fields: meta___createdAt }
         limit: 3
       ) {
         edges {

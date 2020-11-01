@@ -57,7 +57,7 @@ export const query = graphql`
           slug
           id
           meta {
-            publishedAt(formatString: "D MMMM YYYY")
+            createdAt(formatString: "D MMMM YYYY")
           }
           seo {
             description

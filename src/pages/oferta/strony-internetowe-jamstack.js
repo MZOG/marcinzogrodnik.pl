@@ -6,13 +6,28 @@ import PageHero from "../../components/pageHero"
 import { Link } from "gatsby"
 import QuickContact from "../../components/quickContact"
 
+import { useStaticQuery, graphql } from "gatsby"
+
 const StronyInternetoweJAMstack = () => {
+  const data = useStaticQuery(graphql`
+    {
+      file(relativePath: { eq: "strony-internetowe-jamstack.jpg" }) {
+        childImageSharp {
+          fluid(maxWidth: 400) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+    }
+  `)
+
   return (
     <Layout>
       <SEO
         lang="pl"
         title="Strony internetowe JAMstack"
         description="Strony internetowe JAMstack, czyli statyczne strony internetowe z Gatsby oraz Next.js."
+        shareImage={data.file.childImageSharp.fluid.src}
       />
       <section className="page">
         <div className="container">
@@ -22,236 +37,159 @@ const StronyInternetoweJAMstack = () => {
           />
 
           <div className="content">
+            <h2>Strona statyczna</h2>
             <p>
-              <strong>JAMstack</strong> to skrót od{" "}
-              <strong>Javascript, API, Markup</strong>, jest to nowoczesny
-              sposób tworzenia stron internetowych. Przed pojawieniem się PHP,
-              każda strona w internecie była statyczna, nie pobierała ona
-              żadnych danych z serwera, dlatego też ładowały się bardzo szybko.
+              Czasem bardzo ciężko jest odróżnić <strong>statyczną</strong>{" "}
+              stronę internetową od <strong>dynamicznej</strong>. Jeżeli Twoja
+              firma nie wymaga sklepu internetowego, lub rozbudowanego portalu,
+              wtedy na 90% jest to strona statyczna. Nie zawsze jednak tak jest,
+              sporo programistów do bardzo prostych stron informacyjnych używa{" "}
+              <strong>WordPress'a</strong>, co moim zdaniem jest niepotrzebne.
             </p>
             <p>
-              Poprzednia generacja statycznych stron miała jedną wadę, była
-              czasochłonna w utrzymaniu, szczególnie w przypadku, gdy
-              treść zmieniała się często. Każda zmiana wymagała bezpośredniej
-              edycji plików <strong>HTML</strong>, przez co osoby mniej
-              techniczne nie były w stanie samodzielnie zarządzać stroną.
+              Oczywiście strony statyczne również mogą być rozbudowane, ba..
+              coraz więcej firm decyduje się na statyczne sklepy internetowe!
+            </p>
+            <p>
+              W większości przypadków zwykła strona informacyjna wykorzystująca{" "}
+              <strong>Gatsby</strong> jest wystarczająca, aby zapokoić potrzeby
+              strony firmowej. Strona <strong>marcinzogrodnik.pl</strong>{" "}
+              wykorzystuje właśnie <strong>JAMstack</strong> oraz{" "}
+              <strong>Gatsby</strong>. Do zarządzania treścią, tak samo jak w
+              przypadku WordPress'a używam <strong>DatoCMS</strong>, który jest
+              świetnym narzędziem.
             </p>
 
-            <div className="split">
-              <h2>Szybkość</h2>
-              <div className="image">
-                <svg
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"
-                  />
-                </svg>
-              </div>
-              <div className="text">
-                <p>
-                  To, co wyróżnia statyczne strony <strong>JAMstack</strong>, to
-                  przede wszystkim szybkość działania strony. Strona{" "}
-                  <Link to="/">marcinzogrodnik.pl</Link> została wykonana
-                  właśnie tą metodą, co można stwierdzić właśnie po szybkości
-                  oraz wydajności.
-                </p>
+            <h3>Strona statyczna vs. dynamiczna</h3>
 
-                <p>
-                  Dzieje się tak z kilku powodów, po pierwsze nie wysyłane
-                  są żadne zapytania do bazy danych, zapytania te mogą znacznie
-                  spowolnić czas ładowania strony. Zauważysz to w 80% przypadków
-                  stron internetowych.
-                </p>
+            <p>
+              <strong>WordPress</strong> to idealny przykład strony dynamicznej.
+              Strona internetowa wykorzystująca WordPress musi być połączona z
+              bazą danych, która jest zainstalowana na serwerze. Każde
+              zalogowanie się do panelu administratora, każda odsłona strony
+              wymaga wysłania zapytania do serwera oraz do bazy danych. W tym
+              zapytaniu są różne informacje wcześniej zdefiniowane przez
+              twórcę strony.
+            </p>
 
-                <p>
-                  Optymalizacja kodu również przyczynia się do szybkości strony.
-                  Użytkownik dostaje tylko pliki{" "}
-                  <strong>HTML, CSS oraz JavaScript.</strong>
-                </p>
-              </div>
+            <p>
+              Dynamiczna strona internetowa tworzona jest "w locie", czyli każde
+              zapytanie generuje nowy <strong>HTML</strong> i wyświetla go
+              użytkownikowi, gdy tylko dostanie wszystkie informacje. Jak każdy
+              system, strona dynamiczna ma swoje wady i zalety, ważne jest
+              odpowiednie dobranie technologii do oczekiwań klienta.
+            </p>
+
+            <p>
+              Dynamiczne strony, najczęściej wykorzystujące{" "}
+              <strong>WordPress</strong> potrafią być bardzo dobrze
+              zoptymalizowane. Odpowiednie techniki użyte w tworzeniu strony
+              pomagają uniknąć późniejszego spowolnienia strony internetowej.
+            </p>
+
+            <p>
+              Więcej o WordPress przeczytasz w{" "}
+              <Link to="/oferta/strony-internetowe-wordpress/">
+                ofercie strony internetowej WordPress
+              </Link>
+              .
+            </p>
+
+            <div style={{ textAlign: "center" }}>
+              <p
+                style={{
+                  color: "#fb3c54",
+                  fontSize: "1.7rem",
+                  fontWeight: "900",
+                  fontStyle: "italic",
+                }}
+              >
+                vs.
+              </p>
             </div>
 
-            <div className="split">
-              <h2>Bazy danych</h2>
+            <p>
+              <strong>Statyczna strona internetowa</strong> różni się tym, że
+              jest generowana raz, i wszystkie strony czy pliki są już gotowe na
+              serwerze do wyświetlenia. Jest to niewątpliwie główna zaleta stron
+              statycznych, ponieważ strony te są mniej narażone na potencjalne
+              ataki hakerów.
+            </p>
 
-              <div className="image">
-                <svg
-                  className="w-6 h-6"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4"
-                  />
-                </svg>
-              </div>
-              <div className="text">
-                <p>
-                  Zaraz, zaraz.. ale co z danymi, co w przypadku, gdy chcę
-                  prowadzić firmowego bloga, lub dodać realizacje projektów?
-                  Tutaj do gry wchodzi <strong>API</strong>, które jest
-                  odpowiedzialne za pobieranie danych. W zależności jak
-                  skonfigurowana jest strona, dane mogą pochodzić z bazy danych
-                  lub np. GitHub'a.
-                </p>
+            <p>
+              Poruszanie się po stronie statycznej jest dużo szybsze, niż w
+              przypadku stron dynamicznych, ponieważ cała zawartość już tam
+              jest. Daje to wspaniałe efekty w postaci bardzo szybkiej strony
+              internetowej.
+            </p>
+            <p>
+              W przypadku gdy wymagany jest system blogowy / aktualności,
+              korzysta się z zewnętrznych narzędzi takich jak{" "}
+              <a href="https://datocms.com">DatoCMS</a> do zarządzania treścią
+              na blogu / aktualnościach. DatoCMS to nie jest jedyny wybór, pod
+              hasłem <strong>Headless CMS</strong> znajdziesz pełną listę
+              serwisów oferujących te właśnie usługi.
+            </p>
+            <p>
+              Aby wyświetlić posty z <strong>DatoCMS</strong> wymagane jest
+              zintegrowanie{" "}
+              <strong>API</strong> DatoCMS z naszą stroną internetową.
+            </p>
+            <p>
+              Podczas generowania nowej wersji strony tworzona jest cała
+              zawartość. Zapytania te np. o posty, obrazki są wykonwywane przed
+              dodaniem strony na serwer.
+            </p>
 
-                <p>
-                  Przewagą używania API jest to, że wszystkie dane pobierane są
-                  w tle, przez co statyczne elementy takie jak nagłówki czy
-                  szkielet HTML zawsze ładuje się w pierwszej kolejności, tak,
-                  aby użytkownik zobaczył, że od razu coś się dzieje na naszej
-                  stronie internetowej.
-                </p>
+            <h2>Dlaczego wybrać JAMstack?</h2>
+            <p>
+              Jeżeli Twoja strona nie będzie aktualizowana 30 razy w ciągu dnia,
+              to statyczna strona <strong>JAMstack</strong> jest dla Ciebie idealnym
+              rozwiązaniem. Strona będzie lekka, oraz każda podstrona będzie
+              dostępna natychmiast po kliknięciu w link! Szybkość strony
+              internetowej bardzo wpływa na pozycjoniwanie, więc warto się nad
+              tym zastanowić.
+            </p>
 
-                <p>
-                  Zobacz stronę <Link to="/blog/">blog</Link>, przyjżyj się
-                  obrazkom dla każdego posta. Obrazki jak i tekst są pobierane
-                  właśnie dzięki API. Tekst jest dużo lżejszy od obrazka, więc
-                  widzisz go natychmiast, obrazki mają lekkie opóźnienie, dzieje
-                  się tak dlatego, że potrzebują troszkę więcej czasu, aby się
-                  załadować.
-                </p>
+            <p>JAMstack to nie tylko szybkość, poznaj więcej zalet statycznych stron internetowych.</p>
 
-                <p>
-                  <strong>Uwaga!</strong> dalej mówimy o statycznej stronie
-                  internetowej, z tą różnicą, że teraz jesteśmy w stanie w
-                  bardzo łatwy sposób zarządzać treścią na naszej stronie,
-                  poprzez rozmaite panele zarządzania treścią, które są bardzo
-                  łatwe w obsłudze.
-                </p>
-              </div>
-            </div>
+            <h3>Koszt</h3>
+            <p>
+              Strona internetowa JAMstack jest tańsza w utrzymaniu oraz wykonaniu.
+              Darmowy hosting od <a href="https://netlify.com">Netlify</a> w zupełności
+              wystarczy dla małych, a nawet średnich firm.
+              Strona <Link to="/">marcinzogrodnik.pl</Link> korzysta z usług <strong>Netlify</strong>,
+              i nigdy nie było żadnych problemów z wyświetlaniem strony.
+            </p>
 
-            <div className="split">
-              <h2>Koszt utrzymania</h2>
+            <p>Koszt statycznej strony internetowej typu wizytówka, bez żadnych integracji
+              z zewnętrznymi usługami typu <strong>DatoCMS</strong> jest o wiele tańszy,
+              niż opcja z ww. usługami.
+            </p>
 
-              <div className="image">
-                <svg
-                  className="w-6 h-6"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                  />
-                </svg>
-              </div>
+            <p>
+              Czas realizacji również jest krótszy, niż w przypadku dynamicznych stron
+              internetowych.
+            </p>
 
-              <div className="text">
-                <p>
-                  Statyczna strona nie potrzebuje dedykowanego serwera lub
-                  hostingu. Dla prywatnych jak i biznesowych celów używam
-                  darmowego rozwiązania jakim jest{" "}
-                  <a href="https://netlify.com">Netlify</a>, lub{" "}
-                  <a href="https://vercel.com">Vercel</a>. Hostingi czy VPS'y to
-                  dodatkowy koszt, który w przypadku statycznej strony
-                  internetowej można wydać na coś innego.
-                </p>
-              </div>
-            </div>
+            <h3>Bezpieczeństwo</h3>
+            <p>
+              Twoja strona internetowa jest bezpieczniejsza i bardziej odporna
+              na ataki hakerów, ponieważ nie wysyłane są żadne zapytania do
+              serwera.
+            </p>
 
-            <div className="split">
-              <h2>Szybka realizacja</h2>
+            <h3>Wydajność</h3>
+            <p>
+              Strony internetowe <strong>JAMstack</strong> są o wiele szybsze od dynamicznych stron,
+              właśnie przez to, że są generowane podczas wysyłania na serwer, a nie
+              za każdym razem gdy klikniesz w link.
+            </p>
 
-              <div className="image">
-                <svg
-                  className="w-6 h-6"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
-                  />
-                </svg>
-              </div>
+            <p>Szybkość strony internetowej jest bardzo ważna dla pozycjonowania, oraz wyników w Google.
+              Wolniejsze strony są mniej promowane, przez co spada liczba potencjalnych klientów oraz zysków.
+            </p>
 
-              <div className="text">
-                <p>
-                  Strony JAMstack wykonuje się szybciej niż "normalne" strony
-                  internetowe przez gotowe frameworki (szkielety stron), do
-                  których wystarczy jedynie dopasować grafikę.
-                </p>
-              </div>
-            </div>
-
-            <div className="split">
-              <h2>Bezpieczeństwo</h2>
-
-              <div className="image">
-                <svg
-                  className="w-6 h-6"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
-                  />
-                </svg>
-              </div>
-
-              <div className="text">
-                <p>
-                  Statyczne strony są mniej narażone na ataki hakerów, ponieważ
-                  nie wykonujemy żadnych operacji po stronie serwera, do których
-                  potencjalny haker mógłby się włamać.
-                </p>
-              </div>
-            </div>
-
-            <div className="split">
-              <h2>Dla kogo?</h2>
-              <div className="image">
-                <svg
-                  className="w-6 h-6"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                  />
-                </svg>
-              </div>
-              <div className="text">
-                <p>
-                  Polecam JAMstack dla małych oraz średnich firm, które
-                  potrzebują stabilnej, bezpiecznej oraz szybkiej strony
-                  internetowej. Idealnym rozwiązaniem jest strona typu{" "}
-                  <strong>wizytówka</strong>, z opcją "aktualności / bloga".
-                </p>
-              </div>
-            </div>
           </div>
           <QuickContact />
         </div>
