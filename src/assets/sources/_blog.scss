@@ -5,90 +5,164 @@
   margin: 0 auto;
 }
 
-.post {
-  margin-bottom: 20px;
-  display: flex;
-  justify-content: space-between;
-  flex-direction: column-reverse;
-  max-width: 900px;
-  margin: 0 auto;
-
-  @include mq("tablet", "min") {
-    padding: 20px;
-    border-radius: 10px;
-    background: $lightBlue;
-    box-shadow: 0 6px 24px 0 rgba(44, 39, 56, 0.04),
-      24px 24px 48px 0 rgba(44, 39, 56, 0.08);
+.sidebar {
+  h2 {
+    font-weight: 400;
+    font-size: 1.4rem;
   }
+}
 
-  @include mq("tablet", "min") {
-    flex-direction: row;
-    margin-bottom: 40px;
+.posts {
+  width: calc(70% - 20px);
+
+  @include mq('desktop', 'max') {
     width: 100%;
-    padding-bottom: 0;
+  }
+}
+
+.sidebar {
+  width: calc(30% - 20px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+  align-self: flex-start;
+  border-radius: 10px;
+  padding: 20px;
+  background: #fff;
+
+  @include mq('desktop', 'max') {
+    display: none;
   }
 
-  &:not(:first-child) {
-    border-top: 1px solid #eaeaea;
-    padding-top: 20px;
+  h2 {
+    font-weight: 900;
+    font-family: "Montserrat";
+    text-transform: uppercase;
+    font-style: italic;
+  }
 
-    @include mq("tablet", "min") {
-      padding-top: 30px;
+  &-showcase-item {
+    margin-top: 1rem;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+
+    .gatsby-image-wrapper {
+      border-radius: 10px;
+    }
+  }
+}
+
+.post {
+  margin-bottom: 50px;
+
+  .gatsby-image-wrapper {
+    border-radius: 10px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+  }
+
+  &-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 0;
+
+    .author {
+      width: calc(50% - 20px);
+      display: flex;
+      align-items: center;
+
+      .gatsby-image-wrapper {
+        border-radius: 50%;
+        width: calc(20% - 20px);
+        margin-right: 20px;
+      }
+
+      &-info {
+        p {
+          font-size: 14px;
+        }
+      }
+    }
+
+    .categories {
+      p {
+        line-height: 1;
+        margin: 0;
+        padding: 0;
+
+        a {
+          font-size: 14px;
+          font-weight: 500;
+          text-decoration: none;
+          color: $primaryColor;
+          line-height: 1;
+          border-bottom: 1px solid transparent;
+
+          &:hover {
+            border-color: $primaryColor;
+          }
+        }
+      }
+
+      ul {
+        li {
+          display: inline-block;
+          margin-left: 10px;
+          a {
+            line-height: 1;
+            font-size: 14px;
+            text-decoration: none;
+            color: $secondaryColor;
+            border-bottom: 1px solid transparent;
+
+            &:hover {
+              border-color: $secondaryColor;
+            }
+          }
+        }
+      }
     }
   }
 
   &-content {
-    width: 100%;
-
     h2 {
+      line-height: 1;
+      margin-bottom: 20px;
       a {
         text-decoration: none;
         color: $primaryColor;
-        margin-bottom: 1rem;
-        display: inline-block;
-        font-family: "marcinzogrodnik";
-        font-size: 1.5rem;
-        line-height: 1;
-        letter-spacing: -1px;
-
-        @include mq("tablet", "min") {
-          font-size: 1.8rem;
-        }
-
-        @include mq("desktop", "min") {
-          font-size: 2.2rem;
-        }
+        font-weight: 900;
+        font-family: "Montserrat";
+        text-transform: uppercase;
+        font-style: italic;
+        letter-spacing: 0.5px;
 
         &:hover {
           color: $secondaryColor;
         }
       }
     }
+  }
 
-    .post-more {
-      margin-top: 1rem;
-      margin-bottom: 1rem;
+  &-more {
+    margin-top: 20px;
+    display: flex;
+    justify-content: flex-end;
 
-      a {
+    a {
+      text-decoration: none;
+      border: 1px solid $secondaryColor;
+      color: $secondaryColor;
+      border-radius: 7px;
+      transition: all 0.2s ease-in-out;
+      padding: 5px 10px;
+      font-size: 0.85rem;
+
+      @include mq("tablet", "min") {
+        padding: 3px 12px;
+        font-size: 1rem;
+      }
+
+      &:hover {
         background: $secondaryColor;
-        display: inline-flex;
-        align-items: center;
-        text-decoration: none;
         color: $white;
-        padding: 0.5rem 1rem;
-        border-radius: 6px;
-        font-weight: 500;
-        font-size: 0.8rem;
-        transition: all .2s ease-in-out;
-
-        svg {
-          margin-left: 10px;
-        }
-
-        &:hover {
-          color: $white;
-          background: $primaryColor;
-        }
       }
     }
   }
@@ -100,8 +174,7 @@
   }
 }
 
-
-@include mq('tablet', 'min') {
+@include mq("tablet", "min") {
   p {
     display: block;
   }
