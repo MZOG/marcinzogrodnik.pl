@@ -299,11 +299,11 @@
     background: #edf2f7;
 
 
-    @include mq("tablet", "min") {
-      max-width: 60%;
-      margin: 3rem auto;
-      border-radius: 20px;
-    }
+    // @include mq("tablet", "min") {
+    //   max-width: 60%;
+    //   margin: 3rem auto;
+    //   border-radius: 20px;
+    // }
 
     .container {
       max-width: 900px;
@@ -331,13 +331,17 @@
 
       h3 {
         a {
-          font-weight: 500;
           color: $primaryColor;
           text-decoration: none;
           font-size: 1.2rem;
+          font-family: "Montserrat";
+          text-transform: uppercase;
+          font-style: italic;
+          letter-spacing: 0.5px;
+          font-weight: 900;
 
           @include mq("tablet", "min") {
-            font-size: 1.4rem;
+            font-size: 1.6rem;
           }
         }
       }
