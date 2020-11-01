@@ -26,6 +26,11 @@
     h2 {
       font-size: 1.6rem;
       margin-bottom: 2rem;
+      font-family: "Montserrat";
+        text-transform: uppercase;
+        font-style: italic;
+        letter-spacing: 0.5px;
+        font-weight: 900;
 
       @include mq("tabletw", "min") {
         font-size: 2rem;
@@ -43,9 +48,11 @@
         letter-spacing: 0.5px;
         font-weight: 900;
         border-bottom: 0;
+        color: $primaryColor;
 
         &:hover {
           border-bottom: 0;
+          background-color: rgba($primaryColor, 0.2);
         }
       }
     }
