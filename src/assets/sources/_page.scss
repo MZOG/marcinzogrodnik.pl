@@ -39,6 +39,7 @@
       text-transform: uppercase;
       font-style: italic;
       letter-spacing: 0.5px;
+      font-weight: 900;
 
       @include mq("tabletw", "min") {
         font-size: 2rem;
