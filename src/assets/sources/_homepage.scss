@@ -203,9 +203,14 @@
             margin-bottom: 1rem;
             color: $primaryColor;
             text-decoration: none;
+            font-family: "Montserrat";
+            text-transform: uppercase;
+            // font-style: italic;
+            letter-spacing: 0.2px;
+            font-weight: 900;
 
             @include mq("tablet", "min") {
-              font-size: 2rem;
+              font-size: 1.6rem;
             }
 
             &:hover {
@@ -298,13 +303,6 @@
     padding: 2rem 0 2rem 0;
     background: #edf2f7;
 
-
-    // @include mq("tablet", "min") {
-    //   max-width: 60%;
-    //   margin: 3rem auto;
-    //   border-radius: 20px;
-    // }
-
     .container {
       max-width: 900px;
     }
@@ -336,8 +334,8 @@
           font-size: 1.2rem;
           font-family: "Montserrat";
           text-transform: uppercase;
-          font-style: italic;
-          letter-spacing: 0.5px;
+          // font-style: italic;
+          letter-spacing: 0.2px;
           font-weight: 900;
 
           @include mq("tablet", "min") {

@@ -29,7 +29,9 @@
     font-weight: 900;
     font-family: "Montserrat";
     text-transform: uppercase;
-    font-style: italic;
+    // font-style: italic;
+    font-size: 1.3rem;
+    letter-spacing: .2px;
   }
 
   &-showcase-item {
@@ -124,8 +126,8 @@
         font-weight: 900;
         font-family: "Montserrat";
         text-transform: uppercase;
-        font-style: italic;
-        letter-spacing: 0.5px;
+        // font-style: italic;
+        letter-spacing: 0.2px;
 
         &:hover {
           color: $secondaryColor;
