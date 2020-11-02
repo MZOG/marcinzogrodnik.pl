@@ -101,19 +101,6 @@ module.exports = {
       }
     },
     {
-      resolve: `gatsby-plugin-posthog-analytics`,
-      options: {
-        // Specify the API key for your Posthog Project (required)
-        apiKey: "7sL-VMAGk-6Qzk1WoGMB-SBT1saSuokdgqA_anQ8Hp8",
-        // Specify the app host if self-hosting (optional, default: https://app.posthog.com)
-        appHost: "https://app.posthog.com",
-        // Puts tracking script in the head instead of the body (optional, default: true)
-        head: true,
-        // Enable posthog analytics tracking during development (optional, default: false)
-        isEnabledDevMode: true
-      },
-    },
-    {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
         trackingId: "UA-145426129-1",
