@@ -19,7 +19,6 @@ const Kontakt = () => {
             hero="Kontakt"
             lead="Jesteś zainteresowany ofertą, lub masz inny ciekawy pomysł? Zadzwoń lub napisz."
           />
-
           <div className="contact-content">
             <div className="contact-text">
               <p className="lead">

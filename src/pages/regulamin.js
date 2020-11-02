@@ -1,23 +1,46 @@
+/* eslint-disable */
 import React from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import PageHero from "../components/pageHero"
 import { Link } from "gatsby"
+import { useStaticQuery, graphql } from "gatsby"
 
-const Regulamin = () => (
-  <Layout>
-    <SEO title="Regulamin" description="Regulamin strony marcinzogrodnik.pl" />
-    <section className="not-found">
-      <div className="container page">
-        <div className="content">
-          <div className="not-found-btn">
-            <Link to="/" className="btn btn-primary">
-              Strona główna
-            </Link>
+const Regulamin = () => {
+
+  const data = useStaticQuery(graphql`
+    {
+      file(relativePath: { eq: "strony-internetowe-jamstack.jpg" }) {
+        childImageSharp {
+          fluid(maxWidth: 400) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+    }
+  `)
+
+  return (
+    <Layout>
+      <SEO
+        lang="pl"
+        title="Strony internetowe JAMstack"
+        description="Strony internetowe JAMstack, czyli statyczne strony internetowe z Gatsby oraz Next.js."
+        // shareImage={data.file.childImageSharp.fluid.src}
+      />
+      <section className="page">
+        <div className="container">
+          <PageHero
+            hero="Regulamin"
+          />
+
+          <div className="content">
+
           </div>
         </div>
-      </div>
-    </section>
-  </Layout>
-)
+      </section>
+    </Layout>
+  )
+}
 
 export default Regulamin

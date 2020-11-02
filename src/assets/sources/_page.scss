@@ -99,6 +99,17 @@
       }
     }
 
+    ul {
+      li {
+        margin-bottom: 0.5rem;
+        font-size: 1rem;
+
+        a {
+          font-size: 1rem;
+        }
+      }
+    }
+
     .split {
       margin: 2rem 0;
       display: flex;

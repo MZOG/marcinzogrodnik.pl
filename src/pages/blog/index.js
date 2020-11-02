@@ -69,7 +69,7 @@ export const query = graphql`
       edges {
         node {
           image {
-            fluid(maxWidth: 540, imgixParams: { auto: "compress", lossless: true }) {
+            fluid(maxWidth: 800, imgixParams: { auto: "compress", lossless: true }) {
               ...GatsbyDatoCmsFluid
               src
             }
@@ -103,7 +103,7 @@ export const query = graphql`
           id
           slug
           image {
-            fluid(maxWidth: 735) {
+            fluid(maxWidth: 778) {
               ...GatsbyDatoCmsFluid
             }
           }
