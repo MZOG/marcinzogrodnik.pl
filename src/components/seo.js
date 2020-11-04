@@ -81,7 +81,7 @@ function SEO({ description, lang, meta, title, shareImage, schemaMarkup }) {
 }
 
 SEO.defaultProps = {
-    lang: `en`,
+    lang: `pl`,
     meta: [],
     description: ``,
 };
