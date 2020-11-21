@@ -2,7 +2,7 @@
 
   h2 {
     font-size: 2rem;
-    font-family: "marcinzogrodnik", sans-serif;
+    font-family: 'Montserrat';
     letter-spacing: -1px;
     margin-bottom: 2rem;
 
@@ -25,33 +25,99 @@
     flex-direction: column;
 
     h1 {
-      font-family: "marcinzogrodnik", sans-serif;
       font-size: 2.2rem;
       line-height: 1;
       text-align: center;
       margin-bottom: 2rem;
       letter-spacing: -1px;
+      font-family: 'Montserrat';
 
       @include mq("tablet", "min") {
-        font-size: 3.3rem;
+        font-size: 4.3rem;
+      }
+
+      .block {
+        color: inherit;
+        display: block;
       }
 
       span {
-        display: block;
         color: $secondaryColor;
       }
     }
 
+    .lead {
+      margin-bottom: 1rem;
+      p {
+        font-family: 'Montserrat';
+        font-size: 1.5rem;
+        text-transform: uppercase;
+        font-style: italic;
+
+        span {
+          color: $secondaryColor;
+        }
+      }
+    }
+
     &_image {
-      width: 200px;
+      width: 100%;
       position: relative;
 
       @include mq('tablet', 'min') {
-        width: 340px;
+        width: 70%;
       }
 
-      @include mq('desktop', 'min') {
-        width: 400px;
+      .macbook-image {
+        position: relative;
+
+        &_overlay {
+          top: 50%;
+          left: 50%;
+          transform: translate(-50.5%, -54.2%);
+          position: absolute;
+          z-index: 10;
+          width: 70.5%;
+          height: 75.7%;
+        }
+      }
+
+      .iphone-image {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        right: 0;
+        display: none;
+
+        @include mq('tablet', 'min') {
+          display: block;
+        }
+
+        .iphone {
+          z-index: 15;
+          width: 21%;
+          right: 10px;
+          top: 29%;
+
+          @include mq('tablet', 'min') {
+            right: -30px;
+            width: 42%;
+          }
+        }
+
+        &_overlay {
+          position: absolute;
+          z-index: 20;
+          width: 16.1%;
+          opacity: 1;
+          right: 4.8%;
+          top: 49.5%;
+
+          @include mq('tablet', 'min') {
+            right: 2px;
+          }
+        }
       }
     }
 
@@ -135,7 +201,7 @@
         }
 
         h3 {
-          font-family: "marcinzogrodnik", sans-serif;
+          font-family: 'Montserrat';
           font-size: 1.7rem;
           letter-spacing: -1px;
           margin-bottom: 1rem;
@@ -176,6 +242,58 @@
     }
   }
 
+  &_tweets {
+    .tweets-container {
+      display: flex;
+      justify-content: space-between;
+
+      .tweet {
+        align-self: flex-start;
+        width: calc(33% - 20px);
+        background: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 6px 24px 0 rgba(44, 39, 56, 0.04),
+            24px 24px 48px 0 rgba(7, 5, 9, 0.05);
+
+        &:first-child {
+          background: #1da1f2;
+          color: #fff;
+
+          .reply {
+            a {
+              border-color: #fff;
+              color: #fff;
+
+              &:hover {
+                background: darken(#1da1f2, 10%);
+              }
+            }
+          }
+        }
+
+        .svg, .reply {
+          text-align: center;
+        }
+
+        a {
+          color: $secondaryColor;
+          text-decoration: none;
+          display: inline-block;
+          position: relative;
+          border-bottom: 1px dashed $secondaryColor;
+          line-height: 1;
+          padding: 3px 0;
+
+          &:hover {
+            border-bottom: 1px solid $secondaryColor;
+            background: rgba($secondaryColor, 0.2);
+          }
+        }
+      }
+    }
+  }
+
   &_portfolio {
     &_items {
       display: flex;
@@ -197,7 +315,7 @@
 
         h3 {
           a {
-            // font-family: "marcinzogrodnik", sans-serif;
+            // font-family: 'Montserrat';
             font-size: 1.7rem;
             letter-spacing: -1px;
             margin-bottom: 1rem;

@@ -29,9 +29,27 @@
     font-weight: 900;
     font-family: "Montserrat";
     text-transform: uppercase;
-    // font-style: italic;
     font-size: 1.3rem;
     letter-spacing: .2px;
+  }
+
+  ul {
+    list-style: none;
+    margin-bottom: 2rem;
+
+    li {
+      a {
+        color: $secondaryColor;
+        text-decoration: none;
+        border-bottom: 1px dashed $secondaryColor;
+        font-size: .9rem;
+
+        &:hover {
+          background: rgba($secondaryColor, 0.1);
+          border-bottom-style: solid;
+        }
+      }
+    }
   }
 
   &-showcase-item {

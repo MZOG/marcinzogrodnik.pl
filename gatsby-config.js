@@ -13,6 +13,27 @@ module.exports = {
   },
   plugins: [
     {
+      resolve: `gatsby-source-twitter`,
+      options: {
+        credentials: {
+          consumer_key: "olaXHcEtqU7OOslxo53CUkMsL",
+          consumer_secret: "qU5oB4iNDdEwobT52hJW2ZWDZTt2rdNxiZ6ZZIgh939K3q8DOM",
+          bearer_token: "AAAAAAAAAAAAAAAAAAAAAMWOJgEAAAAA260vgooJGEoQ%2Bi6SyT%2BGnIUUwHk%3DYnUR1XwBQPzqkaLPxfDtWyD9bZe7xSqwo5xDOyOgkpu12VAXhs",
+        },
+        queries: {
+          nameofthequery: {
+            endpoint: "statuses/user_timeline",
+            params: {
+              screen_name: "zogrodnik_m",
+              include_rts: false,
+              exclude_replies: true,
+              tweet_mode: "extended",
+            },
+          },
+        },
+      },
+    },
+    {
       resolve: `gatsby-plugin-prefetch-google-fonts`,
       options: {
         fonts: [
@@ -33,6 +54,7 @@ module.exports = {
             options: {
               apiToken: "996463ca0503552024c98da27d4337",
               maxWidth: 1120,
+              linkImagesToOriginal: false,
             },
           },
           {

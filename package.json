@@ -30,6 +30,7 @@
     "gatsby-remark-images-datocms": "0.0.9",
     "gatsby-source-datocms": "^2.4.0",
     "gatsby-source-filesystem": "^2.3.11",
+    "gatsby-source-twitter": "^3.2.2",
     "gatsby-transformer-remark": "^2.8.32",
     "gatsby-transformer-sharp": "^2.5.5",
     "hamburgers": "^1.1.3",
