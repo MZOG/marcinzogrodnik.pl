@@ -22,8 +22,7 @@ const Blog = ({ data }) => {
       <section>
         <div className="container">
           <PageHero
-            hero="Blog"
-            lead="Ciekawe artykuły na temat stron internetowych oraz Front End."
+            title="Blog"
           />
 
           <div className="posts-container">

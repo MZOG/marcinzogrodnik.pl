@@ -1,7 +1,6 @@
 import React from 'react'
-import {Link} from 'gatsby'
 
-const PageHero = ({hero, lead, articleInfo, type, slug}) => {
+const PageHero = ({title, lead, articleInfo, type, slug}) => {
 
   let formatter = new Intl.DateTimeFormat( 'pl', {
     day: 'numeric',
@@ -9,24 +8,24 @@ const PageHero = ({hero, lead, articleInfo, type, slug}) => {
     year: 'numeric'
   } );
 
-  let pageSlug = ""
+  // let pageSlug = ""
 
-  switch (type) {
-    case "DatoCmsPost":
-      pageSlug = "blog"
-      break;
+  // switch (type) {
+  //   case "DatoCmsPost":
+  //     pageSlug = "blog"
+  //     break;
 
-    case "DatoCmsShowcase":
-      pageSlug = "realizacje"
-      break;
+  //   case "DatoCmsShowcase":
+  //     pageSlug = "realizacje"
+  //     break;
 
-    default:
-      pageSlug = ""
-  }
+  //   default:
+  //     pageSlug = ""
+  // }
 
   return (
-    <div className={`page-hero ${pageSlug ? 'article-hero' : ''}`}>
-      {articleInfo &&
+    <div className={`page__hero`}>
+      {/* {articleInfo &&
         <div className="article-info">
           <ul className="breadcrumbs">
             <li><Link to="/">Strona główna</Link></li>
@@ -37,8 +36,8 @@ const PageHero = ({hero, lead, articleInfo, type, slug}) => {
         </div>
       }
       <h1>{hero}</h1>
-      {lead && <p>{lead}</p>}
-
+      {lead && <p>{lead}</p>} */}
+      <h1>{title}</h1>
     </div>
   )
 }

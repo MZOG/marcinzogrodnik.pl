@@ -5,7 +5,7 @@
   url('../fonts/font.woff') format('woff');
   font-display: swap;
 }
-
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap');
 /* Box sizing rules */
 *,
 *::before,
@@ -37,6 +37,7 @@ dd {
   margin: 0;
 }
 
+
 /* Set core body defaults */
 body {
   font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
@@ -44,11 +45,10 @@ body {
   min-height: 100vh;
   scroll-behavior: smooth;
   text-rendering: optimizeSpeed;
-  line-height: 1.6;
-  font-size: 1.1rem;
-  background-image: radial-gradient(#D7D7D7 1px, transparent 1px),radial-gradient(#d7d7d7 1px, transparent 1px);
-  background-position: 0 0, 25px 25px;
-  background-size: 50px 50px;
+  line-height: 1.5;
+  position: relative;
+  overflow-x: hidden;
+  margin-top: 100px;
 
   &.overflow {
     overflow: hidden;
@@ -85,16 +85,6 @@ select {
   font: inherit;
 }
 
-/* Remove all animations and transitions for people that prefer not to see them */
-@media (prefers-reduced-motion: reduce) {
-  * {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
-  }
-}
-
 .container {
   width: 100%;
   padding: 0 15px;
@@ -111,24 +101,5 @@ select {
 
   @include mq("desktop", min) {
     width: 1180px;
-  }
-}
-
-.terms {
-  margin-bottom: 2rem;
-  list-style-type: decimal !important;
-
-  li {
-    margin-bottom: 0.8rem;
-
-    strong {
-      font-weight: 500;
-    }
-
-    ul {
-      margin-top: 0.8rem;
-      margin-left: 1rem;
-      list-style-type: disc !important;
-    }
   }
 }

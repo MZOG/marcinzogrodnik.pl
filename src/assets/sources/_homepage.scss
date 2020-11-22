@@ -1,518 +1,164 @@
 .homepage {
 
   h2 {
-    font-size: 2rem;
-    font-family: 'Montserrat';
-    letter-spacing: -1px;
-    margin-bottom: 2rem;
+    font-size: 1.30rem;
+    font-family: 'Montserrat', sans-serif;
+    margin-bottom: 0.5rem;
+  }
 
-    @include mq("tablet", "min") {
-      letter-spacing: 0px;
-      font-size: 2.5rem;
+  &__hero {
+    &-text {
+      position: relative;
+
+      &-top {
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 500;
+        font-size: .95rem;
+        margin-bottom: 15px;
+      }
+
+      svg {
+        position: absolute;
+        top: -10px;
+        right: 30%;
+      }
+
+      .red {
+        top: auto;
+        position: absolute;
+        right: 20px;
+        bottom: 90px;
+      }
+
+      &-lead {
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 500;
+
+        strong {
+          font-weight: 600;
+          color: $secondaryColor;
+        }
+      }
+
+      h1 {
+        font-family: 'Montserrat', sans-serif;
+        line-height: 1.2;
+        margin-bottom: 15px;
+        font-weight: 700;
+        font-size: 1.65rem;
+
+        span {
+          display: block;
+          font-weight: inherit;
+
+          &.highlight {
+            display: inline-block;
+            color: $secondaryColor;
+          }
+        }
+      }
+
+      &-cta {
+        margin: 30px 0;
+        display: flex;
+        align-items: center;
+
+        a {
+          &:nth-child(2) {
+            color: $secondaryColor;
+            text-decoration: none;
+            font-weight: 600;
+            margin-left: 40px;
+            font-family: 'Montserrat', sans-serif;
+          }
+        }
+      }
     }
 
-    span {
-      color: $secondaryColor;
+    &-image {
+      max-width: 85%;
+      margin: auto;
+    }
+
+  }
+
+  &__offer {
+    margin-top: 40px;
+    background: $primaryColor;
+    padding: 40px 0;
+    position: relative;
+    margin-bottom: 30px;
+
+    .offer-after {
+      position: absolute;
+      top: calc(100% - 1px);
+      fill: $primaryColor;
+    }
+
+    &-item {
+      &:not(:last-child) {
+        margin-bottom: 50px;
+      }
+
+      h2 {
+        color: #fff;
+      }
+
+      p {
+        color: #fff;
+        font-family: 'Montserrat', sans-serif;
+        margin-bottom: 1rem;
+      }
+    }
+
+    &-steps {
+      h2 {
+        color: #fff;
+      }
+
+      &-item {
+        margin-top: 1rem;
+        &-header {
+          display: flex;
+          align-items: center;
+          margin-bottom: .5rem;
+
+          svg {
+            width: 40px;
+          }
+
+          h3 {
+            color: #fff;
+            margin-left: 20px;
+            font-family: 'Montserrat', sans-serif;
+          }
+        }
+
+        p {
+          color: #fff;
+          font-family: 'Montserrat', sans-serif;
+        }
+      }
     }
   }
 
-  &_hero {
-    padding-top: 3rem;
-    min-height: 60vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
+  &__faq {
+    padding-top: 30px;
 
-    h1 {
-      font-size: 2.2rem;
-      line-height: 1;
-      text-align: center;
-      margin-bottom: 2rem;
-      letter-spacing: -1px;
-      font-family: 'Montserrat';
-
-      @include mq("tablet", "min") {
-        font-size: 4.3rem;
-      }
-
-      .block {
-        color: inherit;
-        display: block;
-      }
+    h3 {
+      font-size: 1.05rem;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      margin-top: 1.5rem;
 
       span {
         color: $secondaryColor;
       }
     }
 
-    .lead {
-      margin-bottom: 1rem;
-      p {
-        font-family: 'Montserrat';
-        font-size: 1.5rem;
-        text-transform: uppercase;
-        font-style: italic;
-
-        span {
-          color: $secondaryColor;
-        }
-      }
-    }
-
-    &_image {
-      width: 100%;
-      position: relative;
-
-      @include mq('tablet', 'min') {
-        width: 70%;
-      }
-
-      .macbook-image {
-        position: relative;
-
-        &_overlay {
-          top: 50%;
-          left: 50%;
-          transform: translate(-50.5%, -54.2%);
-          position: absolute;
-          z-index: 10;
-          width: 70.5%;
-          height: 75.7%;
-        }
-      }
-
-      .iphone-image {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        top: 0;
-        right: 0;
-        display: none;
-
-        @include mq('tablet', 'min') {
-          display: block;
-        }
-
-        .iphone {
-          z-index: 15;
-          width: 21%;
-          right: 10px;
-          top: 29%;
-
-          @include mq('tablet', 'min') {
-            right: -30px;
-            width: 42%;
-          }
-        }
-
-        &_overlay {
-          position: absolute;
-          z-index: 20;
-          width: 16.1%;
-          opacity: 1;
-          right: 4.8%;
-          top: 49.5%;
-
-          @include mq('tablet', 'min') {
-            right: 2px;
-          }
-        }
-      }
-    }
-
-    &_cta {
-      margin-top: 3rem;
-      display: flex;
-      flex-direction: column;
-
-      @include mq('tablet', 'min') {
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-      }
-
-      a {
-        text-align: center;
-        border: 1px solid $primaryColor;
-        color: $primaryColor;
-        text-decoration: none;
-        padding: 10px 20px;
-        border-radius: 10px;
-        transition: all 0.2s ease-in-out;
-
-        &:hover {
-          background: $primaryColor;
-          color: $white;
-        }
-
-        &:last-child {
-          color: $secondaryColor;
-          border-color: $secondaryColor;
-          margin-top: 2rem;
-
-          @include mq('tablet', 'min') {
-            margin-top: 0;
-            margin-left: 2rem;
-          }
-
-          &:hover {
-            background: $secondaryColor;
-            color: $white;
-          }
-        }
-      }
-    }
-  }
-
-  &_offer {
-    margin: 3rem auto;
-    padding: 2rem 0 2rem 0;
-    background: #edf2f7;
-
-    @include mq("tablet", "min") {
-      padding: 2rem 0 4rem 0;
-      max-width: 90%;
-      border-radius: 20px;
-    }
-
-    &_items {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-direction: column;
-
-      @include mq('tablet', 'min') {
-        flex-direction: row;
-      }
-
-      .item {
-        width: 100%;
-        background: $white;
-        padding: 1rem;
-        border-radius: 10px;
-        box-shadow: 0 6px 24px 0 rgba(44, 39, 56, 0.04),
-          24px 24px 48px 0 rgba(7, 5, 9, 0.05);
-        margin-bottom: 2rem;
-
-        @include mq("tablet", "min") {
-          width: calc(50% - 30px);
-          padding: 2rem;
-        }
-
-        h3 {
-          font-family: 'Montserrat';
-          font-size: 1.7rem;
-          letter-spacing: -1px;
-          margin-bottom: 1rem;
-          text-align: center;
-
-          @include mq("tablet", "min") {
-            font-size: 2rem;
-            text-align: left;
-          }
-        }
-
-        &-more {
-          margin-top: 1rem;
-          display: flex;
-          justify-content: flex-end;
-
-          a {
-            text-decoration: none;
-            border: 1px solid $secondaryColor;
-            color: $secondaryColor;
-            border-radius: 10px;
-            transition: all 0.2s ease-in-out;
-            padding: 5px 10px;
-            font-size: 0.85rem;
-
-            @include mq("tablet", "min") {
-              padding: 7px 15px;
-              font-size: 1rem;
-            }
-
-            &:hover {
-              background: $secondaryColor;
-              color: $white;
-            }
-          }
-        }
-      }
-    }
-  }
-
-  &_tweets {
-    .tweets-container {
-      display: flex;
-      justify-content: space-between;
-
-      .tweet {
-        align-self: flex-start;
-        width: calc(33% - 20px);
-        background: #fff;
-        padding: 20px;
-        border-radius: 10px;
-        box-shadow: 0 6px 24px 0 rgba(44, 39, 56, 0.04),
-            24px 24px 48px 0 rgba(7, 5, 9, 0.05);
-
-        &:first-child {
-          background: #1da1f2;
-          color: #fff;
-
-          .reply {
-            a {
-              border-color: #fff;
-              color: #fff;
-
-              &:hover {
-                background: darken(#1da1f2, 10%);
-              }
-            }
-          }
-        }
-
-        .svg, .reply {
-          text-align: center;
-        }
-
-        a {
-          color: $secondaryColor;
-          text-decoration: none;
-          display: inline-block;
-          position: relative;
-          border-bottom: 1px dashed $secondaryColor;
-          line-height: 1;
-          padding: 3px 0;
-
-          &:hover {
-            border-bottom: 1px solid $secondaryColor;
-            background: rgba($secondaryColor, 0.2);
-          }
-        }
-      }
-    }
-  }
-
-  &_portfolio {
-    &_items {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-
-      .item {
-        width: 100%;
-        margin-bottom: 2rem;
-
-        &:last-child {
-          margin-bottom: 0;
-        }
-
-        @include mq("tablet", "min") {
-          width: calc(50% - 20px);
-          margin-bottom: 0;
-        }
-
-        h3 {
-          a {
-            // font-family: 'Montserrat';
-            font-size: 1.7rem;
-            letter-spacing: -1px;
-            margin-bottom: 1rem;
-            color: $primaryColor;
-            text-decoration: none;
-            font-family: "Montserrat";
-            text-transform: uppercase;
-            // font-style: italic;
-            letter-spacing: 0.2px;
-            font-weight: 900;
-
-            @include mq("tablet", "min") {
-              font-size: 1.6rem;
-            }
-
-            &:hover {
-              color: $secondaryColor;
-            }
-          }
-        }
-
-        .gatsby-image-wrapper {
-          border-radius: 10px;
-          box-shadow: 0 6px 24px 0 rgba(44, 39, 56, 0.04),
-            24px 24px 48px 0 rgba(7, 5, 9, 0.05);
-        }
-
-        &-info {
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          margin-top: 2rem;
-
-          ul {
-            list-style: none;
-
-            li {
-              display: inline-block;
-              font-size: 0.85rem;
-              margin-right: 1rem;
-            }
-          }
-
-          .more {
-            a {
-              text-decoration: none;
-              border: 1px solid $secondaryColor;
-              color: $secondaryColor;
-              border-radius: 10px;
-              transition: all 0.2s ease-in-out;
-
-              padding: 5px 10px;
-              font-size: 0.85rem;
-
-              @include mq("tablet", "min") {
-                padding: 7px 15px;
-                font-size: 1rem;
-              }
-
-              &:hover {
-                background: $secondaryColor;
-                color: $white;
-              }
-            }
-          }
-        }
-      }
-    }
-
-    &_more {
-      margin: 2rem 0;
-      display: flex;
-      justify-content: center;
-
-      @include mq("tablet", "min") {
-        margin: 4rem 0;
-      }
-
-      a {
-        text-decoration: none;
-        border: 1px solid $primaryColor;
-        color: $primaryColor;
-        border-radius: 10px;
-        transition: all 0.2s ease-in-out;
-        padding: 5px 10px;
-        font-size: 0.85rem;
-
-        @include mq("tablet", "min") {
-          padding: 7px 15px;
-          font-size: 1rem;
-        }
-
-        &:hover {
-          background: $primaryColor;
-          color: $white;
-        }
-      }
-    }
-  }
-
-  &_blog {
-    margin: 2rem auto;
-    padding: 2rem 0 2rem 0;
-    background: #edf2f7;
-
-    .container {
-      max-width: 900px;
-    }
-
-    h2 {
-      text-align: center;
-    }
-
-    &_post {
-      margin-bottom: 2rem;
-      transition: all 0.2s ease-in-out;
-      border-radius: 10px;
-      padding: 1rem;
-
-      @include mq("tablet", "min") {
-        margin-bottom: 3rem;
-      }
-
-      &:hover {
-        background: $white;
-        box-shadow: 0 6px 24px 0 rgba(44, 39, 56, 0.04),
-          24px 24px 48px 0 rgba(7, 5, 9, 0.05);
-      }
-
-      h3 {
-        a {
-          color: $primaryColor;
-          text-decoration: none;
-          font-size: 1.2rem;
-          font-family: "Montserrat";
-          text-transform: uppercase;
-          // font-style: italic;
-          letter-spacing: 0.2px;
-          font-weight: 900;
-
-          @include mq("tablet", "min") {
-            font-size: 1.6rem;
-          }
-        }
-      }
-
-      .time {
-        margin-top: 0;
-
-        p {
-          font-size: 0.85rem;
-          color: rgba($primaryColor, 0.7);
-        }
-      }
-
-      .more {
-        margin-top: 2rem;
-        a {
-          text-decoration: none;
-          border: 1px solid $secondaryColor;
-          color: $secondaryColor;
-          border-radius: 10px;
-          transition: all 0.2s ease-in-out;
-          display: inline-block;
-          padding: 5px 10px;
-          font-size: 0.85rem;
-
-          @include mq("tablet", "min") {
-            padding: 7px 15px;
-            font-size: 1rem;
-          }
-
-          &:hover {
-            background: $secondaryColor;
-            color: $white;
-          }
-        }
-      }
-    }
-
-    &_more {
-      display: flex;
-      justify-content: center;
-
-      a {
-        text-decoration: none;
-        border: 1px solid $primaryColor;
-        color: $primaryColor;
-        padding: 7px 15px;
-        border-radius: 10px;
-        transition: all 0.2s ease-in-out;
-
-        &:hover {
-          background: $primaryColor;
-          color: $white;
-        }
-      }
+    p {
+      font-family: 'Montserrat', sans-serif;
+      margin-top: 1rem;
     }
   }
 }

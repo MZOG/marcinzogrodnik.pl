@@ -13,6 +13,12 @@ module.exports = {
   },
   plugins: [
     {
+      resolve: "gatsby-plugin-anchor-links",
+      options: {
+        offset: -50
+      }
+    },
+    {
       resolve: `gatsby-source-twitter`,
       options: {
         credentials: {
@@ -31,18 +37,6 @@ module.exports = {
             },
           },
         },
-      },
-    },
-    {
-      resolve: `gatsby-plugin-prefetch-google-fonts`,
-      options: {
-        fonts: [
-          {
-            family: `Montserrat`,
-            variants: [`900`, `900i`, `800`],
-            subsets: [`latin-ext`]
-          },
-        ],
       },
     },
     {

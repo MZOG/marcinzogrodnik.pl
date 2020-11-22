@@ -15,10 +15,7 @@ const Realizacje = ({data}) => {
           />
           <section>
             <div className="container">
-              <PageHero
-                hero="Realizacje"
-                lead="Sprawdź ostatnie realizacje stron internetowych WordPress oraz Gatsby."
-              />
+              <PageHero title="Realizacje" />
 
               <div className="showcase">
                 {allShowcase.map(showcase => {

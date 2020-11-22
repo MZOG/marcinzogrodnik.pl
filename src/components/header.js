@@ -3,26 +3,8 @@ import React, { useEffect, useState } from "react"
 import { useStaticQuery, graphql, Link } from "gatsby"
 
 function Header() {
-  const data = useStaticQuery(graphql`
-    query BlogPost {
-      allDatoCmsPost(
-        sort: { fields: meta___firstPublishedAt, order: DESC }
-        limit: 1
-      ) {
-        edges {
-          node {
-            title
-            slug
-            content
-          }
-        }
-      }
-    }
-  `)
-
   const [active, setActive] = useState(false)
   const [scroll, setScroll] = useState(0)
-  const asidePanel = true
 
   useEffect(() => {
     document.addEventListener("scroll", headerScroll)
@@ -50,34 +32,11 @@ function Header() {
 
   return (
     <>
-      <aside className={`top-new-post ${asidePanel ? "active" : ""}`}>
-        <div className="container">
-          <Link to={`/blog/${data.allDatoCmsPost.edges[0].node.slug}`}>
-            <span>Nowy post! &nbsp;</span>{" "}
-            {data.allDatoCmsPost.edges[0].node.title}
-            <svg
-              width="13"
-              height="13"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M9 5l7 7-7 7"
-              ></path>
-            </svg>
-          </Link>
-        </div>
-      </aside>
       <header className={`header ${scroll === false ? "scroll" : ""}`}>
         <div className="container">
           <div className="logo">
-            <div className="svg">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 393 393">
+            <Link to="/" tabIndex="1">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 393 393">
                 <g transform="translate(-4 -4)">
                   <rect
                     width="393"
@@ -93,9 +52,7 @@ function Header() {
                   />
                 </g>
               </svg>
-            </div>
-            <Link to="/">
-              marcin<span>zogrodnik</span>
+              <span>marcinzogrodnik</span>
             </Link>
           </div>
 
@@ -203,7 +160,11 @@ function Header() {
                 </div>
               </li>
               <li>
-                <Link to="/realizacje" activeClassName="active" partiallyActive={true}>
+                <Link
+                  to="/realizacje"
+                  activeClassName="active"
+                  partiallyActive={true}
+                >
                   Realizacje
                 </Link>
               </li>
@@ -228,77 +189,36 @@ function Header() {
               </li>
               <li className="mobile-only">
                 <a href="tel:+48739907919">
-                  <svg
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
-                    ></path>
-                  </svg>
                   739 907 919
                 </a>
               </li>
               <li className="mobile-only">
                 <a href="mailto:kontakt@marcinzogrodnik.pl">
-                  <svg
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                    ></path>
-                  </svg>
                   kontakt@marcinzogrodnik.pl
                 </a>
               </li>
             </ul>
           </nav>
 
-          <div className="mobile-wrapper">
-            <div className="header-contact">
-              <Link to="/kontakt/" activeClassName="active">
-                Kontakt
-                <svg
-                  className="w-6 h-6"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"
-                  ></path>
-                </svg>
-              </Link>
-            </div>
-            <button
-              className={`hamburger hamburger--collapse ${
-                active ? "is-active" : ""
-              }`}
-              type="button"
-              aria-label="Menu"
-              aria-controls="navigation"
-              onClick={toggleMenu}
-            >
-              <span className="hamburger-box">
-                <span className="hamburger-inner"></span>
-              </span>
-            </button>
+          <div className="contact-mobile">
+            <Link to="/darmowa-wycena-strony">
+              Darmowa wycena strony
+            </Link>
           </div>
+
+          <button
+            className={`hamburger hamburger--collapse ${
+              active ? "is-active" : ""
+            }`}
+            type="button"
+            aria-label="Menu"
+            aria-controls="navigation"
+            onClick={toggleMenu}
+          >
+            <span className="hamburger-box">
+              <span className="hamburger-inner"></span>
+            </span>
+          </button>
         </div>
       </header>
     </>

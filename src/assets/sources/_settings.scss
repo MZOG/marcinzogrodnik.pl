@@ -27,10 +27,10 @@ $breakpoints: (
 }
 
 // hamburger menu
-$hamburger-layer-width: 28px !default;
-$hamburger-layer-height: 3px !default;
+$hamburger-layer-width: 30px !default;
+$hamburger-layer-height: 2px !default;
 $hamburger-layer-border-radius: 3px !default;
-$hamburger-padding-x: 10px;
+$hamburger-padding-x: 5px;
 $hamburger-padding-y: 0px;
 $hamburger-active-layer-color: $secondaryColor;
 $hamburger-layer-color: $primaryColor !default;
@@ -38,3 +38,7 @@ $hamburger-active-hover-opacity: 1;
 $hamburger-types: (collapse);
 
 @import "../../node_modules/hamburgers/_sass/hamburgers/hamburgers.scss";
+
+.hamburger {
+  margin-top: 6px;
+}

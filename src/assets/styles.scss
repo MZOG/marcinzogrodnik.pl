@@ -2,17 +2,9 @@
 @import 'sources/global';
 
 // components
-
-@import 'sources/header/header';
-@import 'sources/components/pageHero';
-@import 'sources/components/testimonials';
-@import 'sources/components/article';
-@import 'sources/components/footer';
-@import 'sources/components/quick-contact';
-@import 'sources/blog';
-@import 'sources/contact';
-@import 'sources/about';
-@import 'sources/page';
-@import 'sources/offer';
-@import 'sources/showcase';
+@import 'sources/helpers';
+@import 'sources/header';
+@import 'sources/footer';
+@import 'sources/article';
 @import 'sources/homepage';
+@import 'sources/page';
