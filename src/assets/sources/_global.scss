@@ -40,7 +40,8 @@ dd {
 
 /* Set core body defaults */
 body {
-  font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  font-family: 'Montserrat', sans-serif;
+  // font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
   color: $primaryColor;
   min-height: 100vh;
   scroll-behavior: smooth;

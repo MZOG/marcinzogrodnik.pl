@@ -1,7 +1,7 @@
 .homepage {
 
   h2 {
-    font-size: 1.30rem;
+    font-size: rem(21);
     font-family: 'Montserrat', sans-serif;
     margin-bottom: 0.5rem;
   }
@@ -138,6 +138,43 @@
           color: #fff;
           font-family: 'Montserrat', sans-serif;
         }
+      }
+    }
+  }
+
+  &__portfolio {
+    margin-top: 80px;
+
+    &-items {
+
+    }
+
+    &-item {
+
+      &:not(:first-child) {
+        margin-top: rem(30);
+        padding-top: rem(20);
+        border-top: 1px solid rgba($primaryColor, 0.2);
+      }
+
+      h3 {
+        font-family: 'Montserrat', sans-serif;
+        font-size: rem(18);
+        color: $secondaryColor;
+        margin-bottom: rem(15);
+      }
+
+      &-link {
+        color: $primaryColor;
+        display: block;
+        font-weight: 600;
+        text-decoration: none;
+        margin: rem(15) 0;
+      }
+
+      &-image {
+        margin: rem(30) auto;
+        width: 80%;
       }
     }
   }

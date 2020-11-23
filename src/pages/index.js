@@ -321,6 +321,44 @@ const IndexPage = () => {
     </svg>
         </div>
 
+        <div className="homepage__portfolio">
+          <div className="container">
+            <h2>Wybrane realizacje</h2>
+
+            <div className="homepage__portfolio-items">
+              <div className="homepage__portfolio-item">
+                <h3>Doradca Językowy</h3>
+                <p>
+                Projekt strony internetowej WordPress.
+                Strona jest dostępna w trzech językach.
+                Zdecydowaliśmy się na stronę typu
+                One page.
+                </p>
+                <a href="#" className="homepage__portfolio-item-link">www.doradcajezykowy.com</a>
+                <Img className="homepage__portfolio-item-image" fluid={heroImage} />
+                <Link to="/" className="btn primary">
+                  Więcej
+                </Link>
+              </div>
+              <div className="homepage__portfolio-item">
+                <h3>Luxestate</h3>
+                <p>
+                Projekt strony internetowej WordPress.
+                Strona jest dostępna w trzech językach.
+                Zdecydowaliśmy się na stronę typu
+                One page.
+                </p>
+
+                <a href="#" className="homepage__portfolio-item-link">luxestate.com</a>
+                <Img className="homepage__portfolio-item-image" fluid={heroImage} />
+                <Link to="/" className="btn primary">
+                  Więcej
+                </Link>
+              </div>
+
+            </div>
+          </div>
+        </div>
 
         <div id="faq" className="homepage__faq">
           <div className="container">
