@@ -44,7 +44,7 @@ export default ({ data }) => {
   }
 
   return (
-    <Layout>
+    <Layout postTitle={post.title}>
       <SEO
         title={post.title}
         description={post.seo.description}

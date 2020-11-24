@@ -2,13 +2,15 @@
 import React, { useEffect, useState } from "react"
 import { useStaticQuery, graphql, Link } from "gatsby"
 
-function Header() {
+function Header({postTitle}) {
   const [active, setActive] = useState(false)
   const [scroll, setScroll] = useState(0)
 
   useEffect(() => {
     document.addEventListener("scroll", headerScroll)
     document.body.classList.toggle("overflow", active)
+    window.onscroll = function() { progressBar() };
+
 
     return () => {
       document.removeEventListener("scroll", headerScroll)
@@ -28,6 +30,13 @@ function Header() {
     if (scrollCheck !== scroll) {
       setScroll(scrollCheck)
     }
+  }
+
+  const progressBar = () => {
+    let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+    let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    let scrolled = (winScroll / height) * 100;
+    document.querySelector(".progress-bar").style.width = scrolled + "%";
   }
 
   return (
@@ -201,9 +210,10 @@ function Header() {
           </nav>
 
           <div className="contact-mobile">
+            {postTitle ? <p className="contact-mobile-title">{postTitle}</p> :
             <Link to="/darmowa-wycena-strony">
-              Darmowa wycena strony
-            </Link>
+            Darmowa wycena strony
+          </Link>}
           </div>
 
           <button
@@ -220,6 +230,7 @@ function Header() {
             </span>
           </button>
         </div>
+        <div className="progress-bar"></div>
       </header>
     </>
   )

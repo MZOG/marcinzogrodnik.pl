@@ -5,15 +5,39 @@
   width: 100%;
   z-index: 10;
   background: #fff;
+  transition: all 0.2s ease-in-out;
   box-shadow:
     0 2.3px 3.7px rgba(0, 0, 0, 0.028),
     0 6.4px 10.1px rgba(0, 0, 0, 0.04),
     0 15.4px 24.4px rgba(0, 0, 0, 0.052),
-    0 51px 81px rgba(0, 0, 0, 0.08)
-  ;
+    0 51px 81px rgba(0, 0, 0, 0.08);
 
   @include mq('tablet', 'min') {
     box-shadow: none;
+  }
+
+  &.scroll {
+    box-shadow:
+    0 2.3px 3.7px rgba(0, 0, 0, 0.028),
+    0 6.4px 10.1px rgba(0, 0, 0, 0.04),
+    0 15.4px 24.4px rgba(0, 0, 0, 0.052),
+    0 51px 81px rgba(0, 0, 0, 0.08);
+
+    .contact-mobile {
+      p {
+        opacity: 1;
+      }
+    }
+  }
+
+  .progress-bar {
+    content: '';
+    position: absolute;
+    top: calc(100% - 3px);
+    height: 3px;
+    width: 0;
+    background-color: $secondaryColor;
+    box-shadow: 0 1px 5px 0 $secondaryColor;
   }
 
   .container {
@@ -52,7 +76,13 @@
       font-weight: 600;
       text-decoration: none;
       color: $primaryColor;
-      font-family: 'Montserrat', sans-serif;
+    }
+
+    p {
+      font-size: rem(14);
+      font-weight: 600;
+      opacity: 0;
+      transition: all 0.2s ease-in-out;
     }
   }
 

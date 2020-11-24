@@ -179,6 +179,34 @@
     }
   }
 
+  &__testimonials {
+    margin: rem(40) 0;
+    padding: rem(30) 0;
+    background: $secondaryColor;
+
+    h2 {
+      color: #fff;
+    }
+
+    &-item {
+      p {
+        color: #fff;
+        padding: rem(15) 0;
+      }
+
+      &_author {
+        font-weight: 500;
+        padding-bottom: 0 !important;
+      }
+
+      &_url {
+          text-decoration: none;
+          font-weight: 600;
+          color: #fff;
+      }
+    }
+  }
+
   &__faq {
     padding-top: 30px;
 
@@ -196,6 +224,55 @@
     p {
       font-family: 'Montserrat', sans-serif;
       margin-top: 1rem;
+    }
+
+    &-quote {
+      background: $primaryColor;
+      margin: rem(25) -15px;
+      padding: rem(25px) rem(15px);
+
+
+      h2 {
+        color: #fff;
+      }
+
+      p {
+        color: #fff;
+
+        &.divider {
+          text-align: center;
+          text-transform: uppercase;
+          font-size: rem(13);
+          font-weight: 500;
+        }
+      }
+
+      &-item {
+        margin: rem(20) 0;
+
+        label {
+          color: #fff;
+          display: block;
+          font-size: rem(14);
+          font-weight: 500;
+          margin-bottom: rem(10);
+        }
+
+        input {
+          width: 100%;
+          border-radius: 10px;
+          appearance: none;
+          min-height: 55px;
+          border: none;
+          text-indent: rem(15);
+        }
+      }
+
+      button {
+        margin-top: rem(20);
+        display: block;
+        border: none;
+      }
     }
   }
 }

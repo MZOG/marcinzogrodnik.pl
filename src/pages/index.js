@@ -360,6 +360,25 @@ const IndexPage = () => {
           </div>
         </div>
 
+        <div className="homepage__testimonials">
+          <div className="container">
+            <h2>Opinie klientów</h2>
+
+            <div className="homepage__testimonials-item">
+              <p>
+              Współpraca z Marcinem była wspaniała. W błyskawicznym tempie odpowiadał na wszystkie moje zapytania i zamieszczał kolejne elementy na stronie. W cierpliwy sposób tłumaczył na czym polega budowanie strony internetowej i na czym jako przedsiębiorca powinnam się skupić najbardziej. W stu procentach spełnił moje oczekiwania, zatem mogę go polecić jako świetnego fachowca!
+              </p>
+
+              <p className="homepage__testimonials-item_author">
+                Karolina Wawrzyniak
+              </p>
+              <a href="/" className="homepage__testimonials-item_url">
+                doradcajezykowy.com
+              </a>
+            </div>
+          </div>
+        </div>
+
         <div id="faq" className="homepage__faq">
           <div className="container">
             <h2>Najczęściej zadawane pytania</h2>
@@ -391,6 +410,30 @@ Dalej będziesz mógł używać panelu administratora i zarządzać treścią.
             <p>
             Po raz kolejny ciężkie pytanie, na które nie ma stałej odpowiedzi. Do każdego klienta podchodzę indywidualnie, nie korzystam z gotowych szablonów, jak większość agencji marketingowych. Każdą grafikę wykonuję samodzielnie, aby projekt był unikalny. W przypadku prostej strony wizytówki z wykorzystaniem JAMstack, czas realizacji to około 30 godzin roboczych.
             </p>
+
+            <div className="homepage__faq-quote">
+              <h2>Darmowa wycena strony</h2>
+              <p>
+              Zostaw swój numer telefonu, lub mejla,
+Oddzwonię, lub napiszę do Ciebie w ciągu
+24 godzin, na spokojnie porozmawiamy o Twojej nowej stronie internetowej.
+              </p>
+
+              <form>
+                <div className="homepage__faq-quote-item">
+                  <label htmlFor="telefon">Telefon</label>
+                  <input type="tel" name="telefon" placeholder="np. 739907919" />
+                </div>
+                <p className="divider">lub</p>
+                <div className="homepage__faq-quote-item">
+                  <label htmlFor="email">E-mail</label>
+                  <input type="email" name="email" placeholder="np. jan.kowalski@gmail.com" />
+                </div>
+                <p>Dane kontaktowe nie są wykorzystywane w celach marketingowych.</p>
+
+                <button className="btn secondary">Wyślij</button>
+              </form>
+            </div>
           </div>
         </div>
 
