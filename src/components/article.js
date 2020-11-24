@@ -11,31 +11,22 @@ const Article = ({ title, slug, description, image, author, date }) => {
   } );
 
   return (
-    <article className="post">
-      <div className="post-image">
+    <article className="blog__container-post">
+      <div className="blog__container-post-image">
         <Img fluid={image} alt={title} />
       </div>
-      <div className="post-content">
-        <div className="post-header">
-          <div className="author">
-            <Img fluid={author} alt="Marcin Zogrodnik" />
-
-            <div className="author-info">
-              <p>Marcin Zogrodnik</p>
-              <p>{formatter.format( new Date(date))}</p>
-            </div>
-          </div>
-        </div>
+      <div className="blog__container-post-content">
         <h2>
           <Link to={`/blog/${slug}`}>{title}</Link>
         </h2>
+        <p className="date">{formatter.format( new Date(date))}</p>
 
         <div className="post-excerpt">
           <p>{description}</p>
         </div>
 
-        <div className="post-more">
-          <Link to={`/blog/${slug}`}>Więcej →</Link>
+        <div className="more">
+          <Link className="btn primary" to={`/blog/${slug}`}>Więcej →</Link>
         </div>
       </div>
     </article>
