@@ -3,10 +3,10 @@ import Header from "./header";
 import Footer from "./footer";
 import "../assets/styles.scss";
 
-function Layout ({ children, postTitle }) {
+function Layout ({ children, article }) {
     return (
         <>
-            <Header postTitle={postTitle} />
+            <Header article={article} />
             <main>
                 {children}
             </main>

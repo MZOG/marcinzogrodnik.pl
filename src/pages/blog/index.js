@@ -9,9 +9,6 @@ import Img from "gatsby-image"
 const Blog = ({ data }) => {
   const blogPosts = data.allDatoCmsPost.edges
   const author = data.author
-  const showcase = data.showcase.edges
-
-  console.log(showcase)
 
   return (
     <Layout>
@@ -37,7 +34,6 @@ const Blog = ({ data }) => {
                     date={post.node.meta.createdAt}
                     description={post.node.seo.description}
                     image={post.node.image.fluid || 'elo'}
-                    tags={post.node.tags}
                   />
                 )
               })}

@@ -4,11 +4,6 @@ import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Img from "gatsby-image"
-import PageHero from "../components/pageHero"
-import QuickContact from "../components/quickContact"
-
-import { defineCustomElements as deckDeckGoHighlightElement } from "@deckdeckgo/highlight-code/dist/loader"
-deckDeckGoHighlightElement()
 
 export default ({ data }) => {
   const post = data.datoCmsPost
@@ -44,7 +39,7 @@ export default ({ data }) => {
   }
 
   return (
-    <Layout postTitle={post.title}>
+    <Layout article={true}>
       <SEO
         title={post.title}
         description={post.seo.description}
@@ -53,27 +48,41 @@ export default ({ data }) => {
       />
 
       <article className="article">
-        <div className="container flex">
-          <PageHero
-            hero={post.title}
-            articleInfo={post.meta.createdAt}
-            slug={post.slug}
-            type={post.internal.type}
-          />
-          <section className="article-content">
+        <div className="container">
+          <section className="article__content">
+            <h1>{post.title}</h1>
+            <div className="article__content-info">
+              <p>{formatter.format( new Date(post.meta.createdAt) )} / Marcin Zogrodnik</p>
+            </div>
+
             {post.image.fluid && (
-              <div className="article-image">
+              <div className="article__content-image">
                 <Img fluid={post.image.fluid} />
               </div>
             )}
+
+            <div className="article__content-greeting">
+              <p>
+                <strong>Dziękuję za kliknięcie w link</strong>, to wiele dla mnie znaczy!
+                Jeśli spodobał Ci się artykuł to byłbym wdzięczny za kliknięcie <strong>lubię to</strong>, oraz <strong>udostępnienie</strong> wpisu na facebooku.
+              </p>
+            </div>
 
             <div
               dangerouslySetInnerHTML={{
                 __html: post.contentNode.childMarkdownRemark.html,
               }}
             />
+
+            <div className="article__content-share">
+              <p>Podobał Ci się artykuł? Podziel się na facebooku!</p>
+              <div className="article__content-share-fb">
+                <a href={`https://www.facebook.com/sharer/sharer.php?u=https://marcinzogrodnik.pl/blog/${post.slug}`} >
+                  Udostępnij na facebooku
+                </a>
+              </div>
+            </div>
           </section>
-          <QuickContact />
         </div>
       </article>
     </Layout>

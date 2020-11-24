@@ -1,3 +1,130 @@
 .article {
 
+    &__content {
+      h1 {
+        font-size: rem(22);
+        line-height: 1.3;
+      }
+
+      h2 {
+        font-size: rem(19);
+        line-height: 1.3;
+
+        &:first-child {
+          margin-bottom: 15px;
+        }
+
+        &:not(:first-child) {
+          margin: 15px 0;
+        }
+
+        a {
+          color: $secondaryColor;
+          text-decoration: none;
+          margin: 15px 0;
+          display: inline-block;
+        }
+      }
+
+      h3 {
+        font-size: rem(17);
+        font-weight: 600;
+        line-height: 1.3;
+        color: $secondaryColor;
+        margin: 15px 0;
+        position: relative;
+        display: inline-block;
+      }
+
+      a {
+        color: $primaryColor;
+        text-decoration: none;
+        font-weight: 500;
+        position: relative;
+        border-bottom: 1px dashed rgba($primaryColor, 0.6);
+
+        &:hover {
+          background: rgba($primaryColor, 0.1);
+          border-color: $primaryColor;
+          border-bottom-style: solid;
+        }
+      }
+
+      p {
+        strong {
+          font-weight: 500;
+        }
+      }
+
+      .gatsby-resp-image-wrapper {
+        border-radius: 10px;
+        margin: 15px 0;
+        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+
+        .gatsby-image-wrapper {
+          box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+        }
+      }
+
+      &-info {
+        margin: 10px 0;
+        p {
+          font-size: rem(14);
+          font-weight: 400;
+          color: rgba($primaryColor, 0.5);
+        }
+      }
+
+      &-image {
+        margin-bottom: 30px;
+        margin-top: 20px;
+
+        .gatsby-image-wrapper {
+          border-radius: 10px;
+          box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+
+          img {
+
+            box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+          }
+        }
+      }
+
+      &-greeting {
+        border: 1px dashed rgba($secondaryColor, 0.5);
+        border-radius: 7px;
+        padding: 10px;
+        margin-bottom: 20px;
+
+        p {
+          font-size: rem(14);
+        }
+      }
+
+      &-share {
+        margin: 20px 0;
+        p {
+          font-size: rem(13);
+          font-weight: 500;
+          margin-bottom: rem(10);
+        }
+        &-fb {
+          background: #4267B2;
+          border-radius: 5px;
+          text-align: center;
+
+          a {
+            color: #fff;
+            border: none;
+            padding: 10px 0;
+            display: block;
+
+            &:hover {
+              border: none;
+              background: none;
+            }
+          }
+        }
+      }
+    }
 }
