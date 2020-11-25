@@ -31,10 +31,7 @@ const StronyInternetoweJAMstack = () => {
       />
       <section className="page">
         <div className="container">
-          <PageHero
-            hero="Strony internetowe JAMstack"
-            lead="Statyczne strony internetowe wykonane za pomocą frameworka Gatsby"
-          />
+          <h1>Strona internetowa JAMstack</h1>
 
           <div className="content">
             <h2>Strona statyczna</h2>
@@ -99,9 +96,8 @@ const StronyInternetoweJAMstack = () => {
               <p
                 style={{
                   color: "#fb3c54",
-                  fontSize: "1.7rem",
-                  fontWeight: "900",
-                  fontStyle: "italic",
+                  fontSize: "1rem",
+                  fontWeight: "700"
                 }}
               >
                 vs.

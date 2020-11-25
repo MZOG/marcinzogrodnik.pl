@@ -20,8 +20,9 @@
       a {
         color: $secondaryColor;
         text-decoration: none;
-        margin: 15px 0;
         display: inline-block;
+        border-bottom: 0;
+        font-weight: 700;
       }
     }
 
@@ -30,7 +31,7 @@
       font-weight: 600;
       line-height: 1.3;
       color: $secondaryColor;
-      margin: 15px 0;
+      margin-top: 15px;
       position: relative;
       display: inline-block;
     }
@@ -97,6 +98,7 @@
 
       p {
         font-size: rem(14);
+        margin-top: 0;
       }
     }
 
