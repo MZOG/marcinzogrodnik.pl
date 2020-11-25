@@ -35,14 +35,14 @@ const About = () => {
       <SEO title="O mnie" />
 
       <section className="container">
-        <PageHero hero="O mnie" lead="Kim jestem? Jak pracuję oraz co lubię." />
+       <h1>O mnie</h1>
 
         <div className="about">
-          <div className="about-image">
+          <div className="about__image">
             <Img fluid={aboutContent.image.fluid} alt={aboutContent.image.alt} />
           </div>
 
-          <div className="about-content"
+          <div className="about__content"
             dangerouslySetInnerHTML={{
               __html: aboutContent.contentNode.childMarkdownRemark.html,
             }}

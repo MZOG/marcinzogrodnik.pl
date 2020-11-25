@@ -69,11 +69,6 @@ function Header({article}) {
           <nav className={`navigation ${active ? "is-active" : ""}`}>
             <ul>
               <li>
-                <Link to="/" activeClassName="active">
-                  Strona Główna
-                </Link>
-              </li>
-              <li>
                 <Link to="/o-mnie" activeClassName="active">
                   O mnie
                 </Link>
@@ -176,11 +171,6 @@ function Header({article}) {
                   partiallyActive={true}
                 >
                   Realizacje
-                </Link>
-              </li>
-              <li>
-                <Link to="/opinie" activeClassName="active">
-                  Opinie
                 </Link>
               </li>
               <li>

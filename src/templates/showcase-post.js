@@ -48,31 +48,32 @@ export default ({ data }) => {
         schemaMarkup={schema}
       />
       <article className="article">
-        <div className="container flex">
-          <PageHero
-            hero={post.title}
-            articleInfo={post.meta.createdAt}
-            slug={post.slug}
-            type={post.internal.type}
-          />
-          <section className="article-content">
+        <div className="container">
+          <section className="article__content">
+            <h1>{post.title}</h1>
+            <div className="article__content-info">
+              <p>{formatter.format( new Date(post.meta.createdAt) )} / Marcin Zogrodnik</p>
+            </div>
+
             {post.image.fluid && (
-              <div className="article-image">
+              <div className="article__content-image">
                 <Img fluid={post.image.fluid} />
               </div>
             )}
-
             <div
               dangerouslySetInnerHTML={{
                 __html: post.contentNode.childMarkdownRemark.html,
               }}
             />
-
-            <div className="project-url">
-              <a href={post.projectUrl}>Zobacz online</a>
+            <div className="article__content-share">
+              <p>Podoba Ci się projekt? Podziel się na facebooku!</p>
+              <div className="article__content-share-fb">
+                <a href={`https://www.facebook.com/sharer/sharer.php?u=https://marcinzogrodnik.pl/blog/${post.slug}`} >
+                  Udostępnij na facebooku
+                </a>
+              </div>
             </div>
           </section>
-          <QuickContact />
         </div>
       </article>
     </Layout>
