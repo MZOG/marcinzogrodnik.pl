@@ -1,8 +1,5 @@
 .blog {
   &__container {
-    &-posts {
-
-    }
     &-post {
       margin-bottom: rem(30);
 
@@ -21,7 +18,7 @@
         h2 {
           font-size: rem(19);
           line-height: 1.3;
-          margin: rem(5) 0;
+          margin: rem(10) 0;
 
           a {
             color: $primaryColor;
@@ -34,7 +31,10 @@
           margin-bottom: rem(5);
         }
         .more {
-          margin: rem(20) 0;
+          margin: rem(15) 0;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
         }
       }
     }

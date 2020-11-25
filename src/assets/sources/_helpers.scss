@@ -10,6 +10,10 @@
   font-size: 1rem;
   font-weight: 500;
 
+  &.sm {
+    padding: 12px 25px 12px 12px;
+  }
+
   &.primary {
     background: $primaryColor;
     color: #fff;

@@ -18,8 +18,7 @@ const Blog = ({ data }) => {
       />
       <section>
         <div className="container">
-          <PageHero title="Blog" />
-
+          <h1>Blog</h1>
           <div className="posts-container">
             <div className="posts">
               {blogPosts.map(post => {

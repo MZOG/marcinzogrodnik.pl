@@ -4,19 +4,16 @@ import Img from "gatsby-image"
 
 const ShowcaseItem = ({title, image, slug, description, url}) => {
   return (
-    <article className="showcase-item">
-      <div className="showcase-item_image">
+    <article className="showcase__item">
+      <div className="showcase__item-image">
       <Img fluid={image} />
       </div>
-      <div className="showcase-item_title">
-        <h2>{title}</h2>
-      </div>
-      <div className="showcase-item_description">
-        <p>{description}</p>
-      </div>
-      <div className="showcase-item_more">
-        <Link to={`/realizacje/${slug}`}>Więcej</Link>
-        <a href={url} target="_blank" rel="noreferrer">Zobacz online</a>
+      <h2>
+        <Link to={slug}>{title}</Link>
+      </h2>
+      <p>{description}</p>
+      <div className="more">
+        <Link className="btn primary sm" to={`/realizacje/${slug}`}>Więcej</Link>
       </div>
     </article>
   )

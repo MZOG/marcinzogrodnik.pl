@@ -15,7 +15,7 @@ const Realizacje = ({data}) => {
           />
           <section>
             <div className="container">
-              <PageHero title="Realizacje" />
+              <h1>Realizacje</h1>
 
               <div className="showcase">
                 {allShowcase.map(showcase => {
