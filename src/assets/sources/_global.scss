@@ -100,3 +100,41 @@ select {
     width: 1180px;
   }
 }
+
+// Cookie Alert
+.cookies {
+  position: fixed;
+  bottom: 20px;
+  width: 90%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #fff;
+  margin: 0 auto;
+  padding: 10px;
+  border-radius: 6px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+
+  &.hide {
+    display: none;
+  }
+
+  p {
+    font-size: rem(12);
+    font-weight: 500;
+    text-align: center;
+  }
+
+  &__btn {
+    margin: rem(10) 0;
+    text-align: center;
+    button {
+      font-size: rem(12);
+      font-weight: 500;
+      color: $primaryColor;
+      padding: rem(10) rem(30);
+      background-color: rgba($primaryColor, 0.1);
+      border: 0;
+      border-radius: 5px;
+    }
+  }
+}
