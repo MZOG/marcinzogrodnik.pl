@@ -3,7 +3,6 @@
   h2 {
     font-size: rem(21);
     font-family: 'Montserrat', sans-serif;
-    margin-bottom: 0.5rem;
   }
 
   &__hero {
@@ -14,7 +13,6 @@
         font-family: 'Montserrat', sans-serif;
         font-weight: 500;
         font-size: .95rem;
-        margin-bottom: 15px;
       }
 
       svg {
@@ -43,7 +41,6 @@
       h1 {
         font-family: 'Montserrat', sans-serif;
         line-height: 1.2;
-        margin-bottom: 15px;
         font-weight: 700;
         font-size: 1.65rem;
 
@@ -87,7 +84,6 @@
     background: $primaryColor;
     padding: 40px 0;
     position: relative;
-    margin-bottom: 30px;
 
     .offer-after {
       position: absolute;
@@ -96,10 +92,6 @@
     }
 
     &-item {
-      &:not(:last-child) {
-        margin-bottom: 50px;
-      }
-
       h2 {
         color: #fff;
       }
@@ -107,7 +99,6 @@
       p {
         color: #fff;
         font-family: 'Montserrat', sans-serif;
-        margin-bottom: 1rem;
       }
     }
 
@@ -121,7 +112,6 @@
         &-header {
           display: flex;
           align-items: center;
-          margin-bottom: .5rem;
 
           svg {
             width: 40px;
@@ -161,7 +151,6 @@
         font-family: 'Montserrat', sans-serif;
         font-size: rem(18);
         color: $secondaryColor;
-        margin-bottom: rem(15);
       }
 
       &-link {
@@ -255,7 +244,6 @@
           display: block;
           font-size: rem(14);
           font-weight: 500;
-          margin-bottom: rem(10);
         }
 
         input {
