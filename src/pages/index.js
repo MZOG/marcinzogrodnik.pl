@@ -4,6 +4,7 @@ import SEO from "../components/seo"
 import { useStaticQuery, graphql, Link } from "gatsby"
 import Img from "gatsby-image"
 import { AnchorLink } from "gatsby-plugin-anchor-links";
+import Article from "../components/article";
 
 const IndexPage = () => {
   const data = useStaticQuery(graphql`
@@ -45,6 +46,15 @@ const IndexPage = () => {
             }
             seo {
               description
+            }
+            image {
+              fluid(
+                maxWidth: 800
+                imgixParams: { auto: "compress", lossless: true }
+              ) {
+                ...GatsbyDatoCmsFluid
+                src
+              }
             }
           }
         }
@@ -92,9 +102,7 @@ const IndexPage = () => {
   `)
 
   const heroImage = data.heroImage.childImageSharp.fluid
-  console.log(heroImage)
-
-  const projects = data.allDatoCmsShowcase.edges
+  // const projects = data.allDatoCmsShowcase.edges
   const posts = data.allDatoCmsPost.edges
   const schema = {
     "@context": "https://schema.org",
@@ -116,11 +124,6 @@ const IndexPage = () => {
     ],
   }
 
-  let formatter = new Intl.DateTimeFormat("pl", {
-    day: "numeric",
-    month: "long",
-    year: "numeric",
-  })
 
   return (
     <Layout>
@@ -437,7 +440,26 @@ Oddzwonię, lub napiszę do Ciebie w ciągu
           </div>
         </div>
 
+        <div className="homepage__blog">
+          <div className="container">
+            <h2>Blog</h2>
 
+            <div className="homepage__blog-items">
+              {posts.map(post => {
+                return(
+                  <Article
+                  key={post.node.id}
+                  slug={post.node.slug}
+                  title={post.node.title}
+                  date={post.node.meta.createdAt}
+                  description={post.node.seo.description}
+                  image={post.node.image.fluid || "elo"}
+                />
+                )
+              })}
+            </div>
+          </div>
+        </div>
       </section>
     </Layout>
   )
