@@ -1,5 +1,4 @@
 .homepage {
-
   h2 {
     font-size: rem(21);
     font-family: 'Montserrat', sans-serif;
@@ -31,6 +30,7 @@
       &-lead {
         font-family: 'Montserrat', sans-serif;
         font-weight: 500;
+        margin-top: 15px;
 
         strong {
           font-weight: 600;
@@ -43,6 +43,7 @@
         line-height: 1.2;
         font-weight: 700;
         font-size: 1.65rem;
+        margin-top: 15px;
 
         span {
           display: block;
@@ -56,7 +57,7 @@
       }
 
       &-cta {
-        margin: 30px 0;
+        margin-top: 15px;
         display: flex;
         align-items: center;
 
@@ -75,14 +76,16 @@
     &-image {
       max-width: 85%;
       margin: auto;
+      margin-top: 40px;
     }
 
   }
 
   &__offer {
+    clip-path: polygon(0 0%, 100% 15px, 100% 98%, 0% 100%);
     margin-top: 40px;
-    background: $primaryColor;
     padding: 40px 0;
+    background: $primaryColor;
     position: relative;
 
     .offer-after {
@@ -92,6 +95,10 @@
     }
 
     &-item {
+      &:not(:first-child) {
+        margin-top: 30px;
+      }
+
       h2 {
         color: #fff;
       }
@@ -99,10 +106,16 @@
       p {
         color: #fff;
         font-family: 'Montserrat', sans-serif;
+        margin-top: 15px;
+      }
+
+      .btn {
+        margin-top: 15px;
       }
     }
 
     &-steps {
+      margin-top: 30px;
       h2 {
         color: #fff;
       }
@@ -133,13 +146,14 @@
   }
 
   &__portfolio {
-    margin-top: 80px;
+    margin-top: 30px;
 
     &-items {
 
     }
 
     &-item {
+      margin-top: 20px;
 
       &:not(:first-child) {
         margin-top: rem(30);
@@ -169,7 +183,8 @@
   }
 
   &__testimonials {
-    margin: rem(40) 0;
+    clip-path: polygon(0 0%, 100% 15px, 100% 95%, 0% 100%);
+    margin-top: 40px;
     padding: rem(30) 0;
     background: $secondaryColor;
 
@@ -203,7 +218,11 @@
       font-size: 1.05rem;
       font-family: 'Montserrat', sans-serif;
       font-weight: 600;
-      margin-top: 1.5rem;
+      margin-top: 10px;
+
+      &:not(:first-child) {
+        margin-top: 30px;
+      }
 
       span {
         color: $secondaryColor;
@@ -212,7 +231,7 @@
 
     p {
       font-family: 'Montserrat', sans-serif;
-      margin-top: 1rem;
+      margin-top: 10px;
     }
 
     &-quote {
@@ -227,6 +246,8 @@
 
       p {
         color: #fff;
+        font-size: rem(14);
+        font-weight: 500;
 
         &.divider {
           text-align: center;
@@ -253,6 +274,7 @@
           min-height: 55px;
           border: none;
           text-indent: rem(15);
+          margin-top: 5px;
         }
       }
 
