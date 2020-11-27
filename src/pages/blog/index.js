@@ -19,25 +19,23 @@ const Blog = ({ data }) => {
       <section>
         <div className="container">
           <h1>Blog</h1>
-          <div className="posts-container">
-            <div className="posts">
-              {blogPosts.map(post => {
-                return (
-                  <Article
-                    author={
-                      author.childImageSharp.fluid ||
-                      "https://www.datocms-assets.com/34585/1602078621-marcinprofilowe.jpg"
-                    }
-                    key={post.node.id}
-                    slug={post.node.slug}
-                    title={post.node.title}
-                    date={post.node.meta.createdAt}
-                    description={post.node.seo.description}
-                    image={post.node.image.fluid || "elo"}
-                  />
-                )
-              })}
-            </div>
+          <div className="blog__container">
+            {blogPosts.map(post => {
+              return (
+                <Article
+                  author={
+                    author.childImageSharp.fluid ||
+                    "https://www.datocms-assets.com/34585/1602078621-marcinprofilowe.jpg"
+                  }
+                  key={post.node.id}
+                  slug={post.node.slug}
+                  title={post.node.title}
+                  date={post.node.meta.createdAt}
+                  description={post.node.seo.description}
+                  image={post.node.image.fluid || "elo"}
+                />
+              )
+            })}
           </div>
         </div>
       </section>

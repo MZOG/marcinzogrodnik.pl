@@ -182,7 +182,7 @@ function Header({article}) {
                   Blog
                 </Link>
               </li>
-              <li className="mobile-only">
+              <li>
                 <Link to="/kontakt/" activeClassName="active">
                   Kontakt
                 </Link>

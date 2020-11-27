@@ -2,7 +2,7 @@ import React from "react"
 import { Link } from "gatsby"
 import Img from "gatsby-image"
 
-const Article = ({ title, slug, description, image, author, date }) => {
+const Article = ({ title, slug, description, image, date }) => {
 
   let formatter = new Intl.DateTimeFormat( 'pl', {
     day: 'numeric',

@@ -71,10 +71,13 @@
   }
 
   .contact-mobile {
-    @include mq("desktop", "min") {
-      width: 60%;
-      text-align: center;
+    @include mq('tablet', 'min') {
+      display: none;
     }
+    // @include mq("desktop", "min") {
+    //   width: 60%;
+    //   text-align: center;
+    // }
 
     a {
       font-size: 0.9rem;
@@ -105,6 +108,17 @@
     padding: 20px;
     transition: all 0.2s linear;
 
+    @include mq('tablet', 'min') {
+      position: relative;
+      top: auto;
+      right: auto;
+      width: auto;
+      background: transparent;
+      border: 0;
+      padding: 0;
+      transition: 0;
+    }
+
     &.is-active {
       right: 0;
       transition: all 0.2s linear;
@@ -114,6 +128,10 @@
       list-style: none;
 
       li {
+        @include mq('tablet', 'min') {
+          display: inline-block;
+        }
+
         &.subnav {
           .sub {
             display: none;
@@ -125,6 +143,9 @@
         }
 
         &.mobile-only {
+          @include mq('tablet', 'min') {
+            display: none;
+          }
           svg {
             width: 30px;
           }
@@ -138,12 +159,30 @@
           display: block;
           padding: 10px 0;
           font-weight: 600;
+
+          @include mq('tablet', 'min') {
+            color: $primaryColor;
+            font-weight: 500;
+            padding: 5px 10px;
+            font-size: rem(15);
+          }
+
+          @include mq('desktop', 'min') {
+            padding: 5px 20px;
+          }
+
+          &.active {
+            color: $secondaryColor;
+          }
         }
       }
     }
   }
 
   .hamburger {
+    @include mq('tablet', 'min') {
+      display: none;
+    }
     @include mq("desktop", "min") {
       width: 20%;
       text-align: right;
