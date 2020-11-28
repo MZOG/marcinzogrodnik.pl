@@ -51,6 +51,10 @@ body {
   overflow-x: hidden;
   margin-top: 90px;
 
+  @include mq('desktop', 'min') {
+    margin-top: 110px;
+  }
+
   &.overflow {
     overflow: hidden;
   }

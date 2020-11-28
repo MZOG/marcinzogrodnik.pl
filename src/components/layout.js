@@ -4,10 +4,10 @@ import Footer from "./footer";
 import "../assets/styles.scss";
 
 
-function Layout ({ children, article }) {
+function Layout ({ children, article, homepage }) {
     return (
         <>
-            <Header article={article} />
+            <Header article={article} homepage={homepage}/>
             <main>
                 {children}
             </main>

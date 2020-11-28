@@ -16,10 +16,15 @@
   &.scroll {
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
     padding: 15px 0;
+    background: #fff !important;
 
-    .contact-mobile {
-      p {
-        opacity: 1;
+    .navigation {
+      ul {
+        li {
+          a {
+            color: $primaryColor !important;
+          }
+        }
       }
     }
   }
@@ -32,6 +37,22 @@
     width: 0;
     background-color: $secondaryColor;
     box-shadow: 0 1px 5px 0 $secondaryColor;
+  }
+
+  &.homepage {
+    background: transparent;
+
+    @include mq('desktop', 'min') {
+      .navigation {
+        ul {
+          li {
+            a {
+              color: #fff;
+            }
+          }
+        }
+      }
+    }
   }
 
   .container {

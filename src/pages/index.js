@@ -124,7 +124,7 @@ const IndexPage = () => {
   }
 
   return (
-    <Layout>
+    <Layout homepage={true} >
       <SEO
         title="Marcin Zogrodnik"
         description="Marcin Zogrodnik - Nowoczesne, szybkie oraz bezpieczne strony internetowe JAMstack oraz WordPress. Zapoznaj się z ofertą."
@@ -215,7 +215,7 @@ const IndexPage = () => {
                   Sprawdź ofertę
                 </AnchorLink>
 
-                <AnchorLink to="/#faq" title="FAQ" stripHash />
+                <AnchorLink to="/#faq" stripHash className="faq"><span>Masz pytanie? Sprawdź</span> FAQ</AnchorLink>
               </div>
             </div>
             <div className="homepage__hero-image">

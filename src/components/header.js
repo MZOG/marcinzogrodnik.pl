@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from "react"
 import { useStaticQuery, graphql, Link } from "gatsby"
 
-function Header({article}) {
+function Header({article, homepage}) {
   const [active, setActive] = useState(false)
   const [scroll, setScroll] = useState(0)
 
@@ -42,7 +42,7 @@ function Header({article}) {
 
   return (
     <>
-      <header className={`header ${scroll === false ? "scroll" : ""}`}>
+      <header className={`header ${scroll === false ? "scroll" : ""} ${homepage ? "homepage" : ""}`}>
         <div className="container">
           <div className="logo">
             <Link to="/" tabIndex="1">

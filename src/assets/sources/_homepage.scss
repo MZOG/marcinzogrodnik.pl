@@ -15,8 +15,32 @@
   }
 
   &__hero {
+    @include mq('desktop', 'min') {
+      padding: 40px 0 90px 0;
+
+      &::after {
+        content: url('../images/homepage-blob.svg');
+        position: absolute;
+        top: -700px;
+        right: -200px;
+        width: 1200px;
+        z-index: -1;
+      }
+    }
+    .container {
+      @include mq('tabletw', 'min') {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+    }
+
     &-text {
       position: relative;
+
+      @include mq('tabletw', 'min') {
+        width: calc(60% - 30px);
+      }
 
       &-top {
         font-family: 'Montserrat', sans-serif;
@@ -28,6 +52,10 @@
         position: absolute;
         top: -10px;
         right: 30%;
+
+        @include mq('desktop', 'min') {
+          right: 500px;
+        }
       }
 
       .red {
@@ -35,12 +63,35 @@
         position: absolute;
         right: 20px;
         bottom: 90px;
+
+        @include mq('desktop', 'min') {
+          bottom: 60px;
+          right: 400px;
+        }
+      }
+
+      .faq {
+        font-weight: 500;
+
+        span {
+          display: none;
+
+          @include mq('tablet', 'min') {
+            display: inline-block;
+            color: $primaryColor;
+          }
+        }
       }
 
       &-lead {
         font-family: 'Montserrat', sans-serif;
         font-weight: 500;
         margin-top: 15px;
+
+        @include mq('desktop', 'min') {
+          max-width: 90%;
+          margin-top: 20px;
+        }
 
         strong {
           font-weight: 600;
@@ -54,6 +105,11 @@
         font-weight: 700;
         font-size: 1.65rem;
         margin-top: 15px;
+
+        @include mq('desktop', 'min') {
+          font-size: rem(50);
+          font-weight: 900;
+        }
 
         span {
           display: block;
@@ -71,11 +127,14 @@
         display: flex;
         align-items: center;
 
+        @include mq('desktop', 'min') {
+          margin-top: 30px;
+        }
+
         a {
           &:nth-child(2) {
             color: $secondaryColor;
             text-decoration: none;
-            font-weight: 600;
             margin-left: 40px;
             font-family: 'Montserrat', sans-serif;
           }
@@ -85,8 +144,11 @@
 
     &-image {
       max-width: 85%;
-      margin: auto;
       margin-top: 40px;
+
+      @include mq('tabletw', 'min') {
+        width: calc(40% - 30px);
+      }
     }
 
   }
