@@ -2,6 +2,16 @@
   h2 {
     font-size: rem(21);
     font-family: 'Montserrat', sans-serif;
+
+    @include mq('tablet', 'min') {
+      font-size: rem(25);
+    }
+  }
+
+  h3 {
+    @include mq('tablet', 'min') {
+      font-size: rem(22);
+    }
   }
 
   &__hero {
@@ -88,19 +98,25 @@
     background: $primaryColor;
     position: relative;
 
-    .offer-after {
-      position: absolute;
-      top: calc(100% - 1px);
-      fill: $primaryColor;
+    @include mq('desktop', 'min') {
+      padding: 70px 0;
+    }
+
+    h2, h3 {
+      color: #fff;
+    }
+
+    &-content {
+      @include mq('tablet', 'min') {
+        display: flex;
+        justify-content: space-between;
+      }
     }
 
     &-item {
-      &:not(:first-child) {
-        margin-top: 30px;
-      }
-
-      h2 {
-        color: #fff;
+      margin-top: 20px;
+      @include mq('tablet', 'min') {
+        width: calc(50% - 40px);
       }
 
       p {
@@ -116,12 +132,30 @@
 
     &-steps {
       margin-top: 30px;
+
+      @include mq('tablet', 'min') {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin-top: 60px;
+      }
+
       h2 {
         color: #fff;
+
+        @include mq('tablet', 'min') {
+          width: 100%;
+        }
       }
 
       &-item {
         margin-top: 1rem;
+
+        @include mq('tablet', 'min') {
+          width: calc(50% - 40px);
+          margin-top: 2rem;
+        }
+
         &-header {
           display: flex;
           align-items: center;
@@ -165,6 +199,10 @@
         font-family: 'Montserrat', sans-serif;
         font-size: rem(18);
         color: $secondaryColor;
+      }
+
+      p {
+        margin-top: 15px;
       }
 
       &-link {
@@ -214,24 +252,40 @@
   &__faq {
     padding-top: 30px;
 
-    h3 {
-      font-size: 1.05rem;
-      font-family: 'Montserrat', sans-serif;
-      font-weight: 600;
-      margin-top: 10px;
-
-      &:not(:first-child) {
-        margin-top: 30px;
-      }
-
-      span {
-        color: $secondaryColor;
+    .container {
+      @include mq('tablet', 'min') {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
       }
     }
 
-    p {
-      font-family: 'Montserrat', sans-serif;
-      margin-top: 10px;
+    h2 {
+      @include mq('tablet', 'min') {
+        width: 100%;
+      }
+    }
+
+    &-questions {
+      @include mq('tablet', 'min') {
+        width: calc(60% - 20px);
+      }
+
+      h3 {
+        font-size: 1.05rem;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 600;
+        margin-top: 30px;
+
+        span {
+          color: $secondaryColor;
+        }
+      }
+
+      p {
+        font-family: 'Montserrat', sans-serif;
+        margin-top: 10px;
+      }
     }
 
     &-quote {
@@ -239,6 +293,17 @@
       margin: rem(25) -15px;
       padding: rem(25px) rem(15px);
 
+      @include mq('tablet', 'min') {
+        width: calc(40% - 20px);
+        margin: 0;
+        border-radius: 15px;
+        padding: 15px;
+        align-self: flex-start;
+      }
+
+      @include mq('desktop', 'min') {
+        padding: 30px;
+      }
 
       h2 {
         color: #fff;
@@ -287,8 +352,16 @@
   }
 
   &__blog {
-    &-items {
+    @include mq('tablet', 'min') {
+      margin-top: 40px;
+    }
 
+    &-items {
+      @include mq('tablet', 'min') {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+      }
     }
   }
 }

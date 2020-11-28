@@ -68,7 +68,7 @@ export default ({ data }) => {
               </p>
             </div>
 
-            <div
+            <div className="article__content-text"
               dangerouslySetInnerHTML={{
                 __html: post.contentNode.childMarkdownRemark.html,
               }}

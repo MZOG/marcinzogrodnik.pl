@@ -34,7 +34,7 @@ const About = () => {
     <Layout>
       <SEO title="O mnie" />
 
-      <section className="container">
+      <section className="container page">
        <h1>O mnie</h1>
 
         <div className="about">
