@@ -3,7 +3,6 @@ import Header from "./header";
 import Footer from "./footer";
 import "../assets/styles.scss";
 
-import CookieAlert from "./cookie";
 
 function Layout ({ children, article }) {
     return (
@@ -13,7 +12,6 @@ function Layout ({ children, article }) {
                 {children}
             </main>
             <Footer />
-            <CookieAlert />
         </>
     );
 };
