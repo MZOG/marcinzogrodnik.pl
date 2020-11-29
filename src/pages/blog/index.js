@@ -1,10 +1,8 @@
 import React from "react"
 import Layout from "../../components/layout"
 import SEO from "../../components/seo"
-import PageHero from "../../components/pageHero"
 import Article from "../../components/article"
-import { graphql, Link } from "gatsby"
-import Img from "gatsby-image"
+import { graphql } from "gatsby"
 
 const Blog = ({ data }) => {
   const blogPosts = data.allDatoCmsPost.edges
@@ -17,7 +15,7 @@ const Blog = ({ data }) => {
         description="Marcin Zogrodnik - Artykuły dotyczące świata Front-End."
       />
       <section>
-        <div className="container">
+        <div className="container page">
           <h1>Blog</h1>
           <div className="blog__container">
             {blogPosts.map(post => {

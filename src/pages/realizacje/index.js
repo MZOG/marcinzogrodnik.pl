@@ -1,7 +1,6 @@
 import React from "react"
 import Layout from "../../components/layout"
 import SEO from "../../components/seo"
-import PageHero from "../../components/pageHero"
 import { graphql } from "gatsby"
 import ShowcaseItem from "../../components/showcaseItem"
 
@@ -14,7 +13,7 @@ const Realizacje = ({data}) => {
             description="Sprawdź ostatnie realizacje stron internetowych WordPress oraz Gatsby."
           />
           <section>
-            <div className="container">
+            <div className="container page">
               <h1>Realizacje</h1>
 
               <div className="showcase">

@@ -1,0 +1,22 @@
+.offer {
+
+  .page__container {
+    @include mq('tablet', 'min') {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+
+      &-item {
+        @include mq('tablet', 'min') {
+          width: calc(50% - 20px);
+          margin-top: 0;
+          margin-bottom: 30px;
+
+          &-cta {
+            margin: 15px 0 0 0;
+          }
+        }
+      }
+    }
+  }
+}

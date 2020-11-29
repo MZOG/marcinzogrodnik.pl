@@ -1,7 +1,6 @@
 import React from "react"
 import Layout from "../../components/layout"
 import SEO from "../../components/seo"
-import PageHero from "../../components/pageHero"
 import {Link} from "gatsby"
 
 const Oferta = () => (
@@ -10,7 +9,7 @@ const Oferta = () => (
       title="Oferta"
       description="Pogadajmy o nowym projekcie! Zadzwoń 739 907 919 lub napisz kontakt@marcinzogrodnik.pl"
     />
-    <section className="page">
+    <section className="offer page">
       <div className="container">
         <h1>Oferta</h1>
 

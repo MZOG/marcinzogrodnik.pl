@@ -2,7 +2,6 @@
 import React from "react"
 import Layout from "../../components/layout"
 import SEO from "../../components/seo"
-import PageHero from "../../components/pageHero"
 import { useStaticQuery, graphql } from "gatsby"
 import QuickContact from "../../components/quickContact"
 
@@ -29,10 +28,7 @@ const StronyInternetoweWordPress = () => {
       />
       <section className="page">
         <div className="container">
-          <PageHero
-            hero="Strony internetowe WordPress"
-            lead="Strony oraz sklepy internetowe WordPress"
-          />
+          <h1>Strony internetowe WordPress</h1>
 
           <div className="content">
             <p>

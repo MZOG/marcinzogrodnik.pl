@@ -165,6 +165,10 @@
 
           @include mq('desktop', 'min') {
             padding: 5px 20px;
+
+            &:hover {
+              color: $secondaryColor;
+            }
           }
 
           &.active {

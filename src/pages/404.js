@@ -4,7 +4,6 @@ import SEO from "../components/seo"
 import { Link } from "gatsby"
 
 const NotFoundPage = () => {
-  let pathname = window.location.pathname
   return (
     <Layout>
       <SEO

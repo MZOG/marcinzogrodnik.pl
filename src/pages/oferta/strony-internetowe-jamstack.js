@@ -2,7 +2,6 @@
 import React from "react"
 import Layout from "../../components/layout"
 import SEO from "../../components/seo"
-import PageHero from "../../components/pageHero"
 import { Link } from "gatsby"
 import QuickContact from "../../components/quickContact"
 
