@@ -105,40 +105,52 @@ select {
   }
 }
 
-// Cookie Alert
-.cookies {
-  position: fixed;
-  bottom: 20px;
-  width: 90%;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: #fff;
-  margin: 0 auto;
-  padding: 10px;
-  border-radius: 6px;
+.free-quote {
+  display: none;
+  bottom: 10px;
+  right: 10px;
+  background: #fff;
+  z-index: 100;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  padding: 10px;
+  border-radius: 10px;
 
-  &.hide {
-    display: none;
+  @include mq('tablet', 'min') {
+    position: fixed;
+    display: block;
   }
 
-  p {
-    font-size: rem(12);
-    font-weight: 500;
-    text-align: center;
-  }
+  &:hover {
+    background: $primaryColor;
 
-  &__btn {
-    margin: rem(10) 0;
-    text-align: center;
-    button {
-      font-size: rem(12);
-      font-weight: 500;
-      color: $primaryColor;
-      padding: rem(10) rem(30);
-      background-color: rgba($primaryColor, 0.1);
-      border: 0;
-      border-radius: 5px;
+    .image {
+      svg {
+        fill: #fff;
+      }
     }
+
+    a {
+      color: #fff;
+    }
+  }
+
+  a {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-decoration: none;
+    color: $secondaryColor;
+  }
+
+  .image {
+    margin-right: 20px;
+    svg {
+      width: 30px;
+      fill: $primaryColor;
+    }
+  }
+
+  h2 {
+    font-size: rem(16);
   }
 }

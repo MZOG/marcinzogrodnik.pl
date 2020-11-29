@@ -1,7 +1,6 @@
 .article {
   &__content {
-
-    @include mq('desktop', 'min') {
+    @include mq("desktop", "min") {
       max-width: 800px;
       margin: 0 auto;
     }
@@ -10,7 +9,7 @@
       font-size: rem(22);
       line-height: 1.3;
 
-      @include mq('desktop', 'min') {
+      @include mq("desktop", "min") {
         text-align: center;
         font-size: rem(40);
       }
@@ -21,7 +20,7 @@
       line-height: 1.3;
       margin-top: rem(15);
 
-      @include mq('desktop', 'min') {
+      @include mq("desktop", "min") {
         font-size: rem(25);
       }
 
@@ -49,7 +48,7 @@
       position: relative;
       display: inline-block;
 
-      @include mq('desktop', 'min') {
+      @include mq("desktop", "min") {
         font-size: rem(20);
         font-weight: 700;
       }
@@ -71,6 +70,7 @@
 
     p {
       margin-top: rem(15);
+
       strong {
         font-weight: 500;
       }
@@ -89,7 +89,7 @@
     &-info {
       margin: 10px 0;
 
-      @include mq('desktop', 'min') {
+      @include mq("desktop", "min") {
         margin: 20px 0;
       }
 
@@ -98,7 +98,7 @@
         font-weight: 400;
         color: rgba($primaryColor, 0.5);
 
-        @include mq('desktop', 'min') {
+        @include mq("desktop", "min") {
           text-align: center;
         }
       }
@@ -107,7 +107,7 @@
     &-image {
       margin-top: 20px;
 
-      @include mq('desktop', 'min') {
+      @include mq("desktop", "min") {
         margin-top: 40px;
       }
 
@@ -127,7 +127,7 @@
       padding: 10px;
       margin-top: rem(30);
 
-      @include mq('desktop', 'min') {
+      @include mq("desktop", "min") {
         max-width: 80%;
         margin: 45px auto 40px auto;
         padding: 20px;
@@ -143,15 +143,24 @@
     &-share {
       margin-top: 10px;
 
+      @include mq('desktop', 'min') {
+        margin-top: 50px;
+      }
+
       p {
         font-size: rem(13);
         font-weight: 500;
       }
+
       &-fb {
         background: #4267b2;
         border-radius: 5px;
         text-align: center;
         margin-top: 10px;
+
+        @include mq('desktop', 'min') {
+          width: 50%;
+        }
 
         a {
           color: #fff;

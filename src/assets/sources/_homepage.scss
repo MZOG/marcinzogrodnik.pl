@@ -1,34 +1,29 @@
 .homepage {
   h2 {
     font-size: rem(21);
-    font-family: 'Montserrat', sans-serif;
+    font-family: "Montserrat", sans-serif;
 
-    @include mq('tablet', 'min') {
-      font-size: rem(25);
+    @include mq("tablet", "min") {
+      font-size: rem(30);
     }
   }
 
   h3 {
-    @include mq('tablet', 'min') {
+    @include mq("tablet", "min") {
       font-size: rem(22);
+    }
+
+    @include mq("desktop", "min") {
+      font-size: rem(25);
     }
   }
 
   &__hero {
-    @include mq('desktop', 'min') {
+    @include mq("desktop", "min") {
       padding: 40px 0 90px 0;
-
-      &::after {
-        content: url('../images/homepage-blob.svg');
-        position: absolute;
-        top: -700px;
-        right: -200px;
-        width: 1200px;
-        z-index: -1;
-      }
     }
     .container {
-      @include mq('tabletw', 'min') {
+      @include mq("tabletw", "min") {
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -38,14 +33,14 @@
     &-text {
       position: relative;
 
-      @include mq('tabletw', 'min') {
+      @include mq("tabletw", "min") {
         width: calc(60% - 30px);
       }
 
       &-top {
-        font-family: 'Montserrat', sans-serif;
+        font-family: "Montserrat", sans-serif;
         font-weight: 500;
-        font-size: .95rem;
+        font-size: 0.95rem;
       }
 
       svg {
@@ -53,8 +48,8 @@
         top: -10px;
         right: 30%;
 
-        @include mq('desktop', 'min') {
-          right: 500px;
+        @include mq("desktop", "min") {
+          right: 300px;
         }
       }
 
@@ -64,9 +59,9 @@
         right: 20px;
         bottom: 90px;
 
-        @include mq('desktop', 'min') {
+        @include mq("desktop", "min") {
           bottom: 60px;
-          right: 400px;
+          right: 350px;
         }
       }
 
@@ -76,7 +71,7 @@
         span {
           display: none;
 
-          @include mq('tablet', 'min') {
+          @include mq("tablet", "min") {
             display: inline-block;
             color: $primaryColor;
           }
@@ -84,11 +79,11 @@
       }
 
       &-lead {
-        font-family: 'Montserrat', sans-serif;
+        font-family: "Montserrat", sans-serif;
         font-weight: 500;
         margin-top: 15px;
 
-        @include mq('desktop', 'min') {
+        @include mq("desktop", "min") {
           max-width: 90%;
           margin-top: 20px;
         }
@@ -100,13 +95,13 @@
       }
 
       h1 {
-        font-family: 'Montserrat', sans-serif;
+        font-family: "Montserrat", sans-serif;
         line-height: 1.2;
         font-weight: 700;
         font-size: 1.65rem;
         margin-top: 15px;
 
-        @include mq('desktop', 'min') {
+        @include mq("desktop", "min") {
           font-size: rem(50);
           font-weight: 900;
         }
@@ -127,7 +122,7 @@
         display: flex;
         align-items: center;
 
-        @include mq('desktop', 'min') {
+        @include mq("desktop", "min") {
           margin-top: 30px;
         }
 
@@ -136,7 +131,7 @@
             color: $secondaryColor;
             text-decoration: none;
             margin-left: 40px;
-            font-family: 'Montserrat', sans-serif;
+            font-family: "Montserrat", sans-serif;
           }
         }
       }
@@ -144,13 +139,26 @@
 
     &-image {
       max-width: 85%;
-      margin-top: 40px;
+      margin: 40px auto;
+      position: relative;
 
-      @include mq('tabletw', 'min') {
+      @include mq("tabletw", "min") {
         width: calc(40% - 30px);
+        margin-right: -50px;
+      }
+
+      @include mq("desktop", "min") {
+        &::after {
+          content: url("../images/homepage-blob.svg");
+          position: absolute;
+          top: 40%;
+          left: 50%;
+          transform: translate(-50%, -50%) rotate(-30deg);
+          width: 750px;
+          z-index: -1;
+        }
       }
     }
-
   }
 
   &__offer {
@@ -160,16 +168,18 @@
     background: $primaryColor;
     position: relative;
 
-    @include mq('desktop', 'min') {
+    @include mq("desktop", "min") {
       padding: 70px 0;
+      clip-path: polygon(0 0%, 100% 75px, 100% 98%, 0% 100%);
     }
 
-    h2, h3 {
+    h2,
+    h3 {
       color: #fff;
     }
 
     &-content {
-      @include mq('tablet', 'min') {
+      @include mq("tablet", "min") {
         display: flex;
         justify-content: space-between;
       }
@@ -177,13 +187,13 @@
 
     &-item {
       margin-top: 20px;
-      @include mq('tablet', 'min') {
+      @include mq("tablet", "min") {
         width: calc(50% - 40px);
       }
 
       p {
         color: #fff;
-        font-family: 'Montserrat', sans-serif;
+        font-family: "Montserrat", sans-serif;
         margin-top: 15px;
       }
 
@@ -195,7 +205,7 @@
     &-steps {
       margin-top: 30px;
 
-      @include mq('tablet', 'min') {
+      @include mq("tablet", "min") {
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
@@ -205,7 +215,7 @@
       h2 {
         color: #fff;
 
-        @include mq('tablet', 'min') {
+        @include mq("tablet", "min") {
           width: 100%;
         }
       }
@@ -213,7 +223,7 @@
       &-item {
         margin-top: 1rem;
 
-        @include mq('tablet', 'min') {
+        @include mq("tablet", "min") {
           width: calc(50% - 40px);
           margin-top: 2rem;
         }
@@ -229,13 +239,13 @@
           h3 {
             color: #fff;
             margin-left: 20px;
-            font-family: 'Montserrat', sans-serif;
+            font-family: "Montserrat", sans-serif;
           }
         }
 
         p {
           color: #fff;
-          font-family: 'Montserrat', sans-serif;
+          font-family: "Montserrat", sans-serif;
         }
       }
     }
@@ -244,22 +254,37 @@
   &__portfolio {
     margin-top: 30px;
 
-    &-items {
-
-    }
-
     &-item {
       margin-top: 20px;
 
+      @include mq("tablet", "min") {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
       &:not(:first-child) {
-        margin-top: rem(30);
-        padding-top: rem(20);
-        border-top: 1px solid rgba($primaryColor, 0.2);
+        @include mq("tablet", "min") {
+          margin-top: rem(30);
+          padding-top: rem(30);
+          border-top: 1px solid rgba($primaryColor, 0.2);
+        }
+
+        @include mq("desktop", "min") {
+          border-top: 0;
+          margin-top: 0;
+          padding-top: 0;
+        }
+      }
+
+      &-text {
+        @include mq("tablet", "min") {
+          width: calc(50% - 20px);
+        }
       }
 
       h3 {
-        font-family: 'Montserrat', sans-serif;
-        font-size: rem(18);
+        font-family: "Montserrat", sans-serif;
         color: $secondaryColor;
       }
 
@@ -275,9 +300,19 @@
         margin: rem(15) 0;
       }
 
+      &-img {
+        @include mq("tablet", "min") {
+          width: calc(50% - 20px);
+        }
+      }
+
       &-image {
         margin: rem(30) auto;
         width: 80%;
+
+        @include mq("tablet", "min") {
+          width: 100%;
+        }
       }
     }
   }
@@ -285,8 +320,31 @@
   &__testimonials {
     clip-path: polygon(0 0%, 100% 15px, 100% 95%, 0% 100%);
     margin-top: 40px;
-    padding: rem(30) 0;
+    padding: rem(50) 0;
     background: $secondaryColor;
+    position: relative;
+
+    @include mq("wide", "min") {
+      clip-path: none;
+      margin-top: 100px;
+      padding: 0 0 40px 0;
+    }
+
+    &-before {
+      position: absolute;
+      bottom: 73%;
+      left: 0;
+      width: 100%;
+      z-index: -1;
+    }
+
+    &-after {
+      position: absolute;
+      top: 85%;
+      left: 0;
+      width: 100%;
+      z-index: -1;
+    }
 
     h2 {
       color: #fff;
@@ -296,6 +354,7 @@
       p {
         color: #fff;
         padding: rem(15) 0;
+        font-weight: 500;
       }
 
       &_author {
@@ -304,9 +363,9 @@
       }
 
       &_url {
-          text-decoration: none;
-          font-weight: 600;
-          color: #fff;
+        text-decoration: none;
+        font-weight: 600;
+        color: #fff;
       }
     }
   }
@@ -314,8 +373,12 @@
   &__faq {
     padding-top: 30px;
 
+    @include mq("desktop", "min") {
+      margin-top: 60px;
+    }
+
     .container {
-      @include mq('tablet', 'min') {
+      @include mq("tablet", "min") {
         display: flex;
         justify-content: space-between;
         flex-wrap: wrap;
@@ -323,19 +386,19 @@
     }
 
     h2 {
-      @include mq('tablet', 'min') {
+      @include mq("tablet", "min") {
         width: 100%;
       }
     }
 
     &-questions {
-      @include mq('tablet', 'min') {
+      @include mq("tablet", "min") {
         width: calc(60% - 20px);
       }
 
       h3 {
         font-size: 1.05rem;
-        font-family: 'Montserrat', sans-serif;
+        font-family: "Montserrat", sans-serif;
         font-weight: 600;
         margin-top: 30px;
 
@@ -345,36 +408,45 @@
       }
 
       p {
-        font-family: 'Montserrat', sans-serif;
+        font-family: "Montserrat", sans-serif;
         margin-top: 10px;
       }
     }
 
     &-quote {
       background: $primaryColor;
-      margin: rem(25) -15px;
+      margin: rem(25) -15px 0 -15px;
       padding: rem(25px) rem(15px);
 
-      @include mq('tablet', 'min') {
+      @include mq("tablet", "min") {
         width: calc(40% - 20px);
         margin: 0;
         border-radius: 15px;
         padding: 15px;
         align-self: flex-start;
+        margin-top: 30px;
       }
 
-      @include mq('desktop', 'min') {
+      @include mq("desktop", "min") {
         padding: 30px;
       }
 
       h2 {
         color: #fff;
+
+        @include mq('tablet', 'min') {
+          font-size: 23px;
+        }
       }
 
       p {
         color: #fff;
         font-size: rem(14);
         font-weight: 500;
+
+        @include mq('tablet', 'min') {
+          margin-top: 20px;
+        }
 
         &.divider {
           text-align: center;
@@ -414,12 +486,16 @@
   }
 
   &__blog {
-    @include mq('tablet', 'min') {
+    background: #fafafa;
+    padding-top: 30px;
+
+    @include mq("tablet", "min") {
       margin-top: 40px;
+      padding-bottom: 50px;
     }
 
     &-items {
-      @include mq('tablet', 'min') {
+      @include mq("tablet", "min") {
         display: flex;
         justify-content: space-between;
         flex-wrap: wrap;

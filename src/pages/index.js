@@ -124,7 +124,7 @@ const IndexPage = () => {
   }
 
   return (
-    <Layout homepage={true} >
+    <Layout homepage={true}>
       <SEO
         title="Marcin Zogrodnik"
         description="Marcin Zogrodnik - Nowoczesne, szybkie oraz bezpieczne strony internetowe JAMstack oraz WordPress. Zapoznaj się z ofertą."
@@ -215,7 +215,9 @@ const IndexPage = () => {
                   Sprawdź ofertę
                 </AnchorLink>
 
-                <AnchorLink to="/#faq" stripHash className="faq"><span>Masz pytanie? Sprawdź</span> FAQ</AnchorLink>
+                <AnchorLink to="/#faq" stripHash className="faq">
+                  <span>Masz pytanie? Sprawdź</span> FAQ
+                </AnchorLink>
               </div>
             </div>
             <div className="homepage__hero-image">
@@ -549,24 +551,28 @@ const IndexPage = () => {
                     className="homepage__portfolio-item"
                     key={project.node.id}
                   >
-                    <h3>{project.node.title}</h3>
-                    <p>{project.node.seo.description}</p>
-                    <a
-                      href={project.node.projectUrl}
-                      className="homepage__portfolio-item-link"
-                    >
-                      {project.node.projectUrl}
-                    </a>
-                    <Img
-                      className="homepage__portfolio-item-image"
-                      fluid={heroImage}
-                    />
-                    <Link
-                      to={`/realizacje/${project.node.slug}`}
-                      className="btn primary"
-                    >
-                      Więcej o projekcie
-                    </Link>
+                    <div className="homepage__portfolio-item-text">
+                      <h3>{project.node.title}</h3>
+                      <p>{project.node.seo.description}</p>
+                      <a
+                        href={project.node.projectUrl}
+                        className="homepage__portfolio-item-link"
+                      >
+                        {project.node.projectUrl}
+                      </a>
+                      <Link
+                        to={`/realizacje/${project.node.slug}`}
+                        className="btn primary"
+                      >
+                        Więcej o projekcie
+                      </Link>
+                    </div>
+                    <div className="homepage__portfolio-item-img">
+                      <Img
+                        className="homepage__portfolio-item-image"
+                        fluid={heroImage}
+                      />
+                    </div>
                   </div>
                 )
               })}
@@ -575,6 +581,9 @@ const IndexPage = () => {
         </div>
 
         <div className="homepage__testimonials">
+          <div className="homepage__testimonials-before">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#fb3c54" fill-opacity="1" d="M0,160L80,165.3C160,171,320,181,480,202.7C640,224,800,256,960,245.3C1120,235,1280,181,1360,154.7L1440,128L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"></path></svg>
+          </div>
           <div className="container">
             <h2>Opinie klientów</h2>
 
@@ -596,6 +605,10 @@ const IndexPage = () => {
               </a>
             </div>
           </div>
+        <div className="homepage__testimonials-after">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#fb3c54" fill-opacity="1" d="M0,32L80,32C160,32,320,32,480,37.3C640,43,800,53,960,74.7C1120,96,1280,128,1360,144L1440,160L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z"></path></svg>
+        </div>
+
         </div>
 
         <div id="faq" className="homepage__faq">

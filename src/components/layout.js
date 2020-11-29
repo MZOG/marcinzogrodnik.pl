@@ -1,8 +1,9 @@
 import React from "react";
 import Header from "./header";
 import Footer from "./footer";
-import "../assets/styles.scss";
+import FreeQuote from "./freeQuote";
 
+import "../assets/styles.scss";
 
 function Layout ({ children, article, homepage }) {
     return (
@@ -12,6 +13,7 @@ function Layout ({ children, article, homepage }) {
                 {children}
             </main>
             <Footer />
+            <FreeQuote />
         </>
     );
 };

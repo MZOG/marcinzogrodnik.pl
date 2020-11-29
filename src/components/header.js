@@ -188,6 +188,11 @@ function Header({article, homepage}) {
                 </Link>
               </li>
               <li className="mobile-only">
+                <Link to="/darmowa-wycena-strony/" activeClassName="active">
+                  Wycena strony
+                </Link>
+              </li>
+              <li className="mobile-only">
                 <a href="tel:+48739907919">
                   739 907 919
                 </a>
