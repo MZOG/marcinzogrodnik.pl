@@ -1,2 +1,84 @@
 .contact {
+
+  &__content {
+    @include mq('tablet', 'min') {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    &-text {
+
+      @include mq('tablet', 'min') {
+        width: calc(60% - 20px);
+      }
+
+      @include mq('desktop', 'min') {
+        width: calc(70% - 20px);
+      }
+
+      &-info {
+        @include mq('tablet', 'min') {
+          margin-top: 50px;
+        }
+      }
+    }
+
+    form {
+      margin-top: 30px;
+      background: $primaryColor;
+      padding: 20px;
+      border-radius: 10px;
+
+      @include mq('tablet', 'min') {
+        margin-top: 0;
+        width: calc(40% - 20px);
+      }
+
+      @include mq('desktop', 'min') {
+        width: calc(30% - 20px);
+      }
+
+      .contact-form-item {
+        label {
+          display: block;
+          color: #fff;
+          font-weight: 500;
+          margin-bottom: 10px;
+
+        }
+
+        input {
+          width: 100%;
+          margin-bottom: 30px;
+          border-radius: 5px;
+          min-height: 40px;
+          text-indent: 15px;
+          border: none;
+          appearance: none;
+          font-size: rem(14);
+          font-weight: 500;
+
+          &::placeholder {
+            font-size: rem(12);
+          }
+        }
+
+        textarea {
+          width: 100%;
+          border: none;
+          appearance: none;
+          border-radius: 5px;
+          resize: none;
+          padding: 15px;
+          font-size: rem(14);
+          font-weight: 500;
+        }
+      }
+
+      .btn {
+        margin-top: 30px;
+        border: none;
+      }
+    }
+  }
 }

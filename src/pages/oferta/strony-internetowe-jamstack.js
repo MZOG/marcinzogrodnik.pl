@@ -3,8 +3,6 @@ import React from "react"
 import Layout from "../../components/layout"
 import SEO from "../../components/seo"
 import { Link } from "gatsby"
-import QuickContact from "../../components/quickContact"
-
 import { useStaticQuery, graphql } from "gatsby"
 
 const StronyInternetoweJAMstack = () => {
@@ -186,7 +184,6 @@ const StronyInternetoweJAMstack = () => {
             </p>
 
           </div>
-          <QuickContact />
         </div>
       </section>
     </Layout>

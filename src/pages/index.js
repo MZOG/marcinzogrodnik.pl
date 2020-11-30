@@ -236,7 +236,7 @@ const IndexPage = () => {
                   Pełna kontrola nad treścią na stronie internetowej dzięki
                   łatwemu w obsłudze systemowi zarządzania treścią WordPress.
                 </p>
-                <Link to="/oferta/wordpress" className="btn secondary">
+                <Link to="/oferta/strony-internetowe-wordpress" className="btn secondary">
                   Więcej
                 </Link>
               </div>
@@ -246,7 +246,7 @@ const IndexPage = () => {
                   Szybkość, to główna zaleta statycznych stron internetowych
                   JAMstack. Sprawdź czy JAMstack jest dla Ciebie.
                 </p>
-                <Link to="/oferta/jamstack" className="btn secondary">
+                <Link to="/oferta/strony-internetowe-jamstack" className="btn secondary">
                   Więcej
                 </Link>
               </div>

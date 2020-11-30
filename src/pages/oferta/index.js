@@ -37,7 +37,7 @@ const Oferta = () => (
             <p>Statyczna strona internetowa to przede wszystkim szybkość, która zostawi w tle konkurencję. Zobacz jakie korzyści oferuje strona wykonana za pomocą Gatsby.</p>
 
             <div className="page__container-item-cta">
-              <Link className="btn secondary" to="/oferta/strony-internetowe-jamstack/">Dowiedz się więcej</Link>
+              <Link className="btn secondary" to="/oferta/opieka-nad-strona/">Dowiedz się więcej</Link>
             </div>
           </article>
 
@@ -49,7 +49,7 @@ const Oferta = () => (
             </p>
 
             <div className="page__container-item-cta">
-              <Link className="btn secondary" to="/oferta/strony-internetowe-jamstack/">Dowiedz się więcej</Link>
+              <Link className="btn secondary" to="/oferta/mentoring/">Dowiedz się więcej</Link>
             </div>
           </article>
         </div>
