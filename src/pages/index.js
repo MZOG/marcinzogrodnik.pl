@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState, useEffect } from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { useStaticQuery, graphql, Link } from "gatsby"
@@ -122,6 +122,23 @@ const IndexPage = () => {
       "https://instagram.com/marcinzogrodnik.pl",
     ],
   }
+
+  const [faqData, setFaqData] = useState({ telefon: "", email: "" })
+  const [faqDisabled, setFaqDisabled] = useState(true)
+  const handleFaqForm = e => {
+    setFaqData({ [e.target.name]: e.target.value })
+  }
+
+  useEffect(() => {
+    const validateFaq = () => {
+      if (faqData.telefon === "" || faqData.email === "") {
+        setFaqDisabled(true)
+      } else {
+        setFaqDisabled(false)
+      }
+    }
+    validateFaq();
+  }, [faqData])
 
   return (
     <Layout homepage={true}>
@@ -713,6 +730,7 @@ const IndexPage = () => {
                     type="tel"
                     name="telefon"
                     placeholder="np. 739907919"
+                    onChange={handleFaqForm}
                   />
                 </div>
                 <p className="divider">lub</p>
@@ -722,12 +740,13 @@ const IndexPage = () => {
                     type="email"
                     name="email"
                     placeholder="np. jan.kowalski@gmail.com"
+                    onChange={handleFaqForm}
                   />
                 </div>
                 <p>
                   Dane kontaktowe nie są wykorzystywane w celach marketingowych.
                 </p>
-                <input type="submit" className="btn secondary" value="Wyślij" />
+                <input type="submit" className="btn secondary" value="Wyślij" disabled={faqDisabled === true ? true : false} />
               </form>
             </div>
           </div>

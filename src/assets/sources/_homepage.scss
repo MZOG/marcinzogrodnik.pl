@@ -482,6 +482,12 @@
         margin-top: rem(20);
         display: block;
         border: none !important;
+        cursor: pointer;
+
+        &:disabled {
+          opacity: 0.3;
+          cursor: not-allowed;
+        }
       }
     }
   }
