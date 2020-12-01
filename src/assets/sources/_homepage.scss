@@ -478,10 +478,10 @@
         }
       }
 
-      button {
+      input[type="submit"] {
         margin-top: rem(20);
         display: block;
-        border: none;
+        border: none !important;
       }
     }
   }
