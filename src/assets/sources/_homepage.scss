@@ -261,6 +261,7 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
+        flex-direction: row-reverse;
       }
 
       &:not(:first-child) {
@@ -311,7 +312,7 @@
         width: 80%;
 
         @include mq("tablet", "min") {
-          width: 100%;
+          width: 60%;
         }
       }
     }
@@ -488,6 +489,7 @@
   &__blog {
     background: #fafafa;
     padding-top: 30px;
+    padding-bottom: 1px;
 
     @include mq("tablet", "min") {
       margin-top: 40px;

@@ -555,7 +555,7 @@ const IndexPage = () => {
                       <h3>{project.node.title}</h3>
                       <p>{project.node.seo.description}</p>
                       <a
-                        href={project.node.projectUrl}
+                        href={`https://${project.node.projectUrl}`}
                         className="homepage__portfolio-item-link"
                       >
                         {project.node.projectUrl}
@@ -570,7 +570,7 @@ const IndexPage = () => {
                     <div className="homepage__portfolio-item-img">
                       <Img
                         className="homepage__portfolio-item-image"
-                        fluid={heroImage}
+                        fluid={project.node.image.fluid}
                       />
                     </div>
                   </div>

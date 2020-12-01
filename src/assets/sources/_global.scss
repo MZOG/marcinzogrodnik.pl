@@ -112,7 +112,7 @@ select {
   background: #fff;
   z-index: 100;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-  padding: 10px;
+  padding: 10px 20px;
   border-radius: 10px;
 
   @include mq('tablet', 'min') {
@@ -152,5 +152,6 @@ select {
 
   h2 {
     font-size: rem(16);
+    font-weight: 500;
   }
 }

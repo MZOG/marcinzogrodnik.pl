@@ -108,16 +108,12 @@
       margin-top: 20px;
 
       @include mq("desktop", "min") {
-        margin-top: 40px;
+        width: 70%;
+        margin: 40px auto 0 auto;
       }
 
       .gatsby-image-wrapper {
         border-radius: 10px;
-        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-
-        img {
-          box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-        }
       }
     }
 

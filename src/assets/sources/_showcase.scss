@@ -23,10 +23,12 @@
     }
 
     &-image {
+      @include mq('desktop', 'min') {
+        width: 80%;
+        margin: 0 auto;
+      }
       .gatsby-image-wrapper {
-        border-radius: 10px;
         margin: 10px 0;
-        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
       }
     }
 
