@@ -404,7 +404,7 @@ const IndexPage = () => {
                       />
                     </g>
                   </svg>
-                  <h3>Kontakt i wycena</h3>
+                  <h3>Projekt i wdrożenie</h3>
                 </div>
                 <p>
                   Tworzę wstępny projekt nowej strony internetowej, po
