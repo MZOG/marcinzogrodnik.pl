@@ -8,6 +8,12 @@ module.exports = {
   },
   plugins: [
     {
+      resolve: `gatsby-plugin-canonical-urls`,
+      options: {
+        siteUrl: `https://marcinzogrodnik.pl`,
+      },
+    },
+    {
       resolve: "gatsby-plugin-anchor-links",
       options: {
         offset: -50
