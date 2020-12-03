@@ -22,7 +22,7 @@ const StronyInternetoweWordPress = () => {
       <SEO
         lang="pl"
         title="Strony internetowe WordPress"
-        description="Strony oraz sklepy internetowe WordPress"
+        description="Poznaj nieograniczone możliwości systemu zarządzania treścią WordPress. Posiadam bogate doświadczenie w tworzeniu stron oraz sklepów internetowych WordPress."
         shareImage={data.file.childImageSharp.fluid.src}
       />
       <section className="page">

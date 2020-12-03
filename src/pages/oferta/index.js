@@ -7,7 +7,7 @@ const Oferta = () => (
   <Layout>
     <SEO
       title="Oferta"
-      description="Pogadajmy o nowym projekcie! Zadzwoń 739 907 919 lub napisz kontakt@marcinzogrodnik.pl"
+      description="Poznaj ofertę stron internetowych WordPress oraz JAMstack. Uczysz się programować i masz problem? Napisz do mnie! Na pewno rozwiążemy Twój problem."
     />
     <section className="offer page">
       <div className="container">

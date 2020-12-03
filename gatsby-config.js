@@ -2,14 +2,9 @@ const path = require(`path`)
 
 module.exports = {
   siteMetadata: {
-    title: `Strony internetowe Katowice`,
+    title: `Strony internetowe WordPress & JAMstack`,
     description: `Marcin Zogrodnik - Tworzę szybkie oraz przyciągające klientów strony internetowe wykorzystując najnowsze technologie tj. JAMstack, React czy Gatsby.`,
     author: `@zogrodnik_m`,
-    homepage: {
-      heroHeading: 'Marcin Zogrodnik',
-      heroSlug: 'Szybkie, bezpieczne oraz nowoczesne strony internetowe dostosowane do Twoich potrzeb.',
-      heroBtn: 'Realizacje'
-    }
   },
   plugins: [
     {

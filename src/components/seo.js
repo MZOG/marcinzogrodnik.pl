@@ -29,7 +29,7 @@ function SEO({ description, lang, meta, title, shareImage, schemaMarkup }) {
                 lang,
             }}
             title={title}
-            titleTemplate={`%s | ${site.siteMetadata.title}`}
+            titleTemplate={`%s - ${site.siteMetadata.title}`}
             meta={[
                 {
                     name: `description`,

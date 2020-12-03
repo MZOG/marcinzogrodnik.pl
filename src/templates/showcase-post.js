@@ -6,7 +6,7 @@ import Img from "gatsby-image"
 
 export default ({ data }) => {
   const post = data.datoCmsShowcase
-
+  console.log(post)
   let formatter = new Intl.DateTimeFormat( 'pl', {
     day: 'numeric',
     month: 'long',

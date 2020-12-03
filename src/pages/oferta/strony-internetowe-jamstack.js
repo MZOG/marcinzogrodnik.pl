@@ -22,8 +22,8 @@ const StronyInternetoweJAMstack = () => {
     <Layout>
       <SEO
         lang="pl"
-        title="Strony internetowe JAMstack"
-        description="Strony internetowe JAMstack, czyli statyczne strony internetowe z Gatsby oraz Next.js."
+        title="JAMstack"
+        description="Statyczna strona internetowa JAMstack może być o 10 razy szybsza niż standardowa strona oparta na innym systemie. Strony JAMstack tworzę wykorzystując Gatsby."
         shareImage={data.file.childImageSharp.fluid.src}
       />
       <section className="page">

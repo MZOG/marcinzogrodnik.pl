@@ -20,8 +20,12 @@ const IndexPage = () => {
             slug
             projectUrl
             image {
-              fluid(maxWidth: 735) {
-                ...GatsbyDatoCmsFluid_tracedSVG
+              fluid(
+                maxWidth: 800
+                imgixParams: { auto: "compress", lossless: true }
+              ) {
+                ...GatsbyDatoCmsFluid
+                src
               }
             }
             seo {
@@ -58,13 +62,7 @@ const IndexPage = () => {
           }
         }
       }
-      iphone: file(relativePath: { eq: "iphone.png" }) {
-        childImageSharp {
-          fluid(maxWidth: 300) {
-            ...GatsbyImageSharpFluid_tracedSVG
-          }
-        }
-      }
+
       macbook: file(relativePath: { eq: "macbook.png" }) {
         childImageSharp {
           fluid(maxWidth: 900) {
@@ -72,24 +70,8 @@ const IndexPage = () => {
           }
         }
       }
-      iphoneImage: file(
-        relativePath: { eq: "portfolio/doradcajezykowy-mobile.png" }
-      ) {
-        childImageSharp {
-          fluid(maxWidth: 800) {
-            ...GatsbyImageSharpFluid_tracedSVG
-          }
-        }
-      }
-      macbookImage: file(
-        relativePath: { eq: "portfolio/doradcajezykowy.png" }
-      ) {
-        childImageSharp {
-          fluid(maxWidth: 700) {
-            ...GatsbyImageSharpFluid_tracedSVG
-          }
-        }
-      }
+
+
       heroImage: file(relativePath: { eq: "macbook.png" }) {
         childImageSharp {
           fluid(maxWidth: 700) {
@@ -140,11 +122,12 @@ const IndexPage = () => {
     validateFaq();
   }, [faqData])
 
+
   return (
     <Layout homepage={true}>
       <SEO
-        title="Marcin Zogrodnik"
-        description="Marcin Zogrodnik - Nowoczesne, szybkie oraz bezpieczne strony internetowe JAMstack oraz WordPress. Zapoznaj się z ofertą."
+        title="Home"
+        description="Szybkie i nowoczesne strony internetowe WordPress & JAMstack. Strony internetowe Katowice i okolice. Tylko indywidualne podejście, solidne strony www."
         schemaMarkup={schema}
       />
 

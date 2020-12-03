@@ -21,8 +21,8 @@ const Mentoring = () => {
     <Layout>
       <SEO
         lang="pl"
-        title="Strony internetowe WordPress"
-        description="Strony oraz sklepy internetowe WordPress"
+        title="Mentoring"
+        description="Uczysz się HTML, CSS, JavaScript? A może masz problem z WordPress'em lub Gatsby? Napisz do mnie, na pewno pomogę Ci rozwiązać problem."
         shareImage={data.file.childImageSharp.fluid.src}
       />
       <section className="page">

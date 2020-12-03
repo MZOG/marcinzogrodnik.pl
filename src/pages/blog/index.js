@@ -12,7 +12,7 @@ const Blog = ({ data }) => {
     <Layout>
       <SEO
         title="Blog"
-        description="Marcin Zogrodnik - Artykuły dotyczące świata Front-End."
+        description="Piszę głównie o rzeczach związanych ze stronami internetowymi WordPress oraz JAMstack. Świat Front End to moja pasja, którą chciałbym się podzielić."
       />
       <section>
         <div className="container page">
@@ -57,7 +57,6 @@ export const query = graphql`
               src
             }
           }
-          tags
           title
           slug
           id

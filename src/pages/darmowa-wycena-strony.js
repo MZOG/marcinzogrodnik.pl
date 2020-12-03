@@ -7,7 +7,7 @@ const DarmowaWycenaStrony = () => {
     <Layout>
       <SEO
         title="Darmowa wycena strony"
-        description="Darmowa wycena strony internetowej WordPress lub JAMstack. Zadzwoń lub napisz: 739 907 919 / kontakt@marcinzogrodnik.pl"
+        description="Chciałbyś dowiedzieć się ile kosztuje strona internetowa? Która opcja będzie lepsza - WordPress czy JAMstack? Napisz do mnie, porozmawiamy i doradzę Ci najlepszą opcję."
       />
 
       <section className="container page">

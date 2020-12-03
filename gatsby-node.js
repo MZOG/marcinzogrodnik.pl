@@ -1,5 +1,3 @@
-const _ = require("lodash")
-
 exports.createPages = async function ({ actions, graphql }) {
   const { data } = await graphql(`
     query {

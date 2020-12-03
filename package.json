@@ -26,7 +26,7 @@
     "gatsby-remark-highlight-code": "^2.0.0",
     "gatsby-remark-images": "^3.3.10",
     "gatsby-remark-images-datocms": "0.0.9",
-    "gatsby-source-datocms": "^2.4.0",
+    "gatsby-source-datocms": "^2.5.7",
     "gatsby-source-filesystem": "^2.3.11",
     "gatsby-source-twitter": "^3.2.2",
     "gatsby-transformer-remark": "^2.8.32",

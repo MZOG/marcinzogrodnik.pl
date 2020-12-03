@@ -10,7 +10,8 @@ const Kontakt = () => {
     <Layout>
       <SEO
         title="Kontakt"
-        description="Pogadajmy o nowym projekcie! Zadzwoń 739 907 919 lub napisz kontakt@marcinzogrodnik.pl"
+        description="Masz pomysł na nową stronę internetową? A może chciałbyś lekko zmodyfikować swoją obecną stronę?
+        Zadzwoń lub wyślij wiadomość."
       />
       <section className="contact">
         <div className="container page">

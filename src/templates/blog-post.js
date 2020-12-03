@@ -38,6 +38,8 @@ export default ({ data }) => {
     "datePublished": formatter.format( new Date(post.meta.publishedAt) )
   }
 
+  console.log(post)
+
   return (
     <Layout article={true}>
       <SEO
@@ -70,7 +72,7 @@ export default ({ data }) => {
 
             <div className="article__content-text"
               dangerouslySetInnerHTML={{
-                __html: post.contentNode.childMarkdownRemark.html,
+                __html: post.contentNode.childMarkdownRemark.html
               }}
             />
 

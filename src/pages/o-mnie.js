@@ -30,7 +30,10 @@ const About = () => {
 
   return (
     <Layout>
-      <SEO title="O mnie" />
+      <SEO
+        title="O mnie"
+        description="Nazywam się Marcin Zogrodnik i tworzę strony internetowe. Posiadam wieloletnie doświadczenie zdobtyte w Wielkiej Brytanii, które wykorzystuję w Polsce."
+      />
 
       <section className="about page">
         <div className="container">

@@ -21,8 +21,8 @@ const OpiekaNadStrona = () => {
     <Layout>
       <SEO
         lang="pl"
-        title="Strony internetowe WordPress"
-        description="Strony oraz sklepy internetowe WordPress"
+        title="Opieka nad stroną"
+        description="Nie masz czasu aktualizować strony internetowej? Od teraz nie musisz się o to martwić! Oferuję opiekę nad stroną, abyś Ty mógł zająć się swoim biznesem!"
         shareImage={data.file.childImageSharp.fluid.src}
       />
       <section className="page">
