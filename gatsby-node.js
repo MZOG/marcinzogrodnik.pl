@@ -11,6 +11,7 @@ exports.createPages = async function ({ actions, graphql }) {
       markdown: allMarkdownRemark(
         sort: { order: DESC, fields: [frontmatter___date] }
         limit: 1000
+        filter: {frontmatter: {slug: {ne: null}}}
       ) {
         edges {
           node {
