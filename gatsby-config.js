@@ -35,8 +35,14 @@ module.exports = {
             resolve: `gatsby-remark-highlight-code`,
             options: {
               terminal: 'carbon',
-              theme: 'blackboard'
+              // theme: 'blackboard'
             }
+          },
+          {
+            resolve: "gatsby-remark-images",
+            options: {
+              maxWidth: 850,
+            },
           },
         ],
       },
@@ -44,12 +50,7 @@ module.exports = {
     `gatsby-plugin-smoothscroll`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-sass`,
-    {
-      resolve: "gatsby-remark-images",
-      options: {
-        maxWidth: 850,
-      },
-    },
+
     {
       resolve: `gatsby-plugin-netlify`,
       options: {
@@ -62,8 +63,14 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `images`,
         path: `${__dirname}/src/images`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `markdown-pages`,
+        path: `${__dirname}/src/markdown-pages`,
       },
     },
     `gatsby-transformer-sharp`,

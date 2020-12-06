@@ -1,21 +1,13 @@
 .blog {
   &__container {
+    margin-top: 30px;
+
     @include mq('tablet', 'min') {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-gap: 50px;
     }
     &-post {
-      margin-bottom: 30px;
-
-      @include mq('tablet', 'min') {
-        width: calc(50% - 20px);
-      }
-
-      @include mq('desktop', 'min') {
-        width: calc(33.33% - 40px);
-      }
-
       &:not(:first-child) {
         @include mq('tablet', 'max') {
           border-top: 1px dashed rgba($primaryColor, 0.2);

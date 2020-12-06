@@ -2,11 +2,10 @@ import React from "react"
 import Layout from "../../components/layout"
 import SEO from "../../components/seo"
 import Article from "../../components/article"
-import { graphql } from "gatsby"
+import { graphql, Link } from "gatsby"
 
 const Blog = ({ data }) => {
   const blogPosts = data.allDatoCmsPost.edges
-  const author = data.author
 
   return (
     <Layout>
@@ -17,14 +16,15 @@ const Blog = ({ data }) => {
       <section>
         <div className="container page">
           <h1>Blog</h1>
+
+          <Link to="/blog/frontend/" className="btn primary">
+            Programowanie / Front End
+          </Link>
+
           <div className="blog__container">
             {blogPosts.map(post => {
               return (
                 <Article
-                  author={
-                    author.childImageSharp.fluid ||
-                    "https://www.datocms-assets.com/34585/1602078621-marcinprofilowe.jpg"
-                  }
                   key={post.node.id}
                   slug={post.node.slug}
                   title={post.node.title}
@@ -65,29 +65,6 @@ export const query = graphql`
           }
           seo {
             description
-          }
-        }
-      }
-    }
-    author: file(relativePath: { eq: "marcin_profilowe.jpg" }) {
-      childImageSharp {
-        fluid(maxWidth: 200) {
-          ...GatsbyImageSharpFluid
-        }
-      }
-    }
-    showcase: allDatoCmsShowcase(
-      sort: { fields: meta___createdAt, order: DESC }
-      limit: 5
-    ) {
-      edges {
-        node {
-          id
-          slug
-          image {
-            fluid(maxWidth: 778) {
-              ...GatsbyDatoCmsFluid
-            }
           }
         }
       }

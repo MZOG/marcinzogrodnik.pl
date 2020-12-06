@@ -155,3 +155,35 @@ select {
     font-weight: 500;
   }
 }
+
+.deckgo-highlight-code-carbon {
+  font-size: rem(16) !important;
+  margin: 40px 0;
+}
+
+blockquote {
+  border: 1px solid rgba($secondaryColor, 0.3);
+  margin: 50px 0 30px 0;
+  padding: 20px;
+  border-radius: 10px;
+  position: relative;
+
+  @include mq('desktop') {
+    margin: 60px -20px 60px -20px;
+  }
+
+  &::before {
+    content: 'WAŻNE';
+    position: absolute;
+    top: -25px;
+    left: 0;
+    font-size: rem(11);
+    font-weight: 600;
+    color: $secondaryColor;
+  }
+
+  p {
+    margin-top: 0 !important;
+    font-weight: 500;
+  }
+}

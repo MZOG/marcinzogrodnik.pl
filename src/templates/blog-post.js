@@ -4,9 +4,38 @@ import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Img from "gatsby-image"
+import { defineCustomElements as deckDeckGoHighlightElement } from '@deckdeckgo/highlight-code/dist/loader';
+deckDeckGoHighlightElement();
 
 export default ({ data }) => {
-  const post = data.datoCmsPost
+
+  let post, seoDescription, title, seoImage, image, date, html, slug
+
+  if (data.markdownRemark) {
+    post = data.markdownRemark
+
+    seoDescription = post.frontmatter.description
+    slug = post.frontmatter.slug
+    title = post.frontmatter.title
+    date = post.frontmatter.date
+    image = post.frontmatter.image.childImageSharp.fluid
+    seoImage = post.frontmatter.seoImage.childImageSharp.fluid
+    html = post.html
+
+    console.log(image)
+    console.log(seoImage)
+  } else {
+    post = data.datoCmsPost
+
+    seoDescription = post.seo.description
+    slug = post.slug
+    title = post.title
+    date = post.meta.createdAt
+    seoImage = post.seo.image.sizes.src
+    image = post.image.fluid
+    html = post.contentNode.childMarkdownRemark.html
+  }
+
 
   let formatter = new Intl.DateTimeFormat( 'pl', {
     day: 'numeric',
@@ -19,10 +48,10 @@ export default ({ data }) => {
     "@type": "BlogPosting",
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": `https://marcinzogrodnik.pl/blog/${post.slug}`
+      "@id": `https://marcinzogrodnik.pl/blog/${slug}`,
     },
-    "headline": post.title,
-    "image": post.seo.image.sizes.src,
+    "headline": title,
+    "image": seoImage,
     "author": {
       "@type": "Person",
       "name": "Marcin Zogrodnik"
@@ -35,31 +64,29 @@ export default ({ data }) => {
         "url": "https://www.datocms-assets.com/34585/1603980502-invoice-logo.png"
       }
     },
-    "datePublished": formatter.format( new Date(post.meta.publishedAt) )
+    "datePublished": formatter.format( new Date(date) )
   }
-
-  console.log(post)
 
   return (
     <Layout article={true}>
       <SEO
-        title={post.title}
-        description={post.seo.description}
-        shareImage={post.seo.image.sizes.src}
+        title={title}
+        description={seoDescription}
+        shareImage={seoImage}
         schemaMarkup={schema}
       />
 
       <article className="article">
         <div className="container">
           <section className="article__content">
-            <h1>{post.title}</h1>
+            <h1>{title}</h1>
             <div className="article__content-info">
-              <p>{formatter.format( new Date(post.meta.createdAt) )} / Marcin Zogrodnik</p>
+              <p>{formatter.format( new Date(date) )} / Marcin Zogrodnik</p>
             </div>
 
-            {post.image.fluid && (
+            {image && (
               <div className="article__content-image">
-                <Img fluid={post.image.fluid} />
+                <Img fluid={image} />
               </div>
             )}
 
@@ -72,14 +99,14 @@ export default ({ data }) => {
 
             <div className="article__content-text"
               dangerouslySetInnerHTML={{
-                __html: post.contentNode.childMarkdownRemark.html
+                __html: html
               }}
             />
 
             <div className="article__content-share">
               <p>Podobał Ci się artykuł? Podziel się na facebooku!</p>
               <div className="article__content-share-fb">
-                <a href={`https://www.facebook.com/sharer/sharer.php?u=https://marcinzogrodnik.pl/blog/${post.slug}`} >
+                <a href={`https://www.facebook.com/sharer/sharer.php?u=https://marcinzogrodnik.pl/blog/${slug}`} >
                   Udostępnij na facebooku
                 </a>
               </div>
@@ -93,7 +120,7 @@ export default ({ data }) => {
 
 export const query = graphql`
   query($slug: String!) {
-    datoCmsPost(slug: { eq: $slug }) {
+    datoCmsPost: datoCmsPost(slug: { eq: $slug }) {
       contentNode {
         childMarkdownRemark {
           html
@@ -121,6 +148,29 @@ export const query = graphql`
       }
       internal {
         type
+      }
+    }
+    markdownRemark: markdownRemark(frontmatter: { slug: { eq: $slug } }) {
+      html
+      frontmatter {
+        date(formatString: "MMMM DD, YYYY")
+        slug
+        title
+        description
+        image {
+          childImageSharp {
+            fluid(maxWidth: 800) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+        seoImage {
+          childImageSharp {
+            fluid(maxWidth: 800) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
       }
     }
   }

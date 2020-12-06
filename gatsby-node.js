@@ -8,8 +8,32 @@ exports.createPages = async function ({ actions, graphql }) {
           }
         }
       }
+      markdown: allMarkdownRemark(
+        sort: { order: DESC, fields: [frontmatter___date] }
+        limit: 1000
+      ) {
+        edges {
+          node {
+            frontmatter {
+              slug
+            }
+          }
+        }
+      }
     }
   `)
+
+  if (data.markdown.edges) {
+    data.markdown.edges.forEach(edge => {
+      const slug = edge.node.frontmatter.slug
+
+      actions.createPage({
+        path: `blog/${slug}`,
+        component: require.resolve(`./src/templates/blog-post.js`),
+        context: { slug: slug },
+      })
+    })
+  }
 
   data.allDatoCmsPost.edges.forEach(edge => {
     const slug = edge.node.slug
