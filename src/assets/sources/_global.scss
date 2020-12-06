@@ -107,13 +107,11 @@ select {
 
 .free-quote {
   display: none;
-  bottom: 10px;
-  right: 10px;
+  bottom: 0;
+  right: 0;
   background: #fff;
   z-index: 100;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-  padding: 10px 20px;
-  border-radius: 10px;
 
   @include mq('tablet', 'min') {
     position: fixed;
@@ -139,13 +137,16 @@ select {
     justify-content: space-between;
     align-items: center;
     text-decoration: none;
+    flex-direction: column;
+    padding: 40px 30px;
     color: $secondaryColor;
   }
 
   .image {
-    margin-right: 20px;
+    margin-bottom: 10px;
     svg {
-      width: 30px;
+      margin-right: 20px;
+      width: 60px;
       fill: $primaryColor;
     }
   }
@@ -169,7 +170,7 @@ blockquote {
   position: relative;
 
   @include mq('desktop') {
-    margin: 60px -20px 60px -20px;
+    margin: 60px -20px 20px -20px;
   }
 
   &::before {
@@ -186,4 +187,11 @@ blockquote {
     margin-top: 0 !important;
     font-weight: 500;
   }
+}
+
+.hr {
+  margin: 30px 0 30px 0;
+  border: 0;
+  height: 1px;
+  background-image: linear-gradient(to right, rgba($secondaryColor, 0), rgba($secondaryColor, 0.75), rgba($secondaryColor, 0));
 }

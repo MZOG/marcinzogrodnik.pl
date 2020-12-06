@@ -61,7 +61,8 @@ export default ({ data }) => {
         "url": "https://www.datocms-assets.com/34585/1603980502-invoice-logo.png"
       }
     },
-    "datePublished": formatter.format( new Date(date) )
+    "datePublished": date,
+    "dateModified": date
   }
 
   return (

@@ -92,6 +92,18 @@ const IndexPage = () => {
     alternateName: "Marcin Zogrodnik - Strony internetowe",
     url: "https://marcinzogrodnik.pl",
     logo: "https://www.datocms-assets.com/34585/1603980502-invoice-logo.png",
+    "review": {
+      "@type": "Review",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5"
+      },
+      "author": {
+        "@type": "Person",
+        "name": "Karolina Wawrzyniak"
+      },
+      "reviewBody": "Współpraca z Marcinem była wspaniała. W błyskawicznym tempie odpowiadał na wszystkie moje zapytania i zamieszczał kolejne elementy na stronie. W cierpliwy sposób tłumaczył na czym polega budowanie strony internetowej i na czym jako przedsiębiorca powinnam się skupić najbardziej. W stu procentach spełnił moje oczekiwania, zatem mogę go polecić jako świetnego fachowca!"
+    },
     contactPoint: {
       "@type": "ContactPoint",
       telephone: "739907919",
@@ -101,7 +113,7 @@ const IndexPage = () => {
     },
     sameAs: [
       "https://www.facebook.com/frontendmarcin",
-      "https://instagram.com/marcinzogrodnik.pl",
+      "https://instagram.com/marcinzogrodnik_www",
     ],
   }
 
