@@ -1,5 +1,5 @@
 ---
-slug: "programy-i-wyposażenie-programisty"
+slug: "programy-i-wyposazenie-programisty"
 date: "2020-12-06T14:00"
 title: "Programy i wyposażenie programisty"
 description: "Jak pracuje programista? Niezbędne programy oraz sprzęt do tworzenia szybkich stron internetowych."
