@@ -21,9 +21,6 @@ export default ({ data }) => {
     image = post.frontmatter.image.childImageSharp.fluid
     seoImage = post.frontmatter.seoImage.childImageSharp.fluid
     html = post.html
-
-    console.log(image)
-    console.log(seoImage)
   } else {
     post = data.datoCmsPost
 
