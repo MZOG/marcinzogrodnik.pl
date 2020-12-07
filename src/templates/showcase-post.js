@@ -46,7 +46,7 @@ export default ({ data }) => {
       />
       <article className="article">
         <div className="container">
-          <section className="article__content">
+          <section className="article__content showcase">
             <h1>{post.title}</h1>
             <div className="article__content-info">
               <p>{formatter.format( new Date(post.meta.createdAt) )} / Marcin Zogrodnik</p>

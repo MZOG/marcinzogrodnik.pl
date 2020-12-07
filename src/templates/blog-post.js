@@ -71,6 +71,7 @@ export default ({ data }) => {
         title={title}
         description={seoDescription}
         shareImage={seoImage}
+        slug={slug}
         schemaMarkup={schema}
       />
 
