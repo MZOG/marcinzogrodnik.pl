@@ -62,7 +62,15 @@
     }
   }
 
-
+  .content {
+    &-svg {
+      width: 150px;
+      float: left;
+      display: inline;
+      margin-right: 30px;
+      margin-bottom: 20px;
+    }
+  }
 
   &__container {
     &-item {
