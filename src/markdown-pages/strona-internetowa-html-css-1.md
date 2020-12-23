@@ -2,7 +2,7 @@
 slug: "strona-internetowa-html-css-1"
 date: "2020-12-23T10:00"
 title: "Strona internetowa w HTML i CSS, część 1"
-description: "Bardzo przydatny mixin dla osób tworzących responsywne strony internetowe."
+description: "Tworzymy statyczną stronę internetową w HTML i CSS. Tłumaczę krok po kroku jak powinna wyglądać struktura strony internetowej oraz jakich narzędzi użyjemy."
 image: ../images/markdown/800x450-strona-internetowa-html-css.png
 seoImage: ../images/markdown/strona-internetowa-html-css-1200-630.png
 type: "post"

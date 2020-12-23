@@ -19,7 +19,7 @@ export default ({ data }) => {
     title = post.frontmatter.title
     date = post.frontmatter.date
     image = post.frontmatter.image.childImageSharp.fluid
-    seoImage = post.frontmatter.seoImage.childImageSharp.fluid
+    seoImage = post.frontmatter.seoImage.childImageSharp.fluid.src
     html = post.html
   } else {
     post = data.datoCmsPost
@@ -32,7 +32,6 @@ export default ({ data }) => {
     image = post.image.fluid
     html = post.contentNode.childMarkdownRemark.html
   }
-
 
   let formatter = new Intl.DateTimeFormat( 'pl', {
     day: 'numeric',
@@ -165,7 +164,7 @@ export const query = graphql`
         }
         seoImage {
           childImageSharp {
-            fluid(maxWidth: 800) {
+            fluid(maxWidth: 1200) {
               ...GatsbyImageSharpFluid
             }
           }
