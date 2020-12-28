@@ -80,9 +80,15 @@
 
     p {
       margin-top: rem(15);
+      font-size: rem(16);
+      hyphens: auto;
 
       strong {
         font-weight: 500;
+        background: rgba($primaryColor, 0.08);
+        padding: 2px;
+        border-radius: 3px;
+        line-height: 1;
       }
     }
 

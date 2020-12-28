@@ -6,6 +6,7 @@
   font-display: swap;
 }
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
 /* Box sizing rules */
 *,
 *::before,
@@ -40,13 +41,12 @@ dd {
 
 /* Set core body defaults */
 body {
-  font-family: 'Montserrat', sans-serif;
-  // font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  font-family: 'Montserrat', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   color: $primaryColor;
   min-height: 100vh;
   scroll-behavior: smooth;
   text-rendering: optimizeSpeed;
-  line-height: 1.5;
+  line-height: 1.8;
   position: relative;
   overflow-x: hidden;
   margin-top: 90px;
@@ -158,29 +158,24 @@ select {
 }
 
 .deckgo-highlight-code-carbon {
-  font-size: rem(16) !important;
   margin: 40px 0;
+  font-size: rem(19) !important;
+
+  .deckgo-highlight-code-container {
+    font-family: 'Roboto Mono', monospace !important;
+  }
 }
 
 blockquote {
-  border: 1px solid rgba($secondaryColor, 0.3);
-  margin: 50px 0 30px 0;
+  border: 1px dashed rgba($secondaryColor, 0.3);
+  margin: 30px 0 30px 0;
   padding: 20px;
   border-radius: 10px;
   position: relative;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 
   @include mq('desktop') {
-    margin: 60px -20px 20px -20px;
-  }
-
-  &::before {
-    content: 'WAŻNE';
-    position: absolute;
-    top: -25px;
-    left: 0;
-    font-size: rem(11);
-    font-weight: 600;
-    color: $secondaryColor;
+    margin: 20px -20px 20px 0;
   }
 
   p {
@@ -197,7 +192,15 @@ blockquote {
 }
 
 .markdown-image {
+  @include mq('desktop') {
+    margin: 40px 0;
+  }
   .gatsby-resp-image-wrapper {
     margin-left: 0 !important;
   }
+}
+
+.custom-text-selection::selection {
+  background: deeppink;
+  color: white;
 }

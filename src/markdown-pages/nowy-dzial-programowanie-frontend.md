@@ -6,6 +6,7 @@ description: "Powstał nowy dział - Programowanie / Frontend, na którym będzi
 image: "../images/markdown/nowy-dzial-programowanie-frontend.png"
 seoImage: "../images/markdown/nowy-dzial-programowanie-frontend_seo.png"
 type: "post"
+published: true
 ---
 
 ## Programowanie / Front End

@@ -6,6 +6,7 @@ description: "Tworzymy statyczną stronę internetową w HTML i CSS. Tłumaczę 
 image: ../images/markdown/800x450-strona-internetowa-html-css.png
 seoImage: ../images/markdown/strona-internetowa-html-css-1200-630.png
 type: "post"
+published: true
 ---
 Napisanie prostej strony internetowej nie jest trudnym zadaniem.
 Jestem pewien, że z tym poradnikiem będziesz w stanie zbudować swoją pierwszą

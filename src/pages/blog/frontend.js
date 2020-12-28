@@ -8,7 +8,7 @@ const Blog = ({ data }) => {
   let blogPosts = data.allMarkdownRemark.edges
 
   blogPosts = blogPosts.filter(post => {
-    if (post.node.frontmatter.title !== "") {
+    if (post.node.frontmatter.title !== "" && post.node.frontmatter.published) {
       return post
     }
   })
@@ -67,6 +67,7 @@ export const query = graphql`
             description
             slug
             title
+            published
           }
           html
         }

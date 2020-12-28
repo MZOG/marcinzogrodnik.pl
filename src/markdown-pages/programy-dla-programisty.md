@@ -6,6 +6,7 @@ description: "Jak pracuje programista? Niezbędne programy oraz sprzęt do tworz
 image: "../images/markdown/programy-i-wyposazenie-programisty.png"
 seoImage: "../images/markdown/programy-i-wyposazenie-programisty_seo.png"
 type: "post"
+published: true
 ---
 
 Praca na stanowisku programisty to przede wszystkim odpowiednio dobrane programy,

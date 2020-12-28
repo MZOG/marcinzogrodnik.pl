@@ -6,6 +6,7 @@ description: "Bardzo przydatny mixin dla osób tworzących responsywne strony in
 image: ../images/markdown/media-query.jpeg
 seoImage: ../images/markdown/media-query_seo.png
 type: "post"
+published: true
 ---
 
 **SCSS / SASS** to obowiązkowa pozycja dla każdego, kto poważnie podchodzi do
