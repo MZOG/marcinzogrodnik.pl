@@ -1,5 +1,5 @@
 ---
-slug: "co-to-jest-spread-operator-javascript"
+slug: "css-zmiana-koloru-zaznaczonego-tekstu"
 date: "2020-12-28T18:40"
 title: "CSS: Zmiana koloru zaznaczonego tekstu"
 description: "Prosty trick na zmianę koloru zaznaczonego tekstu w CSS."
