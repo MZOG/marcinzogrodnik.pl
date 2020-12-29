@@ -51,7 +51,10 @@ export default Blog
 
 export const query = graphql`
   query frontend {
-    allMarkdownRemark(sort: {fields: frontmatter___date, order: DESC}) {
+    allMarkdownRemark(
+      sort: {fields: frontmatter___date, order: DESC}
+      filter: {frontmatter: {type: {eq: "post"}}}
+      ) {
       edges {
         node {
           id
