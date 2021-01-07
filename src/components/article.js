@@ -19,9 +19,6 @@ const Article = ({ title, slug, description, image, date }) => {
         <h2>
           <Link to={`/blog/${slug}`}>{title}</Link>
         </h2>
-        <div className="post-excerpt">
-          <p>{description}</p>
-        </div>
         <div className="more">
           <Link className="btn primary sm" to={`/blog/${slug}`}>Więcej →</Link>
           <p className="date">{formatter.format( new Date(date))}</p>

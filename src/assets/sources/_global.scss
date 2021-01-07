@@ -5,9 +5,7 @@
   url('../fonts/font.woff') format('woff');
   font-display: swap;
 }
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
-/* Box sizing rules */
+
 *,
 *::before,
 *::after {
@@ -41,8 +39,8 @@ dd {
 
 /* Set core body defaults */
 body {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
-  color: $primaryColor;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  color: $black;
   min-height: 100vh;
   scroll-behavior: smooth;
   text-rendering: optimizelegibility;

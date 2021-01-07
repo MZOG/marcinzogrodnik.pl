@@ -24,6 +24,7 @@
     "gatsby-plugin-sharp": "^2.6.43",
     "gatsby-plugin-sitemap": "^2.4.5",
     "gatsby-plugin-smoothscroll": "^1.1.0",
+    "gatsby-plugin-webfonts": "^1.1.4",
     "gatsby-remark-highlight-code": "^2.0.0",
     "gatsby-remark-images": "^3.3.10",
     "gatsby-remark-images-datocms": "0.1.0",

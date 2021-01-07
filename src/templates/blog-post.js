@@ -76,8 +76,9 @@ export default ({ data }) => {
 
       <article className="article">
         <div className="container">
+          <h1>{title}</h1>
           <section className="article__content">
-            <h1>{title}</h1>
+
             <div className="article__content-info">
               <p>{formatter.format( new Date(date) )} / Marcin Zogrodnik</p>
             </div>
@@ -115,6 +116,7 @@ export const query = graphql`
       contentNode {
         childMarkdownRemark {
           html
+
         }
       }
       title
@@ -132,7 +134,7 @@ export const query = graphql`
         }
       }
       image {
-        fluid(maxWidth: 800) {
+        fluid(maxWidth: 768) {
           ...GatsbyDatoCmsFluid
           src
         }
@@ -150,7 +152,7 @@ export const query = graphql`
         description
         image {
           childImageSharp {
-            fluid(maxWidth: 800) {
+            fluid(maxWidth: 768) {
               ...GatsbyImageSharpFluid
             }
           }

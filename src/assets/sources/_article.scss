@@ -1,4 +1,16 @@
 .article {
+
+  h1 {
+    font-size: rem(22);
+    line-height: 1.3;
+    font-family: "Lora";
+
+    @include mq("desktop", "min") {
+      text-align: center;
+      font-size: rem(40);
+    }
+  }
+
   &__content {
     @include mq("desktop", "min") {
       max-width: 768px;
@@ -13,15 +25,7 @@
       }
     }
 
-    h1 {
-      font-size: rem(22);
-      line-height: 1.3;
 
-      @include mq("desktop", "min") {
-        text-align: center;
-        font-size: rem(40);
-      }
-    }
 
     h2 {
       font-size: rem(19);

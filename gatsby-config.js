@@ -8,6 +8,25 @@ module.exports = {
   },
   plugins: [
     {
+      resolve: `gatsby-plugin-webfonts`,
+      options: {
+        fonts: {
+          google: [
+            {
+              family: `Inter`,
+              subsets: [`latin`],
+              variants: [`400`, `500`, `700`]
+            },
+            {
+              family: `Lora`,
+              subsets: [`latin`, `latin-ext`],
+              variants: [`400`, `500`, `700`]
+            },
+          ],
+        },
+      },
+    },
+    {
       resolve: `gatsby-plugin-canonical-urls`,
       options: {
         siteUrl: `https://marcinzogrodnik.pl`,
