@@ -1,7 +1,7 @@
 .article {
   &__content {
     @include mq("desktop", "min") {
-      max-width: 800px;
+      max-width: 768px;
       margin: 0 auto;
     }
 
@@ -81,7 +81,9 @@
     p {
       margin-top: rem(15);
       font-size: rem(16);
-      hyphens: auto;
+      line-height: 1.8;
+      color: #000;
+
 
       strong {
         font-weight: 500;

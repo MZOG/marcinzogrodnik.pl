@@ -88,13 +88,6 @@ export default ({ data }) => {
               </div>
             )}
 
-            <div className="article__content-greeting">
-              <p>
-                <strong>Dziękuję za kliknięcie w link</strong>, to wiele dla mnie znaczy!
-                Jeśli spodobał Ci się artykuł to byłbym wdzięczny za kliknięcie <strong>lubię to</strong>, oraz <strong>udostępnienie</strong> wpisu na facebooku.
-              </p>
-            </div>
-
             <div className="article__content-text"
               dangerouslySetInnerHTML={{
                 __html: html

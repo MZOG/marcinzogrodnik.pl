@@ -12,9 +12,9 @@ published: true
 Strony internetowe powinny być unikalne, wyróżniać się na tle konkurencji.
 Dziś poznasz fajny trick, który zmieni kolor zaznaczonego tekstu.
 
-Użyjemy pseudo selektora - **::selection** w wybranym elemencie, aby zmienić kolor tła.
-**::selection** możemy zdefiniować na wybranym elemencie np. klasie .container,
-jeżeli nie zdefiniujemy elementu, wtedy **::selection** zadziała na całej stronie.
+Użyjemy pseudo selektora - ```::selection``` w wybranym elemencie, aby zmienić kolor tła.
+```::selection``` możemy zdefiniować na wybranym elemencie np. klasie ```.container```,
+jeżeli nie zdefiniujemy elementu, wtedy ```::selection``` zadziała na całej stronie.
 
 ```
 // dodanie globalnego tła oraz koloru dla zaznaczonego tekstu
