@@ -62,7 +62,6 @@ function Header({article, homepage}) {
                   />
                 </g>
               </svg>
-              <span>marcinzogrodnik</span>
             </Link>
           </div>
 

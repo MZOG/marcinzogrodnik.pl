@@ -15,6 +15,12 @@ function Hero() {
             Wybieram technologie dopasowane do Twojego biznesu.
           </span>
         </p>
+
+        <div className="homepage_hero_cta">
+          <a href="#">
+            Dowiedz się więcej
+          </a>
+        </div>
       </div>
     </section>
   )

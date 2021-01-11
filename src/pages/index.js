@@ -8,6 +8,11 @@ import Article from "../components/article"
 
 // homepage components
 import Hero from "../components/homepage_sections/hero"
+import Offer from "../components/homepage_sections/offer"
+import OfferMore from "../components/homepage_sections/more-offer"
+import Process from "../components/homepage_sections/process"
+import CallMe from "../components/homepage_sections/call-me"
+import Blog from "../components/homepage_sections/blog"
 
 const IndexPage = () => {
   const data = useStaticQuery(graphql`
@@ -147,35 +152,11 @@ const IndexPage = () => {
       />
 
       <Hero />
-
-      {/* <section className="homepage"> */}
-        {/* <div className="homepage__hero">
-          <div className="container">
-            <div className="homepage__hero-text">
-              <h1>
-                Nowoczesne rozwiązania
-                <span className="highlight">nowej generacji</span>
-              </h1>
-              <p className="homepage__hero-text-lead">
-                Poznaj szybkość statycznych stron <strong>JAMstack</strong>,
-                oraz nieograniczone możliwości systemu{" "}
-                <strong>WordPress</strong>.
-              </p>
-              <div className="homepage__hero-text-cta">
-                <AnchorLink to="/#oferta" className="btn primary">
-                  Sprawdź ofertę
-                </AnchorLink>
-
-                <AnchorLink to="/#faq" stripHash className="faq">
-                  <span>Masz pytanie? Sprawdź</span> FAQ
-                </AnchorLink>
-              </div>
-            </div>
-            <div className="homepage__hero-image">
-              <Img fluid={heroImage} />
-            </div>
-          </div>
-        </div> */}
+      <Offer />
+      <OfferMore />
+      <Process />
+      <CallMe />
+      <Blog data={data.allDatoCmsPost}/>
 
         {/* <div className="homepage__portfolio">
           <div className="container">
@@ -294,7 +275,7 @@ const IndexPage = () => {
                 method="POST"
                 data-netlify="true"
                 action="/kontakt/success"
-              >
+               >
                 <input type="hidden" name="form-name" value="QuickContact" />
                 <div className="homepage__faq-quote-item">
                   <label htmlFor="telefon">Telefon</label>
