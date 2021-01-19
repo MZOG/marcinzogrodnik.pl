@@ -42,7 +42,7 @@ function Header({article, homepage}) {
 
   return (
     <>
-      <header className={`header ${scroll === false ? "scroll" : ""} ${homepage ? "homepage" : ""}`}>
+      <header className={`header ${scroll === false ? "scroll" : ""}`}>
         <div className="container">
           <div className="logo">
             <Link to="/" tabIndex="1">

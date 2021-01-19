@@ -12,7 +12,7 @@ import CallMe from "../components/homepage_sections/call-me"
 import Blog from "../components/homepage_sections/blog"
 import Portfolio from "../components/homepage_sections/portfolio"
 
-const IndexPage = () => {
+const IndexPage = (props) => {
   const data = useStaticQuery(graphql`
     query homepageQuery {
       allDatoCmsShowcase(
@@ -109,7 +109,7 @@ const IndexPage = () => {
   }
 
   return (
-    <Layout>
+    <Layout path={props.location.pathname}>
       <SEO title={metaInfo.title} description={metaInfo.description} schemaMarkup={schema} />
       <Hero />
       <Offer />

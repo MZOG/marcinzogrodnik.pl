@@ -1,5 +1,6 @@
 .footer {
-  background: #fafafa;
+  background: $thirdColor;
+  border-top: 1px solid darken($thirdColor, 3%);
   padding: 30px 0;
   margin-top: 50px;
 
@@ -76,6 +77,16 @@
           }
         }
       }
+    }
+  }
+
+  .copy {
+    text-align: center;
+    font-size: rem(14);
+
+    a {
+      text-decoration: none;
+      color: $secondaryColor;
     }
   }
 }
