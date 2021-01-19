@@ -1,48 +1,71 @@
 .contact {
 
-  &__content {
-    @include mq('tablet', 'min') {
+  .container {
+    max-width: 768px;
+  }
+
+  &-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+
+    .item {
+      width: 100%;
+      border: 1px solid darken($thirdColor, 4%);
+      box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+      padding: 20px;
+      text-align: center;
+      border-radius: 8px;
       display: flex;
-      justify-content: space-between;
-    }
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 30px;
 
-    &-text {
-
-      @include mq('tablet', 'min') {
-        width: calc(60% - 20px);
+      svg {
+        max-width: 30px;
       }
 
-      @include mq('desktop', 'min') {
-        width: calc(70% - 20px);
-      }
-
-      &-info {
-        @include mq('tablet', 'min') {
-          margin-top: 50px;
-        }
+      a {
+        font-size: rem(16);
+        color: $secondaryColor;
+        text-decoration: none;
+        margin-top: 20px;
       }
     }
+  }
 
+  &__content {
     form {
       margin-top: 30px;
-      background: $primaryColor;
+      // background: $thirdColor;
       padding: 20px;
-      border-radius: 10px;
+      border-radius: 8px;
+      border: 1px solid darken($thirdColor, 4%);
+      box-shadow: 0 8px 30px rgba(0,0,0,0.12);
 
-      @include mq('tablet', 'min') {
-        margin-top: 0;
-        width: calc(40% - 20px);
-      }
+      .half {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
 
-      @include mq('desktop', 'min') {
-        width: calc(30% - 20px);
+        @include mq('tablet', 'min') {
+          flex-direction: row;
+        }
+
+        .contact-form-item {
+          width: 100%;
+
+          @include mq('tablet', 'min') {
+            width: calc(50% - 20px);
+          }
+        }
       }
 
       .contact-form-item {
         label {
           display: block;
-          color: #fff;
-          font-weight: 500;
           margin-bottom: 10px;
 
         }
@@ -52,26 +75,28 @@
           margin-bottom: 30px;
           border-radius: 5px;
           min-height: 40px;
-          text-indent: 15px;
+          text-indent: 10px;
           border: none;
           appearance: none;
-          font-size: rem(14);
-          font-weight: 500;
+          font-size: rem(16);
+          color: $primaryColor;
+          border: 1px solid darken($thirdColor, 4%);
 
           &::placeholder {
-            font-size: rem(12);
+            font-size: rem(16);
           }
         }
 
         textarea {
           width: 100%;
-          border: none;
+          border: 1px solid darken($thirdColor, 4%);
           appearance: none;
           border-radius: 5px;
           resize: none;
           padding: 15px;
-          font-size: rem(14);
-          font-weight: 500;
+          font-size: rem(16);
+          min-height: 200px;
+          color: $primaryColor;
         }
       }
 

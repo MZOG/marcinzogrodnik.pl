@@ -2,6 +2,7 @@
 import React from "react"
 import Layout from "../../components/layout"
 import SEO from "../../components/seo"
+import CTA from "../../components/cta"
 import { useStaticQuery, graphql } from "gatsby"
 
 const Mentoring = () => {
@@ -31,6 +32,7 @@ const Mentoring = () => {
           <p>Oferta w przygotowaniu</p>
 
         </div>
+        <CTA line1="Pomogę Ci z JavaScript, React czy Gatsby." />
       </section>
     </Layout>
   )

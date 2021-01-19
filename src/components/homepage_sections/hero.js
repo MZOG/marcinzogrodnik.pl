@@ -1,4 +1,5 @@
 import React from "react"
+import { AnchorLink } from "gatsby-plugin-anchor-links"
 
 function Hero() {
   return(
@@ -17,9 +18,9 @@ function Hero() {
         </p>
 
         <div className="homepage_hero_cta">
-          <a href="#">
+          <AnchorLink to="/#offer" stripHash>
             Dowiedz się więcej
-          </a>
+          </AnchorLink>
         </div>
       </div>
     </section>

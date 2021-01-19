@@ -17,11 +17,14 @@ const Blog = ({ data }) => {
         <div className="container page">
           <h1>Blog</h1>
 
-          <Link to="/blog/frontend/" className="btn primary">
-            Programowanie / Front End
-          </Link>
+          <div className="page-category">
+            <Link to="/blog/frontend/">
+              Front End
+            </Link>
+          </div>
+        </div>
 
-          <div className="blog__container">
+        <div className="blog__container">
             {blogPosts.map(post => {
               return (
                 <Article
@@ -35,7 +38,6 @@ const Blog = ({ data }) => {
               )
             })}
           </div>
-        </div>
       </section>
     </Layout>
   )

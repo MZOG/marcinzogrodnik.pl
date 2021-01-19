@@ -2,6 +2,7 @@
 import React from "react"
 import Layout from "../../components/layout"
 import SEO from "../../components/seo"
+import CTA from "../../components/cta"
 import { useStaticQuery, graphql } from "gatsby"
 
 const OpiekaNadStrona = () => {
@@ -31,6 +32,8 @@ const OpiekaNadStrona = () => {
           <p>Oferta w przygotowaniu</p>
 
         </div>
+
+        <CTA line1="Jestem tu, aby Ci pomóc." />
       </section>
     </Layout>
   )

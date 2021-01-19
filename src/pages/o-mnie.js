@@ -14,7 +14,7 @@ const About = () => {
           }
         }
         image {
-          fluid(maxWidth: 500) {
+          fluid(maxWidth: 768) {
             ...GatsbyDatoCmsFluid
             src
           }
@@ -39,19 +39,16 @@ const About = () => {
         <div className="container">
           <h1>O mnie</h1>
 
-            <div className="about__image">
-              <Img
-                fluid={aboutContent.image.fluid}
-                alt={aboutContent.image.alt}
-              />
-            </div>
+          <Img
+            fluid={aboutContent.image.fluid}
+            alt={aboutContent.image.alt}
+          />
 
-            <div
-              className="about__content"
-              dangerouslySetInnerHTML={{
-                __html: aboutContent.contentNode.childMarkdownRemark.html,
-              }}
-            />
+          <div
+            dangerouslySetInnerHTML={{
+              __html: aboutContent.contentNode.childMarkdownRemark.html,
+            }}
+          />
         </div>
       </section>
     </Layout>

@@ -22,7 +22,7 @@ function OfferMore() {
               <img src={Hosting} alt="Hosting stron internetowych WordPress & JAMstack"/>
             </div>
             <div className="offer-box-content">
-              <h3>Hosting stron internetowych</h3>
+              <h3>Hosting</h3>
               <p>
                 Oferuję pomoc w wyborze odpowiedniego hostingu
                 dla Twojej strony internetowej. Sprawdzam ruch strony
@@ -37,7 +37,7 @@ function OfferMore() {
             <img src={Optymalizacja} alt="Optymalizacja stron internetowych WordPress & JAMstack"/>
             </div>
             <div className="offer-box-content">
-              <h3>Optymalizacja stron internetowych</h3>
+              <h3>Optymalizacja</h3>
               <p>
                 Sprawdzam kondycję strony internetowej, wykonuję
                 odpowiednie testy oraz audyty, aby sprawdzić, gdzie
@@ -52,7 +52,7 @@ function OfferMore() {
             <img src={Grafika} alt="Projekty graficzne stron internetowych WordPress & JAMstack"/>
             </div>
             <div className="offer-box-content">
-              <h3>Projekty graficzne stron internetowych</h3>
+              <h3>Projekty graficzne</h3>
               <p>
                 Twoja strona internetowa odbiega od dzisiejszych norm?
                 Stworzę nowy, modernistyczny projekt graficzny Twojej
@@ -68,7 +68,7 @@ function OfferMore() {
             <img src={Pozycjonowanie} alt="Pozycjonowanie stron internetowych WordPress & JAMstack"/>
             </div>
             <div className="offer-box-content">
-              <h3>Pozycjonowanie stron internetowych</h3>
+              <h3>Pozycjonowanie</h3>
               <p>
                 Częstym błędem braku wysokiej pozycji w Google
                 jest nieodpowiednia struktura strony internetowej.
@@ -81,7 +81,7 @@ function OfferMore() {
         </div>
 
         <div className="homepage_offer_more_cta">
-          <a href="#">
+          <a href="/oferta">
             Zobacz więcej
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
           </a>

@@ -8,6 +8,12 @@ module.exports = {
   },
   plugins: [
     {
+      resolve: `gatsby-plugin-disqus`,
+      options: {
+          shortname: `marcinzogrodnik-1`
+      }
+    },
+    {
       resolve: `gatsby-plugin-webfonts`,
       options: {
         fonts: {
@@ -18,7 +24,7 @@ module.exports = {
               variants: [`400`, `500`, `700`]
             },
             {
-              family: `Lora`,
+              family: `Montserrat`,
               subsets: [`latin`, `latin-ext`],
               variants: [`400`, `500`, `700`]
             },

@@ -9,6 +9,8 @@ type: "post"
 published: true
 ---
 
+## Co to jest ::selection?
+
 Strony internetowe powinny być unikalne, wyróżniać się na tle konkurencji.
 Dziś poznasz fajny trick, który zmieni kolor zaznaczonego tekstu.
 

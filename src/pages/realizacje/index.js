@@ -29,6 +29,10 @@ const Realizacje = ({data}) => {
                     />
                   )
                 })}
+
+                <article className="showcase__item more-projects">
+                  <h2>Niestety nie mogę pochwalić się publicznie wszystkimi projektami, które wykonałem.</h2>
+                </article>
               </div>
             </div>
           </section>

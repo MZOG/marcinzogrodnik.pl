@@ -4,6 +4,8 @@
   margin-top: 50px;
 
   &-logo {
+    margin: 0 auto;
+
     a {
       font-family: "marcinzogrodnik";
       font-size: 1.4rem;
@@ -30,7 +32,6 @@
     flex-direction: column;
 
     @include mq('tablet', 'min') {
-      margin-left: 40px;
       flex-direction: row;
     }
 
@@ -38,23 +39,41 @@
     &-item {
       margin-top: 20px;
 
-      &:last-child {
+      p {
+        font-size: rem(14);
         display: flex;
-        flex-direction: column;
-        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 5px;
 
-        @include mq('tablet', 'min') {
-          text-align: right;
+        svg {
+          width: 22px;
+          margin-right: 10px;
+        }
+
+        a {
+          font-size: rem(14);
+          color: $primaryColor;
+          text-decoration: none;
+
+          &:hover {
+            color: $secondaryColor;
+          }
         }
       }
 
-      p {
-        font-size: rem(14);
-        font-weight: 500;
+      ul {
+        list-style: none;
 
-        a {
-          color: $secondaryColor;
-          text-decoration: none;
+        li {
+          a {
+            font-size: rem(14);
+            color: $primaryColor;
+            text-decoration: none;
+
+            &:hover {
+              color: $secondaryColor;
+            }
+          }
         }
       }
     }

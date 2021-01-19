@@ -1,15 +1,17 @@
 /* disable eslint */
+import { Disqus } from 'gatsby-plugin-disqus';
 import React from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import Img from "gatsby-image"
 import { defineCustomElements as deckDeckGoHighlightElement } from '@deckdeckgo/highlight-code/dist/loader';
 deckDeckGoHighlightElement();
 
 export default ({ data }) => {
 
-  let post, seoDescription, title, seoImage, image, date, html, slug
+  console.log(data)
+
+  let post, seoDescription, title, seoImage, date, html, slug
 
   if (data.markdownRemark) {
     post = data.markdownRemark
@@ -18,7 +20,6 @@ export default ({ data }) => {
     slug = post.frontmatter.slug
     title = post.frontmatter.title
     date = post.frontmatter.date
-    image = post.frontmatter.image.childImageSharp.fluid
     seoImage = post.frontmatter.seoImage.childImageSharp.fluid.src
     html = post.html
   } else {
@@ -29,7 +30,6 @@ export default ({ data }) => {
     title = post.title
     date = post.meta.createdAt
     seoImage = post.seo.image.sizes.src
-    image = post.image.fluid
     html = post.contentNode.childMarkdownRemark.html
   }
 
@@ -64,6 +64,12 @@ export default ({ data }) => {
     "dateModified": date
   }
 
+  let disqusConfig = {
+    url: `https://marcinzogrodnik.pl/blog/${slug}`,
+    identifier: `${title}`,
+    title: `${title}`,
+}
+
   return (
     <Layout article={true}>
       <SEO
@@ -76,18 +82,20 @@ export default ({ data }) => {
 
       <article className="article">
         <div className="container">
-          <h1>{title}</h1>
-          <section className="article__content">
 
+          <section className="article__content">
+            <h1>{title}</h1>
             <div className="article__content-info">
               <p>{formatter.format( new Date(date) )} / Marcin Zogrodnik</p>
+              <ul class="breadcrumb">
+                <li><a href="/">Strona główna</a></li>
+                <li><a href="/blog">Blog</a></li>
+                {data.markdownRemark ?
+                  <li><a href="/blog/frontend">Front End</a></li> : ""
+                }
+                <li>{title}</li>
+              </ul>
             </div>
-
-            {image && (
-              <div className="article__content-image">
-                <Img fluid={image} />
-              </div>
-            )}
 
             <div className="article__content-text"
               dangerouslySetInnerHTML={{
@@ -95,14 +103,7 @@ export default ({ data }) => {
               }}
             />
 
-            <div className="article__content-share">
-              <p>Podobał Ci się artykuł? Podziel się na facebooku!</p>
-              <div className="article__content-share-fb">
-                <a href={`https://www.facebook.com/sharer/sharer.php?u=https://marcinzogrodnik.pl/blog/${slug}`} >
-                  Udostępnij na facebooku
-                </a>
-              </div>
-            </div>
+            <Disqus config={disqusConfig}/>
           </section>
         </div>
       </article>
@@ -116,7 +117,6 @@ export const query = graphql`
       contentNode {
         childMarkdownRemark {
           html
-
         }
       }
       title

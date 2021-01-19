@@ -21,26 +21,28 @@ const Blog = ({ data }) => {
       />
       <section>
         <div className="container page">
-          <h1>Programowanie / Front End</h1>
+          <h1>Front End</h1>
 
-          <Link to="/blog/" className="btn primary">
-            Tematy ogólne
-          </Link>
-
-          <div className="blog__container">
-            {blogPosts.map(post => {
-              return (
-                <Article
-                  key={post.node.id}
-                  slug={post.node.frontmatter.slug}
-                  title={post.node.frontmatter.title}
-                  date={post.node.frontmatter.date}
-                  description={post.node.frontmatter.description}
-                  image={post.node.frontmatter.image.childImageSharp.fluid || "elo"}
-                />
-              )
-            })}
+          <div className="page-category">
+            <Link to="/blog">
+              Blog
+            </Link>
           </div>
+        </div>
+
+        <div className="blog__container">
+          {blogPosts.map(post => {
+            return (
+              <Article
+                key={post.node.id}
+                slug={post.node.frontmatter.slug}
+                title={post.node.frontmatter.title}
+                date={post.node.frontmatter.date}
+                description={post.node.frontmatter.description}
+                image={post.node.frontmatter.image.childImageSharp.fluid || "elo"}
+              />
+            )
+          })}
         </div>
       </section>
     </Layout>

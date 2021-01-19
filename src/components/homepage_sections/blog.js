@@ -4,7 +4,6 @@ import Img from "gatsby-image"
 
 function HomepageBlog(data) {
   let posts = data.data.edges
-  console.log(posts)
 
   return(
     <section className="homepage homepage_blog">
