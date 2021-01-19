@@ -18,6 +18,10 @@
     position: relative;
     flex-direction: column;
 
+    @include mq('tablet') {
+      flex-direction: row;
+    }
+
     &::before {
       content: "";
       position: absolute;
@@ -35,10 +39,6 @@
         flex-direction: row-reverse;
       }
 
-      .showcase__item-image {
-        clip-path: polygon(100% 0%, 0% 0%, 0% 70%, 100% 100%);
-      }
-
       &::before {
         content: "";
         position: absolute;
@@ -54,17 +54,15 @@
     }
 
     &-image {
-      clip-path: polygon(100% 0%, 0% 0%, 0% 70%, 100% 100%);
       width: 100%;
 
       @include mq('tablet', 'min') {
         width: calc(50% - 20px);
-        clip-path: polygon(100% 0%, 0% 0%, 0% 100%, 100% 70%);
       }
 
       .gatsby-image-wrapper {
-        border-top-left-radius: 8px;
-        border-top-right-radius: 8px;
+        border-radius: 8px;
+        box-shadow: 0 8px 30px rgba(0,0,0,0.12);
       }
     }
 
