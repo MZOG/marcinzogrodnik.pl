@@ -104,7 +104,7 @@ const IndexPage = (props) => {
   }
 
   let metaInfo = {
-    title: "home",
+    title: "Strona Główna",
     description: "Nowoczesne rozwiązania, które przynoszą rezultaty. Strony internetowe WordPress, JAMstack. Sklepy internetowe Katowice. Strony internetowe dostosowane do Twoich potrzeb."
   }
 
