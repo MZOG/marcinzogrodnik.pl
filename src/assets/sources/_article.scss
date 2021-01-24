@@ -32,7 +32,7 @@
       font-family: 'Montserrat';
 
       @include mq("desktop", "min") {
-        font-size: rem(30);
+        font-size: rem(24);
       }
 
       &:first-child {

@@ -165,7 +165,8 @@ select {
 }
 
 blockquote {
-  border: 1px dashed rgba($secondaryColor, 0.3);
+  border: 1px dashed darken($lightBlue, 5%);
+  background: $lightBlue;
   margin: 30px 0 30px 0;
   padding: 20px;
   border-radius: 10px;
@@ -173,13 +174,12 @@ blockquote {
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 
   @include mq('desktop') {
-    margin: 20px -20px 20px 0;
+    margin: 20px -20px 20px -20px;
   }
 
   p {
     margin-top: 0 !important;
     margin-bottom: 0 !important;
-    font-weight: 500;
   }
 }
 
