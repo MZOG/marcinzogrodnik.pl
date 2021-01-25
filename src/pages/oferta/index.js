@@ -19,7 +19,7 @@ const Oferta = () => (
             <p>Najpopularniejszy system zarządzania treścią WordPress, który jest wykorzystywany przez największe firmy na świecie. Poznaj ofertę stron oraz sklepów Wordpress.</p>
 
             <div className="offer_boxes-item-cta">
-              <Link className="btn secondary" to="/oferta/strony-internetowe-wordpress/">
+              <Link className="btn secondary" to="/oferta/strony-internetowe-wordpress">
                 Dowiedz się więcej
                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
               </Link>
@@ -31,7 +31,7 @@ const Oferta = () => (
             <p>Statyczna strona internetowa to przede wszystkim szybkość, która zostawi w tle konkurencję. Zobacz jakie korzyści oferuje strona wykonana za pomocą Gatsby.</p>
 
             <div className="offer_boxes-item-cta">
-              <Link className="btn secondary" to="/oferta/strony-internetowe-jamstack/">
+              <Link className="btn secondary" to="/oferta/strony-internetowe-jamstack">
                 Dowiedz się więcej
                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
               </Link>
@@ -47,7 +47,7 @@ const Oferta = () => (
             </p>
 
             <div className="offer_boxes-item-cta">
-              <Link className="btn secondary" to="/oferta/sklepy-internetowe/">
+              <Link className="btn secondary" to="/oferta/sklepy-internetowe">
                 Dowiedz się więcej
                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
               </Link>
@@ -59,7 +59,7 @@ const Oferta = () => (
             <p>Statyczna strona internetowa to przede wszystkim szybkość, która zostawi w tle konkurencję. Zobacz jakie korzyści oferuje strona wykonana za pomocą Gatsby.</p>
 
             <div className="offer_boxes-item-cta">
-              <Link className="btn secondary" to="/oferta/opieka-nad-strona/">
+              <Link className="btn secondary" to="/oferta/opieka-nad-strona">
                 Dowiedz się więcej
                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
               </Link>
@@ -74,7 +74,7 @@ const Oferta = () => (
             </p>
 
             <div className="offer_boxes-item-cta">
-              <Link className="btn secondary" to="/oferta/mentoring/">
+              <Link className="btn secondary" to="/oferta/mentoring">
                 Dowiedz się więcej
                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
               </Link>
