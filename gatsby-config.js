@@ -44,6 +44,7 @@ module.exports = {
         offset: -50
       }
     },
+    `gatsby-plugin-remove-trailing-slashes`,
     {
       resolve: `gatsby-transformer-remark`,
       options: {
