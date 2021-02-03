@@ -73,6 +73,11 @@ function Header({article, homepage}) {
                 </Link>
               </li>
               <li>
+                <Link to="/oferta" activeClassName="active">
+                  Oferta
+                </Link>
+              </li>
+              <li>
                 <Link
                   to="/realizacje"
                   activeClassName="active"
