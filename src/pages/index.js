@@ -1,16 +1,17 @@
-import React from "react"
+import React, { lazy } from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { useStaticQuery, graphql} from "gatsby"
+import { Suspense } from "react"
 
 // homepage components
-import Hero from "../components/homepage_sections/hero"
-import Offer from "../components/homepage_sections/offer"
-import OfferMore from "../components/homepage_sections/more-offer"
-import Process from "../components/homepage_sections/process"
-import CallMe from "../components/homepage_sections/call-me"
-import Blog from "../components/homepage_sections/blog"
-import Portfolio from "../components/homepage_sections/portfolio"
+const Hero = lazy(() => import('../components/homepage_sections/hero'))
+const Offer = lazy(() => import('../components/homepage_sections/offer'))
+const OfferMore = lazy(() => import('../components/homepage_sections/more-offer'))
+const Process = lazy(() => import('../components/homepage_sections/process'))
+const CallMe = lazy(() => import('../components/homepage_sections/call-me'))
+const Blog = lazy(() => import('../components/homepage_sections/blog'))
+const Portfolio = lazy(() => import('../components/homepage_sections/portfolio'))
 
 const IndexPage = (props) => {
   const data = useStaticQuery(graphql`
@@ -109,16 +110,18 @@ const IndexPage = (props) => {
   }
 
   return (
-    <Layout path={props.location.pathname}>
-      <SEO title={metaInfo.title} description={metaInfo.description} schemaMarkup={schema} />
-      <Hero />
-      <Offer />
-      <OfferMore />
-      <Portfolio data={data.allDatoCmsShowcase} />
-      <Process />
-      <CallMe />
-      <Blog data={data.allDatoCmsPost}/>
-    </Layout>
+    <Suspense fallback="loading...">
+      <Layout path={props.location.pathname}>
+        <SEO title={metaInfo.title} description={metaInfo.description} schemaMarkup={schema} />
+        <Hero />
+        <Offer />
+        <OfferMore />
+        <Portfolio data={data.allDatoCmsShowcase} />
+        <Process />
+        <CallMe />
+        <Blog data={data.allDatoCmsPost}/>
+      </Layout>
+    </Suspense>
   )
 }
 

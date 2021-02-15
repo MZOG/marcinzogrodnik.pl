@@ -4,7 +4,7 @@ import SEO from "../../components/seo"
 import Article from "../../components/article"
 import { graphql, Link } from "gatsby"
 
-const Blog = ({ data }) => {
+const Frontend = ({ data }) => {
   let blogPosts = data.allMarkdownRemark.edges
 
   blogPosts = blogPosts.filter(post => {
@@ -49,7 +49,7 @@ const Blog = ({ data }) => {
   )
 }
 
-export default Blog
+export default Frontend
 
 export const query = graphql`
   query frontend {
