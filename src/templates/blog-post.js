@@ -8,9 +8,6 @@ import { defineCustomElements as deckDeckGoHighlightElement } from '@deckdeckgo/
 deckDeckGoHighlightElement();
 
 export default ({ data }) => {
-
-  console.log(data)
-
   let post, seoDescription, title, seoImage, date, html, slug
 
   if (data.markdownRemark) {

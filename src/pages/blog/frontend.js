@@ -11,6 +11,7 @@ const Frontend = ({ data }) => {
     if (post.node.frontmatter.title !== "" && post.node.frontmatter.published) {
       return post
     }
+    return post
   })
 
   return (
