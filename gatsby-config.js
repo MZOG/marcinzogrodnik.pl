@@ -19,11 +19,6 @@ module.exports = {
         fonts: {
           google: [
             {
-              family: `Inter`,
-              subsets: [`latin`],
-              variants: [`400`, `500`, `700`]
-            },
-            {
               family: `Montserrat`,
               subsets: [`latin`, `latin-ext`],
               variants: [`400`, `500`, `700`]
@@ -77,7 +72,6 @@ module.exports = {
     `gatsby-plugin-smoothscroll`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-sass`,
-
     {
       resolve: `gatsby-plugin-netlify`,
       options: {

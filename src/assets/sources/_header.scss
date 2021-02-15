@@ -4,9 +4,7 @@
   top: 0;
   width: 100%;
   z-index: 10;
-  // background: #fff;
   transition: all 100ms ease-in-out;
-  // box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 
   @include mq("tablet", "min") {
     box-shadow: none;
