@@ -1,92 +1,86 @@
 .footer {
-  background: $thirdColor;
-  border-top: 1px solid darken($thirdColor, 3%);
+  background: #f3f3f3;
   padding: 30px 0;
   margin-top: 50px;
 
-  &-logo {
-    margin: 0 auto;
+  .copy {
+    color: $black;
+    font-size: 14px;
+    margin-top: 30px;
+
+    @include mq('tablet', 'min') {
+      text-align: center;
+      margin-top: 0;
+    }
 
     a {
-      font-family: "marcinzogrodnik";
-      font-size: 1.4rem;
-      color: $primaryColor;
-      text-decoration: none;
-      line-height: 0;
-      display: flex;
-      align-items: center;
+      color: $black;
 
-      svg {
-        width: 30px;
-      }
-
-      span {
-        display: block;
-          margin-left: 10px;
-      }
     }
   }
 
   &-info {
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column;
 
     @include mq('tablet', 'min') {
-      flex-direction: row;
+      display: flex;
+      justify-content: space-between;
     }
 
-
     &-item {
-      margin-top: 20px;
-
-      p {
-        font-size: rem(14);
-        display: flex;
-        align-items: center;
-        margin-bottom: 5px;
-
-        svg {
-          width: 22px;
-          margin-right: 10px;
-        }
-
-        a {
-          font-size: rem(14);
-          color: $primaryColor;
-          text-decoration: none;
-
-          &:hover {
-            color: $secondaryColor;
-          }
-        }
-      }
-
       ul {
         list-style: none;
+        margin: 0;
+        padding: 0;
 
         li {
           a {
-            font-size: rem(14);
-            color: $primaryColor;
+            color: $black;
+            padding: 10px 0;
+            display: block;
+            font-size: 18px;
             text-decoration: none;
 
-            &:hover {
-              color: $secondaryColor;
+            @include mq('tablet', 'min') {
+              font-size: 15px;
+            }
+
+            @include mq('tablet', 'min') {
+              padding: 5px 0;
             }
           }
         }
       }
     }
-  }
 
-  .copy {
-    text-align: center;
-    font-size: rem(14);
+    p {
+      margin: 30px 0;
+      display: flex;
+      align-items: center;
 
-    a {
-      text-decoration: none;
-      color: $secondaryColor;
+      @include mq('tablet', 'min') {
+        margin: 0;
+      }
+
+      svg {
+        width: 25px;
+        height: 25px;
+        margin-right: 10px;
+        stroke: $black;
+
+        @include mq('tablet', 'min') {
+          width: 20px;
+          height: 20px;
+        }
+      }
+
+      a {
+        color: $black;
+
+        @include mq('tablet', 'min') {
+          font-size: 15px;
+          padding: 5px 0;
+        }
+      }
     }
   }
 }

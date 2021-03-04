@@ -1,127 +1,341 @@
 .page {
-  padding-top: 100px;
-
-  &.success {
-    .btn {
-      margin-top: 40px;
-    }
-  }
 
   .container {
-    max-width: 768px;
-  }
-
-  &-category {
-    text-align: center;
-    margin-bottom: 50px;
-
-    a {
-      border: 1px solid darken($thirdColor, 5%);
-      color: darken($thirdColor, 25%);
-      padding: 10px 18px;
-      border-radius: 7px;
-      text-decoration: none;
-      transition: all 200ms ease-in-out;
-
-      &:hover {
-        box-shadow: 0 8px 30px rgba(0,0,0,0.12);
-      }
+    @include mq('desktop', 'min') {
+      width: 1000px;
     }
   }
 
-  h1 {
-    line-height: 1.3;
-    margin-bottom: 30px;
-    font-size: rem(28);
-
-    @include mq('tablet', 'min') {
-      font-size: rem(40);
-      text-align: center;
-    }
+  .gatsby-image-wrapper {
+    margin-bottom: 20px;
   }
-
-  h2 {
-    font-size: rem(22);
-    line-height: 1.3;
-    margin-top: rem(15);
-
-    @include mq("desktop", "min") {
-      font-size: rem(25);
-    }
-  }
-
-  h3 {
-      font-size: rem(20);
-      font-weight: 600;
-      line-height: 1.3;
-      color: $secondaryColor;
-      margin-top: 15px;
-      position: relative;
-      display: inline-block;
-
-      @include mq("desktop", "min") {
-        font-size: rem(20);
-        font-weight: 700;
-      }
-    }
 
   p {
-    margin-top: rem(15);
-
-    strong {
-      font-weight: 500;
-    }
-
-    a {
-      color: $primaryColor;
-      text-decoration: none;
-      font-weight: 500;
-      position: relative;
-      border-bottom: 1px dashed rgba($primaryColor, 0.6);
-
-      &:hover {
-        background: rgba($primaryColor, 0.1);
-        border-color: $primaryColor;
-        border-bottom-style: solid;
-      }
-    }
+    font-size: 18px;
+    line-height: 1.4;
   }
 
   .content {
-    &-svg {
-      width: 150px;
-      float: left;
-      display: inline;
-      margin-right: 30px;
-      margin-bottom: 20px;
+    h2, h3, h4 {
+      border-left: 5px solid $primary;
+      padding-left: 10px;
+      margin-top: 40px;
+    }
+
+    a {
+      font-weight: 600;
+      color: $primary;
+      border-bottom: 1px dashed $primary;
+      text-decoration: none;
+
+      &:hover {
+        border-bottom-style: solid;
+        background: rgba($primary, 0.2);
+      }
     }
   }
 
-  &__container {
+  &_grid {
+    margin-top: 50px;
+
+    @include mq('tablet', 'min') {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      column-gap: 20px;
+    }
+
+    @include mq('tabletw', 'min') {
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      column-gap: 50px;
+    }
+
     &-item {
-      &:not(:first-child) {
-        margin-top: rem(30);
+      margin-bottom: 30px;
+
+      @include mq('tablet', 'min') {
+        margin-bottom: 50px;
+      }
+    }
+  }
+
+  &_offer {
+    &-content {
+      margin-top: 50px;
+    }
+
+    &_boxes {
+      display: grid;
+
+      @include mq('tablet', 'min') {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        column-gap: 20px;
       }
 
-      h2 {
-        font-size: rem(19);
-        line-height: 1.3;
-        margin-top: rem(10);
+      @include mq('tabletw', 'min') {
+        grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+        column-gap: 50px;
       }
+    }
 
-      svg {
-        width: 30px;
+    &_item {
+      margin-bottom: 40px;
+
+      @include mq('tablet', 'min') {
+        margin-bottom: 50px;
+        padding: 30px;
+        @include bs;
+        border-radius: 15px;
       }
 
       p {
-        margin-top: rem(10);
-        strong {
-          font-weight: 500;
-        }
+        margin-bottom: 20px;
       }
 
       &-cta {
-        margin: rem(20) 0;
+        a {
+          @include btn($primary, true);
+        }
+      }
+    }
+  }
+  // SHOWCASE PAGE
+  &_showcase {
+    &-items {
+      margin-top: 30px;
+    }
+  }
+  // BLOG PAGE
+  &_blog {
+    &-category {
+      margin-bottom: 20px;
+      margin-top: 20px;
+
+      @include mq('tablet', 'min') {
+        margin-bottom: 50px;
+      }
+
+      a {
+        @include btn($primary, false);
+      }
+    }
+  }
+
+  // CONTACT PAGE
+  &_contact {
+    &-info {
+      margin: 40px 0;
+
+      @include mq('tablet', 'min') {
+        width: calc(50% - 20px);
+        margin: 0;
+      }
+
+      .item {
+        display: flex;
+        align-items: center;
+
+        &:first-child {
+          margin-bottom: 20px;
+        }
+
+        svg {
+          width: 22px;
+          height: 22px;
+          margin-right: 10px;
+          stroke: $primary;
+        }
+
+        a {
+          font-size: 20px;
+          font-weight: 600;
+          color: $black;
+          display: block;
+          text-decoration: none;
+        }
+      }
+    }
+
+    &-wrapper {
+      @include mq('tablet', 'min') {
+        display: flex;
+      }
+    }
+
+    &-content {
+      @include mq('tablet', 'min') {
+        width: calc(50% - 20px);
+      }
+    }
+
+    &-form {
+
+      &-header {
+        @include mq('tablet', 'min') {
+          display: flex;
+          justify-content: space-between;
+        }
+      }
+
+      &-item {
+        &:not(:last-child) {
+          margin-bottom: 40px;
+        }
+
+        @include mq('tablet', 'min') {
+          width: calc(50% - 20px);
+
+         &.message {
+            width: 100%;
+          }
+        }
+
+        label {
+          display: block;
+          font-weight: 600;
+          margin-bottom: 10px;
+        }
+
+        input {
+          appearance: none;
+          min-height: 50px;
+          width: 100%;
+          border: 1px dashed $primary;
+          border-radius: 0;
+        }
+
+        textarea {
+          appearance: none;
+          width: 100%;
+          border: 1px dashed $primary;
+          min-height: 100px;
+          border-radius: 0;
+        }
+      }
+
+      &-submit {
+        input {
+          @include btn($primary, false);
+          border: none;
+          border-radius: 0;
+        }
+      }
+    }
+  }
+
+  // WYCENA STRONY
+  &_brief {
+    &-form {
+
+      &-item {
+        // position: relative;
+        // z-index: -10;
+
+        label {
+          font-weight: 600;
+          margin-bottom: 20px;
+        }
+
+        p {
+          margin-bottom: 20px;
+        }
+      }
+
+      .cbx {
+        margin: auto;
+        user-select: none;
+        cursor: pointer;
+        font-weight: 400;
+        margin-bottom: 20px;
+
+        span {
+          display: inline-block;
+          vertical-align: middle;
+          transform: translate3d(0, 0, 0);
+
+
+          &:first-child {
+            position: relative;
+            width: 18px;
+            height: 18px;
+            border-radius: 3px;
+            transform: scale(1);
+            vertical-align: middle;
+            border: 1px solid #9098a9;
+            transition: all 0.2s ease;
+
+            svg {
+              position: absolute;
+              top: 3px;
+              left: 2px;
+              fill: none;
+              stroke: #ffffff;
+              stroke-width: 2;
+              stroke-linecap: round;
+              stroke-linejoin: round;
+              stroke-dasharray: 16px;
+              stroke-dashoffset: 16px;
+              transition: all 0.3s ease;
+              transition-delay: 0.1s;
+              transform: translate3d(0, 0, 0);
+
+              &:before {
+                content: "";
+                width: 100%;
+                height: 100%;
+                background: #506eec;
+                display: block;
+                transform: scale(0);
+                opacity: 1;
+                border-radius: 50%;
+              }
+            }
+          }
+
+          &:last-child {
+            padding-left: 8px;
+          }
+        }
+
+        &:hover span:first-child {
+          border-color: $primary;
+        }
+      }
+
+      .inp-cbx:checked + .cbx {
+        span {
+          &:first-child {
+            background: $primary;
+            border-color: $primary;
+            animation: wave 0.4s ease;
+
+            svg {
+              stroke-dashoffset: 0;
+            }
+
+            &:before {
+              transform: scale(3.5);
+              opacity: 0;
+              transition: all 0.6s ease;
+            }
+          }
+        }
+      }
+
+      @keyframes wave {
+        50% {
+          transform: scale(.9);
+        }
+      }
+    }
+  }
+
+  // ABOUT
+  &_about {
+    .gatsby-image-wrapper {
+      @include mq('tablet', 'min') {
+        float: right;
+        width: 50%;
+        margin-left: 30px;
       }
     }
   }

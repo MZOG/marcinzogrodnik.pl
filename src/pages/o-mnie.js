@@ -35,16 +35,19 @@ const About = () => {
         description="Nazywam się Marcin Zogrodnik i tworzę strony internetowe. Posiadam wieloletnie doświadczenie zdobtyte w Wielkiej Brytanii, które wykorzystuję w Polsce."
       />
 
-      <section className="about page">
+      <section className="page page_about">
         <div className="container">
           <h1>O mnie</h1>
+          <p className="lead">
+            Poznaj kim jestem, jak zaczęła się moja przygoda z programowaniem
+          </p>
 
           <Img
             fluid={aboutContent.image.fluid}
             alt={aboutContent.image.alt}
           />
 
-          <div
+          <div className="content"
             dangerouslySetInnerHTML={{
               __html: aboutContent.contentNode.childMarkdownRemark.html,
             }}

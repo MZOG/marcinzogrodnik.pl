@@ -6,12 +6,10 @@ import "../assets/styles.scss";
 import CookieConsent from "react-cookie-consent";
 import { Link } from "gatsby";
 
-const Layout = ({ path, children, article }) => {
-    let homepage = path;
-
+const Layout = ({children}) => {
     return (
-        <div className={homepage === "/" ? "web" : ""}>
-            <Header article={article} />
+        <div>
+            <Header />
             <main>
                 {children}
             </main>

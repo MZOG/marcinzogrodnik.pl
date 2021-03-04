@@ -1,0 +1,58 @@
+.home_portfolio {
+  padding: 70px 0;
+
+  p {
+    @include mq('tablet', 'min') {
+      margin-bottom: 50px;
+    }
+  }
+
+  .portfolio_item {
+    &:not(:last-child) {
+      margin-bottom: 50px;
+    }
+
+    @include mq('tablet', 'min') {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    h3 {
+      border-left: 5px solid $primary;
+      padding-left: 10px;
+      a {
+        color: $black;
+        text-decoration: none;
+      }
+    }
+
+    p {
+      margin-bottom: 25px;
+    }
+
+    &-image {
+      margin-bottom: 20px;
+
+      @include mq('tablet', 'min') {
+        width: calc(50% - 30px);
+      }
+    }
+
+    &-content {
+      @include mq('tablet', 'min') {
+        width: calc(50% - 30px);
+      }
+    }
+
+    &-cta {
+      a {
+        @include btn($primary, true);
+
+        &:not(:first-child) {
+          margin-left: 20px;
+        }
+      }
+    }
+  }
+}

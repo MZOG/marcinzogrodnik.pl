@@ -20,18 +20,20 @@ const Frontend = ({ data }) => {
         title="Programowanie / Front End"
         description="Programowanie / Front End to dział, w którym dzielę się wiedzą na temat tworzenia stron internetowych oraz HTML, CSS, JavaScript."
       />
-      <section>
-        <div className="container page">
+      <section className="page page_blog">
+        <div className="container">
           <h1>Front End</h1>
+          <p className="lead">
+            Więcej na temat tworzenia stron internetowych, JavaScript, React'a, CSS
+          </p>
 
-          <div className="page-category">
+          <div className="page_blog-category">
             <Link to="/blog">
               Blog
             </Link>
           </div>
-        </div>
 
-        <div className="blog__container">
+          <div className="blog__container">
           {blogPosts.map(post => {
             return (
               <Article
@@ -45,6 +47,9 @@ const Frontend = ({ data }) => {
             )
           })}
         </div>
+        </div>
+
+
       </section>
     </Layout>
   )

@@ -1,5 +1,6 @@
 import React from "react"
 import { Link } from "gatsby"
+import Img from "gatsby-image"
 
 const Article = ({ title, slug, description, image, date }) => {
 
@@ -10,20 +11,21 @@ const Article = ({ title, slug, description, image, date }) => {
   } );
 
   return (
-    <article className="blog__container-post">
-      <div className="container">
-        <div className="blog__container-post-content">
+    <article className="post">
+        <div className="post-image">
+        <Img fluid={image} />
+        </div>
+        <div className="post-content">
           <h2>
             <Link to={`/blog/${slug}`}>{title}</Link>
           </h2>
-          <p className="date">{formatter.format( new Date(date))} / Marcin Zogrodnik</p>
+          <p className="post-date">{formatter.format( new Date(date))} / Marcin Zogrodnik</p>
           <div className="excerpt">
             <p>{description}</p>
           </div>
-          <div className="more">
+          <div className="post-more">
             <Link to={`/blog/${slug}`}>Więcej →</Link>
           </div>
-        </div>
       </div>
     </article>
   )

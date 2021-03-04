@@ -7,13 +7,15 @@ import Wdrozenie from "../../images/wdrozenie.svg"
 
 function Process() {
   return(
-    <section className="homepage homepage_process">
+    <section className="home home_process">
       <div className="container">
         <h2>Jak wygląda proces tworzenia <span>strony internetowej?</span></h2>
 
         <div className="process-boxes">
           <div className="process-boxes-item">
-            <img src={Planowanie} alt="Planowanie strony internetowej Katowice"/>
+            <div className="process-boxes-item-image">
+              <img src={Planowanie} alt="Planowanie strony internetowej Katowice"/>
+            </div>
             <h3>Planowanie</h3>
             <p>
               Wybieram najbardziej optymalne rozwiązanie dla strony
@@ -26,7 +28,9 @@ function Process() {
           </div>
 
           <div className="process-boxes-item">
-            <img src={Projektowanie} alt="Projektowanie strony internetowej Katowice"/>
+            <div className="process-boxes-item-image">
+              <img src={Projektowanie} alt="Projektowanie strony internetowej Katowice"/>
+            </div>
             <h3>Projektowanie</h3>
             <p>
               Wybieram lub tworzę projekt graficzny strony / sklepu
@@ -39,7 +43,9 @@ function Process() {
           </div>
 
           <div className="process-boxes-item">
-            <img src={Programowanie} alt="Programowanie strony internetowej Katowice"/>
+            <div className="process-boxes-item-image">
+              <img src={Programowanie} alt="Programowanie strony internetowej Katowice"/>
+            </div>
             <h3>Programowanie</h3>
             <p>
               Etap, w którym klient nie uczestniczy, tworzę strukturę
@@ -53,7 +59,9 @@ function Process() {
           </div>
 
           <div className="process-boxes-item">
-            <img src={Wdrozenie} alt="Wdrożenie strony internetowej Katowice"/>
+            <div className="process-boxes-item-image">
+              <img src={Wdrozenie} alt="Wdrożenie strony internetowej Katowice"/>
+            </div>
             <h3>Wdrożenie</h3>
             <p>
               Wdrożenie to ważny moment i dla programisty oraz

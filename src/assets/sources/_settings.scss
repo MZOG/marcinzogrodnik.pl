@@ -1,11 +1,9 @@
 // variables
-$primaryColor: #00304d;
-$secondaryColor: #fb3c54;
-$thirdColor: #F8F7FC;
-$grey: #75778B;
-$lightBlue: #edf2f7;
+$primary: #f96474;
 $white: #fff;
-$black: rgb(16, 16, 16);
+$black: #1a1a1a;
+
+@import url("https://use.typekit.net/qlx1pib.css");
 
 // mixins
 $breakpoints: (
@@ -28,27 +26,46 @@ $breakpoints: (
   }
 }
 
-$html-font-size: 16px;
-@function stripUnit($value) {
-    @return $value / ($value * 0 + 1);
+@mixin btn($background: flase, $svg: false) {
+  @if $background {
+    background: $background;
+  } @else {
+    background: $primary;
+  }
+  color: $white;
+  padding: 10px 20px;
+  display: inline-block;
+  font-size: 18px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all .2s ease-in-out;
+
+  @if $svg {
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+
+    svg {
+      width: 22px;
+      margin-left: 10px;
+    }
+  }
+
+  @include mq('tablet', 'min') {
+    font-weight: 400;
+  }
+
+  &:hover {
+    @if $background {
+      background: darken($background, 5%);
+    } @else {
+      background: $primary;
+    }
+
+    @include bs;
+  }
 }
-@function rem($pxValue) {
-    @return #{stripUnit($pxValue) / stripUnit($html-font-size)}rem;
-}
 
-// hamburger menu
-$hamburger-layer-width: 30px !default;
-$hamburger-layer-height: 2px !default;
-$hamburger-layer-border-radius: 3px !default;
-$hamburger-padding-x: 5px;
-$hamburger-padding-y: 0px;
-$hamburger-active-layer-color: $secondaryColor;
-$hamburger-layer-color: $primaryColor !default;
-$hamburger-active-hover-opacity: 1;
-$hamburger-types: (collapse);
-
-@import "../../node_modules/hamburgers/_sass/hamburgers/hamburgers.scss";
-
-.hamburger {
-  margin-top: 6px;
+@mixin bs {
+  box-shadow: 0 .5rem .9375rem rgba(0,0,0,.11);
 }

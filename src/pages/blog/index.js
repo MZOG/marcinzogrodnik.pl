@@ -13,18 +13,19 @@ const Blog = ({ data }) => {
         title="Blog"
         description="Piszę głównie o rzeczach związanych ze stronami internetowymi WordPress oraz JAMstack. Świat Front End to moja pasja, którą chciałbym się podzielić."
       />
-      <section>
-        <div className="container page">
+      <section className="page page_blog">
+        <div className="container">
           <h1>Blog</h1>
+          <p className="lead">
+            Staram się pisać ciekawie na temat stron internetowych, WordPress'a,
+            pozycjonowania czy optymalizacji stron internetowych.
+          </p>
 
-          <div className="page-category">
-            <Link to="/blog/frontend/">
-              Front End
-            </Link>
+          <div className="page_blog-category">
+            <Link to="/blog/frontend/">Front End</Link>
           </div>
-        </div>
 
-        <div className="blog__container">
+          <div className="page_blog__container">
             {blogPosts.map(post => {
               return (
                 <Article
@@ -38,6 +39,7 @@ const Blog = ({ data }) => {
               )
             })}
           </div>
+        </div>
       </section>
     </Layout>
   )

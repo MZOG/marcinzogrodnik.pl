@@ -12,11 +12,14 @@ const Realizacje = ({data}) => {
             title="Realizacje"
             description="Sprawdź ostatnie realizacje stron internetowych WordPress oraz Gatsby."
           />
-          <section>
+          <section className="page page_showcase">
             <div className="container page">
               <h1>Realizacje</h1>
+              <p className="lead">
+                Sprawdź moje ostatnie realizacje
+              </p>
 
-              <div className="showcase">
+              <div className="page_showcase-items">
                 {allShowcase.map(showcase => {
                   return (
                     <ShowcaseItem

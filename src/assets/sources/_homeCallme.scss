@@ -1,0 +1,45 @@
+.home_callme {
+  padding: 70px 0;
+
+  p {
+    margin-bottom: 30px;
+  }
+
+  @include mq('tablet', 'min') {
+    h2, p {
+      text-align: center;
+      max-width: 50%;
+      margin: 0 auto 30px auto;
+    }
+  }
+
+  form {
+    @include mq('tablet', 'min') {
+      text-align: center;
+    }
+  }
+
+  &-item {
+      input {
+      width: 100%;
+      min-height: 50px;
+      margin-bottom: 30px;
+      appearance: none;
+      border: 1px dashed $primary;
+      text-align: center;
+      font-weight: 600;
+      color: $primary;
+
+      @include mq('tablet', 'min') {
+        max-width: 50%;
+        margin: 0 auto 30px auto;
+        display: block;
+      }
+    }
+
+    &-send {
+      @include btn($primary, true);
+      border: none;
+    }
+  }
+}

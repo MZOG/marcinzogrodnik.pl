@@ -1,4 +1,4 @@
-import React, { lazy } from "react"
+import React from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { useStaticQuery, graphql} from "gatsby"
@@ -11,6 +11,8 @@ import Process from "../components/homepage_sections/process"
 import CallMe from "../components/homepage_sections/call-me"
 import Blog from "../components/homepage_sections/blog"
 import Portfolio from "../components/homepage_sections/portfolio"
+import Testimonials from "../components/homepage_sections/testimonials"
+import Brief from "../components/homepage_sections/wycena-strony"
 
 const IndexPage = (props) => {
   const data = useStaticQuery(graphql`
@@ -43,7 +45,7 @@ const IndexPage = (props) => {
 
       allDatoCmsPost(
         sort: { order: DESC, fields: meta___createdAt }
-        limit: 3
+        limit: 4
       ) {
         edges {
           node {
@@ -112,9 +114,11 @@ const IndexPage = (props) => {
     <Layout path={props.location.pathname}>
       <SEO title={metaInfo.title} description={metaInfo.description} schemaMarkup={schema} />
       <Hero />
-      <Offer />
-      <OfferMore />
       <Portfolio data={data.allDatoCmsShowcase} />
+      <Testimonials />
+      <Offer />
+      <Brief />
+      <OfferMore />
       <Process />
       <CallMe />
       <Blog data={data.allDatoCmsPost}/>

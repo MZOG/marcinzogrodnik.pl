@@ -1,15 +1,18 @@
 @import 'sources/settings';
 @import 'sources/global';
 
-// components
-@import 'sources/helpers';
 @import 'sources/header';
-@import 'sources/footer';
-@import 'sources/article';
-@import 'sources/homepage';
+@import 'sources/homeHero';
+@import 'sources/homePortfolio';
+@import 'sources/homeTestimonials';
+@import 'sources/homeOffer';
+@import 'sources/homeProcess';
+@import 'sources/homeCallme';
+@import 'sources/homeBlog';
+@import 'sources/homeBrief';
+
 @import 'sources/page';
-@import 'sources/blog';
-@import 'sources/showcase';
-@import 'sources/about';
-@import 'sources/offer';
-@import 'sources/contact';
+
+@import 'sources/postItem';
+
+@import 'sources/footer';

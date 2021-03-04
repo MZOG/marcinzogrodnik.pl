@@ -3,23 +3,19 @@ import { AnchorLink } from "gatsby-plugin-anchor-links"
 
 function Hero() {
   return(
-    <section className="homepage_hero">
+    <section className="hero">
       <div className="container">
         <h1>
-          Nowoczesne rozwiązania, {" "}
-          <span>które przynoszą rezultaty.</span>
+          Tworzę nowoczesne <span>strony</span> i sklepy <span>internetowe</span>
         </h1>
-
-        <p className="homepage_hero_lead">
-        Nie wiesz co to WordPress czy JAMstack? Nie musisz.
-          <span>
-            Wybieram technologie dopasowane do Twojego biznesu.
-          </span>
+        <p className="hero_lead">
+          Od 5 lat pomagam zagranicznym firmom rozwijać się w internecie. {" "}
+          <span>Pomogę również Twojej firmie zaistnieć w sieci!</span>
         </p>
 
-        <div className="homepage_hero_cta">
-          <AnchorLink to="/#offer" stripHash>
-            Dowiedz się więcej
+        <div className="hero_more">
+          <AnchorLink to="/#portfolio" stripHash>
+            Realizacje
           </AnchorLink>
         </div>
       </div>

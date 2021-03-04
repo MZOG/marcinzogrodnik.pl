@@ -2,15 +2,13 @@
 import React, { useEffect, useState } from "react"
 import { useStaticQuery, graphql, Link } from "gatsby"
 
-function Header({article, homepage}) {
+function Header() {
   const [active, setActive] = useState(false)
   const [scroll, setScroll] = useState(0)
 
   useEffect(() => {
     document.addEventListener("scroll", headerScroll)
     document.body.classList.toggle("overflow", active)
-
-    window.onscroll = function() { progressBar() }
 
     return () => {
       document.removeEventListener("scroll", headerScroll)
@@ -31,13 +29,6 @@ function Header({article, homepage}) {
     if (scrollCheck !== scroll) {
       setScroll(scrollCheck)
     }
-  }
-
-  const progressBar = () => {
-    let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-    let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-    let scrolled = (winScroll / height) * 100;
-    article ? document.querySelector(".progress-bar").style.width = scrolled + "%" : ''
   }
 
   return (
@@ -67,11 +58,7 @@ function Header({article, homepage}) {
 
           <nav className={`navigation ${active ? "is-active" : ""}`}>
             <ul>
-              <li>
-                <Link to="/o-mnie" activeClassName="active">
-                  O mnie
-                </Link>
-              </li>
+
               <li>
                 <Link to="/oferta" activeClassName="active">
                   Oferta
@@ -84,6 +71,11 @@ function Header({article, homepage}) {
                   partiallyActive={true}
                 >
                   Realizacje
+                </Link>
+              </li>
+              <li>
+                <Link to="/o-mnie" activeClassName="active">
+                  O mnie
                 </Link>
               </li>
               <li>
@@ -100,31 +92,25 @@ function Header({article, homepage}) {
                   Kontakt
                 </Link>
               </li>
-              <li className="mobile-only">
-                <Link to="/darmowa-wycena-strony" activeClassName="active">
-                  Wycena strony
-                </Link>
-              </li>
-              <li className="mobile-only">
+              <li className="call">
+
+
                 <a href="tel:+48739907919">
+                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>
+
                   739 907 919
-                </a>
-              </li>
-              <li className="mobile-only">
-                <a href="mailto:kontakt@marcinzogrodnik.pl">
-                  kontakt@marcinzogrodnik.pl
                 </a>
               </li>
             </ul>
           </nav>
 
-          <div className="contact-mobile">
-            <Link to="/darmowa-wycena-strony">
-              Darmowa wycena strony
+          <div className={`quote ${active ? "is-active" : ""}`}>
+            <Link to="/darmowa-wycena-strony" activeClassName="active">
+                Wycena strony
             </Link>
           </div>
 
-          <button
+          {/* <button
             className={`hamburger hamburger--collapse ${
               active ? "is-active" : ""
             }`}
@@ -136,9 +122,14 @@ function Header({article, homepage}) {
             <span className="hamburger-box">
               <span className="hamburger-inner"></span>
             </span>
-          </button>
+          </button> */}
+
+          <div className={`hamburger ${active ? "is-active" : ""}`} onClick={toggleMenu}>
+            <span className="line"></span>
+            <span className="line"></span>
+            <span className="line"></span>
+          </div>
         </div>
-        {article && <div className="progress-bar"></div>}
       </header>
     </>
   )

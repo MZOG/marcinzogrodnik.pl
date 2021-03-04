@@ -6,11 +6,6 @@ import Img from "gatsby-image"
 
 export default ({ data }) => {
   const post = data.datoCmsShowcase
-  let formatter = new Intl.DateTimeFormat( 'pl', {
-    day: 'numeric',
-    month: 'long',
-    year: 'numeric'
-  } );
 
   const schema = {
     "@context": "https://schema.org",
@@ -37,7 +32,7 @@ export default ({ data }) => {
   }
 
   return (
-    <Layout article={true}>
+    <Layout>
       <SEO
         title={post.title}
         description={post.seo.description}
@@ -46,30 +41,18 @@ export default ({ data }) => {
       />
       <article className="article">
         <div className="container">
-          <section className="article__content showcase">
-            <h1>{post.title}</h1>
-            <div className="article__content-info">
-              <p>{formatter.format( new Date(post.meta.createdAt) )} / Marcin Zogrodnik</p>
-            </div>
-
-            {post.image.fluid && (
+          <section className="article__content">
+            <header className="article__content-header">
               <div className="article__content-image">
                 <Img fluid={post.image.fluid} />
               </div>
-            )}
-            <div
+              <h1>{post.title}</h1>
+            </header>
+            <div className="article__content-text"
               dangerouslySetInnerHTML={{
                 __html: post.contentNode.childMarkdownRemark.html,
               }}
             />
-            <div className="article__content-share">
-              <p>Podoba Ci się projekt? Podziel się na facebooku!</p>
-              <div className="article__content-share-fb">
-                <a href={`https://www.facebook.com/sharer/sharer.php?u=https://marcinzogrodnik.pl/blog/${post.slug}`} >
-                  Udostępnij na facebooku
-                </a>
-              </div>
-            </div>
           </section>
         </div>
       </article>
@@ -100,7 +83,7 @@ export const query = graphql`
         }
       }
       image {
-        fluid(maxWidth: 688) {
+        fluid(maxWidth: 992) {
           ...GatsbyDatoCmsFluid
           src
         }

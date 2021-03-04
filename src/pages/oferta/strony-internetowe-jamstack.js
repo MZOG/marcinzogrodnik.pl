@@ -30,6 +30,7 @@ const StronyInternetoweJAMstack = () => {
       <section className="page">
         <div className="container">
           <h1>Strona internetowa JAMstack</h1>
+          <p className="lead">Wyprzedź konkurencję o lata świetlne z nowoczesnymi rozwiązaniami JAMstack!</p>
 
           <div className="content">
             <h2>Strona statyczna</h2>
@@ -42,7 +43,7 @@ const StronyInternetoweJAMstack = () => {
               <strong>WordPress'a</strong>, co moim zdaniem jest niepotrzebne.
             </p>
             <p>
-              Oczywiście strony statyczne również mogą być rozbudowane, ba..
+              Oczywiście strony statyczne również mogą być rozbudowane,
               coraz więcej firm decyduje się na statyczne sklepy internetowe!
             </p>
             <p>
