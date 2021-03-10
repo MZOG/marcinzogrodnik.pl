@@ -690,3 +690,17 @@ h3 {
     }
   }
 }
+
+blockquote {
+  border-left: 5px solid $primary;
+  padding: 20px 30px;
+  margin: 2rem 0;
+  background: rgba($primary, 0.04);
+
+  p {
+    margin: 0;
+    font-weight: 400 !important;
+    color: darken($primary, 40%);
+    font-size: 17px !important;
+  }
+}

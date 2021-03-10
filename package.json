@@ -27,9 +27,11 @@
     "gatsby-plugin-sitemap": "^2.4.5",
     "gatsby-plugin-smoothscroll": "^1.1.0",
     "gatsby-plugin-webfonts": "^1.1.4",
+    "gatsby-remark-autolink-headers": "^3.0.0",
     "gatsby-remark-highlight-code": "^2.0.0",
     "gatsby-remark-images": "^3.3.10",
     "gatsby-remark-images-datocms": "0.1.0",
+    "gatsby-remark-table-of-contents": "^1.0.0",
     "gatsby-source-datocms": "^2.5.7",
     "gatsby-source-filesystem": "^2.3.11",
     "gatsby-source-twitter": "^3.2.2",
@@ -46,7 +48,6 @@
     "react-helmet": "^6.1.0",
     "react-slick": "^0.27.13",
     "slick-carousel": "^1.8.1",
-    "typeface-montserrat": "^1.1.13",
     "yarn": "^1.22.5"
   },
   "devDependencies": {

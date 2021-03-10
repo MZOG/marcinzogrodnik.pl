@@ -8,7 +8,7 @@ import { defineCustomElements as deckDeckGoHighlightElement } from '@deckdeckgo/
 deckDeckGoHighlightElement();
 
 export default ({ data }) => {
-  let post, seoDescription, title, seoImage, date, html, slug, image
+  let post, seoDescription, title, seoImage, date, html, slug, image, pointers
 
   if (data.markdownRemark) {
     post = data.markdownRemark
@@ -20,6 +20,7 @@ export default ({ data }) => {
     seoImage = post.frontmatter.seoImage.childImageSharp.fluid.src
     html = post.html
     image = post.frontmatter.image.childImageSharp.fluid
+    pointers = false
   } else {
     post = data.datoCmsPost
 
@@ -30,6 +31,7 @@ export default ({ data }) => {
     seoImage = post.seo.image.sizes.src
     html = post.contentNode.childMarkdownRemark.html
     image = post.image.fluid
+    pointers = data.datoCmsPost.pointers
   }
 
   let formatter = new Intl.DateTimeFormat( 'pl', {
@@ -94,6 +96,16 @@ export default ({ data }) => {
               </ul>
             </div>
 
+            { pointers && pointers.length > 0 ?
+            <div className="article__content-toc">
+              <p>Czego się dziś dowiesz?</p>
+              <ul>
+                {pointers.map(pointer => (
+                  <li key={pointer.id}>{pointer.text}</li>
+                ))}
+              </ul>
+            </div> : ""
+            }
             <div className="article__content-text"
               dangerouslySetInnerHTML={{
                 __html: html
@@ -128,6 +140,10 @@ export const query = graphql`
             src
           }
         }
+      }
+      pointers {
+        id
+        text
       }
       image {
         fluid(maxWidth: 768) {
