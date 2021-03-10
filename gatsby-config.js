@@ -8,26 +8,6 @@ module.exports = {
   },
   plugins: [
     {
-      resolve: `gatsby-plugin-disqus`,
-      options: {
-          shortname: `marcinzogrodnik-1`
-      }
-    },
-    {
-      resolve: `gatsby-plugin-webfonts`,
-      options: {
-        fonts: {
-          google: [
-            {
-              family: `Montserrat`,
-              subsets: [`latin`, `latin-ext`],
-              variants: [`400`, `500`, `700`]
-            },
-          ],
-        },
-      },
-    },
-    {
       resolve: `gatsby-plugin-canonical-urls`,
       options: {
         siteUrl: `https://marcinzogrodnik.pl`,

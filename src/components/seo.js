@@ -76,6 +76,7 @@ function SEO({ description, lang, meta, title, shareImage, schemaMarkup }) {
             {schemaMarkup &&
                 <script type="application/ld+json">{JSON.stringify(schemaMarkup)}</script>
             }
+            <link rel="stylesheet" href="https://use.typekit.net/qlx1pib.css"></link>
         </Helmet>
     );
 }
