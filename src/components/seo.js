@@ -77,6 +77,7 @@ function SEO({ description, lang, meta, title, shareImage, schemaMarkup }) {
                 <script type="application/ld+json">{JSON.stringify(schemaMarkup)}</script>
             }
             <link rel="stylesheet" href="https://use.typekit.net/qlx1pib.css"></link>
+            <meta property="fb:pages" content="112142883474554" />
         </Helmet>
     );
 }
