@@ -2,7 +2,6 @@
 import React from "react"
 import Layout from "../../components/layout"
 import SEO from "../../components/seo"
-import CTA from "../../components/cta"
 import { useStaticQuery, graphql, Link } from "gatsby"
 
 const Optymalizacja = () => {
@@ -58,9 +57,7 @@ const Optymalizacja = () => {
           </div>
         </div>
 
-        <CTA
-          line1="Strona internetowa WordPress to system, w którym Ty rządzisz."
-        />
+
       </section>
     </Layout>
   )

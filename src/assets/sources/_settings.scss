@@ -1,16 +1,14 @@
 // variables
-$primary: #f96474;
+$primary: #1858CD;
 $white: #fff;
-$black: #1a1a1a;
+$text: #455E83;
+$light: #F6F7F8;
 
 // mixins
 $breakpoints: (
-  "phone": 480px,
-  "650": 650px,
   "tablet": 768px,
   "tabletw": 992px,
-  "desktop": 1200px,
-  "wide": 1440px
+  "desktop": 1180px,
 );
 @mixin mq($width, $type: min) {
   @if map_has_key($breakpoints, $width) {
@@ -22,48 +20,4 @@ $breakpoints: (
       @content;
     }
   }
-}
-
-@mixin btn($background: flase, $svg: false) {
-  @if $background {
-    background: $background;
-  } @else {
-    background: $primary;
-  }
-  color: $white;
-  padding: 10px 20px;
-  display: inline-block;
-  font-size: 18px;
-  text-decoration: none;
-  font-weight: 600;
-  transition: all .2s ease-in-out;
-
-  @if $svg {
-    display: inline-flex;
-    justify-content: space-between;
-    align-items: center;
-
-    svg {
-      width: 22px;
-      margin-left: 10px;
-    }
-  }
-
-  @include mq('tablet', 'min') {
-    font-weight: 400;
-  }
-
-  &:hover {
-    @if $background {
-      background: darken($background, 5%);
-    } @else {
-      background: $primary;
-    }
-
-    @include bs;
-  }
-}
-
-@mixin bs {
-  box-shadow: 0 .5rem .9375rem rgba(0,0,0,.11);
 }

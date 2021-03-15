@@ -2,7 +2,6 @@
 import React from "react"
 import Layout from "../../components/layout"
 import SEO from "../../components/seo"
-import CTA from "../../components/cta"
 import { Link } from "gatsby"
 import { useStaticQuery, graphql } from "gatsby"
 
@@ -188,7 +187,6 @@ const StronyInternetoweJAMstack = () => {
           </div>
         </div>
 
-        <CTA line1="Zależy Ci na szybkości strony internetowej?" line2="JAMstack jest właśnie dla Ciebie!" />
       </section>
     </Layout>
   )

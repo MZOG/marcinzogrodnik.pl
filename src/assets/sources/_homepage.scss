@@ -1,0 +1,55 @@
+.home {
+
+  &_hero {
+    background: $light;
+    @include mq('tablet', 'min') {
+      background: none;
+    }
+
+    .container {
+      .content {
+        padding: 20px 0;
+
+        @include mq('tablet', 'min') {
+          background: $light;
+          padding: 20px;
+        }
+
+        &_left {
+          margin-bottom: 20px;
+
+          @include mq('tablet', 'min') {
+            margin-bottom: 0;
+          }
+        }
+
+        &_right {
+
+        }
+
+        h1 {
+          font-weight: 600;
+          font-size: 32px;
+          margin-bottom: 20px;
+
+          span {
+            color: $primary;
+          }
+        }
+
+        p {
+          line-height: 1.28;
+          margin-bottom: 20px;
+        }
+
+        a {
+          background: $primary;
+          color: $white;
+          text-decoration: none;
+          padding: 10px;
+          display: inline-block;
+        }
+      }
+    }
+  }
+}

@@ -2,7 +2,6 @@
 import React from "react"
 import Layout from "../../components/layout"
 import SEO from "../../components/seo"
-import CTA from "../../components/cta"
 import { useStaticQuery, graphql } from "gatsby"
 
 const Pozycjonowanie = () => {
@@ -35,10 +34,6 @@ const Pozycjonowanie = () => {
             <p>Oferta w przygotowaniu.</p>
           </div>
         </div>
-
-        <CTA
-          line1="Strona internetowa WordPress to system, w którym Ty rządzisz."
-        />
       </section>
     </Layout>
   )

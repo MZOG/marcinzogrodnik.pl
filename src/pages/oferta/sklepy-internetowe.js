@@ -2,7 +2,6 @@
 import React from "react"
 import Layout from "../../components/layout"
 import SEO from "../../components/seo"
-import CTA from "../../components/cta"
 import { useStaticQuery, graphql } from "gatsby"
 
 const SklepyInternetowe = () => {
@@ -82,10 +81,6 @@ const SklepyInternetowe = () => {
           </div>
         </div>
 
-        <CTA
-          line1="Porozmawiajmy o sklepie internetowym dla Twojej firmy!"
-          line2="Wyślij wiadomość, lub zadzwoń."
-        />
       </section>
     </Layout>
   )

@@ -3,75 +3,63 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { useStaticQuery, graphql} from "gatsby"
 
-// homepage components
-import Hero from "../components/homepage_sections/hero"
-import Offer from "../components/homepage_sections/offer"
-import OfferMore from "../components/homepage_sections/more-offer"
-import Process from "../components/homepage_sections/process"
-import CallMe from "../components/homepage_sections/call-me"
-import Blog from "../components/homepage_sections/blog"
-import Portfolio from "../components/homepage_sections/portfolio"
-import Testimonials from "../components/homepage_sections/testimonials"
-import Brief from "../components/homepage_sections/wycena-strony"
+// COMPONENTS
+import Hero from "../components/homepage/Hero"
 
-const IndexPage = (props) => {
-  const data = useStaticQuery(graphql`
-    query homepageQuery {
-      allDatoCmsShowcase(
-        sort: { fields: meta___createdAt, order: DESC }
-        limit: 2
-      ) {
-        edges {
-          node {
-            id
-            title
-            slug
-            projectUrl
-            image {
-              fluid(
-                maxWidth: 800
-                imgixParams: { auto: "compress", lossless: true }
-              ) {
-                ...GatsbyDatoCmsFluid
-                src
-              }
-            }
-            seo {
-              description
-            }
-          }
-        }
-      }
+const IndexPage = () => {
+  // const data = useStaticQuery(graphql`
+  //   query homepageQuery {
+  //     allDatoCmsShowcase(
+  //       sort: { fields: meta___createdAt, order: DESC }
+  //       limit: 2
+  //     ) {
+  //       edges {
+  //         node {
+  //           id
+  //           title
+  //           slug
+  //           image {
+  //             fluid(
+  //               maxWidth: 800
+  //               imgixParams: { auto: "compress", lossless: true }
+  //             ) {
+  //               ...GatsbyDatoCmsFluid
+  //               src
+  //             }
+  //           }
+  //         }
+  //       }
+  //     }
 
-      allDatoCmsPost(
-        sort: { order: DESC, fields: meta___createdAt }
-        limit: 4
-      ) {
-        edges {
-          node {
-            title
-            slug
-            id
-            meta {
-              createdAt(formatString: "D MMMM YYYY")
-            }
-            seo {
-              description
-            }
-            image {
-              fluid(
-                maxWidth: 800
-                imgixParams: { auto: "compress", lossless: true }
-              ) {
-                ...GatsbyDatoCmsFluid
-                src
-              }
-            }
-          }
-        }
-      }
-    }
-  `)
+  //     allDatoCmsPost(
+  //       sort: { order: DESC, fields: meta___createdAt }
+  //       limit: 2
+  //     ) {
+  //       edges {
+  //         node {
+  //           title
+  //           slug
+  //           id
+  //           meta {
+  //             createdAt(formatString: "D MMMM YYYY")
+  //           }
+  //           seo {
+  //             description
+  //           }
+  //           image {
+  //             fluid(
+  //               maxWidth: 800
+  //               imgixParams: { auto: "compress", lossless: true }
+  //             ) {
+  //               ...GatsbyDatoCmsFluid
+  //               src
+  //             }
+  //           }
+  //         }
+  //       }
+  //     }
+  //   }
+  // `)
 
   const schema = {
     "@context": "https://schema.org",
@@ -105,23 +93,15 @@ const IndexPage = (props) => {
     ],
   }
 
-  let metaInfo = {
-    title: "Strona Główna",
-    description: "Nowoczesne rozwiązania, które przynoszą rezultaty. Strony internetowe WordPress, JAMstack. Sklepy internetowe Katowice. Strony internetowe dostosowane do Twoich potrzeb."
-  }
-
   return (
-    <Layout path={props.location.pathname}>
-      <SEO title={metaInfo.title} description={metaInfo.description} schemaMarkup={schema} />
+    <Layout>
+      <SEO
+        title="Marcin Zogrodnik"
+        description="Tworzę strony i sklepy internetowe WordPress. Nowoczesne, statyczne witryny JAMstack. Wysokiej jakości kod to klucz do sukcesu Twojej firmy w sieci."
+        schemaMarkup={schema}
+      />
+
       <Hero />
-      <Portfolio data={data.allDatoCmsShowcase} />
-      <Testimonials />
-      <Offer />
-      <Brief />
-      <OfferMore />
-      <Process />
-      <CallMe />
-      <Blog data={data.allDatoCmsPost}/>
     </Layout>
   )
 }
