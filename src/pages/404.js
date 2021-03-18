@@ -17,7 +17,7 @@ const NotFoundPage = () => {
       <SEO
         title="Ups.."
         description="Wygląda na to, że wyszukiwana strona nie istnieje.."
-        shareImage={indexQuote.file.publicURL}
+        shareImage={notfound.file.publicURL}
       />
       <section className="not-found">
         <div className="container page">
