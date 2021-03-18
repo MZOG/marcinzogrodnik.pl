@@ -48,12 +48,10 @@ const IndexPage = () => {
   const indexQuote = useStaticQuery(graphql`
     {
       file(relativePath: { eq: "marcin-zogrodnik-facebook.png" }) {
-        absolutePath
+        publicURL
       }
     }
   `)
-
-  console.log(indexQuote.file.absolutePath)
 
   return (
     <Layout>
@@ -61,7 +59,7 @@ const IndexPage = () => {
         title="Marcin Zogrodnik"
         description="Tworzę strony i sklepy internetowe WordPress. Nowoczesne, statyczne witryny JAMstack. Wysokiej jakości kod to klucz do sukcesu Twojej firmy w sieci."
         schemaMarkup={schema}
-        shareImage={indexQuote.file.absolutePath}
+        shareImage={indexQuote.file.publicURL}
       />
 
       <Hero />

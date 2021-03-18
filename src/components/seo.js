@@ -25,8 +25,6 @@ function SEO({ description, lang, meta, title, shareImage, schemaMarkup }) {
     : `https://marcinzogrodnik.pl${shareImage}` ||
       "https://www.datocms-assets.com/34585/1603983032-jamstack-wordpress-fb-post.jpg"
 
-  console.log(metaDescription, image)
-
   return (
     <Helmet
       htmlAttributes={{
