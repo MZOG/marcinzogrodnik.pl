@@ -3,6 +3,7 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { Link } from "gatsby"
 import { useStaticQuery, graphql } from "gatsby"
+
 const NotFoundPage = () => {
   const notfound = useStaticQuery(graphql`
     {
