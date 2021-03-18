@@ -7,7 +7,7 @@ const NotFoundPage = () => {
   const notfound = useStaticQuery(graphql`
     {
       file(relativePath: { eq: "marcin-zogrodnik-facebook.png" }) {
-        absolutePath
+        publicURL
       }
     }
   `)
