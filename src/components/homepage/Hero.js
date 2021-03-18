@@ -7,9 +7,8 @@ function Hero() {
     {
       file(relativePath: { eq: "hero-macbook.png" }) {
         childImageSharp {
-          fluid(quality: 100) {
-            ...GatsbyImageSharpFluid
-            ...GatsbyImageSharpFluidLimitPresentationSize
+          fluid {
+            ...GatsbyImageSharpFluid_tracedSVG
           }
         }
       }

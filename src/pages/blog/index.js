@@ -12,8 +12,8 @@ const Blog = () => {
         nodes {
           id
           image {
-            fluid(maxWidth: 619) {
-              ...GatsbyDatoCmsFluid
+            fluid {
+              ...GatsbyDatoCmsFluid_tracedSVG
               src
             }
           }

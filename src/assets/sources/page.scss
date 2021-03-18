@@ -113,10 +113,11 @@
       h2 {
         a {
           color: $text;
+          text-decoration: none;
           border-bottom: 1px solid transparent;
 
           &:hover {
-            border-color: $text;
+            color: $primary;
           }
         }
       }

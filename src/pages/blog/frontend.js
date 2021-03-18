@@ -18,8 +18,8 @@ const Frontend = () => {
             frontmatter {
               image {
                 childImageSharp {
-                  fluid(maxWidth: 619) {
-                    ...GatsbyImageSharpFluid
+                  fluid {
+                    ...GatsbyImageSharpFluid_tracedSVG
                   }
                 }
               }

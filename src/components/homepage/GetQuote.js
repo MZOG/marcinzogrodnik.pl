@@ -1,22 +1,21 @@
 import React from "react"
-import { useStaticQuery, graphql, Link} from "gatsby"
+import { useStaticQuery, graphql, Link } from "gatsby"
 import Img from "gatsby-image"
 
 const GetQuote = () => {
   const getQuote = useStaticQuery(graphql`
     {
-      file(relativePath: {eq: "get-quote.png"}) {
+      file(relativePath: { eq: "get-quote.png" }) {
         childImageSharp {
           fluid(quality: 100) {
-            ...GatsbyImageSharpFluid_withWebp
-            ...GatsbyImageSharpFluidLimitPresentationSize
+            ...GatsbyImageSharpFluid_tracedSVG
           }
         }
       }
     }
   `)
 
-  return(
+  return (
     <section className="home_quote">
       <div className="container">
         <div className="content">
@@ -26,12 +25,11 @@ const GetQuote = () => {
           <div className="content_right">
             <h2>Darmowa wycena strony internetowej</h2>
             <p>
-              Wypełnij krótki formularz i dowiedz się ile kosztuje strona internetowa WordPress
-              lub JAMstack. <span>Odpowiedź w ciągu 24 godzin!</span>
+              Wypełnij krótki formularz i dowiedz się ile kosztuje strona
+              internetowa WordPress lub JAMstack.{" "}
+              <span>Odpowiedź w ciągu 24 godzin!</span>
             </p>
-            <Link to="/darmowa-wycena-strony">
-              Wypełnij formularz →
-            </Link>
+            <Link to="/darmowa-wycena-strony">Wypełnij formularz →</Link>
           </div>
         </div>
       </div>

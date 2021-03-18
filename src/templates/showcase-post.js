@@ -126,8 +126,8 @@ export const query = graphql`
         }
       }
       image {
-        fluid(maxWidth: 992) {
-          ...GatsbyDatoCmsFluid
+        fluid {
+          ...GatsbyDatoCmsFluid_tracedSVG
           src
         }
       }
@@ -135,9 +135,8 @@ export const query = graphql`
 
     file(relativePath: { eq: "marcin_profilowe.jpg" }) {
       childImageSharp {
-        fluid(quality: 100) {
-          ...GatsbyImageSharpFluid_withWebp
-          ...GatsbyImageSharpFluidLimitPresentationSize
+        fluid {
+          ...GatsbyImageSharpFluid_tracedSVG
         }
       }
     }

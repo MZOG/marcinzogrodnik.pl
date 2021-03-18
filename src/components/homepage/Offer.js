@@ -15,8 +15,7 @@ function Offer() {
           name
           childImageSharp {
             fluid(quality: 100) {
-              ...GatsbyImageSharpFluid_withWebp
-              ...GatsbyImageSharpFluidLimitPresentationSize
+              ...GatsbyImageSharpFluid_tracedSVG
             }
           }
         }
