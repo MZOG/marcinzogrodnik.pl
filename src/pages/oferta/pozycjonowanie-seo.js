@@ -3,13 +3,14 @@ import React from "react"
 import Layout from "../../components/layout"
 import SEO from "../../components/seo"
 import { useStaticQuery, graphql } from "gatsby"
+import PageTitle from "../../components/PageTitle"
 
 const Pozycjonowanie = () => {
   const data = useStaticQuery(graphql`
     {
-      file(relativePath: { eq: "strony-internetowe-jamstack.jpg" }) {
+      file(relativePath: { eq: "offer-pozycjonowanie-fb.png" }) {
         childImageSharp {
-          fluid(maxWidth: 400) {
+          fluid(maxWidth: 1200) {
             ...GatsbyImageSharpFluid
           }
         }
@@ -27,10 +28,12 @@ const Pozycjonowanie = () => {
       />
       <section className="page ">
         <div className="container">
-          <h1>Pozycjonowanie stron internetowych</h1>
-          <p className="lead">Twoja strona nie wyświetla się w wynikach wyszukiwania? Zadbaj o pozycjonowanie.</p>
+          <PageTitle
+            title="Pozycjonowanie stron internetowych"
+            lead="Twoja strona nie wyświetla się w wynikach wyszukiwania? Zadbaj o pozycjonowanie."
+          />
 
-          <div className="content">
+          <div className="page_offer-content">
             <p>Oferta w przygotowaniu.</p>
           </div>
         </div>

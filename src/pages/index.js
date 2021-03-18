@@ -1,66 +1,17 @@
 import React from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import { useStaticQuery, graphql} from "gatsby"
+import { useStaticQuery, graphql } from "gatsby"
 
 // COMPONENTS
 import Hero from "../components/homepage/Hero"
-
+import Companies from "../components/homepage/Companies"
+import Offer from "../components/homepage/Offer"
+import GetQuote from "../components/homepage/GetQuote"
+import Portfolio from "../components/homepage/Portfolio"
+import Blog from "../components/homepage/Blog"
+import Testimonials from "../components/homepage/Testimonials"
 const IndexPage = () => {
-  // const data = useStaticQuery(graphql`
-  //   query homepageQuery {
-  //     allDatoCmsShowcase(
-  //       sort: { fields: meta___createdAt, order: DESC }
-  //       limit: 2
-  //     ) {
-  //       edges {
-  //         node {
-  //           id
-  //           title
-  //           slug
-  //           image {
-  //             fluid(
-  //               maxWidth: 800
-  //               imgixParams: { auto: "compress", lossless: true }
-  //             ) {
-  //               ...GatsbyDatoCmsFluid
-  //               src
-  //             }
-  //           }
-  //         }
-  //       }
-  //     }
-
-  //     allDatoCmsPost(
-  //       sort: { order: DESC, fields: meta___createdAt }
-  //       limit: 2
-  //     ) {
-  //       edges {
-  //         node {
-  //           title
-  //           slug
-  //           id
-  //           meta {
-  //             createdAt(formatString: "D MMMM YYYY")
-  //           }
-  //           seo {
-  //             description
-  //           }
-  //           image {
-  //             fluid(
-  //               maxWidth: 800
-  //               imgixParams: { auto: "compress", lossless: true }
-  //             ) {
-  //               ...GatsbyDatoCmsFluid
-  //               src
-  //             }
-  //           }
-  //         }
-  //       }
-  //     }
-  //   }
-  // `)
-
   const schema = {
     "@context": "https://schema.org",
     "@type": "Organization",
@@ -68,17 +19,18 @@ const IndexPage = () => {
     alternateName: "Marcin Zogrodnik - Strony internetowe",
     url: "https://marcinzogrodnik.pl",
     logo: "https://www.datocms-assets.com/34585/1603980502-invoice-logo.png",
-    "review": {
+    review: {
       "@type": "Review",
-      "reviewRating": {
+      reviewRating: {
         "@type": "Rating",
-        "ratingValue": "5"
+        ratingValue: "5",
       },
-      "author": {
+      author: {
         "@type": "Person",
-        "name": "Karolina Wawrzyniak"
+        name: "Karolina Wawrzyniak",
       },
-      "reviewBody": "Współpraca z Marcinem była wspaniała. W błyskawicznym tempie odpowiadał na wszystkie moje zapytania i zamieszczał kolejne elementy na stronie. W cierpliwy sposób tłumaczył na czym polega budowanie strony internetowej i na czym jako przedsiębiorca powinnam się skupić najbardziej. W stu procentach spełnił moje oczekiwania, zatem mogę go polecić jako świetnego fachowca!"
+      reviewBody:
+        "Współpraca z Marcinem była wspaniała. W błyskawicznym tempie odpowiadał na wszystkie moje zapytania i zamieszczał kolejne elementy na stronie. W cierpliwy sposób tłumaczył na czym polega budowanie strony internetowej i na czym jako przedsiębiorca powinnam się skupić najbardziej. W stu procentach spełnił moje oczekiwania, zatem mogę go polecić jako świetnego fachowca!",
     },
     contactPoint: {
       "@type": "ContactPoint",
@@ -93,15 +45,35 @@ const IndexPage = () => {
     ],
   }
 
+  const indexQuote = useStaticQuery(graphql`
+    {
+      file(relativePath: { eq: "marcin-zogrodnik-facebook.png" }) {
+        childImageSharp {
+          fluid(quality: 100) {
+            ...GatsbyImageSharpFluid
+            ...GatsbyImageSharpFluidLimitPresentationSize
+          }
+        }
+      }
+    }
+  `)
+
   return (
     <Layout>
       <SEO
         title="Marcin Zogrodnik"
         description="Tworzę strony i sklepy internetowe WordPress. Nowoczesne, statyczne witryny JAMstack. Wysokiej jakości kod to klucz do sukcesu Twojej firmy w sieci."
         schemaMarkup={schema}
+        shareImage={indexQuote.file.childImageSharp.fluid}
       />
 
       <Hero />
+      <Companies />
+      <Offer />
+      <GetQuote />
+      <Portfolio />
+      <Testimonials />
+      <Blog />
     </Layout>
   )
 }

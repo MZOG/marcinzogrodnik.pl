@@ -4,13 +4,14 @@ import Layout from "../../components/layout"
 import SEO from "../../components/seo"
 import { Link } from "gatsby"
 import { useStaticQuery, graphql } from "gatsby"
+import PageTitle from "../../components/PageTitle"
 
 const StronyInternetoweJAMstack = () => {
   const data = useStaticQuery(graphql`
     {
-      file(relativePath: { eq: "strony-internetowe-jamstack.jpg" }) {
+      file(relativePath: { eq: "offer-jamstack-fb.png" }) {
         childImageSharp {
-          fluid(maxWidth: 400) {
+          fluid(maxWidth: 1200) {
             ...GatsbyImageSharpFluid
           }
         }
@@ -28,10 +29,12 @@ const StronyInternetoweJAMstack = () => {
       />
       <section className="page">
         <div className="container">
-          <h1>Strona internetowa JAMstack</h1>
-          <p className="lead">Wyprzedź konkurencję o lata świetlne z nowoczesnymi rozwiązaniami JAMstack!</p>
+          <PageTitle
+            title="Strona internetowa JAMstack"
+            lead="Wyprzedź konkurencję o lata świetlne z nowoczesnymi rozwiązaniami JAMstack!"
+          />
 
-          <div className="content">
+          <div className="page_offer-content">
             <h2>Strona statyczna</h2>
             <p>
               Czasem bardzo ciężko jest odróżnić <strong>statyczną</strong>{" "}
@@ -42,8 +45,8 @@ const StronyInternetoweJAMstack = () => {
               <strong>WordPress'a</strong>, co moim zdaniem jest niepotrzebne.
             </p>
             <p>
-              Oczywiście strony statyczne również mogą być rozbudowane,
-              coraz więcej firm decyduje się na statyczne sklepy internetowe!
+              Oczywiście strony statyczne również mogą być rozbudowane, coraz
+              więcej firm decyduje się na statyczne sklepy internetowe!
             </p>
             <p>
               W większości przypadków zwykła strona informacyjna wykorzystująca{" "}
@@ -95,7 +98,7 @@ const StronyInternetoweJAMstack = () => {
                 style={{
                   color: "#fb3c54",
                   fontSize: "1rem",
-                  fontWeight: "700"
+                  fontWeight: "700",
                 }}
               >
                 vs.
@@ -126,8 +129,8 @@ const StronyInternetoweJAMstack = () => {
             </p>
             <p>
               Aby wyświetlić posty z <strong>DatoCMS</strong> wymagane jest
-              zintegrowanie{" "}
-              <strong>API</strong> DatoCMS z naszą stroną internetową.
+              zintegrowanie <strong>API</strong> DatoCMS z naszą stroną
+              internetową.
             </p>
             <p>
               Podczas generowania nowej wersji strony tworzona jest cała
@@ -138,32 +141,38 @@ const StronyInternetoweJAMstack = () => {
             <h2>Dlaczego wybrać JAMstack?</h2>
             <p>
               Jeżeli Twoja strona nie będzie aktualizowana 30 razy w ciągu dnia,
-              to statyczna strona <strong>JAMstack</strong> jest dla Ciebie idealnym
-              rozwiązaniem. Strona będzie lekka, oraz każda podstrona będzie
-              dostępna natychmiast po kliknięciu w link! Szybkość strony
+              to statyczna strona <strong>JAMstack</strong> jest dla Ciebie
+              idealnym rozwiązaniem. Strona będzie lekka, oraz każda podstrona
+              będzie dostępna natychmiast po kliknięciu w link! Szybkość strony
               internetowej bardzo wpływa na pozycjoniwanie, więc warto się nad
               tym zastanowić.
             </p>
 
-            <p>JAMstack to nie tylko szybkość, poznaj więcej zalet statycznych stron internetowych.</p>
+            <p>
+              JAMstack to nie tylko szybkość, poznaj więcej zalet statycznych
+              stron internetowych.
+            </p>
 
             <h3>Koszt</h3>
             <p>
-              Strona internetowa JAMstack jest tańsza w utrzymaniu oraz wykonaniu.
-              Darmowy hosting od <a href="https://netlify.com">Netlify</a> w zupełności
-              wystarczy dla małych, a nawet średnich firm.
-              Strona <Link to="/">marcinzogrodnik.pl</Link> korzysta z usług <strong>Netlify</strong>,
-              i nigdy nie było żadnych problemów z wyświetlaniem strony.
-            </p>
-
-            <p>Koszt statycznej strony internetowej typu wizytówka, bez żadnych integracji
-              z zewnętrznymi usługami typu <strong>DatoCMS</strong> jest o wiele tańszy,
-              niż opcja z ww. usługami.
+              Strona internetowa JAMstack jest tańsza w utrzymaniu oraz
+              wykonaniu. Darmowy hosting od{" "}
+              <a href="https://netlify.com">Netlify</a> w zupełności wystarczy
+              dla małych, a nawet średnich firm. Strona{" "}
+              <Link to="/">marcinzogrodnik.pl</Link> korzysta z usług{" "}
+              <strong>Netlify</strong>, i nigdy nie było żadnych problemów z
+              wyświetlaniem strony.
             </p>
 
             <p>
-              Czas realizacji również jest krótszy, niż w przypadku dynamicznych stron
-              internetowych.
+              Koszt statycznej strony internetowej typu wizytówka, bez żadnych
+              integracji z zewnętrznymi usługami typu <strong>DatoCMS</strong>{" "}
+              jest o wiele tańszy, niż opcja z ww. usługami.
+            </p>
+
+            <p>
+              Czas realizacji również jest krótszy, niż w przypadku dynamicznych
+              stron internetowych.
             </p>
 
             <h3>Bezpieczeństwo</h3>
@@ -175,18 +184,18 @@ const StronyInternetoweJAMstack = () => {
 
             <h3>Wydajność</h3>
             <p>
-              Strony internetowe <strong>JAMstack</strong> są o wiele szybsze od dynamicznych stron,
-              właśnie przez to, że są generowane podczas wysyłania na serwer, a nie
-              za każdym razem gdy klikniesz w link.
+              Strony internetowe <strong>JAMstack</strong> są o wiele szybsze od
+              dynamicznych stron, właśnie przez to, że są generowane podczas
+              wysyłania na serwer, a nie za każdym razem gdy klikniesz w link.
             </p>
 
-            <p>Szybkość strony internetowej jest bardzo ważna dla pozycjonowania, oraz wyników w Google.
-              Wolniejsze strony są mniej promowane, przez co spada liczba potencjalnych klientów oraz zysków.
+            <p>
+              Szybkość strony internetowej jest bardzo ważna dla pozycjonowania,
+              oraz wyników w Google. Wolniejsze strony są mniej promowane, przez
+              co spada liczba potencjalnych klientów oraz zysków.
             </p>
-
           </div>
         </div>
-
       </section>
     </Layout>
   )

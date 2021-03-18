@@ -1,88 +1,94 @@
 import React from "react"
 import Layout from "../../components/layout"
 import SEO from "../../components/seo"
-import Article from "../../components/article"
-import { graphql, Link } from "gatsby"
+import { useStaticQuery, graphql, Link } from "gatsby"
+import Img from "gatsby-image"
+import PageTitle from "../../components/PageTitle"
 
-const Frontend = ({ data }) => {
-  let blogPosts = data.allMarkdownRemark.edges
+const Frontend = () => {
+  const frontendQuote = useStaticQuery(graphql`
+    {
+      allMarkdownRemark(
+        sort: { fields: frontmatter___date, order: DESC }
+        filter: { frontmatter: { type: { eq: "post" } } }
+      ) {
+        edges {
+          node {
+            id
+            frontmatter {
+              image {
+                childImageSharp {
+                  fluid(maxWidth: 619) {
+                    ...GatsbyImageSharpFluid
+                  }
+                }
+              }
+              date
+              description
+              slug
+              title
+              published
+            }
+            html
+          }
+        }
+      }
 
-  blogPosts = blogPosts.filter(post => {
-    if (post.node.frontmatter.title !== "" && post.node.frontmatter.published) {
-      return post
+      file(relativePath: { eq: "front-end-fb.png" }) {
+        childImageSharp {
+          fluid(quality: 100) {
+            ...GatsbyImageSharpFluid
+            ...GatsbyImageSharpFluidLimitPresentationSize
+          }
+        }
+      }
     }
-    return post
-  })
+  `)
 
   return (
     <Layout>
       <SEO
-        title="Programowanie / Front End"
-        description="Programowanie / Front End to dział, w którym dzielę się wiedzą na temat tworzenia stron internetowych oraz HTML, CSS, JavaScript."
+        title="Front End"
+        description="Więcej na temat tworzenia stron internetowych, JavaScript, React'a, CSS"
+        shareImage={frontendQuote.file.childImageSharp.fluid.src}
       />
-      <section className="page page_blog">
+      <section className="page page_offer">
         <div className="container">
-          <h1>Front End</h1>
-          <p className="lead">
-            Więcej na temat tworzenia stron internetowych, JavaScript, React'a, CSS
-          </p>
+          <PageTitle
+            title="Front End"
+            lead="Artykuły na temat JAMstack, WordPress, optymalizacji, pozycjonowania. Zapraszam dównież do działu Front End, gdzie dzielę się wiedzą na temat Gatsby, czy Reacta."
+            link="/blog"
+            linkTxt="Blog"
+          />
 
-          <div className="page_blog-category">
-            <Link to="/blog">
-              Blog
-            </Link>
+          <div className="page_offer_boxes">
+            {frontendQuote.allMarkdownRemark.edges.map(item => (
+              <article className="page_offer_item" key={item.node.id}>
+                <Link to={`/blog/${item.node.frontmatter.slug}`}>
+                  <Img
+                    fluid={item.node.frontmatter.image.childImageSharp.fluid}
+                    alt={item.title}
+                  />
+                </Link>
+                <h2>
+                  <Link to={`/blog/${item.node.frontmatter.slug}`}>
+                    {item.node.frontmatter.title}
+                  </Link>
+                </h2>
+                <p>{item.node.frontmatter.description}</p>
+
+                <div className="page_offer_item-cta">
+                  <Link to={`/blog/${item.node.frontmatter.slug}`}>
+                    Czytaj dalej →
+                  </Link>
+                </div>
+              </article>
+            ))}
           </div>
-
-          <div className="blog__container">
-          {blogPosts.map(post => {
-            return (
-              <Article
-                key={post.node.id}
-                slug={post.node.frontmatter.slug}
-                title={post.node.frontmatter.title}
-                date={post.node.frontmatter.date}
-                description={post.node.frontmatter.description}
-                image={post.node.frontmatter.image.childImageSharp.fluid || "elo"}
-              />
-            )
-          })}
         </div>
-        </div>
-
-
       </section>
     </Layout>
   )
 }
 
 export default Frontend
-
-export const query = graphql`
-  query frontend {
-    allMarkdownRemark(
-      sort: {fields: frontmatter___date, order: DESC}
-      filter: {frontmatter: {type: {eq: "post"}}}
-      ) {
-      edges {
-        node {
-          id
-          frontmatter {
-            image {
-              childImageSharp {
-                fluid(maxWidth: 800) {
-                  ...GatsbyImageSharpFluid
-                }
-              }
-            }
-            date
-            description
-            slug
-            title
-            published
-          }
-          html
-        }
-      }
-    }
-  }
-`
