@@ -8,7 +8,7 @@ import PageTitle from "../../components/PageTitle"
 const Optymalizacja = () => {
   const data = useStaticQuery(graphql`
     {
-      file(relativePath: { eq: "offer-optymalizacja.png" }) {
+      file(relativePath: { eq: "offer-optymalizacja-fb.png" }) {
         childImageSharp {
           fluid(maxWidth: 1200) {
             ...GatsbyImageSharpFluid
