@@ -9,11 +9,7 @@ const SklepyInternetowe = () => {
   const data = useStaticQuery(graphql`
     {
       file(relativePath: { eq: "offer-sklep-fb.png" }) {
-        childImageSharp {
-          fluid(maxWidth: 1200) {
-            ...GatsbyImageSharpFluid
-          }
-        }
+        publicURL
       }
     }
   `)
@@ -24,7 +20,7 @@ const SklepyInternetowe = () => {
         lang="pl"
         title="JAMstack"
         description="Statyczna strona internetowa JAMstack może być o 10 razy szybsza niż standardowa strona oparta na innym systemie. Strony JAMstack tworzę wykorzystując Gatsby."
-        shareImage={data.file.childImageSharp.fluid.src}
+        shareImage={data.file.publicURL}
       />
       <section className="page">
         <div className="container">

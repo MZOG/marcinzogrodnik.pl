@@ -9,11 +9,7 @@ const OpiekaNadStrona = () => {
   const data = useStaticQuery(graphql`
     {
       file(relativePath: { eq: "offer-opieka-fb.png" }) {
-        childImageSharp {
-          fluid(maxWidth: 1200) {
-            ...GatsbyImageSharpFluid
-          }
-        }
+        publicURL
       }
     }
   `)
@@ -24,7 +20,7 @@ const OpiekaNadStrona = () => {
         lang="pl"
         title="Opieka nad stroną"
         description="Nie masz czasu aktualizować strony internetowej? Od teraz nie musisz się o to martwić! Oferuję opiekę nad stroną, abyś Ty mógł zająć się swoim biznesem!"
-        shareImage={data.file.childImageSharp.fluid.src}
+        shareImage={data.file.publicURL}
       />
       <section className="page">
         <div className="container">

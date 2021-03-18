@@ -26,12 +26,7 @@ const About = () => {
         }
       }
       file(relativePath: { eq: "o-mnie-fb.png" }) {
-        childImageSharp {
-          fluid(quality: 100) {
-            ...GatsbyImageSharpFluid
-            ...GatsbyImageSharpFluidLimitPresentationSize
-          }
-        }
+        publicURL
       }
     }
   `)
@@ -43,7 +38,7 @@ const About = () => {
       <SEO
         title="O mnie"
         description="Nazywam się Marcin Zogrodnik i tworzę strony internetowe. Posiadam wieloletnie doświadczenie zdobtyte w Wielkiej Brytanii, które wykorzystuję w Polsce."
-        shareImage={data.file.childImageSharp.fluid.src}
+        shareImage={data.file.publicURL}
       />
 
       <section className="page page_about">

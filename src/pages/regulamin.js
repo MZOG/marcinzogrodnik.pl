@@ -8,12 +8,7 @@ const Regulamin = () => {
   const regulaminQuote = useStaticQuery(graphql`
     {
       file(relativePath: { eq: "regulamin-fb.png" }) {
-        childImageSharp {
-          fluid(quality: 100) {
-            ...GatsbyImageSharpFluid
-            ...GatsbyImageSharpFluidLimitPresentationSize
-          }
-        }
+        publicURL
       }
     }
   `)
@@ -23,7 +18,7 @@ const Regulamin = () => {
         lang="pl"
         title="Regulamin"
         description="Regulamin strony marcinzogrodnik.pl"
-        shareImage={regulaminQuote.file.childImageSharp.fluid.src}
+        shareImage={regulaminQuote.file.publicURL}
       />
       <section className="page">
         <div className="container">

@@ -7,12 +7,7 @@ const DarmowaWycenaStrony = () => {
   const indexQuote = useStaticQuery(graphql`
     {
       file(relativePath: { eq: "wycena-strony-fb.png" }) {
-        childImageSharp {
-          fluid(quality: 100) {
-            ...GatsbyImageSharpFluid
-            ...GatsbyImageSharpFluidLimitPresentationSize
-          }
-        }
+        publicURL
       }
     }
   `)
@@ -22,7 +17,7 @@ const DarmowaWycenaStrony = () => {
       <SEO
         title="Darmowa wycena strony"
         description="Darmowa wycena strony internetowej? Ile kosztuje strona internetowa? Wypełnij formularz i dowiedz się wszystkiego już następnego dnia!"
-        shareImage={indexQuote.file.childImageSharp.fluid.src}
+        shareImage={indexQuote.file.publicURL}
       />
 
       <section className="page page_contact">
@@ -78,16 +73,16 @@ const DarmowaWycenaStrony = () => {
                       name="website"
                       value="website_www"
                       id="website_www"
-                      checked="checked"
+                      defaultChecked
                     />
-                    <label for="website_www">Strona internetowa</label>
+                    <label htmlFor="website_www">Strona internetowa</label>
                     <input
                       type="radio"
                       name="website"
                       value="website_shop"
                       id="website_shop"
                     />
-                    <label for="website_shop">Sklep internetowy</label>
+                    <label htmlFor="website_shop">Sklep internetowy</label>
                   </div>
                 </div>
 
@@ -108,11 +103,11 @@ const DarmowaWycenaStrony = () => {
                       name="cms"
                       value="cms_yes"
                       id="cms_yes"
-                      checked="checked"
+                      defaultChecked
                     />
-                    <label for="cms_yes">Tak</label>
+                    <label htmlFor="cms_yes">Tak</label>
                     <input type="radio" name="cms" value="cms_no" id="cms_no" />
-                    <label for="cms_no">Nie</label>
+                    <label htmlFor="cms_no">Nie</label>
                   </div>
                 </div>
 
@@ -131,16 +126,16 @@ const DarmowaWycenaStrony = () => {
                       name="languages"
                       value="languages_yes"
                       id="languages_yes"
-                      checked="checked"
+                      defaultChecked
                     />
-                    <label for="languages_yes">Tak</label>
+                    <label htmlFor="languages_yes">Tak</label>
                     <input
                       type="radio"
                       name="languages"
                       value="languages_no"
                       id="languages_no"
                     />
-                    <label for="languages_no">Nie</label>
+                    <label htmlFor="languages_no">Nie</label>
                   </div>
                 </div>
 

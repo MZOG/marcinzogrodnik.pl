@@ -34,9 +34,10 @@ const Oferta = () => {
         sort: { fields: modifiedTime, order: ASC }
       ) {
         nodes {
+          publicURL
           childImageSharp {
             fluid(quality: 100) {
-              ...GatsbyImageSharpFluid_withWebp
+              ...GatsbyImageSharpFluid
               ...GatsbyImageSharpFluidLimitPresentationSize
             }
           }
@@ -100,7 +101,8 @@ const Oferta = () => {
       <SEO
         title="Oferta"
         description="Poznaj ofertę stron internetowych WordPress oraz JAMstack. Uczysz się programować i masz problem? Napisz do mnie! Na pewno rozwiążemy Twój problem."
-        shareImage={offerQuote.allFile.nodes[6].childImageSharp.fluid.src}
+        shareImage={null}
+        shareImage={offerQuote.allFile.nodes[6].publicURL}
       />
       <section className="page page_offer">
         <div className="container">

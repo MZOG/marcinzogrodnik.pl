@@ -9,11 +9,7 @@ const Optymalizacja = () => {
   const data = useStaticQuery(graphql`
     {
       file(relativePath: { eq: "offer-optymalizacja-fb.png" }) {
-        childImageSharp {
-          fluid(maxWidth: 1200) {
-            ...GatsbyImageSharpFluid
-          }
-        }
+        publicURL
       }
     }
   `)
@@ -24,7 +20,7 @@ const Optymalizacja = () => {
         lang="pl"
         title="Optymalizacja stron internetowych"
         description="Optymalizuję strony internetowe, aby ładowały się szybko i przyciągały użytkowników."
-        shareImage={data.file.childImageSharp.fluid.src}
+        shareImage={data.file.publicURL}
       />
       <section className="page ">
         <div className="container">

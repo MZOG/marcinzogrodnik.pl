@@ -25,12 +25,7 @@ const Blog = () => {
         }
       }
       file(relativePath: { eq: "blog-fb.png" }) {
-        childImageSharp {
-          fluid(quality: 100) {
-            ...GatsbyImageSharpFluid
-            ...GatsbyImageSharpFluidLimitPresentationSize
-          }
-        }
+        publicURL
       }
     }
   `)
@@ -40,7 +35,7 @@ const Blog = () => {
       <SEO
         title="Blog"
         description="Artykuły na temat JAMstack, WordPress, optymalizacji, pozycjonowania. Zapraszam dównież do działu Front End, gdzie dzielę się wiedzą na temat Gatsby, czy Reacta."
-        shareImage={blogQuote.file.childImageSharp.fluid.src}
+        shareImage={blogQuote.file.publicURL}
       />
       <section className="page page_offer">
         <div className="container">

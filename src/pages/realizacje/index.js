@@ -21,12 +21,7 @@ const Showcase = () => {
         }
       }
       file(relativePath: { eq: "realizacje-fb.png" }) {
-        childImageSharp {
-          fluid(quality: 100) {
-            ...GatsbyImageSharpFluid
-            ...GatsbyImageSharpFluidLimitPresentationSize
-          }
-        }
+        publicURL
       }
     }
   `)
@@ -34,8 +29,8 @@ const Showcase = () => {
     <Layout>
       <SEO
         title="Realizacje"
-        description="Artykuły na temat JAMstack, WordPress, optymalizacji, pozycjonowania. Zapraszam dównież do działu Front End, gdzie dzielę się wiedzą na temat Gatsby, czy Reacta."
-        shareImage={showcaseQuote.file.childImageSharp.fluid.src}
+        description="Wszystkie realizacje stron internetowych WordPress oraz JAMstack."
+        shareImage={showcaseQuote.file.publicURL}
       />
       <section className="page page_offer">
         <div className="container">

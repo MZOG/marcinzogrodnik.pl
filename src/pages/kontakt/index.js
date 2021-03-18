@@ -10,12 +10,7 @@ const Kontakt = () => {
   const contactQuote = useStaticQuery(graphql`
     {
       file(relativePath: { eq: "kontakt-fb.png" }) {
-        childImageSharp {
-          fluid(quality: 100) {
-            ...GatsbyImageSharpFluid
-            ...GatsbyImageSharpFluidLimitPresentationSize
-          }
-        }
+        publicURL
       }
     }
   `)
@@ -25,7 +20,7 @@ const Kontakt = () => {
         title="Kontakt"
         description="Masz pomysł na nową stronę internetową? A może chciałbyś lekko zmodyfikować swoją obecną stronę?
         Zadzwoń lub wyślij wiadomość."
-        shareImage={contactQuote.file.childImageSharp.fluid.src}
+        shareImage={contactQuote.file.publicURL}
       />
 
       <section className="page page_contact">

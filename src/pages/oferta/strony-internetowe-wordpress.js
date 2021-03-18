@@ -9,11 +9,7 @@ const StronyInternetoweWordPress = () => {
   const data = useStaticQuery(graphql`
     {
       file(relativePath: { eq: "offer-wordpress-fb.png" }) {
-        childImageSharp {
-          fluid(maxWidth: 1200) {
-            ...GatsbyImageSharpFluid
-          }
-        }
+        publicURL
       }
     }
   `)
@@ -24,7 +20,7 @@ const StronyInternetoweWordPress = () => {
         lang="pl"
         title="Strony internetowe WordPress"
         description="Łatwa w obsłudze strona internetowa WordPress z panelem administracyjnym do samodzielnego zarządzania stroną. "
-        shareImage={data.file.childImageSharp.fluid.src}
+        shareImage={data.file.publicURL}
       />
       <section className="page">
         <div className="container">

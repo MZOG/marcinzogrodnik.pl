@@ -35,12 +35,7 @@ const Frontend = () => {
       }
 
       file(relativePath: { eq: "front-end-fb.png" }) {
-        childImageSharp {
-          fluid(quality: 100) {
-            ...GatsbyImageSharpFluid
-            ...GatsbyImageSharpFluidLimitPresentationSize
-          }
-        }
+        publicURL
       }
     }
   `)
@@ -50,7 +45,7 @@ const Frontend = () => {
       <SEO
         title="Front End"
         description="Więcej na temat tworzenia stron internetowych, JavaScript, React'a, CSS"
-        shareImage={frontendQuote.file.childImageSharp.fluid.src}
+        shareImage={frontendQuote.file.publicURL}
       />
       <section className="page page_offer">
         <div className="container">

@@ -9,11 +9,7 @@ const Pozycjonowanie = () => {
   const data = useStaticQuery(graphql`
     {
       file(relativePath: { eq: "offer-pozycjonowanie-fb.png" }) {
-        childImageSharp {
-          fluid(maxWidth: 1200) {
-            ...GatsbyImageSharpFluid
-          }
-        }
+        publicURL
       }
     }
   `)
@@ -24,7 +20,7 @@ const Pozycjonowanie = () => {
         lang="pl"
         title="Pozycjonowanie stron internetowych"
         description="Twoja strona nie wyświetla się w wynikach wyszukiwania Google? Pozycjonuję strony internetowe od kilku lat, znam techniki, które pomogą Twojej stronie być wyżej niż konkurencja."
-        shareImage={data.file.childImageSharp.fluid.src}
+        shareImage={data.file.publicURL}
       />
       <section className="page ">
         <div className="container">

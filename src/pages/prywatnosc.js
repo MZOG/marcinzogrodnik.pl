@@ -8,12 +8,7 @@ const Prywatnosc = () => {
   const ppQuote = useStaticQuery(graphql`
     {
       file(relativePath: { eq: "polityka-prywatnosci-fb.png" }) {
-        childImageSharp {
-          fluid(quality: 100) {
-            ...GatsbyImageSharpFluid
-            ...GatsbyImageSharpFluidLimitPresentationSize
-          }
-        }
+        publicURL
       }
     }
   `)
@@ -24,7 +19,7 @@ const Prywatnosc = () => {
         lang="pl"
         title="Polityka prywatności"
         description="Polityka prywatności strony marcinzogrodnik.pl"
-        shareImage={ppQuote.file.childImageSharp.fluid.src}
+        shareImage={ppQuote.file.publicURL}
       />
       <section className="page">
         <div className="container">
