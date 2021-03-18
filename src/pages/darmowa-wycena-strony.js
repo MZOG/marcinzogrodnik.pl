@@ -1,170 +1,172 @@
 import React from "react"
 import Layout from "../components/layout"
+import PageTitle from "../components/PageTitle"
 import SEO from "../components/seo"
-
+import { useStaticQuery, graphql } from "gatsby"
 const DarmowaWycenaStrony = () => {
+  const indexQuote = useStaticQuery(graphql`
+    {
+      file(relativePath: { eq: "wycena-strony-fb.png" }) {
+        publicURL
+      }
+    }
+  `)
+
   return (
     <Layout>
       <SEO
         title="Darmowa wycena strony"
         description="Darmowa wycena strony internetowej? Ile kosztuje strona internetowa? Wypełnij formularz i dowiedz się wszystkiego już następnego dnia!"
+        shareImage={indexQuote.file.publicURL}
       />
 
-      <section className="page page_brief">
+      <section className="page page_contact">
         <div className="container">
-          <h1>Darmowa wycena strony internetowej</h1>
-          <p className="lead">
-            Jesteś ciekaw jaki jest koszt strony internetowej? Wypełnij formularz i dowiedz się wszystkiego już następnego dnia
-          </p>
+          <PageTitle
+            title="Darmowa wycena strony internetowej"
+            lead="Jesteś ciekaw jaki jest koszt strony internetowej? Wypełnij formularz i dowiedz się wszystkiego już następnego dnia"
+          />
 
-          {/* <p>
-            Aby dobrze wycenić stronę internetową potrzebne są informacje. Poniżej znajdziesz formularz, wypełnij go podając możliwie jak najwięcej informacji.
-          </p> */}
-
-          <form
-              className="page_brief-form"
+          <div className="page_contact-wrapper">
+            <form
+              className="page_contact-form"
               name="Wycena Strony Internetowej"
               method="POST"
               data-netlify="true"
               action="/kontakt/success"
-              >
-              <input type="hidden" name="form-name" value="Wycena Strony Internetowej" />
+            >
+              <input
+                type="hidden"
+                name="form-name"
+                value="Wycena Strony Internetowej"
+              />
 
-              {/* <div className="page_brief-form-item">
-                <label>Czym jesteś zainteresowany?</label>
-
-                <div className="checkbox">
-                  <input className="inp-cbx" id="strona-internetowa" type="checkbox" style={{display: "none"}}/>
-                  <label className="cbx" htmlFor="strona-internetowa">
-                    <span>
-                      <svg width="12px" height="10px" viewBox="0 0 12 10">
-                        <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
-                      </svg>
-                    </span>
-                    <span>Strona internetowa</span>
-                  </label>
+              <div className="page_contact-form-row">
+                <div className="page_contact-form-row-item">
+                  <label htmlFor="name">Imię i nazwisko *</label>
+                  <input type="text" name="name" />
                 </div>
-
-                <div className="checkbox">
-                  <input className="inp-cbx" id="sklep-internetowy" type="checkbox" style={{display: "none"}}/>
-                  <label className="cbx" htmlFor="sklep-internetowy">
-                    <span>
-                      <svg width="12px" height="10px" viewBox="0 0 12 10">
-                        <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
-                      </svg>
-                    </span>
-                    <span>Sklep internetowy</span>
-                  </label>
-                </div>
-
-                <div className="checkbox">
-                  <input className="inp-cbx" id="optymalizacja" type="checkbox" style={{display: "none"}}/>
-                  <label className="cbx" htmlFor="optymalizacja">
-                    <span>
-                      <svg width="12px" height="10px" viewBox="0 0 12 10">
-                        <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
-                      </svg>
-                    </span>
-                    <span>Optymalizacja istniejącej strony</span>
-                  </label>
+                <div className="page_contact-form-row-item">
+                  <label htmlFor="email">E-mail</label>
+                  <input type="text" name="email" />
                 </div>
               </div>
 
-              <div className="page_brief-form-item">
-                <label>System CMS?</label>
-                <p>
-                  Panel administracyjny do zarządzania treścią na stronie internetowej
-                </p>
-
-                <div className="checkbox">
-                  <input className="inp-cbx" id="cms-tak" type="checkbox" style={{display: "none"}}/>
-                  <label className="cbx" htmlFor="cms-tak">
-                    <span>
-                      <svg width="12px" height="10px" viewBox="0 0 12 10">
-                        <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
-                      </svg>
-                    </span>
-                    <span>Tak</span>
-                  </label>
+              <div className="page_contact-form-row">
+                <div className="page_contact-form-row-item">
+                  <label htmlFor="company">Nazwa firmy *</label>
+                  <input type="text" name="company" />
                 </div>
 
-                <div className="checkbox">
-                  <input className="inp-cbx" id="cms-nie" type="checkbox" style={{display: "none"}}/>
-                  <label className="cbx" htmlFor="cms-nie">
-                    <span>
-                      <svg width="12px" height="10px" viewBox="0 0 12 10">
-                        <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
-                      </svg>
-                    </span>
-                    <span>Nie</span>
-                  </label>
+                <div className="page_contact-form-row-item">
+                  <label htmlFor="phone">Numer telefonu *</label>
+                  <input type="text" name="phone" />
                 </div>
               </div>
 
-              <div className="page_brief-form-item">
-                <label>Orientacyjna liczba zakładek</label>
-
-                <div className="checkbox">
-                  <input className="inp-cbx" id="zakladki-0-5" type="checkbox" style={{display: "none"}}/>
-                  <label className="cbx" htmlFor="zakladki-0-5">
-                    <span>
-                      <svg width="12px" height="10px" viewBox="0 0 12 10">
-                        <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
-                      </svg>
-                    </span>
-                    <span>0 - 5</span>
-                  </label>
+              <div className="page_contact-form-row">
+                <div className="page_contact-form-row-item">
+                  <label htmlFor="company">Typ strony</label>
+                  <div className="toggle">
+                    <input
+                      type="radio"
+                      name="website"
+                      value="website_www"
+                      id="website_www"
+                      defaultChecked
+                    />
+                    <label htmlFor="website_www">Strona internetowa</label>
+                    <input
+                      type="radio"
+                      name="website"
+                      value="website_shop"
+                      id="website_shop"
+                    />
+                    <label htmlFor="website_shop">Sklep internetowy</label>
+                  </div>
                 </div>
 
-                <div className="checkbox">
-                  <input className="inp-cbx" id="zakladki-5-10" type="checkbox" style={{display: "none"}}/>
-                  <label className="cbx" htmlFor="zakladki-5-10">
-                    <span>
-                      <svg width="12px" height="10px" viewBox="0 0 12 10">
-                        <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
-                      </svg>
-                    </span>
-                    <span>5 - 10</span>
+                <div className="page_contact-form-row-item">
+                  <label htmlFor="phone">
+                    Ilość zakładek (o nas, blog, usługi, kontakt)
                   </label>
+                  <input type="text" name="phone" />
                 </div>
-
-                <div className="checkbox">
-                  <input className="inp-cbx" id="zakladki-10-more" type="checkbox" style={{display: "none"}}/>
-                  <label className="cbx" htmlFor="zakladki-10-more">
-                    <span>
-                      <svg width="12px" height="10px" viewBox="0 0 12 10">
-                        <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
-                      </svg>
-                    </span>
-                    <span>+ 10</span>
-                  </label>
-                </div>
-              </div> */}
-
-              <div className="page_contact-form-item">
-                <label htmlFor="name">Imię</label>
-                <input type="text" name="name" placeholder="Marcin " />
               </div>
 
-              <div className="page_contact-form-item">
-                <label htmlFor="email">E-mail</label>
-                <input
-                  type="text"
-                  name="email"
-                  placeholder="adres.email@gmail.com"
-                />
+              <div className="page_contact-form-row">
+                <div className="page_contact-form-row-item">
+                  <label htmlFor="company">CMS?</label>
+                  <div className="toggle">
+                    <input
+                      type="radio"
+                      name="cms"
+                      value="cms_yes"
+                      id="cms_yes"
+                      defaultChecked
+                    />
+                    <label htmlFor="cms_yes">Tak</label>
+                    <input type="radio" name="cms" value="cms_no" id="cms_no" />
+                    <label htmlFor="cms_no">Nie</label>
+                  </div>
+                </div>
+
+                <div className="page_contact-form-row-item">
+                  <label htmlFor="phone">Chcę określić budżet</label>
+                  <input type="text" name="phone" />
+                </div>
               </div>
 
-              <div className="page_contact-form-item">
-                <label htmlFor="message">Wiadomość</label>
+              <div className="page_contact-form-row">
+                <div className="page_contact-form-row-item">
+                  <label htmlFor="company">Dodatkowe wersje językowe</label>
+                  <div className="toggle">
+                    <input
+                      type="radio"
+                      name="languages"
+                      value="languages_yes"
+                      id="languages_yes"
+                      defaultChecked
+                    />
+                    <label htmlFor="languages_yes">Tak</label>
+                    <input
+                      type="radio"
+                      name="languages"
+                      value="languages_no"
+                      id="languages_no"
+                    />
+                    <label htmlFor="languages_no">Nie</label>
+                  </div>
+                </div>
+
+                <div className="page_contact-form-row-item">
+                  <label htmlFor="current_website">Aktualny adres strony</label>
+                  <input type="text" name="current_website" />
+                </div>
+              </div>
+
+              <div className="page_contact-form-row">
+                <div className="page_contact-form-row-item">
+                  <label htmlFor="links">
+                    Linki do stron, które Ci się podobają
+                  </label>
+                  <input type="text" name="links1" />
+                  <input type="text" name="links2" />
+                </div>
+              </div>
+
+              <div className="page_contact-form-row-item message">
+                <label htmlFor="message">
+                  Dodatkowe informacje (podaj możliwie jak najwięcej informacji)
+                </label>
                 <textarea name="message"></textarea>
               </div>
 
               <div className="page_contact-form-submit">
-                <input type="submit" value="Wyślij"/>
+                <input type="submit" value="Wyślij" />
               </div>
             </form>
-
+          </div>
         </div>
       </section>
     </Layout>

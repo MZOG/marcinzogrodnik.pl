@@ -1,35 +1,95 @@
 import React from "react"
-import {Link} from "gatsby"
+import { useStaticQuery, graphql, Link} from "gatsby"
 
 const Footer = () => {
+
+  const data = useStaticQuery(graphql`
+    {
+      allDatoCmsPost(limit: 3, sort: {order: DESC, fields: meta___publishedAt}) {
+        nodes {
+          id
+          title
+          slug
+        }
+      }
+      allMarkdownRemark(filter: {frontmatter: {type: {eq: "post"}}}, limit: 3, sort: {order: DESC, fields: frontmatter___date}) {
+        nodes {
+          frontmatter {
+            slug
+            title
+          }
+          id
+        }
+      }
+      allDatoCmsShowcase(sort: {order: DESC, fields: meta___publishedAt}) {
+        nodes {
+          id
+          slug
+          title
+        }
+      }
+    }
+  `)
+
+
   return (
     <footer className="footer">
       <div className="container">
-        <div className="footer-info">
-          <div className="footer-info-item">
+        <div className="footer-top">
+          <div className="footer-top-item">
+            <p className="footer-top-item-title">Oferta</p>
             <ul>
-              <li><Link to="/oferta">Oferta</Link></li>
-              <li><Link to="/realizacje">Realizacje</Link></li>
-              <li><Link to="/o-mnie">O mnie</Link></li>
-              <li><Link to="/blog">Blog</Link></li>
-              <li><Link to="/kontakt">Kontakt</Link></li>
-              <li><Link to="/darmowa-wycena-strony">Wycena strony internetowej</Link></li>
+              <li><Link to="/oferta/strony-internetowe-wordpress">Strony internetowe WordPress</Link></li>
+              <li><Link to="/oferta/strony-internetowe-jamstack">Strony internetowe JAMstack</Link></li>
+              <li><Link to="/oferta/sklepy-internetowe">Sklepy internetowe</Link></li>
+              <li><Link to="/oferta/optymalizacja-strony-internetowej">Optymalizacja stron internetowych</Link></li>
+              <li><Link to="/oferta/pozycjonowanie-seo">Pozycjonowanie</Link></li>
+              <li><Link to="/oferta/opieka-nad-strona">Opieka nad stroną</Link></li>
             </ul>
           </div>
-          <div className="footer-info-item">
-            <p><svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg> <a href="tel:+48739907919">739 907 919</a></p>
-            <p><svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg><a href="mailto:kontakt@marcinzogrodnik.pl">kontakt@marcinzogrodnik.pl</a></p>
-
-          </div>
-          <div className="footer-info-item">
-            <ul className="links">
-              <li><Link to="/regulamin">Regulamin</Link></li>
-              <li><Link to="/prywatnosc">Polityka Prywatności</Link></li>
+          <div className="footer-top-item">
+            <p className="footer-top-item-title">Blog</p>
+            <ul>
+              {data.allDatoCmsPost.nodes.map(blog => (
+                <li key={blog.id}>
+                    <Link to={`/blog/${blog.slug}`}>{blog.title}</Link>
+                </li>
+              ))}
             </ul>
 
+            <p className="footer-top-item-title second">Front End</p>
+            <ul>
+              {data.allMarkdownRemark.nodes.map(frontend => (
+                <li key={frontend.id}>
+                    <Link to={`/blog/${frontend.frontmatter.slug}`}>{frontend.frontmatter.title}</Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div className="footer-top-item">
+            <p className="footer-top-item-title">Realizacje</p>
+            <ul>
+              {data.allDatoCmsShowcase.nodes.map(showcase => (
+                <li key={showcase.id}>
+                    <Link to={`/realizacje/${showcase.slug}`}>{showcase.title}</Link>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
-        <p className="copy">&copy; {new Date().getFullYear()}&nbsp;<Link to="/">marcinzogrodnik.pl</Link></p>
+
+        <div className="footer-bottom">
+            <div className="footer-bottom-content">
+              <p>&copy; 2021 Marcin Zogrodnik</p>
+
+              <ul>
+                <li><Link to="/o-mnie">O mnie</Link></li>
+                <li><Link to="/kontakt">Kontakt</Link></li>
+                <li><Link to="/prywatnosc">Polityka prywatności</Link></li>
+                <li><Link to="/regulamin">Regulamin</Link></li>
+              </ul>
+            </div>
+        </div>
       </div>
     </footer>
   )

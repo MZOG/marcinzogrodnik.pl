@@ -1,78 +1,17 @@
 import React from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import { useStaticQuery, graphql} from "gatsby"
+import { useStaticQuery, graphql } from "gatsby"
 
-// homepage components
-import Hero from "../components/homepage_sections/hero"
-import Offer from "../components/homepage_sections/offer"
-import OfferMore from "../components/homepage_sections/more-offer"
-import Process from "../components/homepage_sections/process"
-import CallMe from "../components/homepage_sections/call-me"
-import Blog from "../components/homepage_sections/blog"
-import Portfolio from "../components/homepage_sections/portfolio"
-import Testimonials from "../components/homepage_sections/testimonials"
-import Brief from "../components/homepage_sections/wycena-strony"
-
-const IndexPage = (props) => {
-  const data = useStaticQuery(graphql`
-    query homepageQuery {
-      allDatoCmsShowcase(
-        sort: { fields: meta___createdAt, order: DESC }
-        limit: 2
-      ) {
-        edges {
-          node {
-            id
-            title
-            slug
-            projectUrl
-            image {
-              fluid(
-                maxWidth: 800
-                imgixParams: { auto: "compress", lossless: true }
-              ) {
-                ...GatsbyDatoCmsFluid
-                src
-              }
-            }
-            seo {
-              description
-            }
-          }
-        }
-      }
-
-      allDatoCmsPost(
-        sort: { order: DESC, fields: meta___createdAt }
-        limit: 4
-      ) {
-        edges {
-          node {
-            title
-            slug
-            id
-            meta {
-              createdAt(formatString: "D MMMM YYYY")
-            }
-            seo {
-              description
-            }
-            image {
-              fluid(
-                maxWidth: 800
-                imgixParams: { auto: "compress", lossless: true }
-              ) {
-                ...GatsbyDatoCmsFluid
-                src
-              }
-            }
-          }
-        }
-      }
-    }
-  `)
-
+// COMPONENTS
+import Hero from "../components/homepage/Hero"
+import Companies from "../components/homepage/Companies"
+import Offer from "../components/homepage/Offer"
+import GetQuote from "../components/homepage/GetQuote"
+import Portfolio from "../components/homepage/Portfolio"
+import Blog from "../components/homepage/Blog"
+import Testimonials from "../components/homepage/Testimonials"
+const IndexPage = () => {
   const schema = {
     "@context": "https://schema.org",
     "@type": "Organization",
@@ -80,17 +19,18 @@ const IndexPage = (props) => {
     alternateName: "Marcin Zogrodnik - Strony internetowe",
     url: "https://marcinzogrodnik.pl",
     logo: "https://www.datocms-assets.com/34585/1603980502-invoice-logo.png",
-    "review": {
+    review: {
       "@type": "Review",
-      "reviewRating": {
+      reviewRating: {
         "@type": "Rating",
-        "ratingValue": "5"
+        ratingValue: "5",
       },
-      "author": {
+      author: {
         "@type": "Person",
-        "name": "Karolina Wawrzyniak"
+        name: "Karolina Wawrzyniak",
       },
-      "reviewBody": "Współpraca z Marcinem była wspaniała. W błyskawicznym tempie odpowiadał na wszystkie moje zapytania i zamieszczał kolejne elementy na stronie. W cierpliwy sposób tłumaczył na czym polega budowanie strony internetowej i na czym jako przedsiębiorca powinnam się skupić najbardziej. W stu procentach spełnił moje oczekiwania, zatem mogę go polecić jako świetnego fachowca!"
+      reviewBody:
+        "Współpraca z Marcinem była wspaniała. W błyskawicznym tempie odpowiadał na wszystkie moje zapytania i zamieszczał kolejne elementy na stronie. W cierpliwy sposób tłumaczył na czym polega budowanie strony internetowej i na czym jako przedsiębiorca powinnam się skupić najbardziej. W stu procentach spełnił moje oczekiwania, zatem mogę go polecić jako świetnego fachowca!",
     },
     contactPoint: {
       "@type": "ContactPoint",
@@ -105,23 +45,30 @@ const IndexPage = (props) => {
     ],
   }
 
-  let metaInfo = {
-    title: "Strona Główna",
-    description: "Nowoczesne rozwiązania, które przynoszą rezultaty. Strony internetowe WordPress, JAMstack. Sklepy internetowe Katowice. Strony internetowe dostosowane do Twoich potrzeb."
-  }
+  const indexQuote = useStaticQuery(graphql`
+    {
+      file(relativePath: { eq: "marcin-zogrodnik-facebook.png" }) {
+        publicURL
+      }
+    }
+  `)
 
   return (
-    <Layout path={props.location.pathname}>
-      <SEO title={metaInfo.title} description={metaInfo.description} schemaMarkup={schema} />
+    <Layout>
+      <SEO
+        title="Marcin Zogrodnik"
+        description="Tworzę strony i sklepy internetowe WordPress. Nowoczesne, statyczne witryny JAMstack. Wysokiej jakości kod to klucz do sukcesu Twojej firmy w sieci."
+        schemaMarkup={schema}
+        shareImage={indexQuote.file.publicURL}
+      />
+
       <Hero />
-      <Portfolio data={data.allDatoCmsShowcase} />
-      <Testimonials />
+      <Companies />
       <Offer />
-      <Brief />
-      <OfferMore />
-      <Process />
-      <CallMe />
-      <Blog data={data.allDatoCmsPost}/>
+      <GetQuote />
+      <Portfolio />
+      <Testimonials />
+      <Blog />
     </Layout>
   )
 }

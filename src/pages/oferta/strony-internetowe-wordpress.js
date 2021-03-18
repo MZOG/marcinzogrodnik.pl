@@ -2,18 +2,14 @@
 import React from "react"
 import Layout from "../../components/layout"
 import SEO from "../../components/seo"
-import CTA from "../../components/cta"
 import { useStaticQuery, graphql } from "gatsby"
+import PageTitle from "../../components/PageTitle"
 
 const StronyInternetoweWordPress = () => {
   const data = useStaticQuery(graphql`
     {
-      file(relativePath: { eq: "strony-internetowe-jamstack.jpg" }) {
-        childImageSharp {
-          fluid(maxWidth: 400) {
-            ...GatsbyImageSharpFluid
-          }
-        }
+      file(relativePath: { eq: "offer-wordpress-fb.png" }) {
+        publicURL
       }
     }
   `)
@@ -24,61 +20,62 @@ const StronyInternetoweWordPress = () => {
         lang="pl"
         title="Strony internetowe WordPress"
         description="Łatwa w obsłudze strona internetowa WordPress z panelem administracyjnym do samodzielnego zarządzania stroną. "
-        shareImage={data.file.childImageSharp.fluid.src}
+        shareImage={data.file.publicURL}
       />
       <section className="page">
         <div className="container">
-          <h1>Strony internetowe WordPress</h1>
-
+          <PageTitle
+            title="Strony internetowe WordPress"
+            lead="WordPress to najpopularniejszy system zarządzania treścią na
+              świecie, nie dziwi więc, że sporo firm decyduje się na to
+              rozwiązanie."
+          />
           <div className="page_offer-content content">
-            <p className="lead">
-              WordPress to najpopularniejszy system zarządzania treścią na świecie, nie dziwi więc, że sporo firm decyduje się na to rozwiązanie. Dlaczego WordPress jest tak popularny?
-            </p>
-
             <div className="page_grid">
               <div className="page_grid-item">
-                <h2>
-                  Zarządzanie
-                </h2>
+                <h2>Zarządzanie</h2>
                 <p>
-                  Największą zaletą WordPress'a jest możliwość samodzielnego zadządzania treścią na stronie internetowej.
-                  Panel administracyjny jest prosty w obsłudze, dodawanie nowych wtyczek również nie powinno być problemem.
+                  Największą zaletą WordPress'a jest możliwość samodzielnego
+                  zadządzania treścią na stronie internetowej. Panel
+                  administracyjny jest prosty w obsłudze, dodawanie nowych
+                  wtyczek również nie powinno być problemem.
                 </p>
               </div>
 
               <div className="page_grid-item">
-                <h2>
-                  Bezpieczeństwo
-                </h2>
+                <h2>Bezpieczeństwo</h2>
                 <p>
-                  W tym temacie zdania są podzielone, jedni uważają, że WordPress nie jest bezpieczny, inni wręcz odwrotnie. System sam w sobie jest bezpieczny, ewentualne zagrożenia możesz spotkać instalując nieodpowiednie wtyczki z mało popularnych źródeł.
+                  W tym temacie zdania są podzielone, jedni uważają, że
+                  WordPress nie jest bezpieczny, inni wręcz odwrotnie. System
+                  sam w sobie jest bezpieczny, ewentualne zagrożenia możesz
+                  spotkać instalując nieodpowiednie wtyczki z mało popularnych
+                  źródeł.
                 </p>
               </div>
 
               <div className="page_grid-item">
-                <h2>
-                  Elastyczność
-                </h2>
+                <h2>Elastyczność</h2>
                 <p>
-                  Strona internetowa WordPress może być wykorzystana na bardzo wiele sposobów. Możesz stworzyć prostą stronę wizytówkę, rozbudowany serwis informacyjny czy sklep internetowy. Ogromna ilość wtyczek pozwoli na dowolną rozbudowę strony internetowej.
+                  Strona internetowa WordPress może być wykorzystana na bardzo
+                  wiele sposobów. Możesz stworzyć prostą stronę wizytówkę,
+                  rozbudowany serwis informacyjny czy sklep internetowy. Ogromna
+                  ilość wtyczek pozwoli na dowolną rozbudowę strony
+                  internetowej.
                 </p>
               </div>
 
               <div className="page_grid-item">
-                <h2>
-                  Darmowy
-                </h2>
+                <h2>Darmowy</h2>
                 <p>
-                  WordPress to otwarty system, który jest darmowy. Możesz samodzielnie postawić stronę lub sklep, nie wydając złotówki (nie licząc hostingu, domeny, certyfikatu SSL). Płatne są rozszerzenia (wtyczki) oraz motywy premium.
+                  WordPress to otwarty system, który jest darmowy. Możesz
+                  samodzielnie postawić stronę lub sklep, nie wydając złotówki
+                  (nie licząc hostingu, domeny, certyfikatu SSL). Płatne są
+                  rozszerzenia (wtyczki) oraz motywy premium.
                 </p>
               </div>
             </div>
           </div>
         </div>
-
-        <CTA
-          line1="Strona internetowa WordPress to system, w którym Ty rządzisz."
-        />
       </section>
     </Layout>
   )

@@ -1,59 +1,99 @@
+/* disable eslint */
 import React from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Img from "gatsby-image"
+import SidebarPostInfo from "../components/sidebarPostInfo"
+import SidebarBlogPosts from "../components/sidebarBlogPosts"
+import SidebarQuote from "../components/sidebarQuote"
+import SidebarShowcase from "../components/sidebarShowcase"
 
 export default ({ data }) => {
   const post = data.datoCmsShowcase
 
+  let formatter = new Intl.DateTimeFormat("pl", {
+    day: "numeric",
+    month: "long",
+    year: "numeric",
+  })
+
   const schema = {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
-    "mainEntityOfPage": {
+    mainEntityOfPage: {
       "@type": "WebPage",
-      "@id": `https://marcinzogrodnik.pl/blog/${post.slug}`
+      "@id": `https://marcinzogrodnik.pl/realizacje/${post.slug}`,
     },
-    "headline": post.title,
-    "image": post.seo.image.sizes.src,
-    "author": {
+    headline: post.title,
+    image: post.seo.image.sizes.src,
+    author: {
       "@type": "Person",
-      "name": "Marcin Zogrodnik"
+      name: "Marcin Zogrodnik",
     },
-    "publisher": {
+    publisher: {
       "@type": "Organization",
-      "name": "Marcin Zogrodnik - Strony internetowe",
-      "logo": {
+      name: "Marcin Zogrodnik - Strony internetowe",
+      logo: {
         "@type": "ImageObject",
-        "url": "https://www.datocms-assets.com/34585/1603980502-invoice-logo.png"
-      }
+        url: "https://www.datocms-assets.com/34585/1603980502-invoice-logo.png",
+      },
     },
-    "datePublished": post.meta.createdAt
+    datePublished: post.meta.createdAt,
+    dateModified: post.meta.updatedAt,
   }
 
   return (
-    <Layout>
+    <Layout article={true}>
       <SEO
         title={post.title}
         description={post.seo.description}
         shareImage={post.seo.image.sizes.src}
         schemaMarkup={schema}
       />
+
       <article className="article">
-        <div className="container">
+        <div className="article_breadcrumbs">
+          <div className="container">
+            <ul>
+              <li>
+                <a href="/">Strona główna</a>
+              </li>
+              <li>
+                <a href="/realizacje">Realizacje</a>
+              </li>
+              <li>{post.title}</li>
+            </ul>
+          </div>
+        </div>
+
+        <div className="container article_flex">
           <section className="article__content">
-            <header className="article__content-header">
-              <div className="article__content-image">
-                <Img fluid={post.image.fluid} />
-              </div>
+            <header className="article__content_header">
               <h1>{post.title}</h1>
+              <p className="article__content-lead">{post.seo.description}</p>
             </header>
-            <div className="article__content-text"
+
+            <Img fluid={post.image.fluid} />
+
+            <div
+              className="article__content_text"
               dangerouslySetInnerHTML={{
                 __html: post.contentNode.childMarkdownRemark.html,
               }}
             />
           </section>
+
+          <aside className="article__sidebar">
+            <div className="article__content-info">
+              <SidebarPostInfo
+                date={formatter.format(new Date(post.meta.createdAt))}
+              />
+              <SidebarShowcase />
+              <SidebarBlogPosts />
+              <SidebarQuote />
+            </div>
+          </aside>
         </div>
       </article>
     </Layout>
@@ -69,6 +109,9 @@ export const query = graphql`
         }
       }
       title
+      meta {
+        publishedAt
+      }
       projectUrl
       slug
       meta {
@@ -88,8 +131,14 @@ export const query = graphql`
           src
         }
       }
-      internal {
-        type
+    }
+
+    file(relativePath: { eq: "marcin_profilowe.jpg" }) {
+      childImageSharp {
+        fluid(quality: 100) {
+          ...GatsbyImageSharpFluid_withWebp
+          ...GatsbyImageSharpFluidLimitPresentationSize
+        }
       }
     }
   }

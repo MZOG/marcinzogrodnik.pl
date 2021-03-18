@@ -1,43 +1,67 @@
 import React from "react"
 import Layout from "../../components/layout"
 import SEO from "../../components/seo"
-import Article from "../../components/article"
-import { graphql, Link } from "gatsby"
+import { useStaticQuery, graphql, Link } from "gatsby"
+import Img from "gatsby-image"
+import PageTitle from "../../components/PageTitle"
 
-const Blog = ({ data }) => {
-  const blogPosts = data.allDatoCmsPost.edges
+const Blog = () => {
+  const blogQuote = useStaticQuery(graphql`
+    {
+      allDatoCmsPost(sort: { order: DESC, fields: meta___publishedAt }) {
+        nodes {
+          id
+          image {
+            fluid(maxWidth: 619) {
+              ...GatsbyDatoCmsFluid
+              src
+            }
+          }
+          seo {
+            description
+          }
+          slug
+          title
+        }
+      }
+      file(relativePath: { eq: "blog-fb.png" }) {
+        publicURL
+      }
+    }
+  `)
 
   return (
     <Layout>
       <SEO
         title="Blog"
-        description="Piszę głównie o rzeczach związanych ze stronami internetowymi WordPress oraz JAMstack. Świat Front End to moja pasja, którą chciałbym się podzielić."
+        description="Artykuły na temat JAMstack, WordPress, optymalizacji, pozycjonowania. Zapraszam dównież do działu Front End, gdzie dzielę się wiedzą na temat Gatsby, czy Reacta."
+        shareImage={blogQuote.file.publicURL}
       />
-      <section className="page page_blog">
+      <section className="page page_offer">
         <div className="container">
-          <h1>Blog</h1>
-          <p className="lead">
-            Staram się pisać ciekawie na temat stron internetowych, WordPress'a,
-            pozycjonowania czy optymalizacji stron internetowych.
-          </p>
+          <PageTitle
+            title="Blog"
+            lead="Artykuły na temat JAMstack, WordPress, optymalizacji, pozycjonowania. Zapraszam dównież do działu Front End, gdzie dzielę się wiedzą na temat Gatsby, czy Reacta."
+            link="/blog/frontend"
+            linkTxt="Front End"
+          />
 
-          <div className="page_blog-category">
-            <Link to="/blog/frontend/">Front End</Link>
-          </div>
+          <div className="page_offer_boxes">
+            {blogQuote.allDatoCmsPost.nodes.map(item => (
+              <article className="page_offer_item" key={item.id}>
+                <Link to={`/blog/${item.slug}`}>
+                  <Img fluid={item.image.fluid} alt={item.title} />
+                </Link>
+                <h2>
+                  <Link to={`/blog/${item.slug}`}>{item.title}</Link>
+                </h2>
+                <p>{item.seo.description}</p>
 
-          <div className="page_blog__container">
-            {blogPosts.map(post => {
-              return (
-                <Article
-                  key={post.node.id}
-                  slug={post.node.slug}
-                  title={post.node.title}
-                  date={post.node.meta.createdAt}
-                  description={post.node.seo.description}
-                  image={post.node.image.fluid || "elo"}
-                />
-              )
-            })}
+                <div className="page_offer_item-cta">
+                  <Link to={`/blog/${item.slug}`}>Czytaj dalej →</Link>
+                </div>
+              </article>
+            ))}
           </div>
         </div>
       </section>
@@ -46,32 +70,3 @@ const Blog = ({ data }) => {
 }
 
 export default Blog
-
-export const query = graphql`
-  query AllPosts {
-    allDatoCmsPost(sort: { order: DESC, fields: meta___firstPublishedAt }) {
-      edges {
-        node {
-          image {
-            fluid(
-              maxWidth: 800
-              imgixParams: { auto: "compress", lossless: true }
-            ) {
-              ...GatsbyDatoCmsFluid
-              src
-            }
-          }
-          title
-          slug
-          id
-          meta {
-            createdAt(formatString: "D MMMM YYYY")
-          }
-          seo {
-            description
-          }
-        }
-      }
-    }
-  }
-`

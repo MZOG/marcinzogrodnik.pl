@@ -1,0 +1,500 @@
+.home {
+  &_hero {
+    background: $light;
+
+    @include mq("tablet", "min") {
+      background: none;
+      padding-top: 50px;
+    }
+
+    @include mq("desktop", "min") {
+      padding-top: 70px;
+    }
+
+    .container {
+      .content {
+        padding: 30px 0;
+
+        @include mq("tablet", "min") {
+          background: linear-gradient(to bottom right, $light 0%, #fff 60%) 100%
+            no-repeat;
+          padding: 20px;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 30px;
+          border-radius: 10px;
+        }
+
+        @include mq("desktop", "min") {
+          padding-left: 50px;
+          padding-right: 50px;
+          padding-bottom: 20px;
+        }
+
+        &_left {
+          margin-bottom: 20px;
+
+          @include mq("tablet", "min") {
+            margin-bottom: 0;
+            width: calc(50% - 20px);
+          }
+        }
+
+        &_right {
+          @include mq("tablet", "min") {
+            width: calc(50% - 20px);
+          }
+
+          .gatsby-image-wrapper {
+            @include mq("tabletw", "min") {
+              margin-top: -50px;
+            }
+          }
+        }
+
+        h1 {
+          font-weight: 600;
+          font-size: 32px;
+          margin-bottom: 20px;
+
+          @include mq("tablet", "min") {
+            font-size: 38px;
+          }
+
+          @include mq("desktop", "min") {
+            font-size: 45px;
+          }
+
+          span {
+            color: $primary;
+          }
+        }
+
+        p {
+          line-height: 1.5;
+          margin-bottom: 20px;
+        }
+
+        a {
+          background: $primary;
+          color: $white;
+          text-decoration: none;
+          padding: 10px;
+          display: inline-block;
+
+          @include mq("desktop", "min") {
+            padding: 13px 20px;
+          }
+        }
+      }
+    }
+  }
+
+  &_companies {
+    margin: 30px 0;
+
+    @include mq("tablet", "min") {
+      margin: 40px 0;
+    }
+
+    @include mq("desktop", "min") {
+      margin: 60px 0 100px;
+    }
+
+    &-logos {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      align-items: center;
+
+      li {
+        width: 100%;
+
+        @media screen and (min-width: 600px) {
+          width: 33%;
+        }
+
+        &:not(:last-child) {
+          margin-bottom: 20px;
+          @media screen and (min-width: 600px) {
+            margin-bottom: 0;
+          }
+        }
+
+        .gatsby-image-wrapper {
+          margin: 0 auto;
+          opacity: 0.4;
+
+          &:hover {
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+
+  &_offer {
+    .container {
+      @include mq("desktop", "min") {
+        padding: 0 100px;
+      }
+    }
+
+    h2 {
+      font-size: 28px;
+      margin-bottom: 20px;
+      font-weight: 600;
+
+      @include mq("tablet", "min") {
+        font-size: 32px;
+      }
+
+      @include mq("desktop", "min") {
+        font-size: 39px;
+      }
+
+      span {
+        color: $primary;
+      }
+    }
+
+    h3 {
+      font-size: 24px;
+      color: $primary;
+      font-weight: 600;
+      margin-bottom: 10px;
+
+      @include mq("tablet", "min") {
+        font-size: 25px;
+      }
+    }
+
+    p {
+      line-height: 1.5;
+      margin-bottom: 30px;
+
+      @include mq("desktop", "min") {
+        width: 73%;
+      }
+    }
+
+    a {
+      text-decoration: none;
+      color: $primary;
+    }
+
+    &-content {
+      @include mq("tablet", "min") {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        column-gap: 20px;
+        margin-top: 40px;
+      }
+
+      &-item {
+        margin-bottom: 40px;
+
+        @include mq("tablet", "min") {
+          margin-bottom: 0;
+        }
+      }
+
+      .gatsby-image-wrapper {
+        margin-bottom: 20px;
+        border-radius: 10px;
+      }
+
+      p {
+        width: 100%;
+        font-size: 16px;
+      }
+    }
+  }
+
+  &_blog {
+    .gatsby-image-wrapper {
+      margin-bottom: 20px;
+    }
+
+    h3 {
+      margin-bottom: 20px;
+    }
+
+    a {
+      text-decoration: none;
+      color: $primary;
+    }
+  }
+
+  &_portfolio,
+  &_blog {
+    margin: 30px 0;
+
+    @include mq("tablet", "min") {
+      margin: 40px 0;
+    }
+
+    @include mq("desktop", "min") {
+      margin: 70px 0;
+    }
+    .container {
+      @include mq("desktop", "min") {
+        padding: 0 100px;
+      }
+    }
+
+    &-more {
+      margin-top: 30px;
+
+      @include mq("tablet", "min") {
+        margin-top: 60px;
+        text-align: center;
+      }
+      a {
+        background: $primary;
+        color: $white;
+        text-decoration: none;
+        padding: 10px;
+        display: inline-block;
+
+        @include mq("desktop", "min") {
+          padding: 13px 20px;
+        }
+      }
+    }
+
+    h2 {
+      font-size: 28px;
+      margin-bottom: 20px;
+      font-weight: 600;
+
+      @include mq("tablet", "min") {
+        font-size: 32px;
+      }
+
+      @include mq("desktop", "min") {
+        font-size: 39px;
+      }
+
+      span {
+        color: $primary;
+      }
+    }
+
+    h3 {
+      font-size: 24px;
+      color: $primary;
+      font-weight: 600;
+
+      @include mq("tablet", "min") {
+        font-size: 25px;
+      }
+    }
+
+    p {
+      line-height: 1.5;
+      margin-bottom: 30px;
+    }
+
+    &-content {
+      @include mq("tablet", "min") {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        column-gap: 40px;
+        margin-top: 40px;
+      }
+
+      &-item {
+        margin-bottom: 40px;
+
+        @include mq("tablet", "min") {
+          margin-bottom: 0;
+        }
+
+        &-header {
+          display: flex;
+          align-items: center;
+          margin-bottom: 20px;
+
+          a {
+            color: $primary;
+            margin-left: 30px;
+            text-decoration: none;
+          }
+        }
+
+        .gatsby-image-wrapper {
+          border-radius: 10px;
+        }
+      }
+    }
+  }
+
+  &_testimonials {
+    .container {
+      @include mq("desktop", "min") {
+        padding: 0 100px;
+      }
+    }
+
+    h2 {
+      font-size: 28px;
+      margin-bottom: 20px;
+      font-weight: 600;
+
+      @include mq("tablet", "min") {
+        font-size: 32px;
+      }
+
+      @include mq("desktop", "min") {
+        font-size: 39px;
+      }
+
+      span {
+        color: $primary;
+      }
+    }
+
+    p {
+      line-height: 1.5;
+      margin-bottom: 30px;
+    }
+
+    .content {
+      @include mq("tablet", "min") {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        column-gap: 20px;
+        margin-top: 40px;
+      }
+      &-item {
+        background: $primary;
+        color: $white;
+        padding: 20px;
+        border-radius: 10px;
+        margin-bottom: 30px;
+
+        &:nth-child(2) {
+          background: $light;
+          color: $text;
+        }
+
+        @include mq("tablet", "min") {
+          margin-bottom: 0;
+          padding: 30px;
+        }
+
+        p {
+          &:last-child {
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+  }
+
+  &_quote {
+    background: $primary;
+
+    @include mq("tablet", "min") {
+      background: none;
+    }
+
+    h2 {
+      font-size: 25px;
+      margin-bottom: 20px;
+      font-weight: 600;
+
+      @include mq("tablet", "min") {
+        font-size: 32px;
+      }
+
+      @include mq("desktop", "min") {
+        font-size: 39px;
+      }
+
+      span {
+        color: $primary;
+      }
+    }
+
+    p {
+      line-height: 1.5;
+      margin-bottom: 20px;
+
+      @include mq("desktop", "min") {
+        width: 75%;
+      }
+
+      span {
+        font-weight: 500;
+        border-bottom: 1px solid $white;
+      }
+    }
+
+    a {
+      background: $white;
+      color: $primary;
+      text-decoration: none;
+      padding: 10px;
+      display: inline-block;
+
+      @include mq("desktop", "min") {
+        padding: 13px 20px;
+      }
+    }
+
+    .content {
+      color: $white;
+      padding: 40px 0;
+
+      @include mq("tablet", "min") {
+        background: $primary;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 30px;
+        border-radius: 10px;
+        margin: 50px 0;
+      }
+
+      @include mq("desktop", "min") {
+        margin: 130px 0;
+        padding: 40px;
+      }
+
+      &_left {
+        display: none;
+
+        @include mq("tablet", "min") {
+          display: block;
+          width: calc(20% - 20px);
+        }
+
+        @include mq("desktop", "min") {
+          width: calc(30% - 20px);
+        }
+      }
+
+      &_right {
+        @include mq("tablet", "min") {
+          width: calc(80% - 20px);
+        }
+
+        @include mq("desktop", "min") {
+          width: calc(70% - 20px);
+        }
+
+        &-testimonial {
+          border-left: 5px solid rgba($white, 0.4);
+          padding-left: 20px;
+
+          &:not(:last-child) {
+            margin-bottom: 40px;
+          }
+        }
+      }
+    }
+  }
+}
