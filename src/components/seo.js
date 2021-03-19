@@ -25,63 +25,33 @@ function SEO({ description, lang, meta, title, shareImage, schemaMarkup }) {
     : `https://marcinzogrodnik.pl${shareImage}` ||
       "https://www.datocms-assets.com/34585/1603983032-jamstack-wordpress-fb-post.jpg"
 
+  console.log(metaDescription)
+
   return (
     <Helmet
-      htmlAttributes={{
-        lang,
-      }}
+      htmlAttributes={{ lang }}
       title={title}
       titleTemplate={`%s - ${site.siteMetadata.title}`}
-      meta={[
-        {
-          name: `description`,
-          content: metaDescription,
-        },
-        {
-          property: `og:title`,
-          content: `${title} - ${site.siteMetadata.title}`,
-        },
-        {
-          property: `fb:app_id`,
-          content: "228993968376957",
-        },
-        {
-          property: `og:description`,
-          content: metaDescription,
-        },
-        {
-          property: `og:type`,
-          content: `website`,
-        },
-        {
-          property: `og:image`,
-          content: image,
-        },
-        {
-          name: `twitter:card`,
-          content: `summary_large_image`,
-        },
-        {
-          name: `twitter:creator`,
-          content: site.siteMetadata.author,
-        },
-        {
-          name: `twitter:title`,
-          content: title,
-        },
-        {
-          name: `twitter:description`,
-          content: metaDescription,
-        },
-      ].concat(meta)}
     >
+      <link rel="stylesheet" href="https://use.typekit.net/qlx1pib.css"></link>
+      <meta name="description" content={metaDescription} />
+      <meta name="image" content={image} />
+
+      <meta property="fb:pages" content="112142883474554" />
+      <meta
+        property="og:title"
+        content={`${title} - ${site.siteMetadata.title}`}
+      />
+      <meta property="og:description" content={metaDescription} />
+      <meta property="og:image" content={image} />
+      <meta property="fb:app_id" content="228993968376957" />
+      <meta property="og:type" content="website" />
+
       {schemaMarkup && (
         <script type="application/ld+json">
           {JSON.stringify(schemaMarkup)}
         </script>
       )}
-      <link rel="stylesheet" href="https://use.typekit.net/qlx1pib.css"></link>
-      <meta property="fb:pages" content="112142883474554" />
     </Helmet>
   )
 }
