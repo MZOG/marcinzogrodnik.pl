@@ -124,9 +124,15 @@
 
       &-cta {
         a {
-          color: $primary;
+          background: $primary;
+          color: $white;
           text-decoration: none;
-          font-weight: 600;
+          padding: 10px;
+          display: inline-block;
+
+          @include mq("desktop", "min") {
+            padding: 13px 20px;
+          }
         }
       }
 
@@ -134,10 +140,23 @@
         display: flex;
         align-items: center;
         margin-bottom: 20px;
+        justify-content: space-between;
 
         h2 {
           margin-bottom: 0;
           margin-right: 20px;
+        }
+
+        a {
+          background: $primary;
+          color: $white;
+          text-decoration: none;
+          padding: 10px;
+          display: inline-block;
+
+          @include mq("desktop", "min") {
+            padding: 13px 20px;
+          }
         }
       }
     }
@@ -257,10 +276,6 @@
               transition: border-color 0.15s ease-out, color 0.25s ease-out,
                 background-color 0.15s ease-out, box-shadow 0.15s ease-out;
 
-              /* ADD THESE PROPERTIES TO SWITCH FROM AUTO WIDTH TO FULL WIDTH */
-              /*flex: 0 0 50%; display: flex; justify-content: center; align-items: center;*/
-              /* ----- */
-
               &:first-of-type {
                 border-right: none;
               }
@@ -296,6 +311,9 @@
           display: inline-block;
           border: none;
           font-size: inherit;
+          appearance: none;
+          -moz-appearance: none;
+          -webkit-appearance: none;
 
           @include mq("desktop", "min") {
             padding: 13px 20px;
@@ -322,9 +340,22 @@
         line-height: 1;
         color: $text;
         margin-bottom: 10px;
+        text-decoration: none;
+        margin-top: 20px;
+
+        @include mq("tablet", "min") {
+          margin-top: 0;
+        }
 
         span {
           color: $primary;
+          display: block;
+          margin-top: 5px;
+
+          @include mq("tablet", "min") {
+            display: inline-block;
+            margin-top: 0;
+          }
         }
       }
 

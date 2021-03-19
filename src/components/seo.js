@@ -3,7 +3,7 @@ import PropTypes from "prop-types"
 import { Helmet } from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 
-function SEO({ description, lang, meta, title, shareImage, schemaMarkup }) {
+function SEO({ description, lang, title, shareImage, schemaMarkup }) {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -24,8 +24,6 @@ function SEO({ description, lang, meta, title, shareImage, schemaMarkup }) {
     ? shareImage
     : `https://marcinzogrodnik.pl${shareImage}` ||
       "https://www.datocms-assets.com/34585/1603983032-jamstack-wordpress-fb-post.jpg"
-
-  console.log(metaDescription)
 
   return (
     <Helmet

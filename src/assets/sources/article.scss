@@ -113,7 +113,7 @@
       h3 {
         font-size: 20px;
         color: $primary;
-        margin-bottom: 10px;
+        margin-bottom: 20px;
         font-weight: 600;
 
         @include mq("tablet", "min") {
@@ -130,17 +130,29 @@
 
         li {
           margin-bottom: 5px;
+
+          strong {
+            font-weight: 500;
+            color: $primary;
+            display: block;
+          }
         }
       }
 
       ol {
         list-style-type: decimal;
-        color: $primary;
         margin-left: 30px;
+        margin-bottom: 20px;
 
         li {
           margin-bottom: 5px;
           line-height: 1.5;
+
+          strong {
+            font-weight: 500;
+            color: $primary;
+            display: block;
+          }
         }
       }
 
@@ -178,10 +190,20 @@
       padding: 20px;
       border-radius: 10px;
       margin-bottom: 20px;
+      display: none;
+
+      @include mq("tablet", "min") {
+        display: block;
+      }
+
+      &.info {
+        display: block;
+      }
 
       &.dark {
         background: $primary;
         color: $white;
+        display: block;
 
         @include mq("tablet", "min") {
           position: sticky;

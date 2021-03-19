@@ -17,7 +17,7 @@ const SidebarPostInfo = ({ date }) => {
   `)
 
   return (
-    <div className="article__sidebar_box">
+    <div className="article__sidebar_box info">
       <div className="author">
         <Img fluid={sidebarQuote.file.childImageSharp.fluid} />
         <p>Marcin Zogrodnik</p>
