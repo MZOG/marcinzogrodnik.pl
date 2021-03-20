@@ -6,7 +6,7 @@ description: "Co to jest Gatsby Cloud, oraz jak z korzystać z platformy, pierws
 image: ../images/markdown/selection-css-2.jpeg
 seoImage: ../images/markdown/selection-css.jpeg
 type: "post"
-published: true
+published: false
 ---
 
 Stworzenie strony internetowej JAMstack nie jest takie proste. Potrzebujemy
