@@ -10,7 +10,9 @@ const Frontend = () => {
     {
       allMarkdownRemark(
         sort: { fields: frontmatter___date, order: DESC }
-        filter: { frontmatter: { type: { eq: "post" } } }
+        filter: {
+          frontmatter: { type: { eq: "post" }, published: { eq: true } }
+        }
       ) {
         edges {
           node {
