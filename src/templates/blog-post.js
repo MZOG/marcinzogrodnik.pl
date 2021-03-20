@@ -68,13 +68,15 @@ export default ({ data }) => {
     dateModified: date,
   }
 
+  const path = window.location.href
+
   return (
     <Layout article={true}>
       <SEO
         title={title}
         description={seoDescription}
         shareImage={seoImage}
-        slug={slug}
+        path={path}
         schemaMarkup={schema}
       />
 

@@ -13,6 +13,8 @@ const Prywatnosc = () => {
     }
   `)
 
+  const path = window.location.href
+
   return (
     <Layout>
       <SEO
@@ -20,6 +22,7 @@ const Prywatnosc = () => {
         title="Polityka prywatności"
         description="Polityka prywatności strony marcinzogrodnik.pl"
         shareImage={ppQuote.file.publicURL}
+        path={path}
       />
       <section className="page">
         <div className="container">

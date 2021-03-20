@@ -96,12 +96,14 @@ const Oferta = () => {
     },
   ]
 
+  const path = window.location.href
+
   return (
     <Layout>
       <SEO
         title="Oferta"
         description="Poznaj ofertę stron internetowych WordPress oraz JAMstack. Uczysz się programować i masz problem? Napisz do mnie! Na pewno rozwiążemy Twój problem."
-        shareImage={null}
+        path={path}
         shareImage={offerQuote.allFile.nodes[6].publicURL}
       />
       <section className="page page_offer">

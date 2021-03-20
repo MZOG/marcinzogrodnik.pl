@@ -32,6 +32,7 @@ const About = () => {
   `)
 
   const aboutContent = data.datoCmsAboutMe
+  const path = window.location.href
 
   return (
     <Layout>
@@ -39,6 +40,7 @@ const About = () => {
         title="O mnie"
         description="Nazywam się Marcin Zogrodnik i tworzę strony internetowe. Posiadam wieloletnie doświadczenie zdobtyte w Wielkiej Brytanii, które wykorzystuję w Polsce."
         shareImage={data.file.publicURL}
+        path={path}
       />
 
       <section className="page page_about">

@@ -12,12 +12,15 @@ const DarmowaWycenaStrony = () => {
     }
   `)
 
+  const path = window.location.href
+
   return (
     <Layout>
       <SEO
         title="Darmowa wycena strony"
         description="Darmowa wycena strony internetowej? Ile kosztuje strona internetowa? Wypełnij formularz i dowiedz się wszystkiego już następnego dnia!"
         shareImage={indexQuote.file.publicURL}
+        path={path}
       />
 
       <section className="page page_contact">

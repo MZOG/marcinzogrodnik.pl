@@ -14,6 +14,8 @@ const Optymalizacja = () => {
     }
   `)
 
+  const path = window.location.href
+
   return (
     <Layout>
       <SEO
@@ -21,6 +23,7 @@ const Optymalizacja = () => {
         title="Optymalizacja stron internetowych"
         description="Optymalizuję strony internetowe, aby ładowały się szybko i przyciągały użytkowników."
         shareImage={data.file.publicURL}
+        path={path}
       />
       <section className="page ">
         <div className="container">

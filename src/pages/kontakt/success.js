@@ -12,13 +12,14 @@ const Success = () => {
       }
     }
   `)
-
+  const path = window.location.href
   return (
     <Layout>
       <SEO
         title="Wiadomość wysłana!"
         description="Twoja wiadomość została wysłana"
         shareImage={successQuote.file.publicURL}
+        path={path}
       />
 
       <section className="container page success">

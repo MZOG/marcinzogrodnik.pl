@@ -3,7 +3,7 @@ import PropTypes from "prop-types"
 import { Helmet } from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 
-function SEO({ description, lang, title, shareImage, schemaMarkup }) {
+function SEO({ description, lang, title, shareImage, schemaMarkup, path }) {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -44,7 +44,7 @@ function SEO({ description, lang, title, shareImage, schemaMarkup }) {
       <meta property="og:image" content={image} />
       <meta property="fb:app_id" content="228993968376957" />
       <meta property="og:type" content="website" />
-      <meta property="og:url" content={window.location.href} />
+      <meta property="og:url" content={path} />
 
       {schemaMarkup && (
         <script type="application/ld+json">

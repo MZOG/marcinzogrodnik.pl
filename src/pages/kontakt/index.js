@@ -14,6 +14,9 @@ const Kontakt = () => {
       }
     }
   `)
+
+  const path = window.location.href
+
   return (
     <Layout>
       <SEO
@@ -21,6 +24,7 @@ const Kontakt = () => {
         description="Masz pomysł na nową stronę internetową? A może chciałbyś lekko zmodyfikować swoją obecną stronę?
         Zadzwoń lub wyślij wiadomość."
         shareImage={contactQuote.file.publicURL}
+        path={path}
       />
 
       <section className="page page_contact">

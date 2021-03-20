@@ -14,6 +14,8 @@ const OpiekaNadStrona = () => {
     }
   `)
 
+  const path = window.location.href
+
   return (
     <Layout>
       <SEO
@@ -21,6 +23,7 @@ const OpiekaNadStrona = () => {
         title="Opieka nad stroną"
         description="Nie masz czasu aktualizować strony internetowej? Od teraz nie musisz się o to martwić! Oferuję opiekę nad stroną, abyś Ty mógł zająć się swoim biznesem!"
         shareImage={data.file.publicURL}
+        path={path}
       />
       <section className="page">
         <div className="container">

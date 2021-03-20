@@ -25,12 +25,16 @@ const Showcase = () => {
       }
     }
   `)
+
+  const path = window.location.href
+
   return (
     <Layout>
       <SEO
         title="Realizacje"
         description="Wszystkie realizacje stron internetowych WordPress oraz JAMstack."
         shareImage={showcaseQuote.file.publicURL}
+        path={path}
       />
       <section className="page page_offer">
         <div className="container">
