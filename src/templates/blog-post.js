@@ -152,10 +152,6 @@ export const query = graphql`
           }
         }
       }
-      pointers {
-        id
-        text
-      }
       image {
         fluid {
           ...GatsbyDatoCmsFluid_tracedSVG
