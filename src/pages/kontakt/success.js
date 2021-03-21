@@ -12,27 +12,28 @@ const Success = () => {
       }
     }
   `)
-  const path = window.location.href
+
   return (
     <Layout>
       <SEO
         title="Wiadomość wysłana!"
         description="Twoja wiadomość została wysłana"
         shareImage={successQuote.file.publicURL}
-        path={path}
       />
 
-      <section className="container page success">
-        <h1>Dziękuję za wiadomość</h1>
+      <section className="page success">
+        <div className="container">
+          <h1>Dziękuję za wiadomość</h1>
 
-        <p>
-          Twoja wiadomość już jest u mnie na skrzynce, zapoznam się z nią i
-          odpiszę lub oddzwonię.
-        </p>
+          <p>
+            Twoja wiadomość już jest u mnie na skrzynce, zapoznam się z nią i
+            odpiszę lub oddzwonię.
+          </p>
 
-        <Link to="/" className="btn primary">
-          Powrót na stronę główną
-        </Link>
+          <Link to="/" className="btn primary">
+            Powrót na stronę główną
+          </Link>
+        </div>
       </section>
     </Layout>
   )

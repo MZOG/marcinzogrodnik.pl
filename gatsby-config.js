@@ -5,6 +5,7 @@ module.exports = {
     title: `Strony internetowe WordPress & JAMstack`,
     description: `Marcin Zogrodnik - Tworzę szybkie oraz przyciągające klientów strony internetowe wykorzystując najnowsze technologie tj. JAMstack, React czy Gatsby.`,
     author: `@zogrodnik_m`,
+    url: "https://marcinzogrodnik.pl",
   },
   plugins: [
     {
@@ -13,12 +14,12 @@ module.exports = {
         siteUrl: `https://marcinzogrodnik.pl`,
       },
     },
-    {
-      resolve: "gatsby-plugin-anchor-links",
-      options: {
-        offset: -50
-      }
-    },
+    // {
+    //   resolve: "gatsby-plugin-anchor-links",
+    //   options: {
+    //     offset: -50,
+    //   },
+    // },
     `gatsby-plugin-remove-trailing-slashes`,
     {
       resolve: `gatsby-transformer-remark`,
@@ -35,9 +36,9 @@ module.exports = {
           {
             resolve: `gatsby-remark-highlight-code`,
             options: {
-              terminal: 'carbon',
+              terminal: "carbon",
               // theme: 'blackboard'
-            }
+            },
           },
           {
             resolve: "gatsby-remark-images",
@@ -97,12 +98,12 @@ module.exports = {
       },
     },
     {
-      resolve: 'gatsby-plugin-react-svg',
+      resolve: "gatsby-plugin-react-svg",
       options: {
         rule: {
-          include: /assets/
-        }
-      }
+          include: /assets/,
+        },
+      },
     },
     {
       resolve: `gatsby-plugin-google-analytics`,

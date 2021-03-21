@@ -30,15 +30,12 @@ const Blog = () => {
     }
   `)
 
-  const path = window.location.href
-
   return (
     <Layout>
       <SEO
         title="Blog"
         description="Artykuły na temat JAMstack, WordPress, optymalizacji, pozycjonowania. Zapraszam dównież do działu Front End, gdzie dzielę się wiedzą na temat Gatsby, czy Reacta."
         shareImage={blogQuote.file.publicURL}
-        path={path}
       />
       <section className="page page_offer">
         <div className="container">

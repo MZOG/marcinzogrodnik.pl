@@ -42,15 +42,12 @@ const Frontend = () => {
     }
   `)
 
-  const path = window.location.href
-
   return (
     <Layout>
       <SEO
         title="Front End"
         description="Więcej na temat tworzenia stron internetowych, JavaScript, React'a, CSS"
         shareImage={frontendQuote.file.publicURL}
-        path={path}
       />
       <section className="page page_offer">
         <div className="container">

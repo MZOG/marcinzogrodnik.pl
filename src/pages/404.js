@@ -13,15 +13,12 @@ const NotFoundPage = () => {
     }
   `)
 
-  const path = window.location.href
-
   return (
     <Layout>
       <SEO
         title="Ups.."
         description="Wygląda na to, że wyszukiwana strona nie istnieje.."
         shareImage={notfound.file.publicURL}
-        path={path}
       />
       <section className="not-found">
         <div className="container page">

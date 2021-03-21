@@ -43,8 +43,6 @@ export default ({ data }) => {
     dateModified: post.meta.updatedAt,
   }
 
-  const path = window.location.href
-
   return (
     <Layout article={true}>
       <SEO
@@ -52,7 +50,6 @@ export default ({ data }) => {
         description={post.seo.description}
         shareImage={post.seo.image.sizes.src}
         schemaMarkup={schema}
-        path={path}
       />
 
       <article className="article">

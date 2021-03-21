@@ -13,8 +13,6 @@ const Regulamin = () => {
     }
   `)
 
-  const path = window.location.href
-
   return (
     <Layout>
       <SEO
@@ -22,7 +20,6 @@ const Regulamin = () => {
         title="Regulamin"
         description="Regulamin strony marcinzogrodnik.pl"
         shareImage={regulaminQuote.file.publicURL}
-        path={path}
       />
       <section className="page">
         <div className="container">

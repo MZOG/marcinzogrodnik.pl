@@ -14,8 +14,6 @@ const StronyInternetoweWordPress = () => {
     }
   `)
 
-  const path = window.location.href
-
   return (
     <Layout>
       <SEO
@@ -23,7 +21,6 @@ const StronyInternetoweWordPress = () => {
         title="Strony internetowe WordPress"
         description="Łatwa w obsłudze strona internetowa WordPress z panelem administracyjnym do samodzielnego zarządzania stroną. "
         shareImage={data.file.publicURL}
-        path={path}
       />
       <section className="page">
         <div className="container">

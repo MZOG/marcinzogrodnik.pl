@@ -53,8 +53,6 @@ const IndexPage = () => {
     }
   `)
 
-  const path = window.location.href
-
   return (
     <Layout>
       <SEO
@@ -62,7 +60,6 @@ const IndexPage = () => {
         description="Tworzę strony i sklepy internetowe WordPress. Nowoczesne, statyczne witryny JAMstack. Wysokiej jakości kod to klucz do sukcesu Twojej firmy w sieci."
         schemaMarkup={schema}
         shareImage={indexQuote.file.publicURL}
-        path={path}
       />
 
       <Hero />

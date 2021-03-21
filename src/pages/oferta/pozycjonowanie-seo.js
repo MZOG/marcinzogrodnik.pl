@@ -14,8 +14,6 @@ const Pozycjonowanie = () => {
     }
   `)
 
-  const path = window.location.href
-
   return (
     <Layout>
       <SEO
@@ -23,7 +21,6 @@ const Pozycjonowanie = () => {
         title="Pozycjonowanie stron internetowych"
         description="Twoja strona nie wyświetla się w wynikach wyszukiwania Google? Pozycjonuję strony internetowe od kilku lat, znam techniki, które pomogą Twojej stronie być wyżej niż konkurencja."
         shareImage={data.file.publicURL}
-        path={path}
       />
       <section className="page ">
         <div className="container">

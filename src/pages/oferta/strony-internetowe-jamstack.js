@@ -15,8 +15,6 @@ const StronyInternetoweJAMstack = () => {
     }
   `)
 
-  const path = window.location.href
-
   return (
     <Layout>
       <SEO
@@ -24,7 +22,6 @@ const StronyInternetoweJAMstack = () => {
         title="JAMstack"
         description="Statyczna strona internetowa JAMstack może być o 10 razy szybsza niż standardowa strona oparta na innym systemie. Strony JAMstack tworzę wykorzystując Gatsby."
         shareImage={data.file.publicURL}
-        path={path}
       />
       <section className="page">
         <div className="container">
