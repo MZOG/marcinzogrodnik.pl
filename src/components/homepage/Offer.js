@@ -14,7 +14,7 @@ function Offer() {
           id
           name
           childImageSharp {
-            fluid(quality: 100) {
+            fluid(quality: 90) {
               ...GatsbyImageSharpFluid_tracedSVG
             }
           }

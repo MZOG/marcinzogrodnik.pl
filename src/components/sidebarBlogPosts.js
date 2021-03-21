@@ -15,7 +15,9 @@ const SidebarBlogPosts = () => {
         }
       }
       allMarkdownRemark(
-        filter: { frontmatter: { type: { eq: "post" } } }
+        filter: {
+          frontmatter: { type: { eq: "post" }, published: { eq: true } }
+        }
         limit: 3
         sort: { order: DESC, fields: frontmatter___date }
       ) {
