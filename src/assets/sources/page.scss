@@ -1,6 +1,21 @@
 .page {
   margin: 50px 0;
 
+  h1 {
+    color: $primary;
+    font-weight: 600;
+    font-size: 32px;
+    margin-bottom: 20px;
+
+    @include mq("tablet", "min") {
+      font-size: 35px;
+    }
+
+    @include mq("desktop", "min") {
+      font-size: 37px;
+    }
+  }
+
   h2 {
     font-size: 25px;
     margin-bottom: 20px;
@@ -25,9 +40,10 @@
   ul {
     margin-bottom: 20px;
     list-style-type: "→ ";
-    color: $primary;
+    // color: $primary;
     margin-left: 34px;
     line-height: 1.5;
+    margin-top: 1rem;
 
     li {
       margin-bottom: 5px;
@@ -36,12 +52,18 @@
 
   ol {
     list-style-type: decimal;
-    color: $primary;
+    // color: $primary;
     margin-left: 30px;
+    margin-bottom: 1.5rem;
+    margin-top: 1.5rem;
 
     li {
       margin-bottom: 5px;
       line-height: 1.5;
+
+      strong {
+        color: $primary;
+      }
     }
   }
 
@@ -187,6 +209,12 @@
       }
     }
 
+    .small-print {
+      margin-top: 1.5rem;
+      font-size: 14px;
+      font-style: italic;
+    }
+
     &-form {
       &-row {
         @include mq("tablet", "min") {
@@ -206,6 +234,7 @@
             width: 100%;
 
             textarea {
+              margin-top: 10px;
               width: 100%;
               background: $light;
               border: none;
@@ -231,6 +260,7 @@
             font-size: inherit;
             font-family: inherit;
             padding-left: 10px;
+            margin-top: 10px;
 
             &:nth-child(odd) {
               margin-top: 15px;
@@ -249,7 +279,7 @@
           }
 
           .toggle {
-            margin: 0 0 1.5rem;
+            margin: 10px 0 1.5rem;
             box-sizing: border-box;
             font-size: 0;
             display: flex;
@@ -266,7 +296,6 @@
               box-sizing: border-box;
               position: relative;
               display: inline-block;
-              // border: solid 1px #ddd;
               background-color: $light;
               font-size: 1rem;
               line-height: 140%;
@@ -279,11 +308,6 @@
               &:first-of-type {
                 border-right: none;
               }
-              &:last-of-type {
-              }
-            }
-            input:hover + label {
-              // border-color: $light;
             }
             input:checked + label {
               background-color: $primary;
@@ -291,15 +315,13 @@
               border-color: $primary;
               z-index: 1;
             }
-            // @include breakpoint(800) {
-            //   input + label {
-            //     padding: .75rem .25rem;
-            //     flex: 0 0 50%;
-            //     display: flex; justify-content: center; align-items: center;
-            //   }
-            // }
           }
         }
+      }
+
+      small {
+        font-size: 14px;
+        display: inline-block;
       }
 
       &-submit {

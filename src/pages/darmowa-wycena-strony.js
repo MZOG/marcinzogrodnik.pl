@@ -47,14 +47,14 @@ const DarmowaWycenaStrony = () => {
                   <input type="text" name="name" />
                 </div>
                 <div className="page_contact-form-row-item">
-                  <label htmlFor="email">E-mail</label>
+                  <label htmlFor="email">E-mail *</label>
                   <input type="text" name="email" />
                 </div>
               </div>
 
               <div className="page_contact-form-row">
                 <div className="page_contact-form-row-item">
-                  <label htmlFor="company">Nazwa firmy *</label>
+                  <label htmlFor="company">Nazwa firmy (Jeśli posiadasz)</label>
                   <input type="text" name="company" />
                 </div>
 
@@ -71,7 +71,7 @@ const DarmowaWycenaStrony = () => {
                     <input
                       type="radio"
                       name="website"
-                      value="website_www"
+                      value="STRONA INTERNETOWA"
                       id="website_www"
                       defaultChecked
                     />
@@ -79,7 +79,7 @@ const DarmowaWycenaStrony = () => {
                     <input
                       type="radio"
                       name="website"
-                      value="website_shop"
+                      value="SKLEP"
                       id="website_shop"
                     />
                     <label htmlFor="website_shop">Sklep internetowy</label>
@@ -97,23 +97,26 @@ const DarmowaWycenaStrony = () => {
               <div className="page_contact-form-row">
                 <div className="page_contact-form-row-item">
                   <label htmlFor="company">CMS?</label>
+                  <small>
+                    System zarządzania treścią (WordPress, Headless CMS)
+                  </small>
                   <div className="toggle">
                     <input
                       type="radio"
                       name="cms"
-                      value="cms_yes"
+                      value="TAK"
                       id="cms_yes"
                       defaultChecked
                     />
                     <label htmlFor="cms_yes">Tak</label>
-                    <input type="radio" name="cms" value="cms_no" id="cms_no" />
+                    <input type="radio" name="cms" value="NIE" id="cms_no" />
                     <label htmlFor="cms_no">Nie</label>
                   </div>
                 </div>
 
                 <div className="page_contact-form-row-item">
-                  <label htmlFor="phone">Chcę określić budżet</label>
-                  <input type="text" name="phone" />
+                  <label htmlFor="current_website">Aktualny adres strony</label>
+                  <input type="text" name="current_website" />
                 </div>
               </div>
 
@@ -138,14 +141,6 @@ const DarmowaWycenaStrony = () => {
                     <label htmlFor="languages_no">Nie</label>
                   </div>
                 </div>
-
-                <div className="page_contact-form-row-item">
-                  <label htmlFor="current_website">Aktualny adres strony</label>
-                  <input type="text" name="current_website" />
-                </div>
-              </div>
-
-              <div className="page_contact-form-row">
                 <div className="page_contact-form-row-item">
                   <label htmlFor="links">
                     Linki do stron, które Ci się podobają
@@ -154,6 +149,8 @@ const DarmowaWycenaStrony = () => {
                   <input type="text" name="links2" />
                 </div>
               </div>
+
+              <div className="page_contact-form-row"></div>
 
               <div className="page_contact-form-row-item message">
                 <label htmlFor="message">
@@ -166,6 +163,8 @@ const DarmowaWycenaStrony = () => {
                 <input type="submit" value="Wyślij" />
               </div>
             </form>
+
+            <p className="small-print">Pola oznaczone * są obowiązkowe.</p>
           </div>
         </div>
       </section>

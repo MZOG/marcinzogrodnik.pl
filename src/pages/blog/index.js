@@ -30,6 +30,28 @@ const Blog = () => {
     }
   `)
 
+  const blogArticles = blogQuote.allDatoCmsPost.nodes
+
+  const loopArticles = () =>
+    blogArticles.map(article => {
+      const { id, slug, title, image, seo } = article
+      return (
+        <article className="page_offer_item" key={id}>
+          <Link to={`/blog/${slug}`}>
+            <Img fluid={image.fluid} alt={title} />
+          </Link>
+          <h2>
+            <Link to={`/blog/${slug}`}>{title}</Link>
+          </h2>
+          <p>{seo.description}</p>
+
+          <div className="page_offer_item-cta">
+            <Link to={`/blog/${slug}`}>Czytaj dalej →</Link>
+          </div>
+        </article>
+      )
+    })
+
   return (
     <Layout>
       <SEO
@@ -46,23 +68,7 @@ const Blog = () => {
             linkTxt="Front End"
           />
 
-          <div className="page_offer_boxes">
-            {blogQuote.allDatoCmsPost.nodes.map(item => (
-              <article className="page_offer_item" key={item.id}>
-                <Link to={`/blog/${item.slug}`}>
-                  <Img fluid={item.image.fluid} alt={item.title} />
-                </Link>
-                <h2>
-                  <Link to={`/blog/${item.slug}`}>{item.title}</Link>
-                </h2>
-                <p>{item.seo.description}</p>
-
-                <div className="page_offer_item-cta">
-                  <Link to={`/blog/${item.slug}`}>Czytaj dalej →</Link>
-                </div>
-              </article>
-            ))}
-          </div>
+          <div className="page_offer_boxes">{loopArticles()}</div>
         </div>
       </section>
     </Layout>
